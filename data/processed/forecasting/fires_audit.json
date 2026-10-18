@@ -1,0 +1,12 @@
+{
+  "raw_records": 13957,
+  "duplicate_objectid": 0,
+  "duplicate_fpa_id": 0,
+  "missing_date": 0,
+  "doy_mismatch": 0,
+  "outside_grid": 1402,
+  "bad_coords": 0,
+  "same_point_same_day_groups": 43,
+  "repeated_positions_ge5": 39,
+  "clean_records": 12555
+}

@@ -1,0 +1,39 @@
+{
+  "cells": 80,
+  "weeks": 521,
+  "cell_weeks": 41680,
+  "fires_in_labelled_windows": 11384,
+  "events_counted": 11384,
+  "positives": 6721,
+  "positive_rate": 0.1613,
+  "cells_never_positive": 0,
+  "by_split": {
+    "holdout": {
+      "first": "2023-01-02",
+      "last": "2024-12-23",
+      "weeks": 104,
+      "cell_weeks": 8320,
+      "positives": 1369,
+      "events": 2569,
+      "positive_rate": 0.1645
+    },
+    "train": {
+      "first": "2015-01-05",
+      "last": "2020-12-28",
+      "weeks": 313,
+      "cell_weeks": 25040,
+      "positives": 4088,
+      "events": 6755,
+      "positive_rate": 0.1633
+    },
+    "validation": {
+      "first": "2021-01-04",
+      "last": "2022-12-26",
+      "weeks": 104,
+      "cell_weeks": 8320,
+      "positives": 1264,
+      "events": 2060,
+      "positive_rate": 0.1519
+    }
+  }
+}

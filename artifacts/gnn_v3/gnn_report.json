@@ -1,0 +1,317 @@
+{
+  "dataset": {
+    "camp_2018": {
+      "passes": 14,
+      "pairs_accepted": 13,
+      "detections": 4239,
+      "weather": true
+    },
+    "dixie_2021": {
+      "passes": 11,
+      "pairs_accepted": 10,
+      "detections": 466,
+      "weather": true
+    },
+    "eaton_2025": {
+      "passes": 5,
+      "pairs_accepted": 4,
+      "detections": 868,
+      "weather": true
+    },
+    "eonet_2019_corta_onet4328": {
+      "passes": 10,
+      "pairs_accepted": 9,
+      "detections": 460,
+      "weather": true
+    },
+    "eonet_2019_goose_onet4326": {
+      "passes": 10,
+      "pairs_accepted": 9,
+      "detections": 206,
+      "weather": true
+    },
+    "eonet_2019_tucker_onet4314": {
+      "passes": 11,
+      "pairs_accepted": 10,
+      "detections": 306,
+      "weather": true
+    },
+    "eonet_2020_twin_onet4722": {
+      "passes": 10,
+      "pairs_accepted": 9,
+      "detections": 551,
+      "weather": true
+    },
+    "eonet_2022_becky_peak_onet6113": {
+      "passes": 8,
+      "pairs_accepted": 6,
+      "detections": 232,
+      "weather": true
+    },
+    "eonet_2022_goshute_onet6094": {
+      "passes": 7,
+      "pairs_accepted": 6,
+      "detections": 166,
+      "weather": true
+    },
+    "eonet_2022_kinsley_onet6090": {
+      "passes": 8,
+      "pairs_accepted": 7,
+      "detections": 281,
+      "weather": true
+    },
+    "eonet_2022_lost_lake_onet6070": {
+      "passes": 12,
+      "pairs_accepted": 11,
+      "detections": 370,
+      "weather": true
+    },
+    "eonet_2022_washburn_onet6130": {
+      "passes": 11,
+      "pairs_accepted": 10,
+      "detections": 249,
+      "weather": true
+    },
+    "eonet_2023_bonny_wildfire_riverside_california_onet6534": {
+      "passes": 8,
+      "pairs_accepted": 7,
+      "detections": 114,
+      "weather": true
+    },
+    "eonet_2023_rabbit_wildfire_riverside_california_onet6530": {
+      "passes": 10,
+      "pairs_accepted": 7,
+      "detections": 154,
+      "weather": true
+    },
+    "eonet_2025_wildfire_in_united_states_1024215_net14266": {
+      "passes": 5,
+      "pairs_accepted": 4,
+      "detections": 187,
+      "weather": true
+    },
+    "eonet_2025_wildfire_in_united_states_1024437_net14612": {
+      "passes": 7,
+      "pairs_accepted": 6,
+      "detections": 2552,
+      "weather": true
+    },
+    "palisades_2025": {
+      "passes": 6,
+      "pairs_accepted": 5,
+      "detections": 1512,
+      "weather": true
+    }
+  },
+  "fire_count": 17,
+  "excluded_until_review": [],
+  "method": "edge-aware message passing GNN",
+  "evaluation_caution": "Later FIRMS detections are partial observations, NOT complete burn area.",
+  "split": {
+    "training": [
+      "dixie_2021",
+      "eaton_2025",
+      "eonet_2019_corta_onet4328",
+      "eonet_2019_goose_onet4326",
+      "eonet_2019_tucker_onet4314",
+      "eonet_2020_twin_onet4722",
+      "eonet_2022_becky_peak_onet6113",
+      "eonet_2022_goshute_onet6094",
+      "eonet_2022_kinsley_onet6090",
+      "eonet_2022_lost_lake_onet6070",
+      "eonet_2022_washburn_onet6130",
+      "eonet_2023_bonny_wildfire_riverside_california_onet6534",
+      "eonet_2023_rabbit_wildfire_riverside_california_onet6530",
+      "eonet_2025_wildfire_in_united_states_1024215_net14266",
+      "eonet_2025_wildfire_in_united_states_1024437_net14612"
+    ],
+    "validation": "palisades_2025",
+    "test": [
+      "camp_2018"
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.31473,
+      "val_loss": 0.48423
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.25261,
+      "val_loss": 0.57654
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.24756,
+      "val_loss": 0.47558
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.20204,
+      "val_loss": 0.49236
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.20675,
+      "val_loss": 0.63477
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.21534,
+      "val_loss": 0.61404
+    }
+  ],
+  "test_predictions": [
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-08T19:50:00Z",
+      "observed_at": "2018-11-08T20:39:00Z",
+      "lead_hours": 0.82,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 143,
+      "gnn_average_precision": 0.8417,
+      "persistence_average_precision": 0.6346,
+      "proximity_average_precision": 0.7302
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-08T20:39:00Z",
+      "observed_at": "2018-11-08T21:30:00Z",
+      "lead_hours": 0.85,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 131,
+      "gnn_average_precision": 0.7958,
+      "persistence_average_precision": 0.716,
+      "proximity_average_precision": 0.762
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-08T21:30:00Z",
+      "observed_at": "2018-11-09T08:58:00Z",
+      "lead_hours": 11.47,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 202,
+      "gnn_average_precision": 0.424,
+      "persistence_average_precision": 0.1709,
+      "proximity_average_precision": 0.396
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-09T08:58:00Z",
+      "observed_at": "2018-11-09T09:49:00Z",
+      "lead_hours": 0.85,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 254,
+      "gnn_average_precision": 0.777,
+      "persistence_average_precision": 0.5277,
+      "proximity_average_precision": 0.7091
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-09T09:49:00Z",
+      "observed_at": "2018-11-09T10:38:00Z",
+      "lead_hours": 0.82,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 215,
+      "gnn_average_precision": 0.8667,
+      "persistence_average_precision": 0.6528,
+      "proximity_average_precision": 0.7113
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-09T10:38:00Z",
+      "observed_at": "2018-11-09T20:20:00Z",
+      "lead_hours": 9.7,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 68,
+      "gnn_average_precision": 0.2185,
+      "persistence_average_precision": 0.0796,
+      "proximity_average_precision": 0.1234
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-09T20:20:00Z",
+      "observed_at": "2018-11-09T21:11:00Z",
+      "lead_hours": 0.85,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 92,
+      "gnn_average_precision": 0.7924,
+      "persistence_average_precision": 0.5721,
+      "proximity_average_precision": 0.7077
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-09T21:11:00Z",
+      "observed_at": "2018-11-09T22:01:00Z",
+      "lead_hours": 0.83,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 49,
+      "gnn_average_precision": 0.602,
+      "persistence_average_precision": 0.4115,
+      "proximity_average_precision": 0.445
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-09T22:01:00Z",
+      "observed_at": "2018-11-10T09:30:00Z",
+      "lead_hours": 11.48,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 81,
+      "gnn_average_precision": 0.6679,
+      "persistence_average_precision": 0.4025,
+      "proximity_average_precision": 0.5755
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-10T09:30:00Z",
+      "observed_at": "2018-11-10T10:20:00Z",
+      "lead_hours": 0.83,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 83,
+      "gnn_average_precision": 0.8485,
+      "persistence_average_precision": 0.6641,
+      "proximity_average_precision": 0.7578
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-10T10:20:00Z",
+      "observed_at": "2018-11-10T11:10:00Z",
+      "lead_hours": 0.83,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 57,
+      "gnn_average_precision": 0.7397,
+      "persistence_average_precision": 0.5204,
+      "proximity_average_precision": 0.5462
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-10T11:10:00Z",
+      "observed_at": "2018-11-10T20:02:00Z",
+      "lead_hours": 8.87,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 16,
+      "gnn_average_precision": 0.296,
+      "persistence_average_precision": 0.1832,
+      "proximity_average_precision": 0.2022
+    },
+    {
+      "fire": "camp_2018",
+      "issued_at": "2018-11-10T20:02:00Z",
+      "observed_at": "2018-11-10T20:53:00Z",
+      "lead_hours": 0.85,
+      "future_pixel_coverage_in_grid": 1.0,
+      "future_positive_cells": 56,
+      "gnn_average_precision": 0.5939,
+      "persistence_average_precision": 0.2522,
+      "proximity_average_precision": 0.4149
+    }
+  ],
+  "training_note": "No test-fire labels used for training or early stopping.",
+  "baseline_note": "Proximity baseline uses only currently detected cells and fixed grid distances; all methods evaluated on the same next-pass labels.",
+  "test_summary": {
+    "gnn_average_precision": 0.6511,
+    "persistence_average_precision": 0.4452,
+    "proximity_average_precision": 0.5447
+  }
+}

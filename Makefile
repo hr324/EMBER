@@ -1,5 +1,5 @@
 # Python 3.12+, standard-library core.
-.PHONY: test fixture infer demo graph notebooks
+.PHONY: test fixture infer demo graph notebooks forecast forecast-serve
 
 # Run fast, dependency-free unit and integration tests.
 test:
@@ -24,3 +24,18 @@ graph: fixture
 # Rebuild the seven notebooks (requires nbformat on the generating machine).
 notebooks:
 	python3 scripts/create_notebooks.py
+
+# Weekly new-ignition occurrence forecast (real FPA-FOD + Open-Meteo; see forecasting/README.md).
+forecast:
+	python3 -m forecasting.fetch_fires
+	python3 -m forecasting.fetch_weather
+	python3 -m forecasting.labels
+	python3 -m forecasting.features
+	python3 -m forecasting.models
+	python3 -m forecasting.export
+	python3 -m forecasting.provenance
+	python3 -m unittest tests.test_occurrence_forecast
+
+# Serve the precomputed forecast map and read-only API (stdlib only).
+forecast-serve:
+	python3 -m forecasting.serve --port 8010

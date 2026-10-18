@@ -97,7 +97,8 @@ def main() -> None:
     sig = [t for t in m['holdout_significance'] if t['candidate'] == fusion and t['baseline'] == BASELINE]
     summary['diff'] = sig[0] if sig else None
     html = (config.PKG / 'map_template.html').read_text()
-    html = html.replace('/*__DATA__*/', 'const DATA=' + json.dumps(dict(cells=cells, weeks=weeks, summary=summary)) + ';')
+    blob = json.dumps(dict(cells=cells, weeks=weeks, summary=summary)).replace('</', '<\\/')  # keep inside <script>
+    html = html.replace('/*__DATA__*/', 'const DATA=' + blob + ';')
     (config.OUTPUT_DIR / 'forecast_map.html').write_text(html)
     print(f'headline fusion model (by validation): {fusion}; demo week {DEMO_ISSUE}; '
           f'{len(ev)} observed fires in window; {len(weeks)} holdout weeks in HTML')

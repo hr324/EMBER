@@ -33,6 +33,32 @@ Branch `rayan` · code in `forecasting/` · every number below is read from save
 
 The confusion table for EMBER's 2025 alert rule is TP 235, FP 173, FN 555, TN 3,117. **The alerts cover 29.8% of all cell-weeks that had a fire.** Most fire cell-weeks fall outside the top 8, because fires are spread over many cells.
 
+## Without a fixed number of alerts per week
+
+Full tables: [FLEXIBLE_ALERTS.md](FLEXIBLE_ALERTS.md).
+- **Method:** a cell is alerted whenever its risk score clears a threshold, so the number of alerts rises and falls with conditions (EMBER: 0–19 a week in 2025 under the confident rule).
+- **Thresholds:** set per model on 2021–2022 only, by three rules fixed in advance:
+  - best F1 balance;
+  - ≥ 70% hit rate on validation;
+  - ≥ 50% hit rate on validation.
+
+**"Confident" rule (aim for ≥ 70% hit rate):**
+
+| | 2025 EMBER | 2025 baseline | 2023–24 EMBER | 2023–24 baseline |
+|---|---|---|---|---|
+| Alerts | 332 | 220 | 580 | 440 |
+| Hit rate | 76.8% | 81.8% | 78.5% | 83.0% |
+| Fire cell-weeks caught | **32.3%** | 22.8% | **33.2%** | 26.7% |
+| Reported fires in alerted cells | **44.7%** | 34.7% | **50.1%** | 42.7% |
+| F1 difference (95% CI) | **+9.8 pt [+6.8, +12.5]** | | **+6.3 pt [+4.1, +9.0]** | |
+
+What this shows:
+- **Same setup, more fires caught.** Set up the same way, EMBER makes more alerts and **catches significantly more fires** in both test periods, at a hit rate about 5 points lower. Its overall balance (F1) is significantly better under the confident and broad rules in 2025, and the confident rule in 2023–2024.
+- **But not better ranking.** **Given the same total number of alerts**, placed anywhere in the period, EMBER's and the baseline's hit rates match (all CIs include zero). The advantage comes from EMBER raising more alerts when its signals say risk is up, not from picking better cells per alert.
+- **It adapts to busier years.** In 2025, a busier year, EMBER's average predicted risk was 18.6% against an actual 19.4%; the static baseline stayed at 16.6%. 2025 ROC-AUC improved **+0.018 [+0.003, +0.036]**, a significant but small gain. PR-AUC and Brier also improved but weren't significant. No threshold-free difference is significant in 2023–2024.
+
+**Pitch line (variable alerts):** *"Set up the same way on past data, EMBER flagged about 50% more areas than a seasonal map in 2025 and caught 42% more of the weeks that had fires (32% vs 23%), with 77% of its alerts followed by a reported fire."*
+
 ## What was tried overnight (all chosen on 2021–2022 validation only)
 
 Full log: [experiments.md](experiments.md).

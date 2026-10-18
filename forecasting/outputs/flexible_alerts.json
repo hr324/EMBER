@@ -1,0 +1,1107 @@
+{
+  "thresholds_chosen_on": "validation 2021-2022",
+  "thresholds": {
+    "A_climatology": {
+      "best_f1": 0.299038,
+      "precision70": 0.600881,
+      "precision50": 0.385994
+    },
+    "E_gbm_history_weather": {
+      "best_f1": 0.275181,
+      "precision70": 0.605826,
+      "precision50": 0.335375
+    },
+    "E0+redflag": {
+      "best_f1": 0.2538890440411629,
+      "precision70": 0.6001507395296761,
+      "precision50": 0.33123807996992927
+    }
+  },
+  "periods": {
+    "validation 2021-2022": {
+      "cell_weeks": 8320,
+      "fire_cell_weeks": 1264,
+      "base_rate": 0.1519,
+      "threshold_free": {
+        "A_climatology": {
+          "pr_auc": 0.4999,
+          "roc_auc": 0.8098,
+          "brier": 0.10218,
+          "mean_risk": 0.1633,
+          "observed_rate": 0.1519
+        },
+        "E_gbm_history_weather": {
+          "pr_auc": 0.5211,
+          "roc_auc": 0.8328,
+          "brier": 0.09854,
+          "mean_risk": 0.1594,
+          "observed_rate": 0.1519
+        },
+        "E0+redflag": {
+          "pr_auc": 0.5195,
+          "roc_auc": 0.8314,
+          "brier": 0.09893,
+          "mean_risk": 0.158,
+          "observed_rate": 0.1519
+        }
+      },
+      "rules": {
+        "best_f1": {
+          "A_climatology": {
+            "threshold": 0.299,
+            "alerts": 1498,
+            "hits": 673,
+            "precision": 0.4493,
+            "recall": 0.5324,
+            "f1": 0.4873,
+            "fire_capture": 0.632,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 13.0,
+              "max": 33
+            },
+            "weeks_with_no_alert": 20,
+            "weeks": 104
+          },
+          "E_gbm_history_weather": {
+            "threshold": 0.2752,
+            "alerts": 1571,
+            "hits": 719,
+            "precision": 0.4577,
+            "recall": 0.5688,
+            "f1": 0.5072,
+            "fire_capture": 0.6801,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 15.0,
+              "max": 36
+            },
+            "weeks_with_no_alert": 19,
+            "weeks": 104
+          },
+          "E0+redflag": {
+            "threshold": 0.2539,
+            "alerts": 1719,
+            "hits": 752,
+            "precision": 0.4375,
+            "recall": 0.5949,
+            "f1": 0.5042,
+            "fire_capture": 0.6908,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 14.5,
+              "max": 52
+            },
+            "weeks_with_no_alert": 22,
+            "weeks": 104
+          }
+        },
+        "precision70": {
+          "A_climatology": {
+            "threshold": 0.6009,
+            "alerts": 440,
+            "hits": 308,
+            "precision": 0.7,
+            "recall": 0.2437,
+            "f1": 0.3615,
+            "fire_capture": 0.365,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 3.0,
+              "max": 13
+            },
+            "weeks_with_no_alert": 44,
+            "weeks": 104
+          },
+          "E_gbm_history_weather": {
+            "threshold": 0.6058,
+            "alerts": 488,
+            "hits": 342,
+            "precision": 0.7008,
+            "recall": 0.2706,
+            "f1": 0.3904,
+            "fire_capture": 0.4073,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 4.0,
+              "max": 14
+            },
+            "weeks_with_no_alert": 38,
+            "weeks": 104
+          },
+          "E0+redflag": {
+            "threshold": 0.6002,
+            "alerts": 478,
+            "hits": 335,
+            "precision": 0.7008,
+            "recall": 0.265,
+            "f1": 0.3846,
+            "fire_capture": 0.399,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 3.0,
+              "max": 17
+            },
+            "weeks_with_no_alert": 39,
+            "weeks": 104
+          }
+        },
+        "precision50": {
+          "A_climatology": {
+            "threshold": 0.386,
+            "alerts": 1118,
+            "hits": 559,
+            "precision": 0.5,
+            "recall": 0.4422,
+            "f1": 0.4694,
+            "fire_capture": 0.5534,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 9.0,
+              "max": 28
+            },
+            "weeks_with_no_alert": 36,
+            "weeks": 104
+          },
+          "E_gbm_history_weather": {
+            "threshold": 0.3354,
+            "alerts": 1236,
+            "hits": 618,
+            "precision": 0.5,
+            "recall": 0.4889,
+            "f1": 0.4944,
+            "fire_capture": 0.6092,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 12.5,
+              "max": 32
+            },
+            "weeks_with_no_alert": 25,
+            "weeks": 104
+          },
+          "E0+redflag": {
+            "threshold": 0.3312,
+            "alerts": 1256,
+            "hits": 628,
+            "precision": 0.5,
+            "recall": 0.4968,
+            "f1": 0.4984,
+            "fire_capture": 0.6141,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 9.5,
+              "max": 33
+            },
+            "weeks_with_no_alert": 24,
+            "weeks": 104
+          }
+        }
+      },
+      "equal_count": {}
+    },
+    "test 2023-2024 (FPA-FOD)": {
+      "cell_weeks": 8320,
+      "fire_cell_weeks": 1369,
+      "base_rate": 0.1645,
+      "threshold_free": {
+        "A_climatology": {
+          "pr_auc": 0.6145,
+          "roc_auc": 0.8568,
+          "brier": 0.09455,
+          "mean_risk": 0.1633,
+          "observed_rate": 0.1645
+        },
+        "E_gbm_history_weather": {
+          "pr_auc": 0.6156,
+          "roc_auc": 0.862,
+          "brier": 0.0935,
+          "mean_risk": 0.165,
+          "observed_rate": 0.1645
+        },
+        "E0+redflag": {
+          "pr_auc": 0.6145,
+          "roc_auc": 0.8619,
+          "brier": 0.09347,
+          "mean_risk": 0.1667,
+          "observed_rate": 0.1645
+        }
+      },
+      "rules": {
+        "best_f1": {
+          "A_climatology": {
+            "threshold": 0.299,
+            "alerts": 1498,
+            "hits": 809,
+            "precision": 0.5401,
+            "recall": 0.5909,
+            "f1": 0.5644,
+            "fire_capture": 0.7302,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 13.0,
+              "max": 33
+            },
+            "weeks_with_no_alert": 20,
+            "weeks": 104
+          },
+          "E_gbm_history_weather": {
+            "threshold": 0.2752,
+            "alerts": 1605,
+            "hits": 849,
+            "precision": 0.529,
+            "recall": 0.6202,
+            "f1": 0.5709,
+            "fire_capture": 0.7466,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 13.5,
+              "max": 47
+            },
+            "weeks_with_no_alert": 18,
+            "weeks": 104
+          },
+          "E0+redflag": {
+            "threshold": 0.2539,
+            "alerts": 1789,
+            "hits": 884,
+            "precision": 0.4941,
+            "recall": 0.6457,
+            "f1": 0.5598,
+            "fire_capture": 0.7622,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 16.0,
+              "max": 59
+            },
+            "weeks_with_no_alert": 18,
+            "weeks": 104
+          },
+          "comparisons": [
+            {
+              "metric": "precision",
+              "diff": -0.0111,
+              "ci95": [
+                -0.0286,
+                0.0079
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.0293,
+              "ci95": [
+                0.0092,
+                0.0547
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": 0.0065,
+              "ci95": [
+                -0.0043,
+                0.0204
+              ]
+            },
+            {
+              "metric": "precision",
+              "diff": -0.046,
+              "ci95": [
+                -0.0654,
+                -0.0225
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.0548,
+              "ci95": [
+                0.0351,
+                0.0794
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": -0.0046,
+              "ci95": [
+                -0.0209,
+                0.0169
+              ]
+            }
+          ]
+        },
+        "precision70": {
+          "A_climatology": {
+            "threshold": 0.6009,
+            "alerts": 440,
+            "hits": 365,
+            "precision": 0.8295,
+            "recall": 0.2666,
+            "f1": 0.4035,
+            "fire_capture": 0.4274,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 3.0,
+              "max": 13
+            },
+            "weeks_with_no_alert": 44,
+            "weeks": 104
+          },
+          "E_gbm_history_weather": {
+            "threshold": 0.6058,
+            "alerts": 580,
+            "hits": 455,
+            "precision": 0.7845,
+            "recall": 0.3324,
+            "f1": 0.4669,
+            "fire_capture": 0.501,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 4.0,
+              "max": 17
+            },
+            "weeks_with_no_alert": 41,
+            "weeks": 104
+          },
+          "E0+redflag": {
+            "threshold": 0.6002,
+            "alerts": 566,
+            "hits": 448,
+            "precision": 0.7915,
+            "recall": 0.3272,
+            "f1": 0.463,
+            "fire_capture": 0.4909,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 4.0,
+              "max": 16
+            },
+            "weeks_with_no_alert": 42,
+            "weeks": 104
+          },
+          "comparisons": [
+            {
+              "metric": "precision",
+              "diff": -0.045,
+              "ci95": [
+                -0.0698,
+                -0.0213
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.0658,
+              "ci95": [
+                0.0456,
+                0.0875
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": 0.0634,
+              "ci95": [
+                0.0412,
+                0.0902
+              ]
+            },
+            {
+              "metric": "precision",
+              "diff": -0.038,
+              "ci95": [
+                -0.0619,
+                -0.014
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.0606,
+              "ci95": [
+                0.0446,
+                0.0758
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": 0.0595,
+              "ci95": [
+                0.0431,
+                0.0778
+              ]
+            }
+          ]
+        },
+        "precision50": {
+          "A_climatology": {
+            "threshold": 0.386,
+            "alerts": 1118,
+            "hits": 700,
+            "precision": 0.6261,
+            "recall": 0.5113,
+            "f1": 0.5629,
+            "fire_capture": 0.6621,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 9.0,
+              "max": 28
+            },
+            "weeks_with_no_alert": 36,
+            "weeks": 104
+          },
+          "E_gbm_history_weather": {
+            "threshold": 0.3354,
+            "alerts": 1293,
+            "hits": 759,
+            "precision": 0.587,
+            "recall": 0.5544,
+            "f1": 0.5702,
+            "fire_capture": 0.6921,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 13.0,
+              "max": 35
+            },
+            "weeks_with_no_alert": 25,
+            "weeks": 104
+          },
+          "E0+redflag": {
+            "threshold": 0.3312,
+            "alerts": 1316,
+            "hits": 769,
+            "precision": 0.5843,
+            "recall": 0.5617,
+            "f1": 0.5728,
+            "fire_capture": 0.703,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 12.0,
+              "max": 39
+            },
+            "weeks_with_no_alert": 21,
+            "weeks": 104
+          },
+          "comparisons": [
+            {
+              "metric": "precision",
+              "diff": -0.0391,
+              "ci95": [
+                -0.0668,
+                -0.0124
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.0431,
+              "ci95": [
+                0.0188,
+                0.0703
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": 0.0073,
+              "ci95": [
+                -0.0066,
+                0.0242
+              ]
+            },
+            {
+              "metric": "precision",
+              "diff": -0.0418,
+              "ci95": [
+                -0.0699,
+                -0.0108
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.0504,
+              "ci95": [
+                0.0246,
+                0.08
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": 0.0099,
+              "ci95": [
+                -0.0063,
+                0.03
+              ]
+            }
+          ]
+        }
+      },
+      "equal_count": {
+        "best_f1": {
+          "E_gbm_history_weather": {
+            "alerts": 1605,
+            "share_of_cellweeks": 0.1929,
+            "precision_a": 0.5215,
+            "precision_b": 0.529,
+            "diff": 0.0075,
+            "ci95": [
+              -0.0102,
+              0.0162
+            ]
+          },
+          "E0+redflag": {
+            "alerts": 1605,
+            "share_of_cellweeks": 0.1929,
+            "precision_a": 0.5215,
+            "precision_b": 0.5296,
+            "diff": 0.0081,
+            "ci95": [
+              -0.0131,
+              0.0218
+            ]
+          }
+        },
+        "precision70": {
+          "E_gbm_history_weather": {
+            "alerts": 580,
+            "share_of_cellweeks": 0.0697,
+            "precision_a": 0.7879,
+            "precision_b": 0.7845,
+            "diff": -0.0034,
+            "ci95": [
+              -0.022,
+              0.031
+            ]
+          },
+          "E0+redflag": {
+            "alerts": 580,
+            "share_of_cellweeks": 0.0697,
+            "precision_a": 0.7879,
+            "precision_b": 0.7862,
+            "diff": -0.0017,
+            "ci95": [
+              -0.0193,
+              0.0284
+            ]
+          }
+        },
+        "precision50": {
+          "E_gbm_history_weather": {
+            "alerts": 1293,
+            "share_of_cellweeks": 0.1554,
+            "precision_a": 0.577,
+            "precision_b": 0.587,
+            "diff": 0.0101,
+            "ci95": [
+              -0.0103,
+              0.0234
+            ]
+          },
+          "E0+redflag": {
+            "alerts": 1293,
+            "share_of_cellweeks": 0.1554,
+            "precision_a": 0.577,
+            "precision_b": 0.5893,
+            "diff": 0.0124,
+            "ci95": [
+              -0.0102,
+              0.0281
+            ]
+          }
+        }
+      },
+      "threshold_free_diff": {
+        "E_gbm_history_weather": {
+          "pr_auc": {
+            "diff": 0.0011,
+            "ci95": [
+              -0.0112,
+              0.0137
+            ]
+          },
+          "roc_auc": {
+            "diff": 0.0052,
+            "ci95": [
+              -0.0015,
+              0.0124
+            ]
+          },
+          "brier": {
+            "diff": -0.0011,
+            "ci95": [
+              -0.0024,
+              0.0002
+            ]
+          }
+        },
+        "E0+redflag": {
+          "pr_auc": {
+            "diff": -0.0,
+            "ci95": [
+              -0.013,
+              0.0163
+            ]
+          },
+          "roc_auc": {
+            "diff": 0.0051,
+            "ci95": [
+              -0.0024,
+              0.0125
+            ]
+          },
+          "brier": {
+            "diff": -0.0011,
+            "ci95": [
+              -0.003,
+              0.0008
+            ]
+          }
+        }
+      }
+    },
+    "test 2025 (WFIGS)": {
+      "cell_weeks": 4080,
+      "fire_cell_weeks": 790,
+      "base_rate": 0.1936,
+      "threshold_free": {
+        "A_climatology": {
+          "pr_auc": 0.6127,
+          "roc_auc": 0.8364,
+          "brier": 0.11225,
+          "mean_risk": 0.1661,
+          "observed_rate": 0.1936
+        },
+        "E_gbm_history_weather": {
+          "pr_auc": 0.6292,
+          "roc_auc": 0.8542,
+          "brier": 0.10763,
+          "mean_risk": 0.1864,
+          "observed_rate": 0.1936
+        },
+        "E0+redflag": {
+          "pr_auc": 0.6086,
+          "roc_auc": 0.8426,
+          "brier": 0.11187,
+          "mean_risk": 0.1961,
+          "observed_rate": 0.1936
+        }
+      },
+      "rules": {
+        "best_f1": {
+          "A_climatology": {
+            "threshold": 0.299,
+            "alerts": 749,
+            "hits": 431,
+            "precision": 0.5754,
+            "recall": 0.5456,
+            "f1": 0.5601,
+            "fire_capture": 0.6494,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 13.0,
+              "max": 33
+            },
+            "weeks_with_no_alert": 9,
+            "weeks": 51
+          },
+          "E_gbm_history_weather": {
+            "threshold": 0.2752,
+            "alerts": 958,
+            "hits": 500,
+            "precision": 0.5219,
+            "recall": 0.6329,
+            "f1": 0.5721,
+            "fire_capture": 0.7345,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 14.0,
+              "max": 52
+            },
+            "weeks_with_no_alert": 4,
+            "weeks": 51
+          },
+          "E0+redflag": {
+            "threshold": 0.2539,
+            "alerts": 1117,
+            "hits": 532,
+            "precision": 0.4763,
+            "recall": 0.6734,
+            "f1": 0.5579,
+            "fire_capture": 0.7614,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 18.0,
+              "max": 65
+            },
+            "weeks_with_no_alert": 4,
+            "weeks": 51
+          },
+          "comparisons": [
+            {
+              "metric": "precision",
+              "diff": -0.0535,
+              "ci95": [
+                -0.1073,
+                0.0061
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.0873,
+              "ci95": [
+                0.0457,
+                0.1342
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": 0.012,
+              "ci95": [
+                -0.0279,
+                0.0628
+              ]
+            },
+            {
+              "metric": "precision",
+              "diff": -0.0991,
+              "ci95": [
+                -0.1625,
+                -0.0526
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.1278,
+              "ci95": [
+                0.0866,
+                0.1691
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": -0.0022,
+              "ci95": [
+                -0.0442,
+                0.0367
+              ]
+            }
+          ]
+        },
+        "precision70": {
+          "A_climatology": {
+            "threshold": 0.6009,
+            "alerts": 220,
+            "hits": 180,
+            "precision": 0.8182,
+            "recall": 0.2278,
+            "f1": 0.3564,
+            "fire_capture": 0.3474,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 4.0,
+              "max": 13
+            },
+            "weeks_with_no_alert": 21,
+            "weeks": 51
+          },
+          "E_gbm_history_weather": {
+            "threshold": 0.6058,
+            "alerts": 332,
+            "hits": 255,
+            "precision": 0.7681,
+            "recall": 0.3228,
+            "f1": 0.4545,
+            "fire_capture": 0.4472,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 5.0,
+              "max": 19
+            },
+            "weeks_with_no_alert": 20,
+            "weeks": 51
+          },
+          "E0+redflag": {
+            "threshold": 0.6002,
+            "alerts": 336,
+            "hits": 248,
+            "precision": 0.7381,
+            "recall": 0.3139,
+            "f1": 0.4405,
+            "fire_capture": 0.437,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 5.0,
+              "max": 21
+            },
+            "weeks_with_no_alert": 18,
+            "weeks": 51
+          },
+          "comparisons": [
+            {
+              "metric": "precision",
+              "diff": -0.0501,
+              "ci95": [
+                -0.0757,
+                -0.0255
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.095,
+              "ci95": [
+                0.064,
+                0.1178
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": 0.0981,
+              "ci95": [
+                0.0682,
+                0.1247
+              ]
+            },
+            {
+              "metric": "precision",
+              "diff": -0.0801,
+              "ci95": [
+                -0.143,
+                -0.044
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.0861,
+              "ci95": [
+                0.0484,
+                0.1133
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": 0.0841,
+              "ci95": [
+                0.043,
+                0.1204
+              ]
+            }
+          ]
+        },
+        "precision50": {
+          "A_climatology": {
+            "threshold": 0.386,
+            "alerts": 559,
+            "hits": 361,
+            "precision": 0.6458,
+            "recall": 0.457,
+            "f1": 0.5352,
+            "fire_capture": 0.5765,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 9.0,
+              "max": 28
+            },
+            "weeks_with_no_alert": 17,
+            "weeks": 51
+          },
+          "E_gbm_history_weather": {
+            "threshold": 0.3354,
+            "alerts": 782,
+            "hits": 453,
+            "precision": 0.5793,
+            "recall": 0.5734,
+            "f1": 0.5763,
+            "fire_capture": 0.6827,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 12.0,
+              "max": 43
+            },
+            "weeks_with_no_alert": 7,
+            "weeks": 51
+          },
+          "E0+redflag": {
+            "threshold": 0.3312,
+            "alerts": 826,
+            "hits": 453,
+            "precision": 0.5484,
+            "recall": 0.5734,
+            "f1": 0.5606,
+            "fire_capture": 0.6846,
+            "alerts_per_week": {
+              "min": 0,
+              "median": 15.0,
+              "max": 46
+            },
+            "weeks_with_no_alert": 4,
+            "weeks": 51
+          },
+          "comparisons": [
+            {
+              "metric": "precision",
+              "diff": -0.0665,
+              "ci95": [
+                -0.1143,
+                -0.0289
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.1164,
+              "ci95": [
+                0.0982,
+                0.1373
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": 0.0411,
+              "ci95": [
+                0.0143,
+                0.0764
+              ]
+            },
+            {
+              "metric": "precision",
+              "diff": -0.0974,
+              "ci95": [
+                -0.1805,
+                -0.0544
+              ]
+            },
+            {
+              "metric": "recall",
+              "diff": 0.1164,
+              "ci95": [
+                0.0908,
+                0.1486
+              ]
+            },
+            {
+              "metric": "f1",
+              "diff": 0.0254,
+              "ci95": [
+                -0.0103,
+                0.0654
+              ]
+            }
+          ]
+        }
+      },
+      "equal_count": {
+        "best_f1": {
+          "E_gbm_history_weather": {
+            "alerts": 958,
+            "share_of_cellweeks": 0.2348,
+            "precision_a": 0.5177,
+            "precision_b": 0.5219,
+            "diff": 0.0042,
+            "ci95": [
+              -0.0157,
+              0.0489
+            ]
+          },
+          "E0+redflag": {
+            "alerts": 958,
+            "share_of_cellweeks": 0.2348,
+            "precision_a": 0.5177,
+            "precision_b": 0.5094,
+            "diff": -0.0084,
+            "ci95": [
+              -0.0286,
+              0.0288
+            ]
+          }
+        },
+        "precision70": {
+          "E_gbm_history_weather": {
+            "alerts": 332,
+            "share_of_cellweeks": 0.0814,
+            "precision_a": 0.738,
+            "precision_b": 0.7681,
+            "diff": 0.0301,
+            "ci95": [
+              -0.0241,
+              0.062
+            ]
+          },
+          "E0+redflag": {
+            "alerts": 332,
+            "share_of_cellweeks": 0.0814,
+            "precision_a": 0.738,
+            "precision_b": 0.738,
+            "diff": 0.0,
+            "ci95": [
+              -0.0658,
+              0.0271
+            ]
+          }
+        },
+        "precision50": {
+          "E_gbm_history_weather": {
+            "alerts": 782,
+            "share_of_cellweeks": 0.1917,
+            "precision_a": 0.5639,
+            "precision_b": 0.5793,
+            "diff": 0.0153,
+            "ci95": [
+              -0.0176,
+              0.0533
+            ]
+          },
+          "E0+redflag": {
+            "alerts": 782,
+            "share_of_cellweeks": 0.1917,
+            "precision_a": 0.5639,
+            "precision_b": 0.5627,
+            "diff": -0.0013,
+            "ci95": [
+              -0.0333,
+              0.032
+            ]
+          }
+        }
+      },
+      "threshold_free_diff": {
+        "E_gbm_history_weather": {
+          "pr_auc": {
+            "diff": 0.0165,
+            "ci95": [
+              -0.0091,
+              0.0484
+            ]
+          },
+          "roc_auc": {
+            "diff": 0.0177,
+            "ci95": [
+              0.0026,
+              0.0359
+            ]
+          },
+          "brier": {
+            "diff": -0.0046,
+            "ci95": [
+              -0.0099,
+              0.0008
+            ]
+          }
+        },
+        "E0+redflag": {
+          "pr_auc": {
+            "diff": -0.0041,
+            "ci95": [
+              -0.0338,
+              0.0213
+            ]
+          },
+          "roc_auc": {
+            "diff": 0.0062,
+            "ci95": [
+              -0.0105,
+              0.0253
+            ]
+          },
+          "brier": {
+            "diff": -0.0004,
+            "ci95": [
+              -0.0059,
+              0.0061
+            ]
+          }
+        }
+      }
+    }
+  }
+}

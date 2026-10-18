@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EMBER / GNN Forecast Replay</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+:root{color-scheme:dark}body{margin:0;background:#10181b;color:#edf2ee;font:14px system-ui,sans-serif}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:18px 24px;gap:10px;background:#152226;border-bottom:1px solid #2d4145}
+h1{font-size:21px;margin:0}small{color:#95b8b7}a{color:#80e6d4}#map{height:calc(100vh - 180px);min-height:380px;background:#24323a}
+.controls{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 24px;background:#152226}
+button{background:#24413f;color:#e5fbf8;border:1px solid #4c928a;border-radius:5px;padding:10px 14px;cursor:pointer}button:hover{background:#33665f}
+input[type=range]{flex:1;min-width:170px;accent-color:#74dccc}
+.legend{display:flex;gap:16px;flex-wrap:wrap}i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:middle}
+.leaflet-container{background:#102127}.leaflet-popup-content-wrapper{background:#162326;color:#eff}.leaflet-popup-tip{background:#162326}
+</style>
+</head><body>
+<header><div><h1>EMBER <small>/ LEARNED FIRE FORECAST</small></h1><small id="about">Loading time-ordered predictions...</small></div><a href="/">← Origin investigation</a></header>
+<div class="controls"><button id="previous">← Earlier</button><input id="pass" type="range" min="0" max="0" value="0"/><button id="next">Later →</button><button id="reveal">Reveal actual next detections</button><strong id="stamp">—</strong></div>
+<div id="map"></div>
+<div class="controls"><div class="legend"><span><i style="background:#65cfc8"></i>Observed now</span><span><i style="background:#f4a35c"></i>GNN forecast</span><span><i style="background:#ff6877"></i>Actually detected later (reveal)</span></div><small>Not an operational wildfire warning. Later satellite detections do not represent all burning ground.</small></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+'use strict';
+let data, index=0, revealed=false;
+const map=L.map('map',{preferCanvas:true}).setView([39.77,-121.55],10);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors'}).addTo(map);
+const observed=L.layerGroup().addTo(map),forecast=L.layerGroup().addTo(map),nextObserved=L.layerGroup().addTo(map);
+const stamp=document.querySelector('#stamp');
+function render(){
+  const frame=data.frames[index];if(!frame)return;
+  observed.clearLayers();forecast.clearLayers();nextObserved.clearLayers();
+  let bounds=[];
+  for(const [lat,lon] of frame.observations){L.circleMarker([lat,lon],{radius:3,color:'#65cfc8',fillColor:'#65cfc8',fillOpacity:.7,weight:0}).addTo(observed);bounds.push([lat,lon])}
+  for(const [lat,lon,score] of frame.forecast){
+    L.circleMarker([lat,lon],{radius:4+5*score,color:'#f4a35c',fillColor:'#f4a35c',fillOpacity:Math.min(.65,.14+.65*score),weight:.3})
+     .bindTooltip('GNN ranking score: '+score.toFixed(3)).addTo(forecast);bounds.push([lat,lon]);
+  }
+  if(revealed){for(const [lat,lon] of frame.next_observations){L.circleMarker([lat,lon],{radius:3,color:'#ff6877',fillColor:'#ff6877',fillOpacity:.8,weight:0}).addTo(nextObserved)}}
+  if(bounds.length)map.fitBounds(L.latLngBounds(bounds).pad(.08),{maxZoom:11});
+  stamp.textContent=`Pass ${index+1}/${data.frames.length} · ${frame.issue_time} → ${frame.next_observation_time}`;
+  document.querySelector('#reveal').textContent=revealed?'Hide actual next detections':'Reveal actual next detections';
+  document.querySelector('#pass').value=index;
+}
+fetch('/static/gnn_replay.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('No replay file. Run scripts/gnn_replay.py first.');return r.json()})
+.then(d=>{data=d;document.querySelector('#about').textContent=`${d.case} · trained on ${d.trained_on.join(', ')} · test: ${d.test_fire.join(', ')}`;
+  document.querySelector('#pass').max=Math.max(0,d.frames.length-1);render()})
+.catch(err=>{document.querySelector('#about').textContent='ERROR: '+err.message});
+document.querySelector('#pass').addEventListener('input',e=>{index=Number(e.target.value);revealed=false;render()});
+document.querySelector('#previous').onclick=()=>{if(data){index=Math.max(0,index-1);revealed=false;render()}};
+document.querySelector('#next').onclick=()=>{if(data){index=Math.min(data.frames.length-1,index+1);revealed=false;render()}};
+document.querySelector('#reveal').onclick=()=>{if(data){revealed=!revealed;render()}};
+</script></body></html>

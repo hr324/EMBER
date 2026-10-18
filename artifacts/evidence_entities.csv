@@ -1,0 +1,8 @@
+id,kind,properties_json
+candidate:331,candidate_origin,"{""lat"": 39.85543119818138, ""lon"": -121.58821192365389}"
+hotspot:pass0-VIIRS-cluster0,satellite_cluster,"{""lat"": 39.8600192, ""lon"": -121.492728, ""timestamp_utc"": ""2018-11-08T13:01:00Z"", ""pixels"": 5}"
+hotspot:pass1-VIIRS-cluster0,satellite_cluster,"{""lat"": 39.859944, ""lon"": -121.457637, ""timestamp_utc"": ""2018-11-08T15:01:00Z"", ""pixels"": 5}"
+hotspot:pass2-VIIRS-cluster0,satellite_cluster,"{""lat"": 39.860373200000005, ""lon"": -121.4217186, ""timestamp_utc"": ""2018-11-08T17:01:00Z"", ""pixels"": 5}"
+hotspot:pass3-VIIRS-cluster0,satellite_cluster,"{""lat"": 39.8599278, ""lon"": -121.3910736, ""timestamp_utc"": ""2018-11-08T19:02:00Z"", ""pixels"": 5}"
+line-0,powerline,"{""properties"": {""id"": ""line-0"", ""type"": ""powerline"", ""distance_m"": 4855.5, ""description"": ""FICTIONAL demonstration line"", ""evidence_level"": ""spatial association only"", ""historical_warning"": ""geometry may not represent smaller distribution lines or the historic fire date""}}"
+lightning-0,lightning,"{""properties"": {""id"": ""lightning-0"", ""type"": ""lightning"", ""distance_km"": 6.87, ""hours_before_model_ignition"": 2.02, ""timestamp_utc"": ""2018-11-08T08:00:00+00:00"", ""evidence_level"": ""space/time association only"", ""historical_warning"": ""large lightning footprints cannot pinpoint ignition""}}"

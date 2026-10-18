@@ -1,0 +1,9 @@
+{
+  "fire_id": "camp_fire_2018",
+  "latitude": 39.8134,
+  "longitude": -121.4347,
+  "ignition_time_local": "2018-11-08T06:33:00-08:00",
+  "cause": "Power Lines",
+  "source_url": "https://www.fire.ca.gov/incidents/2018/11/8/camp-fire",
+  "warning": "REFERENCE LABEL FOR EVALUATION ONLY. Do not import in ingestion, inference, feature selection, candidate construction or hyperparameter tuning."
+}

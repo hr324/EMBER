@@ -1,0 +1,40 @@
+{
+  "saved": "artifacts/synthetic_demo.json",
+  "status": "ok",
+  "best_origin": {
+    "latitude": 39.86307542127304,
+    "longitude": -121.52846124750238,
+    "estimated_ignition_utc": "2018-11-08T12:01:00Z",
+    "cell_id": 370,
+    "score_mass": 0.00320086933333414
+  },
+  "warnings": [
+    "Elevation covariate mostly missing: terrain is neutral",
+    "Historical vegetation covariate mostly missing: fuel is neutral",
+    "Normalised model score is NOT a calibrated ignition probability; do not infer legal cause"
+  ],
+  "evaluation": {
+    "fire_id": "SYNTHETIC_TOY_FIRE",
+    "model_error_km": 0.799,
+    "centroid_baseline_error_km": 2.328,
+    "improvement_over_centroid_km": 1.529,
+    "truth_in_candidate_grid": true,
+    "truth_nearest_grid_cell_distance_km": 0.365,
+    "regions": {
+      "top80": {
+        "contains_label_cell": true,
+        "area_km2": 188.57,
+        "mass_fraction": 0.8,
+        "not_calibrated": true
+      },
+      "top90": {
+        "contains_label_cell": true,
+        "area_km2": 223.97,
+        "mass_fraction": 0.9,
+        "not_calibrated": true
+      }
+    },
+    "label_source": "SYNTHETIC_GENERATOR_ONLY",
+    "caution": "Single-case retrospective evaluation is not evidence of generalised accuracy"
+  }
+}

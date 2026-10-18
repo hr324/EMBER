@@ -1,0 +1,7562 @@
+{
+  "status": "ok",
+  "variant": "fusion",
+  "model": "directed_grid_reverse_dijkstra_asymmetric_arrival_v1",
+  "best_origin": {
+    "latitude": 39.86307542127304,
+    "longitude": -121.52846124750238,
+    "estimated_ignition_utc": "2018-11-08T12:01:00Z",
+    "cell_id": 370,
+    "score_mass": 0.00320086933333414
+  },
+  "baseline_centroid": {
+    "latitude": 39.8600192,
+    "longitude": -121.492728
+  },
+  "clusters": [
+    {
+      "cluster_id": "pass0-VIIRS-cluster0",
+      "latitude": 39.8600192,
+      "longitude": -121.492728,
+      "timestamp_utc": "2018-11-08T13:01:00Z",
+      "n_pixels": 5,
+      "confidence": 0.75,
+      "frp_sum": 306.69,
+      "uncertainty_m": 986.6418079250216,
+      "instrument": "VIIRS",
+      "pass_id": 0
+    },
+    {
+      "cluster_id": "pass1-VIIRS-cluster0",
+      "latitude": 39.859944,
+      "longitude": -121.457637,
+      "timestamp_utc": "2018-11-08T15:01:00Z",
+      "n_pixels": 5,
+      "confidence": 0.75,
+      "frp_sum": 218.09,
+      "uncertainty_m": 994.7632153664993,
+      "instrument": "VIIRS",
+      "pass_id": 1
+    },
+    {
+      "cluster_id": "pass2-VIIRS-cluster0",
+      "latitude": 39.860373200000005,
+      "longitude": -121.4217186,
+      "timestamp_utc": "2018-11-08T17:01:00Z",
+      "n_pixels": 5,
+      "confidence": 0.75,
+      "frp_sum": 279.76,
+      "uncertainty_m": 890.9361888720176,
+      "instrument": "VIIRS",
+      "pass_id": 2
+    },
+    {
+      "cluster_id": "pass3-VIIRS-cluster0",
+      "latitude": 39.8599278,
+      "longitude": -121.3910736,
+      "timestamp_utc": "2018-11-08T19:02:00Z",
+      "n_pixels": 5,
+      "confidence": 0.75,
+      "frp_sum": 285.04,
+      "uncertainty_m": 950.2833932968932,
+      "instrument": "VIIRS",
+      "pass_id": 3
+    }
+  ],
+  "observation_gate": {
+    "usable": true,
+    "passes": 4,
+    "detections": 20,
+    "first_utc": "2018-11-08T13:01:00+00:00",
+    "last_utc": "2018-11-08T19:04:00+00:00",
+    "warnings": []
+  },
+  "candidate_cells": [
+    {
+      "cell_id": 370,
+      "latitude": 39.863075,
+      "longitude": -121.528461,
+      "score_mass": 0.0032008693,
+      "rank": 1,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 297,
+      "latitude": 39.847787,
+      "longitude": -121.59817,
+      "score_mass": 0.003199852,
+      "rank": 2,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 429,
+      "latitude": 39.878364,
+      "longitude": -121.59817,
+      "score_mass": 0.003199852,
+      "rank": 3,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 170,
+      "latitude": 39.81721,
+      "longitude": -121.548378,
+      "score_mass": 0.0031998504,
+      "rank": 4,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 566,
+      "latitude": 39.908941,
+      "longitude": -121.548378,
+      "score_mass": 0.0031998504,
+      "rank": 5,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 34,
+      "latitude": 39.786633,
+      "longitude": -121.588212,
+      "score_mass": 0.0031988343,
+      "rank": 6,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 694,
+      "latitude": 39.939518,
+      "longitude": -121.588212,
+      "score_mass": 0.0031988343,
+      "rank": 7,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 271,
+      "latitude": 39.840143,
+      "longitude": -121.528461,
+      "score_mass": 0.003198636,
+      "rank": 8,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 469,
+      "latitude": 39.886008,
+      "longitude": -121.528461,
+      "score_mass": 0.003198636,
+      "rank": 9,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 373,
+      "latitude": 39.863075,
+      "longitude": -121.498586,
+      "score_mass": 0.003198419,
+      "rank": 10,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 66,
+      "latitude": 39.794277,
+      "longitude": -121.59817,
+      "score_mass": 0.0031980245,
+      "rank": 11,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 660,
+      "latitude": 39.931873,
+      "longitude": -121.59817,
+      "score_mass": 0.0031980245,
+      "rank": 12,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 336,
+      "latitude": 39.855431,
+      "longitude": -121.53842,
+      "score_mass": 0.0031978384,
+      "rank": 13,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 402,
+      "latitude": 39.87072,
+      "longitude": -121.53842,
+      "score_mass": 0.0031978384,
+      "rank": 14,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 234,
+      "latitude": 39.832499,
+      "longitude": -121.568295,
+      "score_mass": 0.0031968911,
+      "rank": 15,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 498,
+      "latitude": 39.893652,
+      "longitude": -121.568295,
+      "score_mass": 0.0031968911,
+      "rank": 16,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 338,
+      "latitude": 39.855431,
+      "longitude": -121.518503,
+      "score_mass": 0.0031965046,
+      "rank": 17,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 404,
+      "latitude": 39.87072,
+      "longitude": -121.518503,
+      "score_mass": 0.0031965046,
+      "rank": 18,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 237,
+      "latitude": 39.832499,
+      "longitude": -121.53842,
+      "score_mass": 0.0031960346,
+      "rank": 19,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 501,
+      "latitude": 39.893652,
+      "longitude": -121.53842,
+      "score_mass": 0.0031960346,
+      "rank": 20,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 204,
+      "latitude": 39.824854,
+      "longitude": -121.53842,
+      "score_mass": 0.0031960253,
+      "rank": 21,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 534,
+      "latitude": 39.901297,
+      "longitude": -121.53842,
+      "score_mass": 0.0031960253,
+      "rank": 22,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 265,
+      "latitude": 39.840143,
+      "longitude": -121.588212,
+      "score_mass": 0.0031957826,
+      "rank": 23,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 463,
+      "latitude": 39.886008,
+      "longitude": -121.588212,
+      "score_mass": 0.0031957826,
+      "rank": 24,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 202,
+      "latitude": 39.824854,
+      "longitude": -121.558337,
+      "score_mass": 0.0031957655,
+      "rank": 25,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 532,
+      "latitude": 39.901297,
+      "longitude": -121.558337,
+      "score_mass": 0.0031957655,
+      "rank": 26,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 331,
+      "latitude": 39.855431,
+      "longitude": -121.588212,
+      "score_mass": 0.0031954675,
+      "rank": 27,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 397,
+      "latitude": 39.87072,
+      "longitude": -121.588212,
+      "score_mass": 0.0031954675,
+      "rank": 28,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 364,
+      "latitude": 39.863075,
+      "longitude": -121.588212,
+      "score_mass": 0.0031950655,
+      "rank": 29,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 333,
+      "latitude": 39.855431,
+      "longitude": -121.568295,
+      "score_mass": 0.0031948937,
+      "rank": 30,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 399,
+      "latitude": 39.87072,
+      "longitude": -121.568295,
+      "score_mass": 0.0031948937,
+      "rank": 31,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 368,
+      "latitude": 39.863075,
+      "longitude": -121.548378,
+      "score_mass": 0.0031947989,
+      "rank": 32,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 133,
+      "latitude": 39.809566,
+      "longitude": -121.588212,
+      "score_mass": 0.0031947976,
+      "rank": 33,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 595,
+      "latitude": 39.916585,
+      "longitude": -121.588212,
+      "score_mass": 0.0031947976,
+      "rank": 34,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 68,
+      "latitude": 39.794277,
+      "longitude": -121.578253,
+      "score_mass": 0.0031947528,
+      "rank": 35,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 662,
+      "latitude": 39.931873,
+      "longitude": -121.578253,
+      "score_mass": 0.0031947528,
+      "rank": 36,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 299,
+      "latitude": 39.847787,
+      "longitude": -121.578253,
+      "score_mass": 0.0031946017,
+      "rank": 37,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 431,
+      "latitude": 39.878364,
+      "longitude": -121.578253,
+      "score_mass": 0.0031946017,
+      "rank": 38,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 269,
+      "latitude": 39.840143,
+      "longitude": -121.548378,
+      "score_mass": 0.0031943285,
+      "rank": 39,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 467,
+      "latitude": 39.886008,
+      "longitude": -121.548378,
+      "score_mass": 0.0031943285,
+      "rank": 40,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 305,
+      "latitude": 39.847787,
+      "longitude": -121.518503,
+      "score_mass": 0.0031938828,
+      "rank": 41,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 437,
+      "latitude": 39.878364,
+      "longitude": -121.518503,
+      "score_mass": 0.0031938828,
+      "rank": 42,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 334,
+      "latitude": 39.855431,
+      "longitude": -121.558337,
+      "score_mass": 0.0031933757,
+      "rank": 43,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 400,
+      "latitude": 39.87072,
+      "longitude": -121.558337,
+      "score_mass": 0.0031933757,
+      "rank": 44,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 165,
+      "latitude": 39.81721,
+      "longitude": -121.59817,
+      "score_mass": 0.0031933312,
+      "rank": 45,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 561,
+      "latitude": 39.908941,
+      "longitude": -121.59817,
+      "score_mass": 0.0031933312,
+      "rank": 46,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 99,
+      "latitude": 39.801922,
+      "longitude": -121.59817,
+      "score_mass": 0.0031932941,
+      "rank": 47,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 627,
+      "latitude": 39.924229,
+      "longitude": -121.59817,
+      "score_mass": 0.0031932941,
+      "rank": 48,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 168,
+      "latitude": 39.81721,
+      "longitude": -121.568295,
+      "score_mass": 0.0031932434,
+      "rank": 49,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 564,
+      "latitude": 39.908941,
+      "longitude": -121.568295,
+      "score_mass": 0.0031932434,
+      "rank": 50,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 200,
+      "latitude": 39.824854,
+      "longitude": -121.578253,
+      "score_mass": 0.0031929658,
+      "rank": 51,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 530,
+      "latitude": 39.901297,
+      "longitude": -121.578253,
+      "score_mass": 0.0031929658,
+      "rank": 52,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 0,
+      "latitude": 39.778989,
+      "longitude": -121.59817,
+      "score_mass": 0.0031929458,
+      "rank": 53,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 726,
+      "latitude": 39.947162,
+      "longitude": -121.59817,
+      "score_mass": 0.0031929458,
+      "rank": 54,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 136,
+      "latitude": 39.809566,
+      "longitude": -121.558337,
+      "score_mass": 0.0031928195,
+      "rank": 55,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 598,
+      "latitude": 39.916585,
+      "longitude": -121.558337,
+      "score_mass": 0.0031928195,
+      "rank": 56,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 372,
+      "latitude": 39.863075,
+      "longitude": -121.508544,
+      "score_mass": 0.0031928123,
+      "rank": 57,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 231,
+      "latitude": 39.832499,
+      "longitude": -121.59817,
+      "score_mass": 0.003192719,
+      "rank": 58,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 495,
+      "latitude": 39.893652,
+      "longitude": -121.59817,
+      "score_mass": 0.003192719,
+      "rank": 59,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 167,
+      "latitude": 39.81721,
+      "longitude": -121.578253,
+      "score_mass": 0.0031926324,
+      "rank": 60,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 563,
+      "latitude": 39.908941,
+      "longitude": -121.578253,
+      "score_mass": 0.0031926324,
+      "rank": 61,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 306,
+      "latitude": 39.847787,
+      "longitude": -121.508544,
+      "score_mass": 0.0031924744,
+      "rank": 62,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 438,
+      "latitude": 39.878364,
+      "longitude": -121.508544,
+      "score_mass": 0.0031924744,
+      "rank": 63,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 302,
+      "latitude": 39.847787,
+      "longitude": -121.548378,
+      "score_mass": 0.0031923801,
+      "rank": 64,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 434,
+      "latitude": 39.878364,
+      "longitude": -121.548378,
+      "score_mass": 0.0031923801,
+      "rank": 65,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 266,
+      "latitude": 39.840143,
+      "longitude": -121.578253,
+      "score_mass": 0.0031922228,
+      "rank": 66,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 464,
+      "latitude": 39.886008,
+      "longitude": -121.578253,
+      "score_mass": 0.0031922228,
+      "rank": 67,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 198,
+      "latitude": 39.824854,
+      "longitude": -121.59817,
+      "score_mass": 0.0031920667,
+      "rank": 68,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 528,
+      "latitude": 39.901297,
+      "longitude": -121.59817,
+      "score_mass": 0.0031920667,
+      "rank": 69,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 134,
+      "latitude": 39.809566,
+      "longitude": -121.578253,
+      "score_mass": 0.0031920504,
+      "rank": 70,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 596,
+      "latitude": 39.916585,
+      "longitude": -121.578253,
+      "score_mass": 0.0031920504,
+      "rank": 71,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 301,
+      "latitude": 39.847787,
+      "longitude": -121.558337,
+      "score_mass": 0.0031919784,
+      "rank": 72,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 433,
+      "latitude": 39.878364,
+      "longitude": -121.558337,
+      "score_mass": 0.0031919784,
+      "rank": 73,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 365,
+      "latitude": 39.863075,
+      "longitude": -121.578253,
+      "score_mass": 0.0031915603,
+      "rank": 74,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 303,
+      "latitude": 39.847787,
+      "longitude": -121.53842,
+      "score_mass": 0.0031914031,
+      "rank": 75,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 435,
+      "latitude": 39.878364,
+      "longitude": -121.53842,
+      "score_mass": 0.0031914031,
+      "rank": 76,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 100,
+      "latitude": 39.801922,
+      "longitude": -121.588212,
+      "score_mass": 0.0031913885,
+      "rank": 77,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 628,
+      "latitude": 39.924229,
+      "longitude": -121.588212,
+      "score_mass": 0.0031913885,
+      "rank": 78,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 166,
+      "latitude": 39.81721,
+      "longitude": -121.588212,
+      "score_mass": 0.0031913609,
+      "rank": 79,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 562,
+      "latitude": 39.908941,
+      "longitude": -121.588212,
+      "score_mass": 0.0031913609,
+      "rank": 80,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 300,
+      "latitude": 39.847787,
+      "longitude": -121.568295,
+      "score_mass": 0.0031911152,
+      "rank": 81,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 432,
+      "latitude": 39.878364,
+      "longitude": -121.568295,
+      "score_mass": 0.0031911152,
+      "rank": 82,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 330,
+      "latitude": 39.855431,
+      "longitude": -121.59817,
+      "score_mass": 0.0031909078,
+      "rank": 83,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 396,
+      "latitude": 39.87072,
+      "longitude": -121.59817,
+      "score_mass": 0.0031909078,
+      "rank": 84,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 304,
+      "latitude": 39.847787,
+      "longitude": -121.528461,
+      "score_mass": 0.0031908093,
+      "rank": 85,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 436,
+      "latitude": 39.878364,
+      "longitude": -121.528461,
+      "score_mass": 0.0031908093,
+      "rank": 86,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 232,
+      "latitude": 39.832499,
+      "longitude": -121.588212,
+      "score_mass": 0.0031903615,
+      "rank": 87,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 496,
+      "latitude": 39.893652,
+      "longitude": -121.588212,
+      "score_mass": 0.0031903615,
+      "rank": 88,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 135,
+      "latitude": 39.809566,
+      "longitude": -121.568295,
+      "score_mass": 0.003190296,
+      "rank": 89,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 597,
+      "latitude": 39.916585,
+      "longitude": -121.568295,
+      "score_mass": 0.003190296,
+      "rank": 90,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 101,
+      "latitude": 39.801922,
+      "longitude": -121.578253,
+      "score_mass": 0.0031901382,
+      "rank": 91,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 629,
+      "latitude": 39.924229,
+      "longitude": -121.578253,
+      "score_mass": 0.0031901382,
+      "rank": 92,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 268,
+      "latitude": 39.840143,
+      "longitude": -121.558337,
+      "score_mass": 0.0031900849,
+      "rank": 93,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 466,
+      "latitude": 39.886008,
+      "longitude": -121.558337,
+      "score_mass": 0.0031900849,
+      "rank": 94,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 236,
+      "latitude": 39.832499,
+      "longitude": -121.548378,
+      "score_mass": 0.003190024,
+      "rank": 95,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 500,
+      "latitude": 39.893652,
+      "longitude": -121.548378,
+      "score_mass": 0.003190024,
+      "rank": 96,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 367,
+      "latitude": 39.863075,
+      "longitude": -121.558337,
+      "score_mass": 0.0031895602,
+      "rank": 97,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 235,
+      "latitude": 39.832499,
+      "longitude": -121.558337,
+      "score_mass": 0.0031891966,
+      "rank": 98,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 499,
+      "latitude": 39.893652,
+      "longitude": -121.558337,
+      "score_mass": 0.0031891966,
+      "rank": 99,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 366,
+      "latitude": 39.863075,
+      "longitude": -121.568295,
+      "score_mass": 0.0031891729,
+      "rank": 100,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 102,
+      "latitude": 39.801922,
+      "longitude": -121.568295,
+      "score_mass": 0.0031885897,
+      "rank": 101,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 630,
+      "latitude": 39.924229,
+      "longitude": -121.568295,
+      "score_mass": 0.0031885897,
+      "rank": 102,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 340,
+      "latitude": 39.855431,
+      "longitude": -121.498586,
+      "score_mass": 0.0031885711,
+      "rank": 103,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 406,
+      "latitude": 39.87072,
+      "longitude": -121.498586,
+      "score_mass": 0.0031885711,
+      "rank": 104,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 267,
+      "latitude": 39.840143,
+      "longitude": -121.568295,
+      "score_mass": 0.0031885074,
+      "rank": 105,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 465,
+      "latitude": 39.886008,
+      "longitude": -121.568295,
+      "score_mass": 0.0031885074,
+      "rank": 106,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 335,
+      "latitude": 39.855431,
+      "longitude": -121.548378,
+      "score_mass": 0.0031882852,
+      "rank": 107,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 401,
+      "latitude": 39.87072,
+      "longitude": -121.548378,
+      "score_mass": 0.0031882852,
+      "rank": 108,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 339,
+      "latitude": 39.855431,
+      "longitude": -121.508544,
+      "score_mass": 0.003188253,
+      "rank": 109,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 405,
+      "latitude": 39.87072,
+      "longitude": -121.508544,
+      "score_mass": 0.003188253,
+      "rank": 110,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 201,
+      "latitude": 39.824854,
+      "longitude": -121.568295,
+      "score_mass": 0.0031877863,
+      "rank": 111,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 531,
+      "latitude": 39.901297,
+      "longitude": -121.568295,
+      "score_mass": 0.0031877863,
+      "rank": 112,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 233,
+      "latitude": 39.832499,
+      "longitude": -121.578253,
+      "score_mass": 0.0031877592,
+      "rank": 113,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 497,
+      "latitude": 39.893652,
+      "longitude": -121.578253,
+      "score_mass": 0.0031877592,
+      "rank": 114,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 272,
+      "latitude": 39.840143,
+      "longitude": -121.518503,
+      "score_mass": 0.0031877574,
+      "rank": 115,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 470,
+      "latitude": 39.886008,
+      "longitude": -121.518503,
+      "score_mass": 0.0031877574,
+      "rank": 116,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 363,
+      "latitude": 39.863075,
+      "longitude": -121.59817,
+      "score_mass": 0.0031873002,
+      "rank": 117,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 199,
+      "latitude": 39.824854,
+      "longitude": -121.588212,
+      "score_mass": 0.0031872671,
+      "rank": 118,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 529,
+      "latitude": 39.901297,
+      "longitude": -121.588212,
+      "score_mass": 0.0031872671,
+      "rank": 119,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 132,
+      "latitude": 39.809566,
+      "longitude": -121.59817,
+      "score_mass": 0.0031868577,
+      "rank": 120,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 594,
+      "latitude": 39.916585,
+      "longitude": -121.59817,
+      "score_mass": 0.0031868577,
+      "rank": 121,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 332,
+      "latitude": 39.855431,
+      "longitude": -121.578253,
+      "score_mass": 0.0031865626,
+      "rank": 122,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 398,
+      "latitude": 39.87072,
+      "longitude": -121.578253,
+      "score_mass": 0.0031865626,
+      "rank": 123,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 238,
+      "latitude": 39.832499,
+      "longitude": -121.528461,
+      "score_mass": 0.0031863375,
+      "rank": 124,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 502,
+      "latitude": 39.893652,
+      "longitude": -121.528461,
+      "score_mass": 0.0031863375,
+      "rank": 125,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 67,
+      "latitude": 39.794277,
+      "longitude": -121.588212,
+      "score_mass": 0.0031852902,
+      "rank": 126,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 661,
+      "latitude": 39.931873,
+      "longitude": -121.588212,
+      "score_mass": 0.0031852902,
+      "rank": 127,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 533,
+      "latitude": 39.901297,
+      "longitude": -121.548378,
+      "score_mass": 0.0031850645,
+      "rank": 128,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 203,
+      "latitude": 39.824854,
+      "longitude": -121.548378,
+      "score_mass": 0.0031850645,
+      "rank": 129,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 270,
+      "latitude": 39.840143,
+      "longitude": -121.53842,
+      "score_mass": 0.0031841289,
+      "rank": 130,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 468,
+      "latitude": 39.886008,
+      "longitude": -121.53842,
+      "score_mass": 0.0031841289,
+      "rank": 131,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 369,
+      "latitude": 39.863075,
+      "longitude": -121.53842,
+      "score_mass": 0.0031838249,
+      "rank": 132,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 33,
+      "latitude": 39.786633,
+      "longitude": -121.59817,
+      "score_mass": 0.0031834155,
+      "rank": 133,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 693,
+      "latitude": 39.939518,
+      "longitude": -121.59817,
+      "score_mass": 0.0031834155,
+      "rank": 134,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 337,
+      "latitude": 39.855431,
+      "longitude": -121.528461,
+      "score_mass": 0.0031828979,
+      "rank": 135,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 403,
+      "latitude": 39.87072,
+      "longitude": -121.528461,
+      "score_mass": 0.0031828979,
+      "rank": 136,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 169,
+      "latitude": 39.81721,
+      "longitude": -121.558337,
+      "score_mass": 0.0031828544,
+      "rank": 137,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 565,
+      "latitude": 39.908941,
+      "longitude": -121.558337,
+      "score_mass": 0.0031828544,
+      "rank": 138,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 371,
+      "latitude": 39.863075,
+      "longitude": -121.518503,
+      "score_mass": 0.0031827054,
+      "rank": 139,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 264,
+      "latitude": 39.840143,
+      "longitude": -121.59817,
+      "score_mass": 0.0031825885,
+      "rank": 140,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 462,
+      "latitude": 39.886008,
+      "longitude": -121.59817,
+      "score_mass": 0.0031825885,
+      "rank": 141,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 298,
+      "latitude": 39.847787,
+      "longitude": -121.588212,
+      "score_mass": 0.0031819691,
+      "rank": 142,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 430,
+      "latitude": 39.878364,
+      "longitude": -121.588212,
+      "score_mass": 0.0031819691,
+      "rank": 143,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 374,
+      "latitude": 39.863075,
+      "longitude": -121.488627,
+      "score_mass": 0.0031706653,
+      "rank": 144,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 171,
+      "latitude": 39.81721,
+      "longitude": -121.53842,
+      "score_mass": 0.0031626636,
+      "rank": 145,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 567,
+      "latitude": 39.908941,
+      "longitude": -121.53842,
+      "score_mass": 0.0031626636,
+      "rank": 146,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 205,
+      "latitude": 39.824854,
+      "longitude": -121.528461,
+      "score_mass": 0.0031620511,
+      "rank": 147,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 535,
+      "latitude": 39.901297,
+      "longitude": -121.528461,
+      "score_mass": 0.0031620511,
+      "rank": 148,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 69,
+      "latitude": 39.794277,
+      "longitude": -121.568295,
+      "score_mass": 0.0031593738,
+      "rank": 149,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 663,
+      "latitude": 39.931873,
+      "longitude": -121.568295,
+      "score_mass": 0.0031593738,
+      "rank": 150,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 35,
+      "latitude": 39.786633,
+      "longitude": -121.578253,
+      "score_mass": 0.0031583507,
+      "rank": 151,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 695,
+      "latitude": 39.939518,
+      "longitude": -121.578253,
+      "score_mass": 0.0031583507,
+      "rank": 152,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 307,
+      "latitude": 39.847787,
+      "longitude": -121.498586,
+      "score_mass": 0.0031567925,
+      "rank": 153,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 439,
+      "latitude": 39.878364,
+      "longitude": -121.498586,
+      "score_mass": 0.0031567925,
+      "rank": 154,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 1,
+      "latitude": 39.778989,
+      "longitude": -121.588212,
+      "score_mass": 0.0031554517,
+      "rank": 155,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 727,
+      "latitude": 39.947162,
+      "longitude": -121.588212,
+      "score_mass": 0.0031554517,
+      "rank": 156,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 137,
+      "latitude": 39.809566,
+      "longitude": -121.548378,
+      "score_mass": 0.0031552737,
+      "rank": 157,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 599,
+      "latitude": 39.916585,
+      "longitude": -121.548378,
+      "score_mass": 0.0031552737,
+      "rank": 158,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 341,
+      "latitude": 39.855431,
+      "longitude": -121.488627,
+      "score_mass": 0.00315342,
+      "rank": 159,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 407,
+      "latitude": 39.87072,
+      "longitude": -121.488627,
+      "score_mass": 0.00315342,
+      "rank": 160,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 103,
+      "latitude": 39.801922,
+      "longitude": -121.558337,
+      "score_mass": 0.0031519971,
+      "rank": 161,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 631,
+      "latitude": 39.924229,
+      "longitude": -121.558337,
+      "score_mass": 0.0031519971,
+      "rank": 162,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 239,
+      "latitude": 39.832499,
+      "longitude": -121.518503,
+      "score_mass": 0.003149996,
+      "rank": 163,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 503,
+      "latitude": 39.893652,
+      "longitude": -121.518503,
+      "score_mass": 0.003149996,
+      "rank": 164,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 273,
+      "latitude": 39.840143,
+      "longitude": -121.508544,
+      "score_mass": 0.0031485621,
+      "rank": 165,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 471,
+      "latitude": 39.886008,
+      "longitude": -121.508544,
+      "score_mass": 0.0031485621,
+      "rank": 166,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 206,
+      "latitude": 39.824854,
+      "longitude": -121.518503,
+      "score_mass": 0.0031079435,
+      "rank": 167,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 536,
+      "latitude": 39.901297,
+      "longitude": -121.518503,
+      "score_mass": 0.0031079435,
+      "rank": 168,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 172,
+      "latitude": 39.81721,
+      "longitude": -121.528461,
+      "score_mass": 0.0031039108,
+      "rank": 169,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 568,
+      "latitude": 39.908941,
+      "longitude": -121.528461,
+      "score_mass": 0.0031039108,
+      "rank": 170,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 70,
+      "latitude": 39.794277,
+      "longitude": -121.558337,
+      "score_mass": 0.0031030609,
+      "rank": 171,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 664,
+      "latitude": 39.931873,
+      "longitude": -121.558337,
+      "score_mass": 0.0031030609,
+      "rank": 172,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 138,
+      "latitude": 39.809566,
+      "longitude": -121.53842,
+      "score_mass": 0.0031005528,
+      "rank": 173,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 600,
+      "latitude": 39.916585,
+      "longitude": -121.53842,
+      "score_mass": 0.0031005528,
+      "rank": 174,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 308,
+      "latitude": 39.847787,
+      "longitude": -121.488627,
+      "score_mass": 0.0030994543,
+      "rank": 175,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 440,
+      "latitude": 39.878364,
+      "longitude": -121.488627,
+      "score_mass": 0.0030994543,
+      "rank": 176,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 2,
+      "latitude": 39.778989,
+      "longitude": -121.578253,
+      "score_mass": 0.0030980252,
+      "rank": 177,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 728,
+      "latitude": 39.947162,
+      "longitude": -121.578253,
+      "score_mass": 0.0030980252,
+      "rank": 178,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 104,
+      "latitude": 39.801922,
+      "longitude": -121.548378,
+      "score_mass": 0.0030956531,
+      "rank": 179,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 632,
+      "latitude": 39.924229,
+      "longitude": -121.548378,
+      "score_mass": 0.0030956531,
+      "rank": 180,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 36,
+      "latitude": 39.786633,
+      "longitude": -121.568295,
+      "score_mass": 0.0030952214,
+      "rank": 181,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 696,
+      "latitude": 39.939518,
+      "longitude": -121.568295,
+      "score_mass": 0.0030952214,
+      "rank": 182,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 240,
+      "latitude": 39.832499,
+      "longitude": -121.508544,
+      "score_mass": 0.0030945579,
+      "rank": 183,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 504,
+      "latitude": 39.893652,
+      "longitude": -121.508544,
+      "score_mass": 0.0030945579,
+      "rank": 184,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 274,
+      "latitude": 39.840143,
+      "longitude": -121.498586,
+      "score_mass": 0.0030896541,
+      "rank": 185,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 472,
+      "latitude": 39.886008,
+      "longitude": -121.498586,
+      "score_mass": 0.0030896541,
+      "rank": 186,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 207,
+      "latitude": 39.824854,
+      "longitude": -121.508544,
+      "score_mass": 0.0030234135,
+      "rank": 187,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 537,
+      "latitude": 39.901297,
+      "longitude": -121.508544,
+      "score_mass": 0.0030234135,
+      "rank": 188,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 139,
+      "latitude": 39.809566,
+      "longitude": -121.528461,
+      "score_mass": 0.0030179935,
+      "rank": 189,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 601,
+      "latitude": 39.916585,
+      "longitude": -121.528461,
+      "score_mass": 0.0030179935,
+      "rank": 190,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 71,
+      "latitude": 39.794277,
+      "longitude": -121.548378,
+      "score_mass": 0.0030161336,
+      "rank": 191,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 665,
+      "latitude": 39.931873,
+      "longitude": -121.548378,
+      "score_mass": 0.0030161336,
+      "rank": 192,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 173,
+      "latitude": 39.81721,
+      "longitude": -121.518503,
+      "score_mass": 0.0030156285,
+      "rank": 193,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 569,
+      "latitude": 39.908941,
+      "longitude": -121.518503,
+      "score_mass": 0.0030156285,
+      "rank": 194,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 3,
+      "latitude": 39.778989,
+      "longitude": -121.568295,
+      "score_mass": 0.003013774,
+      "rank": 195,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 729,
+      "latitude": 39.947162,
+      "longitude": -121.568295,
+      "score_mass": 0.003013774,
+      "rank": 196,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 241,
+      "latitude": 39.832499,
+      "longitude": -121.498586,
+      "score_mass": 0.0030124076,
+      "rank": 197,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 505,
+      "latitude": 39.893652,
+      "longitude": -121.498586,
+      "score_mass": 0.0030124076,
+      "rank": 198,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 105,
+      "latitude": 39.801922,
+      "longitude": -121.53842,
+      "score_mass": 0.0030094641,
+      "rank": 199,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 633,
+      "latitude": 39.924229,
+      "longitude": -121.53842,
+      "score_mass": 0.0030094641,
+      "rank": 200,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 275,
+      "latitude": 39.840143,
+      "longitude": -121.488627,
+      "score_mass": 0.0030080789,
+      "rank": 201,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 473,
+      "latitude": 39.886008,
+      "longitude": -121.488627,
+      "score_mass": 0.0030080789,
+      "rank": 202,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 37,
+      "latitude": 39.786633,
+      "longitude": -121.558337,
+      "score_mass": 0.0030016906,
+      "rank": 203,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 697,
+      "latitude": 39.939518,
+      "longitude": -121.558337,
+      "score_mass": 0.0030016906,
+      "rank": 204,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 342,
+      "latitude": 39.855431,
+      "longitude": -121.478669,
+      "score_mass": 0.0029334478,
+      "rank": 205,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 408,
+      "latitude": 39.87072,
+      "longitude": -121.478669,
+      "score_mass": 0.0029334478,
+      "rank": 206,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 375,
+      "latitude": 39.863075,
+      "longitude": -121.478669,
+      "score_mass": 0.0029167423,
+      "rank": 207,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 208,
+      "latitude": 39.824854,
+      "longitude": -121.498586,
+      "score_mass": 0.0029059628,
+      "rank": 208,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 538,
+      "latitude": 39.901297,
+      "longitude": -121.498586,
+      "score_mass": 0.0029059628,
+      "rank": 209,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 4,
+      "latitude": 39.778989,
+      "longitude": -121.558337,
+      "score_mass": 0.0029038782,
+      "rank": 210,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 730,
+      "latitude": 39.947162,
+      "longitude": -121.558337,
+      "score_mass": 0.0029038782,
+      "rank": 211,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 140,
+      "latitude": 39.809566,
+      "longitude": -121.518503,
+      "score_mass": 0.0029038397,
+      "rank": 212,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 602,
+      "latitude": 39.916585,
+      "longitude": -121.518503,
+      "score_mass": 0.0029038397,
+      "rank": 213,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 242,
+      "latitude": 39.832499,
+      "longitude": -121.488627,
+      "score_mass": 0.0028985779,
+      "rank": 214,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 506,
+      "latitude": 39.893652,
+      "longitude": -121.488627,
+      "score_mass": 0.0028985779,
+      "rank": 215,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 174,
+      "latitude": 39.81721,
+      "longitude": -121.508544,
+      "score_mass": 0.0028963597,
+      "rank": 216,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 570,
+      "latitude": 39.908941,
+      "longitude": -121.508544,
+      "score_mass": 0.0028963597,
+      "rank": 217,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 72,
+      "latitude": 39.794277,
+      "longitude": -121.53842,
+      "score_mass": 0.0028959868,
+      "rank": 218,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 666,
+      "latitude": 39.931873,
+      "longitude": -121.53842,
+      "score_mass": 0.0028959868,
+      "rank": 219,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 106,
+      "latitude": 39.801922,
+      "longitude": -121.528461,
+      "score_mass": 0.0028923856,
+      "rank": 220,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 634,
+      "latitude": 39.924229,
+      "longitude": -121.528461,
+      "score_mass": 0.0028923856,
+      "rank": 221,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 38,
+      "latitude": 39.786633,
+      "longitude": -121.548378,
+      "score_mass": 0.002882158,
+      "rank": 222,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 698,
+      "latitude": 39.939518,
+      "longitude": -121.548378,
+      "score_mass": 0.002882158,
+      "rank": 223,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 309,
+      "latitude": 39.847787,
+      "longitude": -121.478669,
+      "score_mass": 0.0027799364,
+      "rank": 224,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 441,
+      "latitude": 39.878364,
+      "longitude": -121.478669,
+      "score_mass": 0.0027799364,
+      "rank": 225,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 5,
+      "latitude": 39.778989,
+      "longitude": -121.548378,
+      "score_mass": 0.0027632499,
+      "rank": 226,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 731,
+      "latitude": 39.947162,
+      "longitude": -121.548378,
+      "score_mass": 0.0027632499,
+      "rank": 227,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 141,
+      "latitude": 39.809566,
+      "longitude": -121.508544,
+      "score_mass": 0.0027591824,
+      "rank": 228,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 603,
+      "latitude": 39.916585,
+      "longitude": -121.508544,
+      "score_mass": 0.0027591824,
+      "rank": 229,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 209,
+      "latitude": 39.824854,
+      "longitude": -121.488627,
+      "score_mass": 0.0027583869,
+      "rank": 230,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 539,
+      "latitude": 39.901297,
+      "longitude": -121.488627,
+      "score_mass": 0.0027583869,
+      "rank": 231,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 175,
+      "latitude": 39.81721,
+      "longitude": -121.498586,
+      "score_mass": 0.0027513523,
+      "rank": 232,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 571,
+      "latitude": 39.908941,
+      "longitude": -121.498586,
+      "score_mass": 0.0027513523,
+      "rank": 233,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 73,
+      "latitude": 39.794277,
+      "longitude": -121.528461,
+      "score_mass": 0.0027486735,
+      "rank": 234,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 667,
+      "latitude": 39.931873,
+      "longitude": -121.528461,
+      "score_mass": 0.0027486735,
+      "rank": 235,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 107,
+      "latitude": 39.801922,
+      "longitude": -121.518503,
+      "score_mass": 0.0027471857,
+      "rank": 236,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 635,
+      "latitude": 39.924229,
+      "longitude": -121.518503,
+      "score_mass": 0.0027471857,
+      "rank": 237,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 39,
+      "latitude": 39.786633,
+      "longitude": -121.53842,
+      "score_mass": 0.0027454289,
+      "rank": 238,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 699,
+      "latitude": 39.939518,
+      "longitude": -121.53842,
+      "score_mass": 0.0027454289,
+      "rank": 239,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 276,
+      "latitude": 39.840143,
+      "longitude": -121.478669,
+      "score_mass": 0.0026207271,
+      "rank": 240,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 474,
+      "latitude": 39.886008,
+      "longitude": -121.478669,
+      "score_mass": 0.0026207271,
+      "rank": 241,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 6,
+      "latitude": 39.778989,
+      "longitude": -121.53842,
+      "score_mass": 0.0025970628,
+      "rank": 242,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 732,
+      "latitude": 39.947162,
+      "longitude": -121.53842,
+      "score_mass": 0.0025970628,
+      "rank": 243,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 142,
+      "latitude": 39.809566,
+      "longitude": -121.498586,
+      "score_mass": 0.0025893325,
+      "rank": 244,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 604,
+      "latitude": 39.916585,
+      "longitude": -121.498586,
+      "score_mass": 0.0025893325,
+      "rank": 245,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 176,
+      "latitude": 39.81721,
+      "longitude": -121.488627,
+      "score_mass": 0.0025853615,
+      "rank": 246,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 572,
+      "latitude": 39.908941,
+      "longitude": -121.488627,
+      "score_mass": 0.0025853615,
+      "rank": 247,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 40,
+      "latitude": 39.786633,
+      "longitude": -121.528461,
+      "score_mass": 0.0025836816,
+      "rank": 248,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 700,
+      "latitude": 39.939518,
+      "longitude": -121.528461,
+      "score_mass": 0.0025836816,
+      "rank": 249,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 74,
+      "latitude": 39.794277,
+      "longitude": -121.518503,
+      "score_mass": 0.0025806896,
+      "rank": 250,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 668,
+      "latitude": 39.931873,
+      "longitude": -121.518503,
+      "score_mass": 0.0025806896,
+      "rank": 251,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 108,
+      "latitude": 39.801922,
+      "longitude": -121.508544,
+      "score_mass": 0.0025801532,
+      "rank": 252,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 636,
+      "latitude": 39.924229,
+      "longitude": -121.508544,
+      "score_mass": 0.0025801532,
+      "rank": 253,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 243,
+      "latitude": 39.832499,
+      "longitude": -121.478669,
+      "score_mass": 0.0024479642,
+      "rank": 254,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 507,
+      "latitude": 39.893652,
+      "longitude": -121.478669,
+      "score_mass": 0.0024479642,
+      "rank": 255,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 7,
+      "latitude": 39.778989,
+      "longitude": -121.528461,
+      "score_mass": 0.0024112712,
+      "rank": 256,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 733,
+      "latitude": 39.947162,
+      "longitude": -121.528461,
+      "score_mass": 0.0024112712,
+      "rank": 257,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 143,
+      "latitude": 39.809566,
+      "longitude": -121.488627,
+      "score_mass": 0.0024033483,
+      "rank": 258,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 605,
+      "latitude": 39.916585,
+      "longitude": -121.488627,
+      "score_mass": 0.0024033483,
+      "rank": 259,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 41,
+      "latitude": 39.786633,
+      "longitude": -121.518503,
+      "score_mass": 0.0024019543,
+      "rank": 260,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 701,
+      "latitude": 39.939518,
+      "longitude": -121.518503,
+      "score_mass": 0.0024019543,
+      "rank": 261,
+      "in_top80": true,
+      "in_top90": true
+    },
+    {
+      "cell_id": 109,
+      "latitude": 39.801922,
+      "longitude": -121.498586,
+      "score_mass": 0.0023971439,
+      "rank": 262,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 637,
+      "latitude": 39.924229,
+      "longitude": -121.498586,
+      "score_mass": 0.0023971439,
+      "rank": 263,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 75,
+      "latitude": 39.794277,
+      "longitude": -121.508544,
+      "score_mass": 0.0023944597,
+      "rank": 264,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 669,
+      "latitude": 39.931873,
+      "longitude": -121.508544,
+      "score_mass": 0.0023944597,
+      "rank": 265,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 8,
+      "latitude": 39.778989,
+      "longitude": -121.518503,
+      "score_mass": 0.0022869795,
+      "rank": 266,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 734,
+      "latitude": 39.947162,
+      "longitude": -121.518503,
+      "score_mass": 0.0022869795,
+      "rank": 267,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 42,
+      "latitude": 39.786633,
+      "longitude": -121.508544,
+      "score_mass": 0.002283982,
+      "rank": 268,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 702,
+      "latitude": 39.939518,
+      "longitude": -121.508544,
+      "score_mass": 0.002283982,
+      "rank": 269,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 110,
+      "latitude": 39.801922,
+      "longitude": -121.488627,
+      "score_mass": 0.0022773842,
+      "rank": 270,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 638,
+      "latitude": 39.924229,
+      "longitude": -121.488627,
+      "score_mass": 0.0022773842,
+      "rank": 271,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 76,
+      "latitude": 39.794277,
+      "longitude": -121.498586,
+      "score_mass": 0.0022749621,
+      "rank": 272,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 670,
+      "latitude": 39.931873,
+      "longitude": -121.498586,
+      "score_mass": 0.0022749621,
+      "rank": 273,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 310,
+      "latitude": 39.847787,
+      "longitude": -121.468711,
+      "score_mass": 0.0022531962,
+      "rank": 274,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 442,
+      "latitude": 39.878364,
+      "longitude": -121.468711,
+      "score_mass": 0.0022531962,
+      "rank": 275,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 210,
+      "latitude": 39.824854,
+      "longitude": -121.478669,
+      "score_mass": 0.0022487128,
+      "rank": 276,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 540,
+      "latitude": 39.901297,
+      "longitude": -121.478669,
+      "score_mass": 0.0022487128,
+      "rank": 277,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 343,
+      "latitude": 39.855431,
+      "longitude": -121.468711,
+      "score_mass": 0.0022067692,
+      "rank": 278,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 409,
+      "latitude": 39.87072,
+      "longitude": -121.468711,
+      "score_mass": 0.0022067692,
+      "rank": 279,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 376,
+      "latitude": 39.863075,
+      "longitude": -121.468711,
+      "score_mass": 0.0021996232,
+      "rank": 280,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 43,
+      "latitude": 39.786633,
+      "longitude": -121.498586,
+      "score_mass": 0.0021556546,
+      "rank": 281,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 703,
+      "latitude": 39.939518,
+      "longitude": -121.498586,
+      "score_mass": 0.0021556546,
+      "rank": 282,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 9,
+      "latitude": 39.778989,
+      "longitude": -121.508544,
+      "score_mass": 0.0021531582,
+      "rank": 283,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 735,
+      "latitude": 39.947162,
+      "longitude": -121.508544,
+      "score_mass": 0.0021531582,
+      "rank": 284,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 77,
+      "latitude": 39.794277,
+      "longitude": -121.488627,
+      "score_mass": 0.0021469523,
+      "rank": 285,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 671,
+      "latitude": 39.931873,
+      "longitude": -121.488627,
+      "score_mass": 0.0021469523,
+      "rank": 286,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 277,
+      "latitude": 39.840143,
+      "longitude": -121.468711,
+      "score_mass": 0.0020696491,
+      "rank": 287,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 475,
+      "latitude": 39.886008,
+      "longitude": -121.468711,
+      "score_mass": 0.0020696491,
+      "rank": 288,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 177,
+      "latitude": 39.81721,
+      "longitude": -121.478669,
+      "score_mass": 0.0020476019,
+      "rank": 289,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 573,
+      "latitude": 39.908941,
+      "longitude": -121.478669,
+      "score_mass": 0.0020476019,
+      "rank": 290,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 44,
+      "latitude": 39.786633,
+      "longitude": -121.488627,
+      "score_mass": 0.0020196744,
+      "rank": 291,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 704,
+      "latitude": 39.939518,
+      "longitude": -121.488627,
+      "score_mass": 0.0020196744,
+      "rank": 292,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 11,
+      "latitude": 39.778989,
+      "longitude": -121.488627,
+      "score_mass": 0.0020135698,
+      "rank": 293,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 737,
+      "latitude": 39.947162,
+      "longitude": -121.488627,
+      "score_mass": 0.0020135698,
+      "rank": 294,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 10,
+      "latitude": 39.778989,
+      "longitude": -121.498586,
+      "score_mass": 0.0020126137,
+      "rank": 295,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 736,
+      "latitude": 39.947162,
+      "longitude": -121.498586,
+      "score_mass": 0.0020126137,
+      "rank": 296,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 144,
+      "latitude": 39.809566,
+      "longitude": -121.478669,
+      "score_mass": 0.001922442,
+      "rank": 297,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 606,
+      "latitude": 39.916585,
+      "longitude": -121.478669,
+      "score_mass": 0.001922442,
+      "rank": 298,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 244,
+      "latitude": 39.832499,
+      "longitude": -121.468711,
+      "score_mass": 0.001872915,
+      "rank": 299,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 508,
+      "latitude": 39.893652,
+      "longitude": -121.468711,
+      "score_mass": 0.001872915,
+      "rank": 300,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 111,
+      "latitude": 39.801922,
+      "longitude": -121.478669,
+      "score_mass": 0.0017888826,
+      "rank": 301,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 639,
+      "latitude": 39.924229,
+      "longitude": -121.478669,
+      "score_mass": 0.0017888826,
+      "rank": 302,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 12,
+      "latitude": 39.778989,
+      "longitude": -121.478669,
+      "score_mass": 0.001678921,
+      "rank": 303,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 738,
+      "latitude": 39.947162,
+      "longitude": -121.478669,
+      "score_mass": 0.001678921,
+      "rank": 304,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 78,
+      "latitude": 39.794277,
+      "longitude": -121.478669,
+      "score_mass": 0.001669833,
+      "rank": 305,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 672,
+      "latitude": 39.931873,
+      "longitude": -121.478669,
+      "score_mass": 0.001669833,
+      "rank": 306,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 211,
+      "latitude": 39.824854,
+      "longitude": -121.468711,
+      "score_mass": 0.0016691568,
+      "rank": 307,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 541,
+      "latitude": 39.901297,
+      "longitude": -121.468711,
+      "score_mass": 0.0016691568,
+      "rank": 308,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 45,
+      "latitude": 39.786633,
+      "longitude": -121.478669,
+      "score_mass": 0.0016671854,
+      "rank": 309,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 705,
+      "latitude": 39.939518,
+      "longitude": -121.478669,
+      "score_mass": 0.0016671854,
+      "rank": 310,
+      "in_top80": false,
+      "in_top90": true
+    },
+    {
+      "cell_id": 178,
+      "latitude": 39.81721,
+      "longitude": -121.468711,
+      "score_mass": 0.0015579972,
+      "rank": 311,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 574,
+      "latitude": 39.908941,
+      "longitude": -121.468711,
+      "score_mass": 0.0015579972,
+      "rank": 312,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 278,
+      "latitude": 39.840143,
+      "longitude": -121.458752,
+      "score_mass": 0.0014882955,
+      "rank": 313,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 476,
+      "latitude": 39.886008,
+      "longitude": -121.458752,
+      "score_mass": 0.0014882955,
+      "rank": 314,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 311,
+      "latitude": 39.847787,
+      "longitude": -121.458752,
+      "score_mass": 0.0014327088,
+      "rank": 315,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 443,
+      "latitude": 39.878364,
+      "longitude": -121.458752,
+      "score_mass": 0.0014327088,
+      "rank": 316,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 145,
+      "latitude": 39.809566,
+      "longitude": -121.468711,
+      "score_mass": 0.0014321135,
+      "rank": 317,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 607,
+      "latitude": 39.916585,
+      "longitude": -121.468711,
+      "score_mass": 0.0014321135,
+      "rank": 318,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 344,
+      "latitude": 39.855431,
+      "longitude": -121.458752,
+      "score_mass": 0.0013694283,
+      "rank": 319,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 410,
+      "latitude": 39.87072,
+      "longitude": -121.458752,
+      "score_mass": 0.0013694283,
+      "rank": 320,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 13,
+      "latitude": 39.778989,
+      "longitude": -121.468711,
+      "score_mass": 0.0013383778,
+      "rank": 321,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 739,
+      "latitude": 39.947162,
+      "longitude": -121.468711,
+      "score_mass": 0.0013383778,
+      "rank": 322,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 46,
+      "latitude": 39.786633,
+      "longitude": -121.468711,
+      "score_mass": 0.0013356092,
+      "rank": 323,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 706,
+      "latitude": 39.939518,
+      "longitude": -121.468711,
+      "score_mass": 0.0013356092,
+      "rank": 324,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 79,
+      "latitude": 39.794277,
+      "longitude": -121.468711,
+      "score_mass": 0.0013289802,
+      "rank": 325,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 673,
+      "latitude": 39.931873,
+      "longitude": -121.468711,
+      "score_mass": 0.0013289802,
+      "rank": 326,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 112,
+      "latitude": 39.801922,
+      "longitude": -121.468711,
+      "score_mass": 0.0013266469,
+      "rank": 327,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 640,
+      "latitude": 39.924229,
+      "longitude": -121.468711,
+      "score_mass": 0.0013266469,
+      "rank": 328,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 377,
+      "latitude": 39.863075,
+      "longitude": -121.458752,
+      "score_mass": 0.0013100374,
+      "rank": 329,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 245,
+      "latitude": 39.832499,
+      "longitude": -121.458752,
+      "score_mass": 0.0013042701,
+      "rank": 330,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 509,
+      "latitude": 39.893652,
+      "longitude": -121.458752,
+      "score_mass": 0.0013042701,
+      "rank": 331,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 212,
+      "latitude": 39.824854,
+      "longitude": -121.458752,
+      "score_mass": 0.0012083355,
+      "rank": 332,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 542,
+      "latitude": 39.901297,
+      "longitude": -121.458752,
+      "score_mass": 0.0012083355,
+      "rank": 333,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 179,
+      "latitude": 39.81721,
+      "longitude": -121.458752,
+      "score_mass": 0.0011042515,
+      "rank": 334,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 575,
+      "latitude": 39.908941,
+      "longitude": -121.458752,
+      "score_mass": 0.0011042515,
+      "rank": 335,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 47,
+      "latitude": 39.786633,
+      "longitude": -121.458752,
+      "score_mass": 0.0010237583,
+      "rank": 336,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 707,
+      "latitude": 39.939518,
+      "longitude": -121.458752,
+      "score_mass": 0.0010237583,
+      "rank": 337,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 14,
+      "latitude": 39.778989,
+      "longitude": -121.458752,
+      "score_mass": 0.0010191706,
+      "rank": 338,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 740,
+      "latitude": 39.947162,
+      "longitude": -121.458752,
+      "score_mass": 0.0010191706,
+      "rank": 339,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 80,
+      "latitude": 39.794277,
+      "longitude": -121.458752,
+      "score_mass": 0.0010186081,
+      "rank": 340,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 674,
+      "latitude": 39.931873,
+      "longitude": -121.458752,
+      "score_mass": 0.0010186081,
+      "rank": 341,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 641,
+      "latitude": 39.924229,
+      "longitude": -121.458752,
+      "score_mass": 0.001016858,
+      "rank": 342,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 113,
+      "latitude": 39.801922,
+      "longitude": -121.458752,
+      "score_mass": 0.001016858,
+      "rank": 343,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 146,
+      "latitude": 39.809566,
+      "longitude": -121.458752,
+      "score_mass": 0.0010108428,
+      "rank": 344,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 608,
+      "latitude": 39.916585,
+      "longitude": -121.458752,
+      "score_mass": 0.0010108428,
+      "rank": 345,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 246,
+      "latitude": 39.832499,
+      "longitude": -121.448794,
+      "score_mass": 0.0009368066,
+      "rank": 346,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 510,
+      "latitude": 39.893652,
+      "longitude": -121.448794,
+      "score_mass": 0.0009368066,
+      "rank": 347,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 213,
+      "latitude": 39.824854,
+      "longitude": -121.448794,
+      "score_mass": 0.000852457,
+      "rank": 348,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 543,
+      "latitude": 39.901297,
+      "longitude": -121.448794,
+      "score_mass": 0.000852457,
+      "rank": 349,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 279,
+      "latitude": 39.840143,
+      "longitude": -121.448794,
+      "score_mass": 0.000842364,
+      "rank": 350,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 477,
+      "latitude": 39.886008,
+      "longitude": -121.448794,
+      "score_mass": 0.000842364,
+      "rank": 351,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 312,
+      "latitude": 39.847787,
+      "longitude": -121.448794,
+      "score_mass": 0.000813531,
+      "rank": 352,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 444,
+      "latitude": 39.878364,
+      "longitude": -121.448794,
+      "score_mass": 0.000813531,
+      "rank": 353,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 411,
+      "latitude": 39.87072,
+      "longitude": -121.448794,
+      "score_mass": 0.0007837365,
+      "rank": 354,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 345,
+      "latitude": 39.855431,
+      "longitude": -121.448794,
+      "score_mass": 0.0007837365,
+      "rank": 355,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 81,
+      "latitude": 39.794277,
+      "longitude": -121.448794,
+      "score_mass": 0.0007796466,
+      "rank": 356,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 675,
+      "latitude": 39.931873,
+      "longitude": -121.448794,
+      "score_mass": 0.0007796466,
+      "rank": 357,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 741,
+      "latitude": 39.947162,
+      "longitude": -121.448794,
+      "score_mass": 0.0007774122,
+      "rank": 358,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 15,
+      "latitude": 39.778989,
+      "longitude": -121.448794,
+      "score_mass": 0.0007774122,
+      "rank": 359,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 48,
+      "latitude": 39.786633,
+      "longitude": -121.448794,
+      "score_mass": 0.0007772957,
+      "rank": 360,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 708,
+      "latitude": 39.939518,
+      "longitude": -121.448794,
+      "score_mass": 0.0007772957,
+      "rank": 361,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 609,
+      "latitude": 39.916585,
+      "longitude": -121.448794,
+      "score_mass": 0.0007753003,
+      "rank": 362,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 147,
+      "latitude": 39.809566,
+      "longitude": -121.448794,
+      "score_mass": 0.0007753003,
+      "rank": 363,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 114,
+      "latitude": 39.801922,
+      "longitude": -121.448794,
+      "score_mass": 0.00077401,
+      "rank": 364,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 642,
+      "latitude": 39.924229,
+      "longitude": -121.448794,
+      "score_mass": 0.00077401,
+      "rank": 365,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 180,
+      "latitude": 39.81721,
+      "longitude": -121.448794,
+      "score_mass": 0.0007717974,
+      "rank": 366,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 576,
+      "latitude": 39.908941,
+      "longitude": -121.448794,
+      "score_mass": 0.0007717974,
+      "rank": 367,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 378,
+      "latitude": 39.863075,
+      "longitude": -121.448794,
+      "score_mass": 0.0007695603,
+      "rank": 368,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 643,
+      "latitude": 39.924229,
+      "longitude": -121.438835,
+      "score_mass": 0.0005792162,
+      "rank": 369,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 115,
+      "latitude": 39.801922,
+      "longitude": -121.438835,
+      "score_mass": 0.0005792162,
+      "rank": 370,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 709,
+      "latitude": 39.939518,
+      "longitude": -121.438835,
+      "score_mass": 0.0005785842,
+      "rank": 371,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 49,
+      "latitude": 39.786633,
+      "longitude": -121.438835,
+      "score_mass": 0.0005785842,
+      "rank": 372,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 577,
+      "latitude": 39.908941,
+      "longitude": -121.438835,
+      "score_mass": 0.0005784202,
+      "rank": 373,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 181,
+      "latitude": 39.81721,
+      "longitude": -121.438835,
+      "score_mass": 0.0005784202,
+      "rank": 374,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 148,
+      "latitude": 39.809566,
+      "longitude": -121.438835,
+      "score_mass": 0.0005779597,
+      "rank": 375,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 610,
+      "latitude": 39.916585,
+      "longitude": -121.438835,
+      "score_mass": 0.0005779597,
+      "rank": 376,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 544,
+      "latitude": 39.901297,
+      "longitude": -121.438835,
+      "score_mass": 0.0005778641,
+      "rank": 377,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 214,
+      "latitude": 39.824854,
+      "longitude": -121.438835,
+      "score_mass": 0.0005778641,
+      "rank": 378,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 676,
+      "latitude": 39.931873,
+      "longitude": -121.438835,
+      "score_mass": 0.0005778256,
+      "rank": 379,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 82,
+      "latitude": 39.794277,
+      "longitude": -121.438835,
+      "score_mass": 0.0005778256,
+      "rank": 380,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 16,
+      "latitude": 39.778989,
+      "longitude": -121.438835,
+      "score_mass": 0.0005754281,
+      "rank": 381,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 742,
+      "latitude": 39.947162,
+      "longitude": -121.438835,
+      "score_mass": 0.0005754281,
+      "rank": 382,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 247,
+      "latitude": 39.832499,
+      "longitude": -121.438835,
+      "score_mass": 0.0005202931,
+      "rank": 383,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 511,
+      "latitude": 39.893652,
+      "longitude": -121.438835,
+      "score_mass": 0.0005202931,
+      "rank": 384,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 280,
+      "latitude": 39.840143,
+      "longitude": -121.438835,
+      "score_mass": 0.0004662412,
+      "rank": 385,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 478,
+      "latitude": 39.886008,
+      "longitude": -121.438835,
+      "score_mass": 0.0004662412,
+      "rank": 386,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 677,
+      "latitude": 39.931873,
+      "longitude": -121.428877,
+      "score_mass": 0.0004223773,
+      "rank": 387,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 83,
+      "latitude": 39.794277,
+      "longitude": -121.428877,
+      "score_mass": 0.0004223773,
+      "rank": 388,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 644,
+      "latitude": 39.924229,
+      "longitude": -121.428877,
+      "score_mass": 0.0004220841,
+      "rank": 389,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 116,
+      "latitude": 39.801922,
+      "longitude": -121.428877,
+      "score_mass": 0.0004220841,
+      "rank": 390,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 578,
+      "latitude": 39.908941,
+      "longitude": -121.428877,
+      "score_mass": 0.0004218706,
+      "rank": 391,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 182,
+      "latitude": 39.81721,
+      "longitude": -121.428877,
+      "score_mass": 0.0004218706,
+      "rank": 392,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 611,
+      "latitude": 39.916585,
+      "longitude": -121.428877,
+      "score_mass": 0.0004218303,
+      "rank": 393,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 149,
+      "latitude": 39.809566,
+      "longitude": -121.428877,
+      "score_mass": 0.0004218303,
+      "rank": 394,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 710,
+      "latitude": 39.939518,
+      "longitude": -121.428877,
+      "score_mass": 0.0004195929,
+      "rank": 395,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 50,
+      "latitude": 39.786633,
+      "longitude": -121.428877,
+      "score_mass": 0.0004195929,
+      "rank": 396,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 313,
+      "latitude": 39.847787,
+      "longitude": -121.438835,
+      "score_mass": 0.0004110911,
+      "rank": 397,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 445,
+      "latitude": 39.878364,
+      "longitude": -121.438835,
+      "score_mass": 0.0004110911,
+      "rank": 398,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 346,
+      "latitude": 39.855431,
+      "longitude": -121.438835,
+      "score_mass": 0.0004088791,
+      "rank": 399,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 412,
+      "latitude": 39.87072,
+      "longitude": -121.438835,
+      "score_mass": 0.0004088791,
+      "rank": 400,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 17,
+      "latitude": 39.778989,
+      "longitude": -121.428877,
+      "score_mass": 0.0004087118,
+      "rank": 401,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 743,
+      "latitude": 39.947162,
+      "longitude": -121.428877,
+      "score_mass": 0.0004087118,
+      "rank": 402,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 379,
+      "latitude": 39.863075,
+      "longitude": -121.438835,
+      "score_mass": 0.0004040268,
+      "rank": 403,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 545,
+      "latitude": 39.901297,
+      "longitude": -121.428877,
+      "score_mass": 0.0003389492,
+      "rank": 404,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 215,
+      "latitude": 39.824854,
+      "longitude": -121.428877,
+      "score_mass": 0.0003389492,
+      "rank": 405,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 645,
+      "latitude": 39.924229,
+      "longitude": -121.418918,
+      "score_mass": 0.0003023015,
+      "rank": 406,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 117,
+      "latitude": 39.801922,
+      "longitude": -121.418918,
+      "score_mass": 0.0003023015,
+      "rank": 407,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 612,
+      "latitude": 39.916585,
+      "longitude": -121.418918,
+      "score_mass": 0.0003022506,
+      "rank": 408,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 150,
+      "latitude": 39.809566,
+      "longitude": -121.418918,
+      "score_mass": 0.0003022506,
+      "rank": 409,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 678,
+      "latitude": 39.931873,
+      "longitude": -121.418918,
+      "score_mass": 0.0003010084,
+      "rank": 410,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 84,
+      "latitude": 39.794277,
+      "longitude": -121.418918,
+      "score_mass": 0.0003010084,
+      "rank": 411,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 711,
+      "latitude": 39.939518,
+      "longitude": -121.418918,
+      "score_mass": 0.0002944863,
+      "rank": 412,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 51,
+      "latitude": 39.786633,
+      "longitude": -121.418918,
+      "score_mass": 0.0002944863,
+      "rank": 413,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 18,
+      "latitude": 39.778989,
+      "longitude": -121.418918,
+      "score_mass": 0.000290429,
+      "rank": 414,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 744,
+      "latitude": 39.947162,
+      "longitude": -121.418918,
+      "score_mass": 0.000290429,
+      "rank": 415,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 248,
+      "latitude": 39.832499,
+      "longitude": -121.428877,
+      "score_mass": 0.0002692065,
+      "rank": 416,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 512,
+      "latitude": 39.893652,
+      "longitude": -121.428877,
+      "score_mass": 0.0002692065,
+      "rank": 417,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 646,
+      "latitude": 39.924229,
+      "longitude": -121.40896,
+      "score_mass": 0.0002449849,
+      "rank": 418,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 118,
+      "latitude": 39.801922,
+      "longitude": -121.40896,
+      "score_mass": 0.0002449849,
+      "rank": 419,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 679,
+      "latitude": 39.931873,
+      "longitude": -121.40896,
+      "score_mass": 0.0002407298,
+      "rank": 420,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 85,
+      "latitude": 39.794277,
+      "longitude": -121.40896,
+      "score_mass": 0.0002407298,
+      "rank": 421,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 579,
+      "latitude": 39.908941,
+      "longitude": -121.418918,
+      "score_mass": 0.0002401586,
+      "rank": 422,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 183,
+      "latitude": 39.81721,
+      "longitude": -121.418918,
+      "score_mass": 0.0002401586,
+      "rank": 423,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 712,
+      "latitude": 39.939518,
+      "longitude": -121.40896,
+      "score_mass": 0.0002386684,
+      "rank": 424,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 52,
+      "latitude": 39.786633,
+      "longitude": -121.40896,
+      "score_mass": 0.0002386684,
+      "rank": 425,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 281,
+      "latitude": 39.840143,
+      "longitude": -121.428877,
+      "score_mass": 0.0002373309,
+      "rank": 426,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 479,
+      "latitude": 39.886008,
+      "longitude": -121.428877,
+      "score_mass": 0.0002373309,
+      "rank": 427,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 745,
+      "latitude": 39.947162,
+      "longitude": -121.40896,
+      "score_mass": 0.0002325912,
+      "rank": 428,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 19,
+      "latitude": 39.778989,
+      "longitude": -121.40896,
+      "score_mass": 0.0002325912,
+      "rank": 429,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 314,
+      "latitude": 39.847787,
+      "longitude": -121.428877,
+      "score_mass": 0.0002148224,
+      "rank": 430,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 446,
+      "latitude": 39.878364,
+      "longitude": -121.428877,
+      "score_mass": 0.0002148224,
+      "rank": 431,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 613,
+      "latitude": 39.916585,
+      "longitude": -121.40896,
+      "score_mass": 0.0001939974,
+      "rank": 432,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 151,
+      "latitude": 39.809566,
+      "longitude": -121.40896,
+      "score_mass": 0.0001939974,
+      "rank": 433,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 680,
+      "latitude": 39.931873,
+      "longitude": -121.399001,
+      "score_mass": 0.0001936895,
+      "rank": 434,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 86,
+      "latitude": 39.794277,
+      "longitude": -121.399001,
+      "score_mass": 0.0001936895,
+      "rank": 435,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 347,
+      "latitude": 39.855431,
+      "longitude": -121.428877,
+      "score_mass": 0.0001918045,
+      "rank": 436,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 413,
+      "latitude": 39.87072,
+      "longitude": -121.428877,
+      "score_mass": 0.0001918045,
+      "rank": 437,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 380,
+      "latitude": 39.863075,
+      "longitude": -121.428877,
+      "score_mass": 0.000189654,
+      "rank": 438,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 713,
+      "latitude": 39.939518,
+      "longitude": -121.399001,
+      "score_mass": 0.0001895587,
+      "rank": 439,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 53,
+      "latitude": 39.786633,
+      "longitude": -121.399001,
+      "score_mass": 0.0001895587,
+      "rank": 440,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 546,
+      "latitude": 39.901297,
+      "longitude": -121.418918,
+      "score_mass": 0.0001872781,
+      "rank": 441,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 216,
+      "latitude": 39.824854,
+      "longitude": -121.418918,
+      "score_mass": 0.0001872781,
+      "rank": 442,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 20,
+      "latitude": 39.778989,
+      "longitude": -121.399001,
+      "score_mass": 0.0001804251,
+      "rank": 443,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 746,
+      "latitude": 39.947162,
+      "longitude": -121.399001,
+      "score_mass": 0.0001804251,
+      "rank": 444,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 647,
+      "latitude": 39.924229,
+      "longitude": -121.399001,
+      "score_mass": 0.0001529409,
+      "rank": 445,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 119,
+      "latitude": 39.801922,
+      "longitude": -121.399001,
+      "score_mass": 0.0001529409,
+      "rank": 446,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 580,
+      "latitude": 39.908941,
+      "longitude": -121.40896,
+      "score_mass": 0.0001516044,
+      "rank": 447,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 184,
+      "latitude": 39.81721,
+      "longitude": -121.40896,
+      "score_mass": 0.0001516044,
+      "rank": 448,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 249,
+      "latitude": 39.832499,
+      "longitude": -121.418918,
+      "score_mass": 0.0001477821,
+      "rank": 449,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 513,
+      "latitude": 39.893652,
+      "longitude": -121.418918,
+      "score_mass": 0.0001477821,
+      "rank": 450,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 714,
+      "latitude": 39.939518,
+      "longitude": -121.389043,
+      "score_mass": 0.0001452054,
+      "rank": 451,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 54,
+      "latitude": 39.786633,
+      "longitude": -121.389043,
+      "score_mass": 0.0001452054,
+      "rank": 452,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 21,
+      "latitude": 39.778989,
+      "longitude": -121.389043,
+      "score_mass": 0.0001391957,
+      "rank": 453,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 747,
+      "latitude": 39.947162,
+      "longitude": -121.389043,
+      "score_mass": 0.0001391957,
+      "rank": 454,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 22,
+      "latitude": 39.778989,
+      "longitude": -121.379085,
+      "score_mass": 0.0001299729,
+      "rank": 455,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 748,
+      "latitude": 39.947162,
+      "longitude": -121.379085,
+      "score_mass": 0.0001299729,
+      "rank": 456,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 614,
+      "latitude": 39.916585,
+      "longitude": -121.399001,
+      "score_mass": 0.0001198501,
+      "rank": 457,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 152,
+      "latitude": 39.809566,
+      "longitude": -121.399001,
+      "score_mass": 0.0001198501,
+      "rank": 458,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 217,
+      "latitude": 39.824854,
+      "longitude": -121.40896,
+      "score_mass": 0.0001183057,
+      "rank": 459,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 547,
+      "latitude": 39.901297,
+      "longitude": -121.40896,
+      "score_mass": 0.0001183057,
+      "rank": 460,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 681,
+      "latitude": 39.931873,
+      "longitude": -121.389043,
+      "score_mass": 0.0001170348,
+      "rank": 461,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 87,
+      "latitude": 39.794277,
+      "longitude": -121.389043,
+      "score_mass": 0.0001170348,
+      "rank": 462,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 480,
+      "latitude": 39.886008,
+      "longitude": -121.418918,
+      "score_mass": 0.000116297,
+      "rank": 463,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 282,
+      "latitude": 39.840143,
+      "longitude": -121.418918,
+      "score_mass": 0.000116297,
+      "rank": 464,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 715,
+      "latitude": 39.939518,
+      "longitude": -121.379085,
+      "score_mass": 0.0001052133,
+      "rank": 465,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 55,
+      "latitude": 39.786633,
+      "longitude": -121.379085,
+      "score_mass": 0.0001052133,
+      "rank": 466,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 315,
+      "latitude": 39.847787,
+      "longitude": -121.418918,
+      "score_mass": 0.0001036114,
+      "rank": 467,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 447,
+      "latitude": 39.878364,
+      "longitude": -121.418918,
+      "score_mass": 0.0001036114,
+      "rank": 468,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 648,
+      "latitude": 39.924229,
+      "longitude": -121.389043,
+      "score_mass": 9.40979e-05,
+      "rank": 469,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 120,
+      "latitude": 39.801922,
+      "longitude": -121.389043,
+      "score_mass": 9.40979e-05,
+      "rank": 470,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 581,
+      "latitude": 39.908941,
+      "longitude": -121.399001,
+      "score_mass": 9.34154e-05,
+      "rank": 471,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 185,
+      "latitude": 39.81721,
+      "longitude": -121.399001,
+      "score_mass": 9.34154e-05,
+      "rank": 472,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 514,
+      "latitude": 39.893652,
+      "longitude": -121.40896,
+      "score_mass": 9.29018e-05,
+      "rank": 473,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 250,
+      "latitude": 39.832499,
+      "longitude": -121.40896,
+      "score_mass": 9.29018e-05,
+      "rank": 474,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 23,
+      "latitude": 39.778989,
+      "longitude": -121.369126,
+      "score_mass": 9.25841e-05,
+      "rank": 475,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 749,
+      "latitude": 39.947162,
+      "longitude": -121.369126,
+      "score_mass": 9.25841e-05,
+      "rank": 476,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 414,
+      "latitude": 39.87072,
+      "longitude": -121.418918,
+      "score_mass": 9.25445e-05,
+      "rank": 477,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 348,
+      "latitude": 39.855431,
+      "longitude": -121.418918,
+      "score_mass": 9.25445e-05,
+      "rank": 478,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 682,
+      "latitude": 39.931873,
+      "longitude": -121.379085,
+      "score_mass": 8.594e-05,
+      "rank": 479,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 88,
+      "latitude": 39.794277,
+      "longitude": -121.379085,
+      "score_mass": 8.594e-05,
+      "rank": 480,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 381,
+      "latitude": 39.863075,
+      "longitude": -121.418918,
+      "score_mass": 8.19708e-05,
+      "rank": 481,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 716,
+      "latitude": 39.939518,
+      "longitude": -121.369126,
+      "score_mass": 7.53286e-05,
+      "rank": 482,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 56,
+      "latitude": 39.786633,
+      "longitude": -121.369126,
+      "score_mass": 7.53286e-05,
+      "rank": 483,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 283,
+      "latitude": 39.840143,
+      "longitude": -121.40896,
+      "score_mass": 7.29896e-05,
+      "rank": 484,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 481,
+      "latitude": 39.886008,
+      "longitude": -121.40896,
+      "score_mass": 7.29896e-05,
+      "rank": 485,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 615,
+      "latitude": 39.916585,
+      "longitude": -121.389043,
+      "score_mass": 7.29265e-05,
+      "rank": 486,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 153,
+      "latitude": 39.809566,
+      "longitude": -121.389043,
+      "score_mass": 7.29265e-05,
+      "rank": 487,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 548,
+      "latitude": 39.901297,
+      "longitude": -121.399001,
+      "score_mass": 7.28002e-05,
+      "rank": 488,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 218,
+      "latitude": 39.824854,
+      "longitude": -121.399001,
+      "score_mass": 7.28002e-05,
+      "rank": 489,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 649,
+      "latitude": 39.924229,
+      "longitude": -121.379085,
+      "score_mass": 6.83864e-05,
+      "rank": 490,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 121,
+      "latitude": 39.801922,
+      "longitude": -121.379085,
+      "score_mass": 6.83864e-05,
+      "rank": 491,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 24,
+      "latitude": 39.778989,
+      "longitude": -121.359168,
+      "score_mass": 6.79251e-05,
+      "rank": 492,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 750,
+      "latitude": 39.947162,
+      "longitude": -121.359168,
+      "score_mass": 6.79251e-05,
+      "rank": 493,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 683,
+      "latitude": 39.931873,
+      "longitude": -121.369126,
+      "score_mass": 5.97611e-05,
+      "rank": 494,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 89,
+      "latitude": 39.794277,
+      "longitude": -121.369126,
+      "score_mass": 5.97611e-05,
+      "rank": 495,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 515,
+      "latitude": 39.893652,
+      "longitude": -121.399001,
+      "score_mass": 5.76084e-05,
+      "rank": 496,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 251,
+      "latitude": 39.832499,
+      "longitude": -121.399001,
+      "score_mass": 5.76084e-05,
+      "rank": 497,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 448,
+      "latitude": 39.878364,
+      "longitude": -121.40896,
+      "score_mass": 5.70788e-05,
+      "rank": 498,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 316,
+      "latitude": 39.847787,
+      "longitude": -121.40896,
+      "score_mass": 5.70788e-05,
+      "rank": 499,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 582,
+      "latitude": 39.908941,
+      "longitude": -121.389043,
+      "score_mass": 5.70585e-05,
+      "rank": 500,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 186,
+      "latitude": 39.81721,
+      "longitude": -121.389043,
+      "score_mass": 5.70585e-05,
+      "rank": 501,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 616,
+      "latitude": 39.916585,
+      "longitude": -121.379085,
+      "score_mass": 5.49958e-05,
+      "rank": 502,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 154,
+      "latitude": 39.809566,
+      "longitude": -121.379085,
+      "score_mass": 5.49958e-05,
+      "rank": 503,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 57,
+      "latitude": 39.786633,
+      "longitude": -121.359168,
+      "score_mass": 5.38176e-05,
+      "rank": 504,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 717,
+      "latitude": 39.939518,
+      "longitude": -121.359168,
+      "score_mass": 5.38176e-05,
+      "rank": 505,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 349,
+      "latitude": 39.855431,
+      "longitude": -121.40896,
+      "score_mass": 5.01691e-05,
+      "rank": 506,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 415,
+      "latitude": 39.87072,
+      "longitude": -121.40896,
+      "score_mass": 5.01691e-05,
+      "rank": 507,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 382,
+      "latitude": 39.863075,
+      "longitude": -121.40896,
+      "score_mass": 5.01673e-05,
+      "rank": 508,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 650,
+      "latitude": 39.924229,
+      "longitude": -121.369126,
+      "score_mass": 4.84176e-05,
+      "rank": 509,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 122,
+      "latitude": 39.801922,
+      "longitude": -121.369126,
+      "score_mass": 4.84176e-05,
+      "rank": 510,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 549,
+      "latitude": 39.901297,
+      "longitude": -121.389043,
+      "score_mass": 4.47826e-05,
+      "rank": 511,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 219,
+      "latitude": 39.824854,
+      "longitude": -121.389043,
+      "score_mass": 4.47826e-05,
+      "rank": 512,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 25,
+      "latitude": 39.778989,
+      "longitude": -121.349209,
+      "score_mass": 4.47478e-05,
+      "rank": 513,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 751,
+      "latitude": 39.947162,
+      "longitude": -121.349209,
+      "score_mass": 4.47478e-05,
+      "rank": 514,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 482,
+      "latitude": 39.886008,
+      "longitude": -121.399001,
+      "score_mass": 4.46585e-05,
+      "rank": 515,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 284,
+      "latitude": 39.840143,
+      "longitude": -121.399001,
+      "score_mass": 4.46585e-05,
+      "rank": 516,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 583,
+      "latitude": 39.908941,
+      "longitude": -121.379085,
+      "score_mass": 4.41363e-05,
+      "rank": 517,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 187,
+      "latitude": 39.81721,
+      "longitude": -121.379085,
+      "score_mass": 4.41363e-05,
+      "rank": 518,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 684,
+      "latitude": 39.931873,
+      "longitude": -121.359168,
+      "score_mass": 4.35613e-05,
+      "rank": 519,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 90,
+      "latitude": 39.794277,
+      "longitude": -121.359168,
+      "score_mass": 4.35613e-05,
+      "rank": 520,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 617,
+      "latitude": 39.916585,
+      "longitude": -121.369126,
+      "score_mass": 3.92648e-05,
+      "rank": 521,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 155,
+      "latitude": 39.809566,
+      "longitude": -121.369126,
+      "score_mass": 3.92648e-05,
+      "rank": 522,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 58,
+      "latitude": 39.786633,
+      "longitude": -121.349209,
+      "score_mass": 3.70782e-05,
+      "rank": 523,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 718,
+      "latitude": 39.939518,
+      "longitude": -121.349209,
+      "score_mass": 3.70782e-05,
+      "rank": 524,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 651,
+      "latitude": 39.924229,
+      "longitude": -121.359168,
+      "score_mass": 3.50001e-05,
+      "rank": 525,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 123,
+      "latitude": 39.801922,
+      "longitude": -121.359168,
+      "score_mass": 3.50001e-05,
+      "rank": 526,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 516,
+      "latitude": 39.893652,
+      "longitude": -121.389043,
+      "score_mass": 3.45312e-05,
+      "rank": 527,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 252,
+      "latitude": 39.832499,
+      "longitude": -121.389043,
+      "score_mass": 3.45312e-05,
+      "rank": 528,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 550,
+      "latitude": 39.901297,
+      "longitude": -121.379085,
+      "score_mass": 3.44287e-05,
+      "rank": 529,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 220,
+      "latitude": 39.824854,
+      "longitude": -121.379085,
+      "score_mass": 3.44287e-05,
+      "rank": 530,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 449,
+      "latitude": 39.878364,
+      "longitude": -121.399001,
+      "score_mass": 3.43588e-05,
+      "rank": 531,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 317,
+      "latitude": 39.847787,
+      "longitude": -121.399001,
+      "score_mass": 3.43588e-05,
+      "rank": 532,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 584,
+      "latitude": 39.908941,
+      "longitude": -121.369126,
+      "score_mass": 3.13475e-05,
+      "rank": 533,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 188,
+      "latitude": 39.81721,
+      "longitude": -121.369126,
+      "score_mass": 3.13475e-05,
+      "rank": 534,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 685,
+      "latitude": 39.931873,
+      "longitude": -121.349209,
+      "score_mass": 3.01989e-05,
+      "rank": 535,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 91,
+      "latitude": 39.794277,
+      "longitude": -121.349209,
+      "score_mass": 3.01989e-05,
+      "rank": 536,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 752,
+      "latitude": 39.947162,
+      "longitude": -121.339251,
+      "score_mass": 2.96894e-05,
+      "rank": 537,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 26,
+      "latitude": 39.778989,
+      "longitude": -121.339251,
+      "score_mass": 2.96894e-05,
+      "rank": 538,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 350,
+      "latitude": 39.855431,
+      "longitude": -121.399001,
+      "score_mass": 2.96474e-05,
+      "rank": 539,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 416,
+      "latitude": 39.87072,
+      "longitude": -121.399001,
+      "score_mass": 2.96474e-05,
+      "rank": 540,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 383,
+      "latitude": 39.863075,
+      "longitude": -121.399001,
+      "score_mass": 2.93387e-05,
+      "rank": 541,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 618,
+      "latitude": 39.916585,
+      "longitude": -121.359168,
+      "score_mass": 2.75522e-05,
+      "rank": 542,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 156,
+      "latitude": 39.809566,
+      "longitude": -121.359168,
+      "score_mass": 2.75522e-05,
+      "rank": 543,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 517,
+      "latitude": 39.893652,
+      "longitude": -121.379085,
+      "score_mass": 2.6679e-05,
+      "rank": 544,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 253,
+      "latitude": 39.832499,
+      "longitude": -121.379085,
+      "score_mass": 2.6679e-05,
+      "rank": 545,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 483,
+      "latitude": 39.886008,
+      "longitude": -121.389043,
+      "score_mass": 2.66713e-05,
+      "rank": 546,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 285,
+      "latitude": 39.840143,
+      "longitude": -121.389043,
+      "score_mass": 2.66713e-05,
+      "rank": 547,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 719,
+      "latitude": 39.939518,
+      "longitude": -121.339251,
+      "score_mass": 2.58376e-05,
+      "rank": 548,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 59,
+      "latitude": 39.786633,
+      "longitude": -121.339251,
+      "score_mass": 2.58376e-05,
+      "rank": 549,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 551,
+      "latitude": 39.901297,
+      "longitude": -121.369126,
+      "score_mass": 2.54217e-05,
+      "rank": 550,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 221,
+      "latitude": 39.824854,
+      "longitude": -121.369126,
+      "score_mass": 2.54217e-05,
+      "rank": 551,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 652,
+      "latitude": 39.924229,
+      "longitude": -121.349209,
+      "score_mass": 2.4017e-05,
+      "rank": 552,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 124,
+      "latitude": 39.801922,
+      "longitude": -121.349209,
+      "score_mass": 2.4017e-05,
+      "rank": 553,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 450,
+      "latitude": 39.878364,
+      "longitude": -121.389043,
+      "score_mass": 2.28415e-05,
+      "rank": 554,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 318,
+      "latitude": 39.847787,
+      "longitude": -121.389043,
+      "score_mass": 2.28415e-05,
+      "rank": 555,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 484,
+      "latitude": 39.886008,
+      "longitude": -121.379085,
+      "score_mass": 2.28396e-05,
+      "rank": 556,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 286,
+      "latitude": 39.840143,
+      "longitude": -121.379085,
+      "score_mass": 2.28396e-05,
+      "rank": 557,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 518,
+      "latitude": 39.893652,
+      "longitude": -121.369126,
+      "score_mass": 2.23948e-05,
+      "rank": 558,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 254,
+      "latitude": 39.832499,
+      "longitude": -121.369126,
+      "score_mass": 2.23948e-05,
+      "rank": 559,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 585,
+      "latitude": 39.908941,
+      "longitude": -121.359168,
+      "score_mass": 2.225e-05,
+      "rank": 560,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 189,
+      "latitude": 39.81721,
+      "longitude": -121.359168,
+      "score_mass": 2.225e-05,
+      "rank": 561,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 686,
+      "latitude": 39.931873,
+      "longitude": -121.339251,
+      "score_mass": 2.18512e-05,
+      "rank": 562,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 92,
+      "latitude": 39.794277,
+      "longitude": -121.339251,
+      "score_mass": 2.18512e-05,
+      "rank": 563,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 619,
+      "latitude": 39.916585,
+      "longitude": -121.349209,
+      "score_mass": 1.95853e-05,
+      "rank": 564,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 157,
+      "latitude": 39.809566,
+      "longitude": -121.349209,
+      "score_mass": 1.95853e-05,
+      "rank": 565,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 552,
+      "latitude": 39.901297,
+      "longitude": -121.359168,
+      "score_mass": 1.95574e-05,
+      "rank": 566,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 222,
+      "latitude": 39.824854,
+      "longitude": -121.359168,
+      "score_mass": 1.95574e-05,
+      "rank": 567,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 351,
+      "latitude": 39.855431,
+      "longitude": -121.389043,
+      "score_mass": 1.92876e-05,
+      "rank": 568,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 417,
+      "latitude": 39.87072,
+      "longitude": -121.389043,
+      "score_mass": 1.92876e-05,
+      "rank": 569,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 319,
+      "latitude": 39.847787,
+      "longitude": -121.379085,
+      "score_mass": 1.92207e-05,
+      "rank": 570,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 451,
+      "latitude": 39.878364,
+      "longitude": -121.379085,
+      "score_mass": 1.92207e-05,
+      "rank": 571,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 485,
+      "latitude": 39.886008,
+      "longitude": -121.369126,
+      "score_mass": 1.91902e-05,
+      "rank": 572,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 287,
+      "latitude": 39.840143,
+      "longitude": -121.369126,
+      "score_mass": 1.91902e-05,
+      "rank": 573,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 125,
+      "latitude": 39.801922,
+      "longitude": -121.339251,
+      "score_mass": 1.79574e-05,
+      "rank": 574,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 653,
+      "latitude": 39.924229,
+      "longitude": -121.339251,
+      "score_mass": 1.79574e-05,
+      "rank": 575,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 586,
+      "latitude": 39.908941,
+      "longitude": -121.349209,
+      "score_mass": 1.70659e-05,
+      "rank": 576,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 190,
+      "latitude": 39.81721,
+      "longitude": -121.349209,
+      "score_mass": 1.70659e-05,
+      "rank": 577,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 519,
+      "latitude": 39.893652,
+      "longitude": -121.359168,
+      "score_mass": 1.69976e-05,
+      "rank": 578,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 255,
+      "latitude": 39.832499,
+      "longitude": -121.359168,
+      "score_mass": 1.69976e-05,
+      "rank": 579,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 419,
+      "latitude": 39.87072,
+      "longitude": -121.369126,
+      "score_mass": 1.64977e-05,
+      "rank": 580,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 353,
+      "latitude": 39.855431,
+      "longitude": -121.369126,
+      "score_mass": 1.64977e-05,
+      "rank": 581,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 385,
+      "latitude": 39.863075,
+      "longitude": -121.379085,
+      "score_mass": 1.64953e-05,
+      "rank": 582,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 452,
+      "latitude": 39.878364,
+      "longitude": -121.369126,
+      "score_mass": 1.64295e-05,
+      "rank": 583,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 320,
+      "latitude": 39.847787,
+      "longitude": -121.369126,
+      "score_mass": 1.64295e-05,
+      "rank": 584,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 352,
+      "latitude": 39.855431,
+      "longitude": -121.379085,
+      "score_mass": 1.64144e-05,
+      "rank": 585,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 418,
+      "latitude": 39.87072,
+      "longitude": -121.379085,
+      "score_mass": 1.64144e-05,
+      "rank": 586,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 386,
+      "latitude": 39.863075,
+      "longitude": -121.369126,
+      "score_mass": 1.64076e-05,
+      "rank": 587,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 384,
+      "latitude": 39.863075,
+      "longitude": -121.389043,
+      "score_mass": 1.63658e-05,
+      "rank": 588,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 387,
+      "latitude": 39.863075,
+      "longitude": -121.359168,
+      "score_mass": 1.6245e-05,
+      "rank": 589,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 354,
+      "latitude": 39.855431,
+      "longitude": -121.359168,
+      "score_mass": 1.59831e-05,
+      "rank": 590,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 420,
+      "latitude": 39.87072,
+      "longitude": -121.359168,
+      "score_mass": 1.59831e-05,
+      "rank": 591,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 453,
+      "latitude": 39.878364,
+      "longitude": -121.359168,
+      "score_mass": 1.56959e-05,
+      "rank": 592,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 321,
+      "latitude": 39.847787,
+      "longitude": -121.359168,
+      "score_mass": 1.56959e-05,
+      "rank": 593,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 620,
+      "latitude": 39.916585,
+      "longitude": -121.339251,
+      "score_mass": 1.56575e-05,
+      "rank": 594,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 158,
+      "latitude": 39.809566,
+      "longitude": -121.339251,
+      "score_mass": 1.56575e-05,
+      "rank": 595,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 486,
+      "latitude": 39.886008,
+      "longitude": -121.359168,
+      "score_mass": 1.51738e-05,
+      "rank": 596,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 288,
+      "latitude": 39.840143,
+      "longitude": -121.359168,
+      "score_mass": 1.51738e-05,
+      "rank": 597,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 553,
+      "latitude": 39.901297,
+      "longitude": -121.349209,
+      "score_mass": 1.46701e-05,
+      "rank": 598,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 223,
+      "latitude": 39.824854,
+      "longitude": -121.349209,
+      "score_mass": 1.46701e-05,
+      "rank": 599,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 388,
+      "latitude": 39.863075,
+      "longitude": -121.349209,
+      "score_mass": 1.43615e-05,
+      "rank": 600,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 753,
+      "latitude": 39.947162,
+      "longitude": -121.329292,
+      "score_mass": 1.39647e-05,
+      "rank": 601,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 27,
+      "latitude": 39.778989,
+      "longitude": -121.329292,
+      "score_mass": 1.39647e-05,
+      "rank": 602,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 355,
+      "latitude": 39.855431,
+      "longitude": -121.349209,
+      "score_mass": 1.38008e-05,
+      "rank": 603,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 421,
+      "latitude": 39.87072,
+      "longitude": -121.349209,
+      "score_mass": 1.38008e-05,
+      "rank": 604,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 587,
+      "latitude": 39.908941,
+      "longitude": -121.339251,
+      "score_mass": 1.35285e-05,
+      "rank": 605,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 191,
+      "latitude": 39.81721,
+      "longitude": -121.339251,
+      "score_mass": 1.35285e-05,
+      "rank": 606,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 322,
+      "latitude": 39.847787,
+      "longitude": -121.349209,
+      "score_mass": 1.33233e-05,
+      "rank": 607,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 454,
+      "latitude": 39.878364,
+      "longitude": -121.349209,
+      "score_mass": 1.33233e-05,
+      "rank": 608,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 720,
+      "latitude": 39.939518,
+      "longitude": -121.329292,
+      "score_mass": 1.33179e-05,
+      "rank": 609,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 60,
+      "latitude": 39.786633,
+      "longitude": -121.329292,
+      "score_mass": 1.33179e-05,
+      "rank": 610,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 289,
+      "latitude": 39.840143,
+      "longitude": -121.349209,
+      "score_mass": 1.31839e-05,
+      "rank": 611,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 487,
+      "latitude": 39.886008,
+      "longitude": -121.349209,
+      "score_mass": 1.31839e-05,
+      "rank": 612,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 256,
+      "latitude": 39.832499,
+      "longitude": -121.349209,
+      "score_mass": 1.29816e-05,
+      "rank": 613,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 520,
+      "latitude": 39.893652,
+      "longitude": -121.349209,
+      "score_mass": 1.29816e-05,
+      "rank": 614,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 93,
+      "latitude": 39.794277,
+      "longitude": -121.329292,
+      "score_mass": 1.23488e-05,
+      "rank": 615,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 687,
+      "latitude": 39.931873,
+      "longitude": -121.329292,
+      "score_mass": 1.23488e-05,
+      "rank": 616,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 389,
+      "latitude": 39.863075,
+      "longitude": -121.339251,
+      "score_mass": 1.22769e-05,
+      "rank": 617,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 356,
+      "latitude": 39.855431,
+      "longitude": -121.339251,
+      "score_mass": 1.21805e-05,
+      "rank": 618,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 422,
+      "latitude": 39.87072,
+      "longitude": -121.339251,
+      "score_mass": 1.21805e-05,
+      "rank": 619,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 455,
+      "latitude": 39.878364,
+      "longitude": -121.339251,
+      "score_mass": 1.2002e-05,
+      "rank": 620,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 323,
+      "latitude": 39.847787,
+      "longitude": -121.339251,
+      "score_mass": 1.2002e-05,
+      "rank": 621,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 654,
+      "latitude": 39.924229,
+      "longitude": -121.329292,
+      "score_mass": 1.19882e-05,
+      "rank": 622,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 126,
+      "latitude": 39.801922,
+      "longitude": -121.329292,
+      "score_mass": 1.19882e-05,
+      "rank": 623,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 224,
+      "latitude": 39.824854,
+      "longitude": -121.339251,
+      "score_mass": 1.19371e-05,
+      "rank": 624,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 554,
+      "latitude": 39.901297,
+      "longitude": -121.339251,
+      "score_mass": 1.19371e-05,
+      "rank": 625,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 257,
+      "latitude": 39.832499,
+      "longitude": -121.339251,
+      "score_mass": 1.19369e-05,
+      "rank": 626,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 521,
+      "latitude": 39.893652,
+      "longitude": -121.339251,
+      "score_mass": 1.19369e-05,
+      "rank": 627,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 290,
+      "latitude": 39.840143,
+      "longitude": -121.339251,
+      "score_mass": 1.1794e-05,
+      "rank": 628,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 488,
+      "latitude": 39.886008,
+      "longitude": -121.339251,
+      "score_mass": 1.1794e-05,
+      "rank": 629,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 324,
+      "latitude": 39.847787,
+      "longitude": -121.329292,
+      "score_mass": 1.16836e-05,
+      "rank": 630,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 456,
+      "latitude": 39.878364,
+      "longitude": -121.329292,
+      "score_mass": 1.16836e-05,
+      "rank": 631,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 291,
+      "latitude": 39.840143,
+      "longitude": -121.329292,
+      "score_mass": 1.16389e-05,
+      "rank": 632,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 489,
+      "latitude": 39.886008,
+      "longitude": -121.329292,
+      "score_mass": 1.16389e-05,
+      "rank": 633,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 390,
+      "latitude": 39.863075,
+      "longitude": -121.329292,
+      "score_mass": 1.16069e-05,
+      "rank": 634,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 357,
+      "latitude": 39.855431,
+      "longitude": -121.329292,
+      "score_mass": 1.15775e-05,
+      "rank": 635,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 423,
+      "latitude": 39.87072,
+      "longitude": -121.329292,
+      "score_mass": 1.15775e-05,
+      "rank": 636,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 258,
+      "latitude": 39.832499,
+      "longitude": -121.329292,
+      "score_mass": 1.14399e-05,
+      "rank": 637,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 522,
+      "latitude": 39.893652,
+      "longitude": -121.329292,
+      "score_mass": 1.14399e-05,
+      "rank": 638,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 621,
+      "latitude": 39.916585,
+      "longitude": -121.329292,
+      "score_mass": 1.13984e-05,
+      "rank": 639,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 159,
+      "latitude": 39.809566,
+      "longitude": -121.329292,
+      "score_mass": 1.13984e-05,
+      "rank": 640,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 225,
+      "latitude": 39.824854,
+      "longitude": -121.329292,
+      "score_mass": 1.10924e-05,
+      "rank": 641,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 555,
+      "latitude": 39.901297,
+      "longitude": -121.329292,
+      "score_mass": 1.10924e-05,
+      "rank": 642,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 391,
+      "latitude": 39.863075,
+      "longitude": -121.319334,
+      "score_mass": 1.0635e-05,
+      "rank": 643,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 192,
+      "latitude": 39.81721,
+      "longitude": -121.329292,
+      "score_mass": 1.06095e-05,
+      "rank": 644,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 588,
+      "latitude": 39.908941,
+      "longitude": -121.329292,
+      "score_mass": 1.06095e-05,
+      "rank": 645,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 358,
+      "latitude": 39.855431,
+      "longitude": -121.319334,
+      "score_mass": 1.00462e-05,
+      "rank": 646,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 424,
+      "latitude": 39.87072,
+      "longitude": -121.319334,
+      "score_mass": 1.00462e-05,
+      "rank": 647,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 325,
+      "latitude": 39.847787,
+      "longitude": -121.319334,
+      "score_mass": 9.3616e-06,
+      "rank": 648,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 457,
+      "latitude": 39.878364,
+      "longitude": -121.319334,
+      "score_mass": 9.3616e-06,
+      "rank": 649,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 292,
+      "latitude": 39.840143,
+      "longitude": -121.319334,
+      "score_mass": 8.6081e-06,
+      "rank": 650,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 490,
+      "latitude": 39.886008,
+      "longitude": -121.319334,
+      "score_mass": 8.6081e-06,
+      "rank": 651,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 259,
+      "latitude": 39.832499,
+      "longitude": -121.319334,
+      "score_mass": 7.8142e-06,
+      "rank": 652,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 523,
+      "latitude": 39.893652,
+      "longitude": -121.319334,
+      "score_mass": 7.8142e-06,
+      "rank": 653,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 226,
+      "latitude": 39.824854,
+      "longitude": -121.319334,
+      "score_mass": 7.003e-06,
+      "rank": 654,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 556,
+      "latitude": 39.901297,
+      "longitude": -121.319334,
+      "score_mass": 7.003e-06,
+      "rank": 655,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 392,
+      "latitude": 39.863075,
+      "longitude": -121.309375,
+      "score_mass": 6.281e-06,
+      "rank": 656,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 193,
+      "latitude": 39.81721,
+      "longitude": -121.319334,
+      "score_mass": 6.1958e-06,
+      "rank": 657,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 589,
+      "latitude": 39.908941,
+      "longitude": -121.319334,
+      "score_mass": 6.1958e-06,
+      "rank": 658,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 359,
+      "latitude": 39.855431,
+      "longitude": -121.309375,
+      "score_mass": 5.4936e-06,
+      "rank": 659,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 425,
+      "latitude": 39.87072,
+      "longitude": -121.309375,
+      "score_mass": 5.4936e-06,
+      "rank": 660,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 160,
+      "latitude": 39.809566,
+      "longitude": -121.319334,
+      "score_mass": 5.4117e-06,
+      "rank": 661,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 622,
+      "latitude": 39.916585,
+      "longitude": -121.319334,
+      "score_mass": 5.4117e-06,
+      "rank": 662,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 655,
+      "latitude": 39.924229,
+      "longitude": -121.319334,
+      "score_mass": 5.2448e-06,
+      "rank": 663,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 127,
+      "latitude": 39.801922,
+      "longitude": -121.319334,
+      "score_mass": 5.2448e-06,
+      "rank": 664,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 688,
+      "latitude": 39.931873,
+      "longitude": -121.319334,
+      "score_mass": 4.9802e-06,
+      "rank": 665,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 94,
+      "latitude": 39.794277,
+      "longitude": -121.319334,
+      "score_mass": 4.9802e-06,
+      "rank": 666,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 326,
+      "latitude": 39.847787,
+      "longitude": -121.309375,
+      "score_mass": 4.7435e-06,
+      "rank": 667,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 458,
+      "latitude": 39.878364,
+      "longitude": -121.309375,
+      "score_mass": 4.7435e-06,
+      "rank": 668,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 61,
+      "latitude": 39.786633,
+      "longitude": -121.319334,
+      "score_mass": 4.6331e-06,
+      "rank": 669,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 721,
+      "latitude": 39.939518,
+      "longitude": -121.319334,
+      "score_mass": 4.6331e-06,
+      "rank": 670,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 754,
+      "latitude": 39.947162,
+      "longitude": -121.319334,
+      "score_mass": 4.4529e-06,
+      "rank": 671,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 28,
+      "latitude": 39.778989,
+      "longitude": -121.319334,
+      "score_mass": 4.4529e-06,
+      "rank": 672,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 293,
+      "latitude": 39.840143,
+      "longitude": -121.309375,
+      "score_mass": 4.0435e-06,
+      "rank": 673,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 491,
+      "latitude": 39.886008,
+      "longitude": -121.309375,
+      "score_mass": 4.0435e-06,
+      "rank": 674,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 260,
+      "latitude": 39.832499,
+      "longitude": -121.309375,
+      "score_mass": 3.4028e-06,
+      "rank": 675,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 524,
+      "latitude": 39.893652,
+      "longitude": -121.309375,
+      "score_mass": 3.4028e-06,
+      "rank": 676,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 227,
+      "latitude": 39.824854,
+      "longitude": -121.309375,
+      "score_mass": 2.8271e-06,
+      "rank": 677,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 557,
+      "latitude": 39.901297,
+      "longitude": -121.309375,
+      "score_mass": 2.8271e-06,
+      "rank": 678,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 393,
+      "latitude": 39.863075,
+      "longitude": -121.299417,
+      "score_mass": 2.3706e-06,
+      "rank": 679,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 194,
+      "latitude": 39.81721,
+      "longitude": -121.309375,
+      "score_mass": 2.3187e-06,
+      "rank": 680,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 590,
+      "latitude": 39.908941,
+      "longitude": -121.309375,
+      "score_mass": 2.3187e-06,
+      "rank": 681,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 360,
+      "latitude": 39.855431,
+      "longitude": -121.299417,
+      "score_mass": 1.9222e-06,
+      "rank": 682,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 426,
+      "latitude": 39.87072,
+      "longitude": -121.299417,
+      "score_mass": 1.9222e-06,
+      "rank": 683,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 161,
+      "latitude": 39.809566,
+      "longitude": -121.309375,
+      "score_mass": 1.8775e-06,
+      "rank": 684,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 623,
+      "latitude": 39.916585,
+      "longitude": -121.309375,
+      "score_mass": 1.8775e-06,
+      "rank": 685,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 327,
+      "latitude": 39.847787,
+      "longitude": -121.299417,
+      "score_mass": 1.5387e-06,
+      "rank": 686,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 459,
+      "latitude": 39.878364,
+      "longitude": -121.299417,
+      "score_mass": 1.5387e-06,
+      "rank": 687,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 128,
+      "latitude": 39.801922,
+      "longitude": -121.309375,
+      "score_mass": 1.5008e-06,
+      "rank": 688,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 656,
+      "latitude": 39.924229,
+      "longitude": -121.309375,
+      "score_mass": 1.5008e-06,
+      "rank": 689,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 95,
+      "latitude": 39.794277,
+      "longitude": -121.309375,
+      "score_mass": 1.3142e-06,
+      "rank": 690,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 689,
+      "latitude": 39.931873,
+      "longitude": -121.309375,
+      "score_mass": 1.3142e-06,
+      "rank": 691,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 294,
+      "latitude": 39.840143,
+      "longitude": -121.299417,
+      "score_mass": 1.216e-06,
+      "rank": 692,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 492,
+      "latitude": 39.886008,
+      "longitude": -121.299417,
+      "score_mass": 1.216e-06,
+      "rank": 693,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 722,
+      "latitude": 39.939518,
+      "longitude": -121.309375,
+      "score_mass": 1.1274e-06,
+      "rank": 694,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 62,
+      "latitude": 39.786633,
+      "longitude": -121.309375,
+      "score_mass": 1.1274e-06,
+      "rank": 695,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 261,
+      "latitude": 39.832499,
+      "longitude": -121.299417,
+      "score_mass": 9.486e-07,
+      "rank": 696,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 525,
+      "latitude": 39.893652,
+      "longitude": -121.299417,
+      "score_mass": 9.486e-07,
+      "rank": 697,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 29,
+      "latitude": 39.778989,
+      "longitude": -121.309375,
+      "score_mass": 9.476e-07,
+      "rank": 698,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 755,
+      "latitude": 39.947162,
+      "longitude": -121.309375,
+      "score_mass": 9.476e-07,
+      "rank": 699,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 228,
+      "latitude": 39.824854,
+      "longitude": -121.299417,
+      "score_mass": 7.306e-07,
+      "rank": 700,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 558,
+      "latitude": 39.901297,
+      "longitude": -121.299417,
+      "score_mass": 7.306e-07,
+      "rank": 701,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 394,
+      "latitude": 39.863075,
+      "longitude": -121.289459,
+      "score_mass": 5.727e-07,
+      "rank": 702,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 195,
+      "latitude": 39.81721,
+      "longitude": -121.299417,
+      "score_mass": 5.556e-07,
+      "rank": 703,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 591,
+      "latitude": 39.908941,
+      "longitude": -121.299417,
+      "score_mass": 5.556e-07,
+      "rank": 704,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 361,
+      "latitude": 39.855431,
+      "longitude": -121.289459,
+      "score_mass": 4.293e-07,
+      "rank": 705,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 427,
+      "latitude": 39.87072,
+      "longitude": -121.289459,
+      "score_mass": 4.293e-07,
+      "rank": 706,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 162,
+      "latitude": 39.809566,
+      "longitude": -121.299417,
+      "score_mass": 4.155e-07,
+      "rank": 707,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 624,
+      "latitude": 39.916585,
+      "longitude": -121.299417,
+      "score_mass": 4.155e-07,
+      "rank": 708,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 328,
+      "latitude": 39.847787,
+      "longitude": -121.289459,
+      "score_mass": 3.143e-07,
+      "rank": 709,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 460,
+      "latitude": 39.878364,
+      "longitude": -121.289459,
+      "score_mass": 3.143e-07,
+      "rank": 710,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 129,
+      "latitude": 39.801922,
+      "longitude": -121.299417,
+      "score_mass": 3.034e-07,
+      "rank": 711,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 657,
+      "latitude": 39.924229,
+      "longitude": -121.299417,
+      "score_mass": 3.034e-07,
+      "rank": 712,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 295,
+      "latitude": 39.840143,
+      "longitude": -121.289459,
+      "score_mass": 2.247e-07,
+      "rank": 713,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 493,
+      "latitude": 39.886008,
+      "longitude": -121.289459,
+      "score_mass": 2.247e-07,
+      "rank": 714,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 96,
+      "latitude": 39.794277,
+      "longitude": -121.299417,
+      "score_mass": 2.164e-07,
+      "rank": 715,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 690,
+      "latitude": 39.931873,
+      "longitude": -121.299417,
+      "score_mass": 2.164e-07,
+      "rank": 716,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 63,
+      "latitude": 39.786633,
+      "longitude": -121.299417,
+      "score_mass": 1.65e-07,
+      "rank": 717,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 723,
+      "latitude": 39.939518,
+      "longitude": -121.299417,
+      "score_mass": 1.65e-07,
+      "rank": 718,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 262,
+      "latitude": 39.832499,
+      "longitude": -121.289459,
+      "score_mass": 1.569e-07,
+      "rank": 719,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 526,
+      "latitude": 39.893652,
+      "longitude": -121.289459,
+      "score_mass": 1.569e-07,
+      "rank": 720,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 30,
+      "latitude": 39.778989,
+      "longitude": -121.299417,
+      "score_mass": 1.22e-07,
+      "rank": 721,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 756,
+      "latitude": 39.947162,
+      "longitude": -121.299417,
+      "score_mass": 1.22e-07,
+      "rank": 722,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 229,
+      "latitude": 39.824854,
+      "longitude": -121.289459,
+      "score_mass": 1.069e-07,
+      "rank": 723,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 559,
+      "latitude": 39.901297,
+      "longitude": -121.289459,
+      "score_mass": 1.069e-07,
+      "rank": 724,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 395,
+      "latitude": 39.863075,
+      "longitude": -121.2795,
+      "score_mass": 7.45e-08,
+      "rank": 725,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 196,
+      "latitude": 39.81721,
+      "longitude": -121.289459,
+      "score_mass": 7.12e-08,
+      "rank": 726,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 592,
+      "latitude": 39.908941,
+      "longitude": -121.289459,
+      "score_mass": 7.12e-08,
+      "rank": 727,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 362,
+      "latitude": 39.855431,
+      "longitude": -121.2795,
+      "score_mass": 4.85e-08,
+      "rank": 728,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 428,
+      "latitude": 39.87072,
+      "longitude": -121.2795,
+      "score_mass": 4.85e-08,
+      "rank": 729,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 163,
+      "latitude": 39.809566,
+      "longitude": -121.289459,
+      "score_mass": 4.62e-08,
+      "rank": 730,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 625,
+      "latitude": 39.916585,
+      "longitude": -121.289459,
+      "score_mass": 4.62e-08,
+      "rank": 731,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 329,
+      "latitude": 39.847787,
+      "longitude": -121.2795,
+      "score_mass": 3.09e-08,
+      "rank": 732,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 461,
+      "latitude": 39.878364,
+      "longitude": -121.2795,
+      "score_mass": 3.09e-08,
+      "rank": 733,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 130,
+      "latitude": 39.801922,
+      "longitude": -121.289459,
+      "score_mass": 2.93e-08,
+      "rank": 734,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 658,
+      "latitude": 39.924229,
+      "longitude": -121.289459,
+      "score_mass": 2.93e-08,
+      "rank": 735,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 296,
+      "latitude": 39.840143,
+      "longitude": -121.2795,
+      "score_mass": 1.92e-08,
+      "rank": 736,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 494,
+      "latitude": 39.886008,
+      "longitude": -121.2795,
+      "score_mass": 1.92e-08,
+      "rank": 737,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 97,
+      "latitude": 39.794277,
+      "longitude": -121.289459,
+      "score_mass": 1.82e-08,
+      "rank": 738,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 691,
+      "latitude": 39.931873,
+      "longitude": -121.289459,
+      "score_mass": 1.82e-08,
+      "rank": 739,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 263,
+      "latitude": 39.832499,
+      "longitude": -121.2795,
+      "score_mass": 1.16e-08,
+      "rank": 740,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 527,
+      "latitude": 39.893652,
+      "longitude": -121.2795,
+      "score_mass": 1.16e-08,
+      "rank": 741,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 64,
+      "latitude": 39.786633,
+      "longitude": -121.289459,
+      "score_mass": 1.1e-08,
+      "rank": 742,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 724,
+      "latitude": 39.939518,
+      "longitude": -121.289459,
+      "score_mass": 1.1e-08,
+      "rank": 743,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 31,
+      "latitude": 39.778989,
+      "longitude": -121.289459,
+      "score_mass": 7e-09,
+      "rank": 744,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 757,
+      "latitude": 39.947162,
+      "longitude": -121.289459,
+      "score_mass": 7e-09,
+      "rank": 745,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 230,
+      "latitude": 39.824854,
+      "longitude": -121.2795,
+      "score_mass": 6.9e-09,
+      "rank": 746,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 560,
+      "latitude": 39.901297,
+      "longitude": -121.2795,
+      "score_mass": 6.9e-09,
+      "rank": 747,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 197,
+      "latitude": 39.81721,
+      "longitude": -121.2795,
+      "score_mass": 4e-09,
+      "rank": 748,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 593,
+      "latitude": 39.908941,
+      "longitude": -121.2795,
+      "score_mass": 4e-09,
+      "rank": 749,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 164,
+      "latitude": 39.809566,
+      "longitude": -121.2795,
+      "score_mass": 2.2e-09,
+      "rank": 750,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 626,
+      "latitude": 39.916585,
+      "longitude": -121.2795,
+      "score_mass": 2.2e-09,
+      "rank": 751,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 131,
+      "latitude": 39.801922,
+      "longitude": -121.2795,
+      "score_mass": 1.2e-09,
+      "rank": 752,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 659,
+      "latitude": 39.924229,
+      "longitude": -121.2795,
+      "score_mass": 1.2e-09,
+      "rank": 753,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 98,
+      "latitude": 39.794277,
+      "longitude": -121.2795,
+      "score_mass": 7e-10,
+      "rank": 754,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 692,
+      "latitude": 39.931873,
+      "longitude": -121.2795,
+      "score_mass": 7e-10,
+      "rank": 755,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 65,
+      "latitude": 39.786633,
+      "longitude": -121.2795,
+      "score_mass": 4e-10,
+      "rank": 756,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 725,
+      "latitude": 39.939518,
+      "longitude": -121.2795,
+      "score_mass": 4e-10,
+      "rank": 757,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 32,
+      "latitude": 39.778989,
+      "longitude": -121.2795,
+      "score_mass": 2e-10,
+      "rank": 758,
+      "in_top80": false,
+      "in_top90": false
+    },
+    {
+      "cell_id": 758,
+      "latitude": 39.947162,
+      "longitude": -121.2795,
+      "score_mass": 2e-10,
+      "rank": 759,
+      "in_top80": false,
+      "in_top90": false
+    }
+  ],
+  "regions": {
+    "top80": {
+      "mass_fraction": 0.8,
+      "cell_count": 261,
+      "area_km2": 188.57,
+      "candidate_indices": [
+        370,
+        297,
+        429,
+        170,
+        566,
+        34,
+        694,
+        271,
+        469,
+        373,
+        66,
+        660,
+        336,
+        402,
+        234,
+        498,
+        338,
+        404,
+        237,
+        501,
+        204,
+        534,
+        265,
+        463,
+        202,
+        532,
+        331,
+        397,
+        364,
+        333,
+        399,
+        368,
+        133,
+        595,
+        68,
+        662,
+        299,
+        431,
+        269,
+        467,
+        305,
+        437,
+        334,
+        400,
+        165,
+        561,
+        99,
+        627,
+        168,
+        564,
+        200,
+        530,
+        0,
+        726,
+        136,
+        598,
+        372,
+        231,
+        495,
+        167,
+        563,
+        306,
+        438,
+        302,
+        434,
+        266,
+        464,
+        198,
+        528,
+        134,
+        596,
+        301,
+        433,
+        365,
+        303,
+        435,
+        100,
+        628,
+        166,
+        562,
+        300,
+        432,
+        330,
+        396,
+        304,
+        436,
+        232,
+        496,
+        135,
+        597,
+        101,
+        629,
+        268,
+        466,
+        236,
+        500,
+        367,
+        235,
+        499,
+        366,
+        102,
+        630,
+        340,
+        406,
+        267,
+        465,
+        335,
+        401,
+        339,
+        405,
+        201,
+        531,
+        233,
+        497,
+        272,
+        470,
+        363,
+        199,
+        529,
+        132,
+        594,
+        332,
+        398,
+        238,
+        502,
+        67,
+        661,
+        533,
+        203,
+        270,
+        468,
+        369,
+        33,
+        693,
+        337,
+        403,
+        169,
+        565,
+        371,
+        264,
+        462,
+        298,
+        430,
+        374,
+        171,
+        567,
+        205,
+        535,
+        69,
+        663,
+        35,
+        695,
+        307,
+        439,
+        1,
+        727,
+        137,
+        599,
+        341,
+        407,
+        103,
+        631,
+        239,
+        503,
+        273,
+        471,
+        206,
+        536,
+        172,
+        568,
+        70,
+        664,
+        138,
+        600,
+        308,
+        440,
+        2,
+        728,
+        104,
+        632,
+        36,
+        696,
+        240,
+        504,
+        274,
+        472,
+        207,
+        537,
+        139,
+        601,
+        71,
+        665,
+        173,
+        569,
+        3,
+        729,
+        241,
+        505,
+        105,
+        633,
+        275,
+        473,
+        37,
+        697,
+        342,
+        408,
+        375,
+        208,
+        538,
+        4,
+        730,
+        140,
+        602,
+        242,
+        506,
+        174,
+        570,
+        72,
+        666,
+        106,
+        634,
+        38,
+        698,
+        309,
+        441,
+        5,
+        731,
+        141,
+        603,
+        209,
+        539,
+        175,
+        571,
+        73,
+        667,
+        107,
+        635,
+        39,
+        699,
+        276,
+        474,
+        6,
+        732,
+        142,
+        604,
+        176,
+        572,
+        40,
+        700,
+        74,
+        668,
+        108,
+        636,
+        243,
+        507,
+        7,
+        733,
+        143,
+        605,
+        41,
+        701
+      ],
+      "warning": "Model-relative score mass, not empirically calibrated coverage"
+    },
+    "top90": {
+      "mass_fraction": 0.9,
+      "cell_count": 310,
+      "area_km2": 223.97,
+      "candidate_indices": [
+        370,
+        297,
+        429,
+        170,
+        566,
+        34,
+        694,
+        271,
+        469,
+        373,
+        66,
+        660,
+        336,
+        402,
+        234,
+        498,
+        338,
+        404,
+        237,
+        501,
+        204,
+        534,
+        265,
+        463,
+        202,
+        532,
+        331,
+        397,
+        364,
+        333,
+        399,
+        368,
+        133,
+        595,
+        68,
+        662,
+        299,
+        431,
+        269,
+        467,
+        305,
+        437,
+        334,
+        400,
+        165,
+        561,
+        99,
+        627,
+        168,
+        564,
+        200,
+        530,
+        0,
+        726,
+        136,
+        598,
+        372,
+        231,
+        495,
+        167,
+        563,
+        306,
+        438,
+        302,
+        434,
+        266,
+        464,
+        198,
+        528,
+        134,
+        596,
+        301,
+        433,
+        365,
+        303,
+        435,
+        100,
+        628,
+        166,
+        562,
+        300,
+        432,
+        330,
+        396,
+        304,
+        436,
+        232,
+        496,
+        135,
+        597,
+        101,
+        629,
+        268,
+        466,
+        236,
+        500,
+        367,
+        235,
+        499,
+        366,
+        102,
+        630,
+        340,
+        406,
+        267,
+        465,
+        335,
+        401,
+        339,
+        405,
+        201,
+        531,
+        233,
+        497,
+        272,
+        470,
+        363,
+        199,
+        529,
+        132,
+        594,
+        332,
+        398,
+        238,
+        502,
+        67,
+        661,
+        533,
+        203,
+        270,
+        468,
+        369,
+        33,
+        693,
+        337,
+        403,
+        169,
+        565,
+        371,
+        264,
+        462,
+        298,
+        430,
+        374,
+        171,
+        567,
+        205,
+        535,
+        69,
+        663,
+        35,
+        695,
+        307,
+        439,
+        1,
+        727,
+        137,
+        599,
+        341,
+        407,
+        103,
+        631,
+        239,
+        503,
+        273,
+        471,
+        206,
+        536,
+        172,
+        568,
+        70,
+        664,
+        138,
+        600,
+        308,
+        440,
+        2,
+        728,
+        104,
+        632,
+        36,
+        696,
+        240,
+        504,
+        274,
+        472,
+        207,
+        537,
+        139,
+        601,
+        71,
+        665,
+        173,
+        569,
+        3,
+        729,
+        241,
+        505,
+        105,
+        633,
+        275,
+        473,
+        37,
+        697,
+        342,
+        408,
+        375,
+        208,
+        538,
+        4,
+        730,
+        140,
+        602,
+        242,
+        506,
+        174,
+        570,
+        72,
+        666,
+        106,
+        634,
+        38,
+        698,
+        309,
+        441,
+        5,
+        731,
+        141,
+        603,
+        209,
+        539,
+        175,
+        571,
+        73,
+        667,
+        107,
+        635,
+        39,
+        699,
+        276,
+        474,
+        6,
+        732,
+        142,
+        604,
+        176,
+        572,
+        40,
+        700,
+        74,
+        668,
+        108,
+        636,
+        243,
+        507,
+        7,
+        733,
+        143,
+        605,
+        41,
+        701,
+        109,
+        637,
+        75,
+        669,
+        8,
+        734,
+        42,
+        702,
+        110,
+        638,
+        76,
+        670,
+        310,
+        442,
+        210,
+        540,
+        343,
+        409,
+        376,
+        43,
+        703,
+        9,
+        735,
+        77,
+        671,
+        277,
+        475,
+        177,
+        573,
+        44,
+        704,
+        11,
+        737,
+        10,
+        736,
+        144,
+        606,
+        244,
+        508,
+        111,
+        639,
+        12,
+        738,
+        78,
+        672,
+        211,
+        541,
+        45,
+        705
+      ],
+      "warning": "Model-relative score mass, not empirically calibrated coverage"
+    }
+  },
+  "grid": {
+    "cell_m": 850,
+    "nx": 33,
+    "ny": 23,
+    "nodes": 759,
+    "margin_km": 9,
+    "projection": "local equirectangular, incident-scale only"
+  },
+  "weather_summary": {
+    "wind_east_mps": 7.200000000000001,
+    "wind_north_mps": 1.3226185430791415e-15,
+    "wind_speed_mps": 7.200000000000001,
+    "wind_to_deg": 89.99999999999999,
+    "n_hours": 10,
+    "mean_relative_humidity": 22.0,
+    "approximation": "vector-mean stationary wind across early observation window"
+  },
+  "graph_summary": {
+    "nodes": 759,
+    "directed_edges": 5740,
+    "wind_used": true,
+    "elevation_coverage": 0.0,
+    "fuel_coverage": 0.0,
+    "params": {
+      "base_speed_mps": 0.4,
+      "wind_gain": 0.9,
+      "slope_gain": 1.5,
+      "use_fuel": true,
+      "wind_direction_offset_deg": 0.0,
+      "min_speed_mps": 0.04,
+      "max_speed_mps": 3.5
+    }
+  },
+  "ensemble_count": 5,
+  "scenario_peak_cells": [
+    331,
+    0,
+    269,
+    495,
+    231
+  ],
+  "options": {
+    "cell_m": 850,
+    "margin_km": 9,
+    "max_observation_hours": 10.0,
+    "max_clusters": 10,
+    "max_grid_cells": 12000,
+    "ignition_lookback_hours": 12.0,
+    "ignition_step_minutes": 30,
+    "observation_early_grace_hours": 2.0,
+    "observation_late_grace_hours": 0.25,
+    "early_penalty_multiplier": 0.08,
+    "assumed_detection_delay_hours": 0.0,
+    "score_temperature": 0.9,
+    "ensemble": true,
+    "base_speed_mps": 0.4
+  },
+  "warnings": [
+    "Elevation covariate mostly missing: terrain is neutral",
+    "Historical vegetation covariate mostly missing: fuel is neutral",
+    "Normalised model score is NOT a calibrated ignition probability; do not infer legal cause"
+  ],
+  "research_notes": {
+    "objective": "one-sided arrival consistency plus weak delayed-observation penalty",
+    "interpretation": "hypothesis-ranked origin region; not physical simulator or causal attribution"
+  }
+}

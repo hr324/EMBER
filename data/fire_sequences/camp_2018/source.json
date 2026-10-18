@@ -1,0 +1,6 @@
+{
+  "incident": "camp_2018",
+  "source": "https://www.fire.ca.gov/incidents/2018/11/8/camp-fire",
+  "bounding_box": "-121.85470000000001,39.513400000000004,-121.0147,40.1134",
+  "note": "AOI is for archive retrieval only; never used as model features or labels."
+}

@@ -1,0 +1,53 @@
+{
+  "reference_type": "SYNTHETIC - demonstration only",
+  "evaluation": {
+    "fire_id": "SYNTHETIC_TOY_FIRE",
+    "model_error_km": 0.799,
+    "centroid_baseline_error_km": 2.328,
+    "improvement_over_centroid_km": 1.529,
+    "truth_in_candidate_grid": true,
+    "truth_nearest_grid_cell_distance_km": 0.365,
+    "regions": {
+      "top80": {
+        "contains_label_cell": true,
+        "area_km2": 188.57,
+        "mass_fraction": 0.8,
+        "not_calibrated": true
+      },
+      "top90": {
+        "contains_label_cell": true,
+        "area_km2": 223.97,
+        "mass_fraction": 0.9,
+        "not_calibrated": true
+      }
+    },
+    "label_source": "SYNTHETIC_GENERATOR_ONLY",
+    "caution": "Single-case retrospective evaluation is not evidence of generalised accuracy"
+  },
+  "ablations": [
+    {
+      "variant": "satellite",
+      "model_error_km": 8.008,
+      "centroid_baseline_error_km": 2.328,
+      "improvement_over_centroid_km": -5.68,
+      "elevation_coverage": 0.0,
+      "fuel_coverage": 0.0
+    },
+    {
+      "variant": "wind",
+      "model_error_km": 0.799,
+      "centroid_baseline_error_km": 2.328,
+      "improvement_over_centroid_km": 1.529,
+      "elevation_coverage": 0.0,
+      "fuel_coverage": 0.0
+    },
+    {
+      "variant": "fusion",
+      "model_error_km": 0.799,
+      "centroid_baseline_error_km": 2.328,
+      "improvement_over_centroid_km": 1.529,
+      "elevation_coverage": 0.0,
+      "fuel_coverage": 0.0
+    }
+  ]
+}

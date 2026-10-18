@@ -1,0 +1,6 @@
+{
+  "incident": "dixie_2021",
+  "source": "https://www.fire.ca.gov/incidents/2021/7/13/dixie-fire",
+  "bounding_box": "-121.789439,39.511306,-120.98943899999999,40.231306",
+  "note": "AOI is for archive retrieval only; never used as model features or labels."
+}

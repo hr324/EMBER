@@ -1,0 +1,1 @@
+**SYNTHETIC, NOT HISTORICAL.** All observations, weather, infrastructure and lightning in this directory were fabricated for software demonstration and unit tests. Do not report toy evaluation as real validation.

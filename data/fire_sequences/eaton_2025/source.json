@@ -1,0 +1,6 @@
+{
+  "incident": "eaton_2025",
+  "source": "https://www.fire.ca.gov/incidents/2025/1/7/eaton-fire",
+  "bounding_box": "-118.22915499999999,34.083483,-117.909155,34.323482999999996",
+  "note": "AOI is for archive retrieval only; never used as model features or labels."
+}

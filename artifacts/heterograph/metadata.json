@@ -1,0 +1,13 @@
+{
+  "inference_model": "directed_grid_reverse_dijkstra_asymmetric_arrival_v1",
+  "typed_edges": [
+    "NEAR_LIGHTNING",
+    "NEAR_POWERLINE",
+    "OBSERVED_AT",
+    "PROPAGATES_TO"
+  ],
+  "infrastructure_is_explanatory_not_part_of_origin_ranking": true,
+  "graph_is_nominal_parameter_snapshot": true,
+  "selected_top_ranked": 50,
+  "data_provenance": "See separate CLI manifest and individual input datasets"
+}

@@ -1,0 +1,6 @@
+{
+  "incident": "palisades_2025",
+  "source": "https://www.fire.ca.gov/incidents/2025/1/7/palisades-fire",
+  "bounding_box": "-118.73452999999999,33.94022,-118.35453,34.20022",
+  "note": "AOI is for archive retrieval only; never used as model features or labels."
+}

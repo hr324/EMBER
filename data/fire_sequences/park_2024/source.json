@@ -1,0 +1,6 @@
+{
+  "incident": "park_2024",
+  "source": "https://www.fire.ca.gov/incidents/2024/7/24/park-fire",
+  "bounding_box": "-122.14168,39.4589,-121.38168,40.0989",
+  "note": "AOI is for archive retrieval only; never used as model features or labels."
+}

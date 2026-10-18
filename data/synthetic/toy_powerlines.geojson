@@ -1,0 +1,24 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "NAME": "FICTIONAL demonstration line"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -121.535,
+            39.839999999999996
+          ],
+          [
+            -121.50999999999999,
+            39.89
+          ]
+        ]
+      }
+    }
+  ]
+}

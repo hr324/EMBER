@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EMBER | Wildfire Forensics</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<div class="app">
+  <header class="header">
+    <div class="brand"><div class="brand-icon">◈</div><div><div class="brand-name">EMBER<span> / FORENSICS</span></div><div class="brand-sub">INVERSE WILDFIRE ORIGIN RECONSTRUCTION</div></div></div>
+    <div class="header-right"><span id="dataBadge" class="status-badge">DATA NOT LOADED</span><span id="machineBadge" class="machine">ENGINE · CONNECTING</span></div>
+  </header>
+  <section class="intro">
+    <div class="eyebrow">RESEARCH PROTOTYPE <span class="divider-dot">◆</span> 01 / RECONSTRUCTION</div>
+    <div class="heading-line"><div><h1>Where did the fire <em>begin?</em></h1><p>Work backwards from satellite detections through a wind-aware propagation graph. Explore hypotheses without mistaking proximity for causality.</p></div><button id="runBtn" class="run-button">↻ <span>RUN INFERENCE</span></button></div>
+  </section>
+  <section class="workbench">
+    <div class="map-panel">
+      <div class="panel-top"><div><span class="panel-index">01</span> <strong>ORIGIN PLAUSIBILITY</strong><span class="panel-sub">SPATIAL RECONSTRUCTION / EPSG:4326 DISPLAY</span></div><div class="map-actions"><button id="resetView" title="Reset viewport">⊡ FIT</button><button id="mapMode" title="Switch between OpenStreetMap and offline coordinate grid" disabled>MAP LOADING</button><button id="togglePerimeter" title="Toggle optional perimeters">PERIMETER</button></div></div>
+      <div id="mapWrap" class="map-wrap"><canvas id="mapCanvas" aria-label="Interactive coordinate-map of inferred origin and time-ordered hotspots"></canvas><div id="leafletMap" aria-label="Geographic basemap with wildfire observation overlays"></div><div id="windBadge" class="wind-badge" hidden></div><div class="map-overlay" id="mapOverlay">WAITING FOR INFERENCE</div><div class="map-legend"><div><i class="legend-dot heat"></i> Candidate ranking</div><div><i class="legend-dot satellite"></i> Observed hotspot</div><div><i class="legend-dot inferred"></i> Top inferred cell</div><div><i class="legend-dot baseline"></i> Earliest centroid</div></div><div class="map-hint" id="mapHint">DRAG TO PAN · SCROLL TO ZOOM · HOVER FOR CELL</div><div id="mapTooltip" class="tooltip"></div></div>
+      <div class="timeline"><div class="timeline-row"><span class="eyebrow">THERMAL DETECTION REPLAY</span><span id="timeLabel" class="time-label">—</span></div><div class="timeline-controls"><button id="playBtn" title="Animate time">▶</button><input id="timeSlider" type="range" min="0" max="100" value="100"><span id="observationCount">0 points</span></div><div class="timeline-endpoints"><span id="timeStart">FIRST PASS</span><span id="timeEnd">LATEST PASS</span></div></div>
+    </div>
+    <aside class="sidebar">
+      <div class="section-head"><span class="panel-index">02</span><strong>INFERENCE CONTROL</strong></div>
+      <label for="variant">MODEL VARIANT</label><select id="variant"><option value="fusion">Wind + available terrain/fuel</option><option value="wind">Wind-aware graph</option><option value="satellite">Isotropic satellite baseline</option></select>
+      <div class="control-row"><div><label for="cell">GRID RESOLUTION</label><select id="cell"><option value="650">650 m</option><option value="850" selected>850 m</option><option value="1200">1,200 m</option></select></div><div><label for="margin">SEARCH MARGIN</label><select id="margin"><option value="5">5 km</option><option value="9" selected>9 km</option><option value="15">15 km</option></select></div></div>
+      <label class="checkbox-row"><input id="ensemble" type="checkbox" checked><span>5-scenario parameter ensemble</span></label>
+      <div class="hairline"></div>
+      <div class="section-head"><span class="panel-index">03</span><strong>RECONSTRUCTION</strong></div>
+      <div class="stat-label">HIGHEST-RANKED CANDIDATE</div><div id="coordinates" class="coordinates">—</div><div id="ignitionTime" class="sub-value">Run an inference to begin</div>
+      <div class="metrics"><div><div id="area80" class="metric-number">—</div><div class="metric-label">TOP 80% MASS AREA<br>km² · uncalibrated</div></div><div><div id="numberCells" class="metric-number">—</div><div class="metric-label">GRAPH CELLS<br>directed lattice</div></div></div>
+      <div class="hairline"></div><div class="section-head"><span class="panel-index">04</span><strong>EVIDENCE SUMMARY</strong></div>
+      <div id="evidence" class="evidence"><div class="empty-content">Evidence links appear after inference. Infrastructure and lightning never alter the primary ranking.</div></div>
+    </aside>
+  </section>
+  <section class="bottom-grid">
+    <article class="bottom-card"><div class="section-head"><span class="panel-index">05</span><strong>OBSERVATION QUALITY</strong></div><div id="gateText" class="bottom-body">Waiting for satellite observations.</div></article>
+    <article class="bottom-card"><div class="section-head"><span class="panel-index">06</span><strong>METHOD & CAUTIONS</strong></div><div id="methodText" class="bottom-body">Reverse directed shortest paths; asymmetric observation-time constraints; score-mass ensemble.</div></article>
+    <article class="bottom-card"><div class="section-head"><span class="panel-index">07</span><strong>EXECUTION PROVENANCE</strong></div><div id="provenance" class="bottom-body">Waiting for IBM LinuxONE or local backend.</div></article>
+  </section>
+  <footer><span>EMBER / WILDFIRE FORENSICS · IBM Z DATATHON 2026</span><span>NOT FOR EMERGENCY USE OR CAUSAL / LEGAL ATTRIBUTION</span></footer>
+</div>
+<script src="/static/app.js"></script></body></html>

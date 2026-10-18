@@ -55,22 +55,24 @@ def _get(url: str, tries: int = 5) -> bytes:
     raise RuntimeError(url)
 
 
-def cached(name: str, url: str) -> dict:
+def cached(name: str, url: str, refresh: bool = False) -> dict:
     CACHE.mkdir(parents=True, exist_ok=True)
     p = CACHE / name
-    if not p.exists():
+    if refresh or not p.exists():
         p.write_bytes(_get(url))
         time.sleep(0.7)
     return json.loads(p.read_bytes())
 
 
-def events() -> pd.DataFrame:
+def events(years=YEARS, refresh_years=()) -> pd.DataFrame:
+    """(event, zone) rows; ``refresh_years`` are re-downloaded (the current year is still changing)."""
     rows = []
     for wfo in WFOS:
-        for y in YEARS:
+        for y in years:
             for sig in PRODUCTS:
                 d = cached(f'events_{wfo}_{y}_FW{sig}.json',
-                           f'{IEM}/json/vtec_events_bywfo.py?wfo={wfo}&year={y}&phenomena=FW&significance={sig}')
+                           f'{IEM}/json/vtec_events_bywfo.py?wfo={wfo}&year={y}&phenomena=FW&significance={sig}',
+                           refresh=y in refresh_years)
                 for r in d.get('events', []):
                     rows.append(dict(wfo=wfo, year=y, sig=sig, eventid=r['eventid'], ugc=r['ugc'],
                                      product_issued=r['product_issued'], issue=r['issue'],

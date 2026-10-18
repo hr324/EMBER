@@ -180,13 +180,14 @@ def evaluate_frame(df: pd.DataFrame) -> dict:
 
 
 def weather_table_extended() -> pd.DataFrame:
-    """Rolling weather features from the original archive plus the 2025-26 extension."""
+    """Rolling weather features from the original archive plus the 2025-26 and live extensions."""
     base = pd.read_csv(config.PROCESSED_DIR / 'weather_daily.csv')
-    ext_path = config.PROCESSED_DIR / 'weather_daily_ext.csv'
-    if ext_path.exists():
-        ext = pd.read_csv(ext_path)
-        base = pd.concat([base, ext[~ext.set_index(['point_id', 'date']).index.isin(
-            base.set_index(['point_id', 'date']).index)]], ignore_index=True)
+    for name in ('weather_daily_ext.csv', 'weather_daily_live.csv'):
+        ext_path = config.PROCESSED_DIR / name
+        if ext_path.exists():
+            ext = pd.read_csv(ext_path)
+            base = pd.concat([base, ext[~ext.set_index(['point_id', 'date']).index.isin(
+                base.set_index(['point_id', 'date']).index)]], ignore_index=True)
     tmp = config.PROCESSED_DIR / '_weather_combined.csv'
     base.sort_values(['point_id', 'date']).to_csv(tmp, index=False)
     t = features.weather_table(tmp)

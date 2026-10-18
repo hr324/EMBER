@@ -20,4 +20,3 @@ data/cache/
 # Claude Code personal settings
 .claude/settings.local.json
 data/processed/forecasting/*.csv
-forecasting/outputs/models.pkl

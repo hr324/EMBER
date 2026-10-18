@@ -124,6 +124,27 @@ The headline model's top 8 cells contained 18 of them; the climatology's contain
 climatology, so neither model flagged it.** Present it as an honest example of the
 forecast's limits, not as a hit.
 
+## Audits and independent test
+
+**Audit** ([outputs/AUDIT.md](outputs/AUDIT.md), from `python3 -m forecasting.evaluate`):
+
+- **Reproducibility.** All reported numbers recompute from the saved predictions. All splits re-scored from the saved models match the holdout scores. `all_predictions.csv.gz` holds every split and model.
+- **Timestamp audit.** All 41,680 rows have weather exactly 7 days old and fire history ending the day before. 0 violations.
+- **Equal budget.** Given the same 449 most-confident calls, the weather model hits 83.3% and climatology 82.4% (+0.9 pt, 95% CI −3.5 to +2.4). **The "83% when confident" figure is mostly a hotspot effect:** those calls come from 14 cells, 88% from the 10 busiest, and 77% fall in June–September.
+- **Seasons.** No difference in summer. A possible edge in winter and spring (+9.5 and +3.9 pt), but the CIs include zero.
+- **Confusion matrices.** Saved for top-8 per week, score ≥ 0.5 and score ≥ 0.7.
+
+**Independent test on new years** ([outputs/EXTERNAL_TEST.md](outputs/EXTERNAL_TEST.md); rules pre-registered in [PREREG_2025.md](PREREG_2025.md) before any score was computed). Frozen models scored on the live NIFC WFIGS fire feed. WFIGS agrees closely with FPA-FOD for 2022–2024 (kappa 0.90–0.96).
+
+| Test | Weather model | Climatology | Difference (95% CI) |
+|---|---|---|---|
+| 2025, 51 weeks, 1,563 fires | **40.1%** | 39.3% | +0.8 pt [−0.4, +3.1] |
+| 2026 Jan–Sep, 39 weeks, 778 fires | 38.4% | 38.2% | +0.3 pt [−2.8, +3.1] |
+
+- **The skill carries over to unseen years:** about 4× random.
+- **The weather model still does not beat climatology.**
+- **Capture is about 5 points lower than in 2023–2024.** That's more than the ~1 point explained by switching to WFIGS. 2025 had more fire cell-weeks (19.4% vs 16.5%).
+
 Development note: the no-weather models (A, B, D0, E0) were run once on the holdout during a
 pipeline dry run before the weather download finished. No setting was changed afterwards.
 Configurations are chosen only on 2021–2022.

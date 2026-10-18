@@ -11,7 +11,8 @@ As of 18 October 2026 · branch `rayan` · code in `forecasting/`
 EMBER has a working weekly wildfire-ignition forecast, tested on real data.
 
 - **Headline:** on 2023–2024, which the model never saw in training, the 10% of cells it ranked highest each week held **46.8% of the next week's reported fires**, 4.7× better than random.
-- **Confidence:** when the model was highly confident (risk score ≥ 0.7), a fire was reported in that cell within the week **83% of the time**.
+- **Confidence:** when the model was highly confident (risk score ≥ 0.7), a fire was reported in that cell within the week **83% of the time**. **But** given the same number of calls, the seasonal baseline hits 82.4%. Those calls come from 14 habitual hotspot cells, mostly in summer (see `outputs/AUDIT.md`).
+- **Independent test:** pre-registered, frozen models, scored on the live WFIGS fire feed. 2025: **40.1%** of fires in the top 10% of cells vs 39.3% for the baseline, +0.8 pt, 95% CI −0.4 to +3.1. 2026 to date: +0.3 pt. The ~4× skill carries over to new years; weather still adds nothing measurable (see `outputs/EXTERNAL_TEST.md`).
 - **The catch:** nearly all of that skill comes from *where and when fires usually happen*. Adding weather gave **+1.1 points** over a simple seasonal baseline, **95% CI −0.4 to +3.0**. That is not a measurable improvement.
 - **Biggest finding for the expansion:** **0.5% of fires (62 of 11,384) caused 98% of the area burned** in the region from 2015 to 2024. Predicting *which* fires blow up is a different problem from predicting *where* fires start, and it is probably where weather matters.
 - **Proposal:** two tracks. Track 1 sharpens ignition prediction with inputs available in real time: same-day weather and Red Flag Warnings, lightning, human activity. Track 2 builds a large-fire ("freak event") model.

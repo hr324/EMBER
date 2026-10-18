@@ -124,6 +124,15 @@ The headline model's top 8 cells contained 18 of them; the climatology's contain
 climatology, so neither model flagged it.** Present it as an honest example of the
 forecast's limits, not as a hit.
 
+## Overnight expansion (18 Oct 2026)
+
+See **[outputs/OVERNIGHT_RESULTS.md](outputs/OVERNIGHT_RESULTS.md)**.
+- **Headline:** in 2025, 235 of 408 weekly top-8 alerts (57.6%) were followed by a reported wildfire. The seasonal baseline at the same budget managed 54.7%: +2.9 pt, 95% CI [−0.5, +6.0], so no measurable advantage.
+- **New signals:** six families tested (better-timed weather, activity anomalies, holidays, climatology-offset model, gridMET fuel dryness, Red Flag Warnings). None improved the alerts measurably.
+- **New tools:**
+  - `python3 -m forecasting.predict --date YYYY-MM-DD` forecasts any Monday from live sources.
+  - A live forecast for 19 Oct 2026 is in `outputs/live/`.
+
 ## Audits and independent test
 
 **Audit** ([outputs/AUDIT.md](outputs/AUDIT.md), from `python3 -m forecasting.evaluate`):

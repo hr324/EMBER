@@ -1,0 +1,68 @@
+{
+  "generated": "2026-10-18",
+  "branch": "rayan",
+  "headline": {
+    "statement": "Of the 8 areas (of 80, ~25 km) EMBER flagged each week in 2025, 57.6% saw at least one newly reported wildfire within 7 days.",
+    "test_period": "2025 (51 Monday-issued weeks), labels from the NIFC WFIGS live feed; model frozen since training on 2015-2020",
+    "alerts": 408,
+    "hits": 235,
+    "success_rate": 0.576,
+    "baseline_same_budget": {
+      "model": "seasonal/location climatology",
+      "hits": 223,
+      "success_rate": 0.5466
+    },
+    "difference_pt": 2.9,
+    "ci95_pt": [
+      -0.5,
+      6.0
+    ],
+    "verdict": "no measurable advantage established (95% CI includes zero)",
+    "fires_in_alerted_areas": {
+      "captured": 627.0,
+      "of": 1563,
+      "share": 0.4012,
+      "baseline_share": 0.3928
+    },
+    "fire_cellweek_recall": 0.2975,
+    "base_rate": 0.1936,
+    "confusion": {
+      "TP": 235,
+      "FP": 173,
+      "FN": 555,
+      "TN": 3117
+    },
+    "caveats": [
+      "2025 was previously used once for this frozen model (top-10% capture pre-registered as primary); the alert hit rate is a secondary measure of that same frozen test",
+      "~25 km areas, one-week horizon, reported fires only (records miss fires), no exact ignition location or time",
+      "random 8-of-80 selection would be right about 19% of the time in 2025 (base rate)"
+    ]
+  },
+  "overnight_candidate": {
+    "model": "E0+redflag (Red Flag Warnings / Fire Weather Watches)",
+    "chosen_on": "2021-2022 validation",
+    "success_rate": 0.5515,
+    "hits": 225,
+    "vs_baseline_pt": 0.5,
+    "vs_baseline_ci95_pt": [
+      -2.5,
+      3.5
+    ],
+    "vs_matched_control_pt": 0.0,
+    "verdict": "no measurable advantage established"
+  },
+  "original_2023_2024_holdout": {
+    "ember_hits": 436,
+    "alerts": 832,
+    "ember_success": 0.524,
+    "baseline_hits": 423,
+    "baseline_success": 0.5084,
+    "note": "used holdout; unchanged since first scoring"
+  },
+  "live_forecast": {
+    "issue_date": "2026-10-19",
+    "file": "forecasting/outputs/live/forecast_2026-10-19.csv",
+    "score_after": "After about two weeks (late reports settle): python3 -m forecasting.fetch_wfigs --refresh && python3 -m forecasting.predict --date 2026-10-19 --score-outcomes"
+  },
+  "spend": "Free public endpoints only (USFS, NIFC, Open-Meteo, IEM, gridMET/NKN). Account-level Claude billing cannot be verified from inside the session; the user confirmed a Claude Pro login via /status."
+}

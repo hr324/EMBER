@@ -34,14 +34,14 @@ aside{padding:16px;border-left:1px solid var(--line);background:#121d20;overflow
   <button id="prev">&larr;</button><select id="week"></select><button id="next">&rarr;</button>
   <span class="seg"><button id="m-fusion" class="sel">Weather model</button><button id="m-baseline">Seasonal baseline</button></span>
   <button id="reveal">Reveal observed fires</button>
-  <button id="demo">Park Fire week</button>
+  <button id="demo">Demo week</button>
 </div>
 <div id="wrap">
   <div id="map"></div>
   <aside>
     <div class="card"><div class="lbl">Issue date &rarr; window</div><div id="when" class="stat" style="font-size:18px">&mdash;</div><div class="note" id="cutoff"></div></div>
     <div class="card" id="weekcard"><div class="lbl">This week (after reveal)</div><div id="wk" class="note">Forecast only. Outcomes hidden.</div></div>
-    <div class="card"><div class="lbl">Whole 2023&ndash;2024 holdout</div><div id="hold" class="note"></div></div>
+    <div class="card"><div class="lbl" id="period">Whole 2023&ndash;2024 holdout</div><div id="hold" class="note"></div></div>
     <div class="card legend"><div class="lbl">Weekly rank of cell</div>
       <div><i style="background:#b2182b"></i>Top 10% (8 cells)</div>
       <div><i style="background:#ef8a62"></i>Top 10&ndash;25%</div>
@@ -99,7 +99,10 @@ let h=`Fires captured in each week's top ${S.top_n} cells (top 10%), all ${S.wee
   `<b>${S.fusion}</b>: <span class="stat" style="font-size:20px">${pct(S.fusion_top10)}</span><br>`+
   `<b>${S.baseline}</b>: <span class="stat" style="font-size:20px">${pct(S.baseline_top10)}</span>`;
 if(S.diff)h+=`<br>Difference ${S.diff.diff>=0?'+':''}${(100*S.diff.diff).toFixed(1)} pts, 95% CI [${(100*S.diff.ci95[0]).toFixed(1)}, ${(100*S.diff.ci95[1]).toFixed(1)}] (month-block bootstrap). Random ranking would capture about 10%.`;
+if(S.precision)h+=`<br><br>Alerts followed by a reported fire (8 per week): <b>${S.fusion}</b> ${S.precision.fusion_hits}/${S.precision.alerts} (${pct(S.precision.fusion)}), <b>${S.baseline}</b> ${S.precision.baseline_hits}/${S.precision.alerts} (${pct(S.precision.baseline)}); difference ${(100*S.precision.diff).toFixed(1)} pts, 95% CI [${(100*S.precision.ci95[0]).toFixed(1)}, ${(100*S.precision.ci95[1]).toFixed(1)}].`;
 document.querySelector('#hold').innerHTML=h;
+document.querySelector('#period').textContent=S.period_label||'Whole 2023\u20132024 holdout';
+document.querySelector('#demo').textContent=S.demo_label||'Park Fire week';
 document.querySelector('#prev').onclick=()=>{wi=Math.max(0,wi-1);revealed=false;syncReveal();render()};
 document.querySelector('#next').onclick=()=>{wi=Math.min(weeks.length-1,wi+1);revealed=false;syncReveal();render()};
 sel.onchange=()=>{wi=+sel.value;revealed=false;syncReveal();render()};

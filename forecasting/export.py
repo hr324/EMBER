@@ -104,5 +104,51 @@ def main() -> None:
           f'{len(ev)} observed fires in window; {len(weeks)} holdout weeks in HTML')
 
 
+def export_2025() -> None:
+    """Map of the 2025 test: EMBER (frozen E) vs climatology, outcomes revealed only on demand.
+
+    Demo-week rule: the 2025 week with the most WFIGS-reported fires in the lattice
+    (chosen from outcomes, never from model scores).
+    """
+    p = pd.read_csv(config.OUTPUT_DIR / 'candidate_2025_predictions.csv')
+    ext = json.loads((config.OUTPUT_DIR / 'external_test.json').read_text())['test']['2025_primary']
+    cand = json.loads((config.OUTPUT_DIR / 'candidate_2025.json').read_text())
+    fusion = HEADLINE_2025
+    wf = pd.read_csv(config.PROCESSED_DIR / 'wfigs_fires.csv')
+    grid = Grid()
+    top_n = max(1, round(0.10 * len(grid.cells)))
+    weeks = {}
+    for d, g in p.groupby('forecast_date'):
+        end = (pd.Timestamp(d) + pd.Timedelta(days=6)).date().isoformat()
+        fw = wf[(wf['discovery_date'] >= d) & (wf['discovery_date'] <= end)]
+        rank = lambda col: g[col].rank(ascending=False, method='first').astype(int)
+        weeks[d] = dict(
+            fusion={c: [round(s, 5), int(r)] for c, s, r in zip(g['cell_id'], g[fusion], rank(fusion))},
+            baseline={c: [round(s, 5), int(r)] for c, s, r in zip(g['cell_id'], g[BASELINE], rank(BASELINE))},
+            fires=[[round(r.latitude, 4), round(r.longitude, 4), r.cell_id,
+                    r.fire_name if isinstance(r.fire_name, str) else '', r.discovery_date] for r in fw.itertuples()])
+    demo = max(weeks, key=lambda d: len(weeks[d]['fires']))
+    comp = [c for c in cand['comparisons'] if c['candidate'] == fusion and c['baseline'] == BASELINE][0]
+    summary = dict(fusion='EMBER (E)', baseline='Seasonal baseline (A)', top_n=top_n, demo=demo,
+                   demo_label=f'Busiest 2025 week ({demo})', period_label='2025 independent test (WFIGS labels)',
+                   fusion_top10=ext['models'][fusion]['top10_capture'], baseline_top10=ext['models'][BASELINE]['top10_capture'],
+                   holdout_events=ext['fires'], weeks=ext['weeks'], diff=ext['E_minus_A_top10'],
+                   precision=dict(alerts=cand['models'][fusion]['alerts'], fusion_hits=cand['models'][fusion]['hits'],
+                                  baseline_hits=cand['models'][BASELINE]['hits'],
+                                  fusion=cand['models'][fusion]['precision'], baseline=cand['models'][BASELINE]['precision'],
+                                  diff=comp['diff'], ci95=comp['ci95']))
+    cells = {c.cell_id: c.polygon_lonlat(2) for c in grid.cells}
+    html = (config.PKG / 'map_template.html').read_text()
+    blob = json.dumps(dict(cells=cells, weeks=weeks, summary=summary)).replace('</', '<\\/')
+    html = html.replace('/*__DATA__*/', 'const DATA=' + blob + ';')
+    html = html.replace('7-day new-ignition risk, held-out backtest', '7-day new-ignition risk, 2025 independent test')
+    (config.OUTPUT_DIR / 'forecast_map_2025.html').write_text(html)
+    print(f'2025 map: {len(weeks)} weeks, demo {demo} ({len(weeks[demo]["fires"])} fires)')
+
+
+HEADLINE_2025 = 'E_gbm_history_weather'
+
+
 if __name__ == '__main__':
-    main()
+    import sys
+    export_2025() if '--2025' in sys.argv else main()

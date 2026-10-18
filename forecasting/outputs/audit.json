@@ -1,0 +1,345 @@
+{
+  "generated_utc": "2026-10-18T03:09:40+00:00",
+  "holdout_weeks": 104,
+  "holdout_cell_weeks": 8320,
+  "holdout_fire_cell_weeks": 1369,
+  "holdout_base_rate": 0.16454326923076923,
+  "reproduce": {
+    "A_climatology": {
+      "max_abs_diff": 0,
+      "recomputed_top10": 0.4562
+    },
+    "B_logit_season_loc": {
+      "max_abs_diff": 0,
+      "recomputed_top10": 0.464
+    },
+    "C_logit_weather": {
+      "max_abs_diff": 0,
+      "recomputed_top10": 0.4628
+    },
+    "D0_gbm_season_loc": {
+      "max_abs_diff": 0,
+      "recomputed_top10": 0.4502
+    },
+    "D_gbm_weather": {
+      "max_abs_diff": 0,
+      "recomputed_top10": 0.4445
+    },
+    "E0_gbm_history": {
+      "max_abs_diff": 0,
+      "recomputed_top10": 0.4624
+    },
+    "E_gbm_history_weather": {
+      "max_abs_diff": 0,
+      "recomputed_top10": 0.4675
+    }
+  },
+  "rescore_max_abs_diff": 4.999928180926538e-07,
+  "all_predictions_rows": 291760,
+  "equal_budget": [
+    {
+      "budget": 276,
+      "budget_share": 0.0332,
+      "A_climatology_hit_rate": 0.8804,
+      "E_gbm_history_weather_hit_rate": 0.8732,
+      "A_climatology_share_of_fire_cell_weeks": 0.1775,
+      "E_gbm_history_weather_share_of_fire_cell_weeks": 0.176,
+      "diff_hit_rate": -0.0072,
+      "ci95": [
+        -0.0476,
+        0.0256
+      ],
+      "p_le_zero": 0.747
+    },
+    {
+      "budget": 449,
+      "budget_share": 0.054,
+      "A_climatology_hit_rate": 0.8241,
+      "E_gbm_history_weather_hit_rate": 0.833,
+      "A_climatology_share_of_fire_cell_weeks": 0.2703,
+      "E_gbm_history_weather_share_of_fire_cell_weeks": 0.2732,
+      "diff_hit_rate": 0.0089,
+      "ci95": [
+        -0.0349,
+        0.024
+      ],
+      "p_le_zero": 0.5805
+    },
+    {
+      "budget": 786,
+      "budget_share": 0.0945,
+      "A_climatology_hit_rate": 0.7087,
+      "E_gbm_history_weather_hit_rate": 0.7188,
+      "A_climatology_share_of_fire_cell_weeks": 0.4069,
+      "E_gbm_history_weather_share_of_fire_cell_weeks": 0.4127,
+      "diff_hit_rate": 0.0102,
+      "ci95": [
+        -0.0175,
+        0.0359
+      ],
+      "p_le_zero": 0.324
+    },
+    {
+      "budget": 832,
+      "budget_share": 0.1,
+      "A_climatology_hit_rate": 0.6923,
+      "E_gbm_history_weather_hit_rate": 0.6995,
+      "A_climatology_share_of_fire_cell_weeks": 0.4207,
+      "E_gbm_history_weather_share_of_fire_cell_weeks": 0.4251,
+      "diff_hit_rate": 0.0072,
+      "ci95": [
+        -0.017,
+        0.0368
+      ],
+      "p_le_zero": 0.275
+    },
+    {
+      "budget": 1664,
+      "budget_share": 0.2,
+      "A_climatology_hit_rate": 0.5117,
+      "E_gbm_history_weather_hit_rate": 0.5168,
+      "A_climatology_share_of_fire_cell_weeks": 0.622,
+      "E_gbm_history_weather_share_of_fire_cell_weeks": 0.6282,
+      "diff_hit_rate": 0.0051,
+      "ci95": [
+        -0.0101,
+        0.015
+      ],
+      "p_le_zero": 0.3615
+    }
+  ],
+  "seasons": [
+    {
+      "season": "Winter (Dec-Feb)",
+      "weeks": 26,
+      "cell_weeks": 2080,
+      "fires": 74,
+      "fire_cell_weeks": 66,
+      "base_rate": 0.0317,
+      "E_top10_capture": 0.4459,
+      "E_top8_hit_rate": 0.1298,
+      "A_top10_capture": 0.3514,
+      "A_top8_hit_rate": 0.0962,
+      "E_top8_expected_by_climatology": 0.1392,
+      "E_top8_excess_hit_rate": -0.0094,
+      "E_minus_A_top10": 0.0946,
+      "E_minus_A_top10_ci95": [
+        -0.0536,
+        0.1613
+      ]
+    },
+    {
+      "season": "Spring (Mar-May)",
+      "weeks": 26,
+      "cell_weeks": 2080,
+      "fires": 457,
+      "fire_cell_weeks": 271,
+      "base_rate": 0.1303,
+      "E_top10_capture": 0.4858,
+      "E_top8_hit_rate": 0.4375,
+      "A_top10_capture": 0.4464,
+      "A_top8_hit_rate": 0.4231,
+      "E_top8_expected_by_climatology": 0.4178,
+      "E_top8_excess_hit_rate": 0.0197,
+      "E_minus_A_top10": 0.0394,
+      "E_minus_A_top10_ci95": [
+        -0.0202,
+        0.0624
+      ]
+    },
+    {
+      "season": "Summer (Jun-Aug)",
+      "weeks": 26,
+      "cell_weeks": 2080,
+      "fires": 1393,
+      "fire_cell_weeks": 635,
+      "base_rate": 0.3053,
+      "E_top10_capture": 0.4523,
+      "E_top8_hit_rate": 0.875,
+      "A_top10_capture": 0.4537,
+      "A_top8_hit_rate": 0.8558,
+      "E_top8_expected_by_climatology": 0.8109,
+      "E_top8_excess_hit_rate": 0.0641,
+      "E_minus_A_top10": -0.0014,
+      "E_minus_A_top10_ci95": [
+        -0.0177,
+        0.0181
+      ]
+    },
+    {
+      "season": "Autumn (Sep-Nov)",
+      "weeks": 26,
+      "cell_weeks": 2080,
+      "fires": 645,
+      "fire_cell_weeks": 397,
+      "base_rate": 0.1909,
+      "E_top10_capture": 0.4899,
+      "E_top8_hit_rate": 0.6538,
+      "A_top10_capture": 0.4806,
+      "A_top8_hit_rate": 0.6587,
+      "E_top8_expected_by_climatology": 0.5902,
+      "E_top8_excess_hit_rate": 0.0636,
+      "E_minus_A_top10": 0.0093,
+      "E_minus_A_top10_ci95": [
+        -0.0249,
+        0.0358
+      ]
+    }
+  ],
+  "confident_calls": {
+    "E_gbm_history_weather": {
+      "threshold": 0.7,
+      "calls": 449,
+      "hit_rate": 0.833,
+      "climatology_expected_rate": 0.7462,
+      "excess_over_climatology": 0.0868,
+      "share_in_jun_sep": 0.7684,
+      "distinct_cells": 14,
+      "share_from_top10_busiest_cells": 0.882
+    },
+    "A_climatology": {
+      "threshold": 0.7,
+      "calls": 276,
+      "hit_rate": 0.8804,
+      "climatology_expected_rate": 0.8418,
+      "excess_over_climatology": 0.0387,
+      "share_in_jun_sep": 0.8188,
+      "distinct_cells": 11,
+      "share_from_top10_busiest_cells": 0.9493
+    }
+  },
+  "confusion": [
+    {
+      "rule": "top 8 cells per week (10%)",
+      "model": "E_gbm_history_weather",
+      "TP": 436,
+      "FP": 396,
+      "FN": 933,
+      "TN": 6555,
+      "precision": 0.524,
+      "recall": 0.3185,
+      "specificity": 0.943,
+      "flagged": 832
+    },
+    {
+      "rule": "top 8 cells per week (10%)",
+      "model": "A_climatology",
+      "TP": 423,
+      "FP": 409,
+      "FN": 946,
+      "TN": 6542,
+      "precision": 0.5084,
+      "recall": 0.309,
+      "specificity": 0.9412,
+      "flagged": 832
+    },
+    {
+      "rule": "score >= 0.5",
+      "model": "E_gbm_history_weather",
+      "TP": 565,
+      "FP": 221,
+      "FN": 804,
+      "TN": 6730,
+      "precision": 0.7188,
+      "recall": 0.4127,
+      "specificity": 0.9682,
+      "flagged": 786
+    },
+    {
+      "rule": "score >= 0.5",
+      "model": "A_climatology",
+      "TP": 492,
+      "FP": 156,
+      "FN": 877,
+      "TN": 6795,
+      "precision": 0.7593,
+      "recall": 0.3594,
+      "specificity": 0.9776,
+      "flagged": 648
+    },
+    {
+      "rule": "score >= 0.7",
+      "model": "E_gbm_history_weather",
+      "TP": 374,
+      "FP": 75,
+      "FN": 995,
+      "TN": 6876,
+      "precision": 0.833,
+      "recall": 0.2732,
+      "specificity": 0.9892,
+      "flagged": 449
+    },
+    {
+      "rule": "score >= 0.7",
+      "model": "A_climatology",
+      "TP": 243,
+      "FP": 33,
+      "FN": 1126,
+      "TN": 6918,
+      "precision": 0.8804,
+      "recall": 0.1775,
+      "specificity": 0.9953,
+      "flagged": 276
+    }
+  ],
+  "timestamp_audit": {
+    "rows": 41680,
+    "weather_gap_days": {
+      "min": 7,
+      "max": 7,
+      "required_min": 7,
+      "violations": 0
+    },
+    "history_gap_days": {
+      "min": 1,
+      "max": 1,
+      "required_min": 1,
+      "violations": 0
+    },
+    "weather_cutoff_equals_latest": true,
+    "windows": {
+      "weather": "trailing 7/14/30/90 days ending at issue_date - 7 (inclusive)",
+      "history": "discoveries in [issue_date - N, issue_date - 1], N in 30/90/365",
+      "season": "day-of-year of window midpoint (known in advance)",
+      "location": "static cell centroid; climatology from training years only"
+    },
+    "weather_features": [
+      "tmax_mean_7",
+      "rhmin_mean_7",
+      "vpd_mean_7",
+      "wind_mean_7",
+      "tmax_mean_14",
+      "rhmin_mean_14",
+      "vpd_mean_14",
+      "wind_mean_14",
+      "tmax_mean_30",
+      "rhmin_mean_30",
+      "vpd_mean_30",
+      "wind_mean_30",
+      "tmean_mean_7",
+      "rhmean_mean_7",
+      "wind_max_7",
+      "tmax_max_7",
+      "precip_sum_7",
+      "precip_sum_30",
+      "precip_sum_90",
+      "et0_sum_30",
+      "sm_mean_7",
+      "dry_days"
+    ],
+    "history_features": [
+      "hist_cell_30",
+      "hist_cell_90",
+      "hist_cell_365",
+      "hist_nbr_30",
+      "hist_nbr_90"
+    ],
+    "excluded_inputs": [
+      "fire_size",
+      "fire_size_class",
+      "cause",
+      "containment date",
+      "any forecast-window data"
+    ]
+  }
+}

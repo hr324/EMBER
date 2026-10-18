@@ -34,6 +34,7 @@ forecast:
 	python3 -m forecasting.models
 	python3 -m forecasting.export
 	python3 -m forecasting.provenance
+	python3 -m forecasting.evaluate
 	python3 -m unittest tests.test_occurrence_forecast
 
 # Serve the precomputed forecast map and read-only API (stdlib only).

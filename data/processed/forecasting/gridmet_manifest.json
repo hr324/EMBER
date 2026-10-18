@@ -1,0 +1,355 @@
+{
+  "source": "http://thredds.northwestknowledge.net:8080/thredds/ncss/grid",
+  "variables": {
+    "erc": {
+      "dataset": "agg_met_erc_1979_CurrentYear_CONUS.nc",
+      "variable": "daily_mean_energy_release_component-g"
+    },
+    "bi": {
+      "dataset": "agg_met_bi_1979_CurrentYear_CONUS.nc",
+      "variable": "daily_mean_burning_index_g"
+    },
+    "fm100": {
+      "dataset": "agg_met_fm100_1979_CurrentYear_CONUS.nc",
+      "variable": "dead_fuel_moisture_100hr"
+    },
+    "fm1000": {
+      "dataset": "agg_met_fm1000_1979_CurrentYear_CONUS.nc",
+      "variable": "dead_fuel_moisture_1000hr"
+    }
+  },
+  "years": [
+    2014,
+    2026
+  ],
+  "last_day": "2026-10-16",
+  "lag_days": 3,
+  "aggregation": "mean of gridMET pixels whose centres fall inside each 25 km cell",
+  "pixels_per_cell": {
+    "min": 35,
+    "max": 45
+  },
+  "rows": 373760,
+  "missing": {
+    "erc": 0,
+    "bi": 0,
+    "fm100": 0,
+    "fm1000": 0
+  },
+  "files": [
+    {
+      "var": "erc",
+      "year": 2014,
+      "sha256": "c46a9e126cde7b0d851244456468e31c2c1d0eb681b738c6fa288f02377916ab",
+      "bytes": 2634460
+    },
+    {
+      "var": "erc",
+      "year": 2015,
+      "sha256": "f10778560035fcde3b4a45fb10fa1e4fa4c0f44542b60611f9d4ff4c5a508482",
+      "bytes": 2634460
+    },
+    {
+      "var": "erc",
+      "year": 2016,
+      "sha256": "615b684e8843a217f4992eb5fed3b4342b94374f6b882843026cf43f11245f73",
+      "bytes": 2641664
+    },
+    {
+      "var": "erc",
+      "year": 2017,
+      "sha256": "22f04285c68e84e3f6934a819946bcb88adf8a6d1af1c2cea62ea2717845e65d",
+      "bytes": 2634460
+    },
+    {
+      "var": "erc",
+      "year": 2018,
+      "sha256": "7f556b16363a781b2507367005029060cb2c507092c672f8c07ba46b0808c03d",
+      "bytes": 2634460
+    },
+    {
+      "var": "erc",
+      "year": 2019,
+      "sha256": "e253b41b06e52fbe79ece43d93384ad44952eee9634968e21f6f5d6f33c6a24e",
+      "bytes": 2634460
+    },
+    {
+      "var": "erc",
+      "year": 2020,
+      "sha256": "644e784519a9597b65a5771f04618c23b16cf70ea8c35ece6c488e9f48df6683",
+      "bytes": 2641664
+    },
+    {
+      "var": "erc",
+      "year": 2021,
+      "sha256": "7979bb99ea9ba79cd44a21112b5516b64c01ce7b591f90f78634ccb173e74c98",
+      "bytes": 2634460
+    },
+    {
+      "var": "erc",
+      "year": 2022,
+      "sha256": "9dbfa615025c08986f3a01cc34d31d91430f9fa467426bad1c631fd74cc2fca6",
+      "bytes": 2634460
+    },
+    {
+      "var": "erc",
+      "year": 2023,
+      "sha256": "0f73a48cc0a74ee448b08afe454423730ecbf99c100308e96e23d7956acbd5da",
+      "bytes": 2634460
+    },
+    {
+      "var": "erc",
+      "year": 2024,
+      "sha256": "7ffc6224fec680729a0423a4b03ef8c885654e6b846291b6fad5f9f6d45935bc",
+      "bytes": 2641664
+    },
+    {
+      "var": "erc",
+      "year": 2025,
+      "sha256": "1a5e3251472a33993a4b5c06024dcbf768b7db9a96f3a9e32b4794925ad65783",
+      "bytes": 2634460
+    },
+    {
+      "var": "erc",
+      "year": 2026,
+      "sha256": "341e99d181af3003a8faece6a9253045b0b3c138c237e49e914ca6472f793159",
+      "bytes": 2086804
+    },
+    {
+      "var": "bi",
+      "year": 2014,
+      "sha256": "aec4a210588afc6bf3ff7a964b9b96da7f2c8b3c12b31c272f51cf732f9ba3b4",
+      "bytes": 2634440
+    },
+    {
+      "var": "bi",
+      "year": 2015,
+      "sha256": "c8f8afd5e59f757dda092a7aee008d92963f9aae2ed595ac6a3c35a77b758d70",
+      "bytes": 2634440
+    },
+    {
+      "var": "bi",
+      "year": 2016,
+      "sha256": "4c71431e436cf1121a5d8820b4a218dc4599beacb2515f8f2c6c124d02133d9b",
+      "bytes": 2641644
+    },
+    {
+      "var": "bi",
+      "year": 2017,
+      "sha256": "b414c9d1961bcf3e836ab6b5543ff61dadfe065b344644fa79aec466dff5f29b",
+      "bytes": 2634440
+    },
+    {
+      "var": "bi",
+      "year": 2018,
+      "sha256": "25a68409492cbe2a4c24ae5d257f5f9a8a7d7550a3098403220b4320137bdeb4",
+      "bytes": 2634440
+    },
+    {
+      "var": "bi",
+      "year": 2019,
+      "sha256": "55b308a8fa86494444b930983c17f8da83a2e5b3619907a117998f6197b59c54",
+      "bytes": 2634440
+    },
+    {
+      "var": "bi",
+      "year": 2020,
+      "sha256": "f4363493539af5b2ff7f79cdbb46596aa595915b170f226d09865995ded37750",
+      "bytes": 2641644
+    },
+    {
+      "var": "bi",
+      "year": 2021,
+      "sha256": "4e60b2002ca9ec5030e66b9ce38aa7d54bae8fc25533226a4dda122fc706bb14",
+      "bytes": 2634440
+    },
+    {
+      "var": "bi",
+      "year": 2022,
+      "sha256": "db3e98cf57b08c6efc4b9e1a15a86a051cf4d2c7e5de27b87072af02abf6ad2e",
+      "bytes": 2634440
+    },
+    {
+      "var": "bi",
+      "year": 2023,
+      "sha256": "3cc7fdbb29fafe149cdc4d31bae0a5746074a2944631d4ab86ff7caa035cbbee",
+      "bytes": 2634440
+    },
+    {
+      "var": "bi",
+      "year": 2024,
+      "sha256": "a326a2e6a06315d4d0049d50b28ec2482a7b005e742098d642f461c972a80681",
+      "bytes": 2641644
+    },
+    {
+      "var": "bi",
+      "year": 2025,
+      "sha256": "7e941e8a70215afcb88119d75e3526ae43fcc2ee5bffe6b06565f899c24bbfea",
+      "bytes": 2634440
+    },
+    {
+      "var": "bi",
+      "year": 2026,
+      "sha256": "80da23001bdc8b6635500d973ccce90695989ba5396b99489ebabfd9a19a18a3",
+      "bytes": 2086784
+    },
+    {
+      "var": "fm100",
+      "year": 2014,
+      "sha256": "048a25fe382689f42217d00d1b5f4b38090d8fb45b4f876f94c67d5655fac1a2",
+      "bytes": 5261736
+    },
+    {
+      "var": "fm100",
+      "year": 2015,
+      "sha256": "9a5d73f1143679188ca877e023d07eb42c4b49c137cac785e5a2c3ea99527d92",
+      "bytes": 5261736
+    },
+    {
+      "var": "fm100",
+      "year": 2016,
+      "sha256": "30b5752fe525aad204a547c6fd9c786bce8b46a7f9653b8f0204458ba3a20169",
+      "bytes": 5276140
+    },
+    {
+      "var": "fm100",
+      "year": 2017,
+      "sha256": "f0baf2fa889aef1d9bf6636698bd015e384de31a92fa580447ec6d07a4fb5c3e",
+      "bytes": 5261736
+    },
+    {
+      "var": "fm100",
+      "year": 2018,
+      "sha256": "45cbf6d4e12db94173dd186e6576a9c0920e2e90c84ae900aa4000f667444180",
+      "bytes": 5261736
+    },
+    {
+      "var": "fm100",
+      "year": 2019,
+      "sha256": "1a86423052a9cf5910fc7a34b4aaa6a84762565ea0125f0e5a8cbb99e596c044",
+      "bytes": 5261736
+    },
+    {
+      "var": "fm100",
+      "year": 2020,
+      "sha256": "7e9f8bf38c98c7399595238b66dd306b011c6bb38f2651b3c845d77387419404",
+      "bytes": 5276140
+    },
+    {
+      "var": "fm100",
+      "year": 2021,
+      "sha256": "c69a2409c8b6600d57e794184eeddda7217ea08ce9a635ae921f2fdf45916781",
+      "bytes": 5261736
+    },
+    {
+      "var": "fm100",
+      "year": 2022,
+      "sha256": "692bc1f3d7f5f077c4960f921a6dbecc24b632b6106e0ff95ee0cceaac3095dd",
+      "bytes": 5261736
+    },
+    {
+      "var": "fm100",
+      "year": 2023,
+      "sha256": "55e2363633b8d03bd42711b62a3b08e780a7ffe3fca7b2f1394daa32f6bb6db3",
+      "bytes": 5261736
+    },
+    {
+      "var": "fm100",
+      "year": 2024,
+      "sha256": "2850ac605332c79e96db64a2643dc95cdf98baa22233d42ca16a766e4522c09f",
+      "bytes": 5276140
+    },
+    {
+      "var": "fm100",
+      "year": 2025,
+      "sha256": "cec3a2c9d6e4b7f34d49fddcbf82df2042078ee4862ac45f54fdbd48e7186c11",
+      "bytes": 5261736
+    },
+    {
+      "var": "fm100",
+      "year": 2026,
+      "sha256": "ebbd4fb60ac83b52b858de0ced59d8256c5c13f71c2c50a1a6328dab0b9c4fcc",
+      "bytes": 4167032
+    },
+    {
+      "var": "fm1000",
+      "year": 2014,
+      "sha256": "8ac3373c95ee2623c4003f2a4d45d6f063ac55c19dfea97e88860065543dcaf0",
+      "bytes": 5261740
+    },
+    {
+      "var": "fm1000",
+      "year": 2015,
+      "sha256": "aa7940c0ad6ae63829cafce51dfad7d47abe88f9e4b9bc15ebbafff5a574cdce",
+      "bytes": 5261740
+    },
+    {
+      "var": "fm1000",
+      "year": 2016,
+      "sha256": "7fc82c54e077626bbf4872c1b3eb8626710bc56610509cf60f6c82603c29353a",
+      "bytes": 5276144
+    },
+    {
+      "var": "fm1000",
+      "year": 2017,
+      "sha256": "19d80f42d9f65eeca725e4519926edd8110b41bd9273739f709ac2fff07c2b2d",
+      "bytes": 5261740
+    },
+    {
+      "var": "fm1000",
+      "year": 2018,
+      "sha256": "fef5bcb8d5a4770bf3d8be2d6b1e1f2bb09c890cf7b73711a7f09146a4ace566",
+      "bytes": 5261740
+    },
+    {
+      "var": "fm1000",
+      "year": 2019,
+      "sha256": "a2bec2f28ebdd2afa0d65f23cf906ed9dc285683ed1ea253b2cf4adba35ab6de",
+      "bytes": 5261740
+    },
+    {
+      "var": "fm1000",
+      "year": 2020,
+      "sha256": "5da9a10f3a03c15136b8bc9c004ab1a2c7bf00597e36e7d254119b3e03c9f348",
+      "bytes": 5276144
+    },
+    {
+      "var": "fm1000",
+      "year": 2021,
+      "sha256": "56fa622c95abf3a5f7992666edcea828b7f5f0d5b70155379f2e95140cb50138",
+      "bytes": 5261740
+    },
+    {
+      "var": "fm1000",
+      "year": 2022,
+      "sha256": "b2161682be1f77cfd77e0b8bb3c6956cf3473806b5e88f02c4cfd80a4be9b076",
+      "bytes": 5261740
+    },
+    {
+      "var": "fm1000",
+      "year": 2023,
+      "sha256": "d117f35b990ec2840909ab4927318d1109b8b0e0cb8468ec0a063b0530fbdcaa",
+      "bytes": 5261740
+    },
+    {
+      "var": "fm1000",
+      "year": 2024,
+      "sha256": "4d1acf60f6b785cc27e718dc13647dc02abe2559d7f19efddf4070cd272fcfd6",
+      "bytes": 5276144
+    },
+    {
+      "var": "fm1000",
+      "year": 2025,
+      "sha256": "762885580d5d402ada21e7adef27671b6fb627f9dc4e4d3cfde6136e575882f3",
+      "bytes": 5261740
+    },
+    {
+      "var": "fm1000",
+      "year": 2026,
+      "sha256": "81f2d1089140d9f759cc3f2a47bfa49d1d5de4927376931ffeda1caf89367197",
+      "bytes": 4167036
+    }
+  ],
+  "built_utc": "2026-10-18T03:41:52+00:00",
+  "limitation": "Archive values are final versions; provisional near-real-time values may have differed."
+}

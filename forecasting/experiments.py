@@ -317,6 +317,29 @@ def exp_gridmet() -> dict:
     return run_family('5. gridMET fuel dryness and fire danger', df, variants, comps, meta)
 
 
+def exp_redflag() -> dict:
+    df = base_frame()
+    r = pd.read_csv(config.PROCESSED_DIR / 'redflag_features.csv', parse_dates=['forecast_date'])
+    df = df.merge(r[['cell_id', 'forecast_date'] + REDFLAG_COLS], on=['cell_id', 'forecast_date'], how='left')
+    assert df[REDFLAG_COLS].notna().all().all()
+    base = BASE_COLS + HISTORY_COLS
+    variants = {'A_climatology': None, 'E0_history_no_weather': base, 'E0+redflag': base + REDFLAG_COLS,
+                'E0+weather(lag7)': base + weather_cols(), 'E0+weather(lag7)+redflag': base + weather_cols() + REDFLAG_COLS}
+    comps = [('E0_history_no_weather', 'E0+redflag'), ('E0+weather(lag7)', 'E0+weather(lag7)+redflag'),
+             ('A_climatology', 'E0+redflag')]
+    s = json.loads((config.PROCESSED_DIR / 'redflag_summary.json').read_text())
+    meta = dict(hypothesis='Red Flag Warnings and Fire Weather Watches already published by Monday 06:00 Pacific '
+                           '(forecaster-identified critical fire weather) mark weeks and cells of elevated ignition risk.',
+                source='IEM NWS VTEC archive (FW.W, FW.A) for offices STO, EKA, REV, MFR, MTR; zone polygons per event.',
+                timing='Zone rows count only if product_issued <= Monday 06:00 America/Los_Angeles; valid window = '
+                       'issue..init_expired (expiry as first issued; later extensions ignored).',
+                coverage=f"{s['rows_touching_lattice']} (event, zone) rows touch the lattice; {len(s['zones_touching'])} zones; "
+                         f"cell-weeks with a warning for the coming week {100 * s['share_cellweeks_rfw_week']:.1f}%, "
+                         f"watch {100 * s['share_cellweeks_fww_week']:.1f}%, warning in past 7 days "
+                         f"{100 * s['share_cellweeks_rfw_past7']:.1f}%.")
+    return run_family('6. Red Flag Warnings / Fire Weather Watches', df, variants, comps, meta)
+
+
 # ---------------------------------------------------------------- climatology-offset model
 
 OFFSET_L2 = (1.0, 10.0, 100.0)
@@ -453,15 +476,22 @@ def exp_offset() -> dict:
 
 
 FAMILIES = {'weather_timing': exp_weather_timing, 'activity': exp_activity, 'holidays': exp_holidays,
-            'offset': exp_offset, 'gridmet': exp_gridmet}
+            'offset': exp_offset, 'gridmet': exp_gridmet, 'redflag': exp_redflag}
 
 
 DECISIONS = {
     '1. Weather timing (diagnostic)': (
-        'REJECT lag-1 weather (no gain even as an upper bound: -0.8 pt vs no weather). The leaking oracle ceiling is '
-        'only +1.2 pt [-0.2, +2.7], so even perfect next-week weather at this scale adds little. Experiment 4 '
-        '(issued forecasts, archive from ~2021 only) is therefore DEPRIORITISED: its maximum plausible gain is below '
-        'what 2 validation years can detect.'),
+        'REJECT lag-1 weather (no gain even as an upper bound: -0.8 pt vs no weather). The leaking oracle ceiling is only +1.2 pt [-0.2, +2.7], so even perfect next-week weather at this scale adds little. Experiment 4 (issued forecasts, archive from ~2021 only) is therefore DEPRIORITISED: its maximum plausible gain is below what 2 validation years can detect.'),
+    '2. Recent activity anomalies': (
+        'REJECT for the alert budget: -0.1 pt [-1.0, +0.8] vs matched control. Small PR-AUC/capture gain (0.521 -> 0.529) noted; kept only inside the offset-model test.'),
+    '3. Holiday weeks': (
+        'REJECT: +0.1 pt [-0.6, +0.7]. Only ~8 July-4 weeks in train+validation; too rare to learn from at this scale.'),
+    '4. Climatology-offset model (dynamic departures only)': (
+        'REJECT: no family moves the weekly top-8 relative to climatology (all-dynamic +0.0 pt [-2.3, +2.6]). Coefficients have sensible signs (drier 1000-h fuel and recent activity raise risk), but the shifts rarely change which 8 cells rank highest.'),
+    '5. gridMET fuel dryness and fire danger': (
+        'REJECT: -0.5 pt alone; -1.7 pt [-3.0, -0.4] when added to lag-7 weather (significantly worse: redundant correlated inputs overfit).'),
+    '6. Red Flag Warnings / Fire Weather Watches': (
+        'CARRY FORWARD as the single candidate: best validation precision of any new variant (48.4%), +0.7 pt [-0.2, +1.6] vs matched control (P<=0 = 0.07). Not significant; tested once on 2025 per PREREG_2025_v2.md.'),
 }
 
 

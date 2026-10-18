@@ -183,7 +183,7 @@
         "p_le_zero": 0.7265
       }
     ],
-    "decision": "PENDING - set after review"
+    "decision": "REJECT for the alert budget: -0.1 pt [-1.0, +0.8] vs matched control. Small PR-AUC/capture gain (0.521 -> 0.529) noted; kept only inside the offset-model test."
   },
   {
     "family": "3. Holiday weeks",
@@ -240,15 +240,15 @@
         "p_le_zero": 0.637
       }
     ],
-    "decision": "PENDING - set after review"
+    "decision": "REJECT: +0.1 pt [-0.6, +0.7]. Only ~8 July-4 weeks in train+validation; too rare to learn from at this scale."
   },
   {
     "family": "4. Climatology-offset model (dynamic departures only)",
-    "run_utc": "2026-10-18T03:36:46+00:00",
+    "run_utc": "2026-10-18T03:42:37+00:00",
     "hypothesis": "Holding climatology fixed as an offset, a small penalised adjustment from dynamic departures (weather, activity, holidays, Red Flag) improves the weekly alerts.",
     "source": "Same sources as families 1-3, plus IEM Red Flag Warnings / Fire Weather Watches if built.",
     "timing": "Weather lag 7 days; activity and history before issue; Red Flag as published by Monday 06:00 PT.",
-    "coverage": "All 80 cells, 2015-2022. Families: weather, activity, holidays. Anomalies = value minus training-years mean for the same cell and month. L2 penalty chosen on validation from 1, 10, 100.",
+    "coverage": "All 80 cells, 2015-2022. Families: weather, activity, holidays, redflag, gridmet. Anomalies = value minus training-years mean for the same cell and month. L2 penalty chosen on validation from 1, 10, 100.",
     "variants": {
       "A_climatology": {
         "alerts": 832,
@@ -282,13 +282,29 @@
         "cellweek_recall": 0.318,
         "pr_auc": 0.5007
       },
-      "A+all_dynamic": {
+      "A+redflag": {
         "alerts": 832,
         "hits": 400,
         "precision": 0.4808,
-        "event_capture": 0.4413,
+        "event_capture": 0.4345,
         "cellweek_recall": 0.3165,
-        "pr_auc": 0.5285
+        "pr_auc": 0.4999
+      },
+      "A+gridmet": {
+        "alerts": 832,
+        "hits": 399,
+        "precision": 0.4796,
+        "event_capture": 0.432,
+        "cellweek_recall": 0.3157,
+        "pr_auc": 0.5003
+      },
+      "A+all_dynamic": {
+        "alerts": 832,
+        "hits": 402,
+        "precision": 0.4832,
+        "event_capture": 0.4417,
+        "cellweek_recall": 0.318,
+        "pr_auc": 0.5254
       }
     },
     "comparisons": [
@@ -324,13 +340,33 @@
       },
       {
         "baseline": "A_climatology",
-        "candidate": "A+all_dynamic",
+        "candidate": "A+redflag",
         "diff": -0.0024,
         "ci95": [
-          -0.0231,
-          0.0188
+          -0.0073,
+          0.0023
         ],
-        "p_le_zero": 0.614
+        "p_le_zero": 0.9125
+      },
+      {
+        "baseline": "A_climatology",
+        "candidate": "A+gridmet",
+        "diff": -0.0036,
+        "ci95": [
+          -0.0149,
+          0.0081
+        ],
+        "p_le_zero": 0.774
+      },
+      {
+        "baseline": "A_climatology",
+        "candidate": "A+all_dynamic",
+        "diff": 0.0,
+        "ci95": [
+          -0.0234,
+          0.0257
+        ],
+        "p_le_zero": 0.525
       }
     ],
     "offset_models": {
@@ -385,48 +421,244 @@
           "hol_days_to_july4": 0.0058
         }
       },
+      "A+redflag": {
+        "l2": 1.0,
+        "coefs": {
+          "rfw_week_cov__anom": 0.021,
+          "fww_week_cov__anom": 0.0208,
+          "rfw_past7_cov__anom": 0.0729
+        }
+      },
+      "A+gridmet": {
+        "l2": 100.0,
+        "coefs": {
+          "gm_erc_0__anom": -0.0303,
+          "gm_erc_mean_7__anom": -0.1079,
+          "gm_erc_max_7__anom": 0.0495,
+          "gm_bi_max_7__anom": -0.0655,
+          "gm_fm100_0__anom": -0.175,
+          "gm_fm1000_0__anom": -0.4532,
+          "gm_fm1000_chg_14__anom": 0.0002
+        }
+      },
       "A+all_dynamic": {
         "l2": 100.0,
         "coefs": {
-          "tmax_mean_7__anom": 0.0957,
-          "rhmin_mean_7__anom": 0.0464,
-          "vpd_mean_7__anom": -0.0062,
-          "wind_mean_7__anom": 0.0142,
-          "tmax_mean_14__anom": 0.0206,
-          "rhmin_mean_14__anom": 0.0126,
-          "vpd_mean_14__anom": -0.1288,
-          "wind_mean_14__anom": -0.0491,
-          "tmax_mean_30__anom": 0.0053,
-          "rhmin_mean_30__anom": 0.0095,
-          "vpd_mean_30__anom": 0.1303,
-          "wind_mean_30__anom": 0.0372,
-          "tmean_mean_7__anom": -0.0871,
-          "rhmean_mean_7__anom": -0.1134,
-          "wind_max_7__anom": -0.0626,
-          "tmax_max_7__anom": -0.0193,
-          "precip_sum_7__anom": -0.0474,
-          "precip_sum_30__anom": -0.1028,
-          "precip_sum_90__anom": -0.1114,
-          "et0_sum_30__anom": -0.1198,
-          "sm_mean_7__anom": -0.1401,
-          "dry_days__anom": -0.0337,
-          "act_region_7__anom": 0.1138,
-          "act_region_30__anom": 0.0202,
-          "act_cell_7__anom": 0.0693,
-          "act_nbr_7__anom": 0.0282,
-          "hist_cell_30__anom": 0.042,
-          "hist_cell_90__anom": 0.131,
-          "hist_cell_365__anom": 0.0892,
-          "hist_nbr_30__anom": 0.0802,
-          "hist_nbr_90__anom": -0.1158,
-          "hol_july4": 0.0208,
-          "hol_memorial": 0.0087,
-          "hol_labor": 0.0621,
-          "hol_thanksgiving": -0.0026,
-          "hol_days_to_july4": 0.0062
+          "tmax_mean_7__anom": 0.0744,
+          "rhmin_mean_7__anom": 0.1004,
+          "vpd_mean_7__anom": 0.0292,
+          "wind_mean_7__anom": 0.012,
+          "tmax_mean_14__anom": -0.0067,
+          "rhmin_mean_14__anom": 0.0689,
+          "vpd_mean_14__anom": -0.096,
+          "wind_mean_14__anom": -0.0405,
+          "tmax_mean_30__anom": 0.0025,
+          "rhmin_mean_30__anom": -0.0233,
+          "vpd_mean_30__anom": 0.1102,
+          "wind_mean_30__anom": 0.017,
+          "tmean_mean_7__anom": -0.072,
+          "rhmean_mean_7__anom": -0.0787,
+          "wind_max_7__anom": -0.0567,
+          "tmax_max_7__anom": -0.0452,
+          "precip_sum_7__anom": 0.0055,
+          "precip_sum_30__anom": -0.0939,
+          "precip_sum_90__anom": -0.0785,
+          "et0_sum_30__anom": -0.1139,
+          "sm_mean_7__anom": -0.1308,
+          "dry_days__anom": -0.0578,
+          "act_region_7__anom": 0.0951,
+          "act_region_30__anom": 0.016,
+          "act_cell_7__anom": 0.0672,
+          "act_nbr_7__anom": 0.0248,
+          "hist_cell_30__anom": 0.0448,
+          "hist_cell_90__anom": 0.1211,
+          "hist_cell_365__anom": 0.0978,
+          "hist_nbr_30__anom": 0.0852,
+          "hist_nbr_90__anom": -0.1231,
+          "hol_july4": 0.0166,
+          "hol_memorial": 0.0157,
+          "hol_labor": 0.0524,
+          "hol_thanksgiving": -0.0054,
+          "hol_days_to_july4": 0.0027,
+          "rfw_week_cov__anom": -0.0051,
+          "fww_week_cov__anom": 0.0093,
+          "rfw_past7_cov__anom": -0.0032,
+          "gm_erc_0__anom": -0.0146,
+          "gm_erc_mean_7__anom": -0.0299,
+          "gm_erc_max_7__anom": -0.0129,
+          "gm_bi_max_7__anom": -0.0439,
+          "gm_fm100_0__anom": -0.1585,
+          "gm_fm1000_0__anom": -0.2417,
+          "gm_fm1000_chg_14__anom": -0.0796
         }
       }
     },
-    "decision": "PENDING - set after review"
+    "decision": "REJECT: no family moves the weekly top-8 relative to climatology (all-dynamic +0.0 pt [-2.3, +2.6]). Coefficients have sensible signs (drier 1000-h fuel and recent activity raise risk), but the shifts rarely change which 8 cells rank highest."
+  },
+  {
+    "family": "5. gridMET fuel dryness and fire danger",
+    "run_utc": "2026-10-18T03:42:22+00:00",
+    "hypothesis": "Fuel dryness and fire danger at 4 km (ERC, burning index, 100/1000-hour fuel moisture) distinguish dangerous weeks and cells better than 50 km raw weather.",
+    "source": "gridMET via Northwest Knowledge Network THREDDS (free), sampled at the 80 cell centroids.",
+    "timing": "Latest gridMET day = issue - 3 (observed archive latency ~2 days on 18 Oct 2026). Archive values are final versions; provisional real-time values may have differed.",
+    "coverage": "All 80 cells, 2015-2022; rows with any missing gridMET value: 0.",
+    "variants": {
+      "A_climatology": {
+        "alerts": 832,
+        "hits": 402,
+        "precision": 0.4832,
+        "event_capture": 0.4335,
+        "cellweek_recall": 0.318,
+        "pr_auc": 0.4999
+      },
+      "E0_history_no_weather": {
+        "alerts": 832,
+        "hits": 397,
+        "precision": 0.4772,
+        "event_capture": 0.432,
+        "cellweek_recall": 0.3141,
+        "pr_auc": 0.5213
+      },
+      "E0+gridmet": {
+        "alerts": 832,
+        "hits": 393,
+        "precision": 0.4724,
+        "event_capture": 0.4282,
+        "cellweek_recall": 0.3109,
+        "pr_auc": 0.5129
+      },
+      "E0+weather(lag7)": {
+        "alerts": 832,
+        "hits": 395,
+        "precision": 0.4748,
+        "event_capture": 0.4408,
+        "cellweek_recall": 0.3125,
+        "pr_auc": 0.5211
+      },
+      "E0+weather(lag7)+gridmet": {
+        "alerts": 832,
+        "hits": 381,
+        "precision": 0.4579,
+        "event_capture": 0.4257,
+        "cellweek_recall": 0.3014,
+        "pr_auc": 0.5157
+      }
+    },
+    "comparisons": [
+      {
+        "baseline": "E0_history_no_weather",
+        "candidate": "E0+gridmet",
+        "diff": -0.0048,
+        "ci95": [
+          -0.0196,
+          0.0091
+        ],
+        "p_le_zero": 0.764
+      },
+      {
+        "baseline": "E0+weather(lag7)",
+        "candidate": "E0+weather(lag7)+gridmet",
+        "diff": -0.0168,
+        "ci95": [
+          -0.03,
+          -0.0037
+        ],
+        "p_le_zero": 0.9955
+      },
+      {
+        "baseline": "A_climatology",
+        "candidate": "E0+gridmet",
+        "diff": -0.0108,
+        "ci95": [
+          -0.0331,
+          0.0117
+        ],
+        "p_le_zero": 0.8275
+      }
+    ],
+    "decision": "REJECT: -0.5 pt alone; -1.7 pt [-3.0, -0.4] when added to lag-7 weather (significantly worse: redundant correlated inputs overfit)."
+  },
+  {
+    "family": "6. Red Flag Warnings / Fire Weather Watches",
+    "run_utc": "2026-10-18T03:42:27+00:00",
+    "hypothesis": "Red Flag Warnings and Fire Weather Watches already published by Monday 06:00 Pacific (forecaster-identified critical fire weather) mark weeks and cells of elevated ignition risk.",
+    "source": "IEM NWS VTEC archive (FW.W, FW.A) for offices STO, EKA, REV, MFR, MTR; zone polygons per event.",
+    "timing": "Zone rows count only if product_issued <= Monday 06:00 America/Los_Angeles; valid window = issue..init_expired (expiry as first issued; later extensions ignored).",
+    "coverage": "1986 (event, zone) rows touch the lattice; 17 zones; cell-weeks with a warning for the coming week 4.1%, watch 4.5%, warning in past 7 days 12.4%.",
+    "variants": {
+      "A_climatology": {
+        "alerts": 832,
+        "hits": 402,
+        "precision": 0.4832,
+        "event_capture": 0.4335,
+        "cellweek_recall": 0.318,
+        "pr_auc": 0.4999
+      },
+      "E0_history_no_weather": {
+        "alerts": 832,
+        "hits": 397,
+        "precision": 0.4772,
+        "event_capture": 0.432,
+        "cellweek_recall": 0.3141,
+        "pr_auc": 0.5213
+      },
+      "E0+redflag": {
+        "alerts": 832,
+        "hits": 403,
+        "precision": 0.4844,
+        "event_capture": 0.4408,
+        "cellweek_recall": 0.3188,
+        "pr_auc": 0.5195
+      },
+      "E0+weather(lag7)": {
+        "alerts": 832,
+        "hits": 395,
+        "precision": 0.4748,
+        "event_capture": 0.4408,
+        "cellweek_recall": 0.3125,
+        "pr_auc": 0.5211
+      },
+      "E0+weather(lag7)+redflag": {
+        "alerts": 832,
+        "hits": 395,
+        "precision": 0.4748,
+        "event_capture": 0.4383,
+        "cellweek_recall": 0.3125,
+        "pr_auc": 0.5199
+      }
+    },
+    "comparisons": [
+      {
+        "baseline": "E0_history_no_weather",
+        "candidate": "E0+redflag",
+        "diff": 0.0072,
+        "ci95": [
+          -0.0023,
+          0.0162
+        ],
+        "p_le_zero": 0.07
+      },
+      {
+        "baseline": "E0+weather(lag7)",
+        "candidate": "E0+weather(lag7)+redflag",
+        "diff": 0.0,
+        "ci95": [
+          -0.0107,
+          0.0117
+        ],
+        "p_le_zero": 0.559
+      },
+      {
+        "baseline": "A_climatology",
+        "candidate": "E0+redflag",
+        "diff": 0.0012,
+        "ci95": [
+          -0.0218,
+          0.0255
+        ],
+        "p_le_zero": 0.491
+      }
+    ],
+    "decision": "CARRY FORWARD as the single candidate: best validation precision of any new variant (48.4%), +0.7 pt [-0.2, +1.6] vs matched control (P<=0 = 0.07). Not significant; tested once on 2025 per PREREG_2025_v2.md."
   }
 ]

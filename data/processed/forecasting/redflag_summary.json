@@ -1,0 +1,47 @@
+{
+  "source": "https://mesonet.agron.iastate.edu",
+  "wfos": [
+    "STO",
+    "EKA",
+    "REV",
+    "MFR",
+    "MTR"
+  ],
+  "years": [
+    2014,
+    2025
+  ],
+  "rows": 6784,
+  "rows_touching_lattice": 1986,
+  "by_wfo_touching": {
+    "EKA": 247,
+    "MFR": 207,
+    "REV": 247,
+    "STO": 1285
+  },
+  "zone_year_geometries": 656,
+  "zones_touching": [
+    "CAZ213",
+    "CAZ214",
+    "CAZ215",
+    "CAZ216",
+    "CAZ217",
+    "CAZ263",
+    "CAZ264",
+    "CAZ266",
+    "CAZ267",
+    "CAZ268",
+    "CAZ269",
+    "CAZ271",
+    "CAZ277",
+    "CAZ278",
+    "CAZ279",
+    "CAZ280",
+    "CAZ283"
+  ],
+  "issue_rule": "product_issued <= Monday 06:00 America/Los_Angeles; valid window issue..init_expired",
+  "share_cellweeks_rfw_week": 0.0406,
+  "share_cellweeks_fww_week": 0.0453,
+  "share_cellweeks_rfw_past7": 0.1241,
+  "built_utc": "2026-10-18T03:40:59+00:00"
+}

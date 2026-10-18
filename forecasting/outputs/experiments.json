@@ -1,0 +1,432 @@
+[
+  {
+    "family": "1. Weather timing (diagnostic)",
+    "run_utc": "2026-10-18T03:33:28+00:00",
+    "hypothesis": "The 7-day weather lag hides near-term dry/windy conditions; weather ending the day before issue, or (diagnostic only) the actual target-week weather, should add skill if weather matters at all.",
+    "source": "Open-Meteo historical reanalysis, same 20 points and variables as the current model.",
+    "timing": "lag1 = reanalysis ending issue-1 day: an UPPER BOUND, not operational (reanalysis is a later reconstruction). oracle = the actual weather of the forecast week: a LEAKING ceiling used only to decide whether issued forecasts are worth pursuing; never a candidate.",
+    "coverage": "All 80 cells, 2015-2022, no missing values.",
+    "variants": {
+      "A_climatology": {
+        "alerts": 832,
+        "hits": 402,
+        "precision": 0.4832,
+        "event_capture": 0.4335,
+        "cellweek_recall": 0.318,
+        "pr_auc": 0.4999
+      },
+      "E0_history_no_weather": {
+        "alerts": 832,
+        "hits": 397,
+        "precision": 0.4772,
+        "event_capture": 0.432,
+        "cellweek_recall": 0.3141,
+        "pr_auc": 0.5213
+      },
+      "E_weather_lag7 (current)": {
+        "alerts": 832,
+        "hits": 395,
+        "precision": 0.4748,
+        "event_capture": 0.4408,
+        "cellweek_recall": 0.3125,
+        "pr_auc": 0.5211
+      },
+      "E_weather_lag1 (upper bound)": {
+        "alerts": 832,
+        "hits": 390,
+        "precision": 0.4688,
+        "event_capture": 0.4345,
+        "cellweek_recall": 0.3085,
+        "pr_auc": 0.5179
+      },
+      "DIAG_oracle_target_week (leaks)": {
+        "alerts": 832,
+        "hits": 407,
+        "precision": 0.4892,
+        "event_capture": 0.4427,
+        "cellweek_recall": 0.322,
+        "pr_auc": 0.5312
+      }
+    },
+    "comparisons": [
+      {
+        "baseline": "E0_history_no_weather",
+        "candidate": "E_weather_lag7 (current)",
+        "diff": -0.0024,
+        "ci95": [
+          -0.0206,
+          0.0146
+        ],
+        "p_le_zero": 0.628
+      },
+      {
+        "baseline": "E0_history_no_weather",
+        "candidate": "E_weather_lag1 (upper bound)",
+        "diff": -0.0084,
+        "ci95": [
+          -0.0253,
+          0.0081
+        ],
+        "p_le_zero": 0.863
+      },
+      {
+        "baseline": "E_weather_lag7 (current)",
+        "candidate": "E_weather_lag1 (upper bound)",
+        "diff": -0.006,
+        "ci95": [
+          -0.0159,
+          0.0036
+        ],
+        "p_le_zero": 0.9135
+      },
+      {
+        "baseline": "E0_history_no_weather",
+        "candidate": "DIAG_oracle_target_week (leaks)",
+        "diff": 0.012,
+        "ci95": [
+          -0.0024,
+          0.0269
+        ],
+        "p_le_zero": 0.0575
+      },
+      {
+        "baseline": "A_climatology",
+        "candidate": "E_weather_lag1 (upper bound)",
+        "diff": -0.0144,
+        "ci95": [
+          -0.0364,
+          0.0058
+        ],
+        "p_le_zero": 0.9195
+      }
+    ],
+    "decision": "REJECT lag-1 weather (no gain even as an upper bound: -0.8 pt vs no weather). The leaking oracle ceiling is only +1.2 pt [-0.2, +2.7], so even perfect next-week weather at this scale adds little. Experiment 4 (issued forecasts, archive from ~2021 only) is therefore DEPRIORITISED: its maximum plausible gain is below what 2 validation years can detect."
+  },
+  {
+    "family": "2. Recent activity anomalies",
+    "run_utc": "2026-10-18T03:35:48+00:00",
+    "hypothesis": "Busy or quiet periods across the whole region (and in the last 7 days locally) shift next-week ignition risk beyond season and location.",
+    "source": "FPA-FOD discoveries (live equivalent: WFIGS feed, reliable from 2020).",
+    "timing": "Counts of discoveries in [issue - N days, issue - 1 day]; known at issue in live use only if reporting is prompt (WFIGS discovery records are near-real-time).",
+    "coverage": "All 80 cells, 2015-2022.",
+    "variants": {
+      "A_climatology": {
+        "alerts": 832,
+        "hits": 402,
+        "precision": 0.4832,
+        "event_capture": 0.4335,
+        "cellweek_recall": 0.318,
+        "pr_auc": 0.4999
+      },
+      "E0_history_no_weather": {
+        "alerts": 832,
+        "hits": 397,
+        "precision": 0.4772,
+        "event_capture": 0.432,
+        "cellweek_recall": 0.3141,
+        "pr_auc": 0.5213
+      },
+      "E0+activity": {
+        "alerts": 832,
+        "hits": 396,
+        "precision": 0.476,
+        "event_capture": 0.434,
+        "cellweek_recall": 0.3133,
+        "pr_auc": 0.5289
+      },
+      "E0+weather(lag7)": {
+        "alerts": 832,
+        "hits": 395,
+        "precision": 0.4748,
+        "event_capture": 0.4408,
+        "cellweek_recall": 0.3125,
+        "pr_auc": 0.5211
+      },
+      "E0+weather(lag7)+activity": {
+        "alerts": 832,
+        "hits": 397,
+        "precision": 0.4772,
+        "event_capture": 0.4437,
+        "cellweek_recall": 0.3141,
+        "pr_auc": 0.5294
+      }
+    },
+    "comparisons": [
+      {
+        "baseline": "E0_history_no_weather",
+        "candidate": "E0+activity",
+        "diff": -0.0012,
+        "ci95": [
+          -0.0099,
+          0.0082
+        ],
+        "p_le_zero": 0.6485
+      },
+      {
+        "baseline": "E0+weather(lag7)",
+        "candidate": "E0+weather(lag7)+activity",
+        "diff": 0.0024,
+        "ci95": [
+          -0.006,
+          0.0111
+        ],
+        "p_le_zero": 0.355
+      },
+      {
+        "baseline": "A_climatology",
+        "candidate": "E0+activity",
+        "diff": -0.0072,
+        "ci95": [
+          -0.0307,
+          0.0175
+        ],
+        "p_le_zero": 0.7265
+      }
+    ],
+    "decision": "PENDING - set after review"
+  },
+  {
+    "family": "3. Holiday weeks",
+    "run_utc": "2026-10-18T03:35:51+00:00",
+    "hypothesis": "Fireworks and holiday travel raise ignitions in holiday weeks beyond the smooth seasonal curve (cf. doi:10.1371/journal.pone.0291026).",
+    "source": "Deterministic US federal holiday rules (no external data).",
+    "timing": "Known years ahead.",
+    "coverage": "All rows; July-4 weeks in train+validation: 8 (base rate 0.331 vs overall 0.160). No historically valid exposure layer (roads/campgrounds) was available, so no interaction term.",
+    "variants": {
+      "A_climatology": {
+        "alerts": 832,
+        "hits": 402,
+        "precision": 0.4832,
+        "event_capture": 0.4335,
+        "cellweek_recall": 0.318,
+        "pr_auc": 0.4999
+      },
+      "E0_history_no_weather": {
+        "alerts": 832,
+        "hits": 397,
+        "precision": 0.4772,
+        "event_capture": 0.432,
+        "cellweek_recall": 0.3141,
+        "pr_auc": 0.5213
+      },
+      "E0+holidays": {
+        "alerts": 832,
+        "hits": 398,
+        "precision": 0.4784,
+        "event_capture": 0.4325,
+        "cellweek_recall": 0.3149,
+        "pr_auc": 0.5208
+      }
+    },
+    "comparisons": [
+      {
+        "baseline": "E0_history_no_weather",
+        "candidate": "E0+holidays",
+        "diff": 0.0012,
+        "ci95": [
+          -0.0061,
+          0.0073
+        ],
+        "p_le_zero": 0.416
+      },
+      {
+        "baseline": "A_climatology",
+        "candidate": "E0+holidays",
+        "diff": -0.0048,
+        "ci95": [
+          -0.0327,
+          0.0243
+        ],
+        "p_le_zero": 0.637
+      }
+    ],
+    "decision": "PENDING - set after review"
+  },
+  {
+    "family": "4. Climatology-offset model (dynamic departures only)",
+    "run_utc": "2026-10-18T03:36:46+00:00",
+    "hypothesis": "Holding climatology fixed as an offset, a small penalised adjustment from dynamic departures (weather, activity, holidays, Red Flag) improves the weekly alerts.",
+    "source": "Same sources as families 1-3, plus IEM Red Flag Warnings / Fire Weather Watches if built.",
+    "timing": "Weather lag 7 days; activity and history before issue; Red Flag as published by Monday 06:00 PT.",
+    "coverage": "All 80 cells, 2015-2022. Families: weather, activity, holidays. Anomalies = value minus training-years mean for the same cell and month. L2 penalty chosen on validation from 1, 10, 100.",
+    "variants": {
+      "A_climatology": {
+        "alerts": 832,
+        "hits": 402,
+        "precision": 0.4832,
+        "event_capture": 0.4335,
+        "cellweek_recall": 0.318,
+        "pr_auc": 0.4999
+      },
+      "A+weather": {
+        "alerts": 832,
+        "hits": 394,
+        "precision": 0.4736,
+        "event_capture": 0.4267,
+        "cellweek_recall": 0.3117,
+        "pr_auc": 0.502
+      },
+      "A+activity": {
+        "alerts": 832,
+        "hits": 400,
+        "precision": 0.4808,
+        "event_capture": 0.4427,
+        "cellweek_recall": 0.3165,
+        "pr_auc": 0.5327
+      },
+      "A+holidays": {
+        "alerts": 832,
+        "hits": 402,
+        "precision": 0.4832,
+        "event_capture": 0.4335,
+        "cellweek_recall": 0.318,
+        "pr_auc": 0.5007
+      },
+      "A+all_dynamic": {
+        "alerts": 832,
+        "hits": 400,
+        "precision": 0.4808,
+        "event_capture": 0.4413,
+        "cellweek_recall": 0.3165,
+        "pr_auc": 0.5285
+      }
+    },
+    "comparisons": [
+      {
+        "baseline": "A_climatology",
+        "candidate": "A+weather",
+        "diff": -0.0096,
+        "ci95": [
+          -0.0198,
+          0.0012
+        ],
+        "p_le_zero": 0.972
+      },
+      {
+        "baseline": "A_climatology",
+        "candidate": "A+activity",
+        "diff": -0.0024,
+        "ci95": [
+          -0.0255,
+          0.0231
+        ],
+        "p_le_zero": 0.6005
+      },
+      {
+        "baseline": "A_climatology",
+        "candidate": "A+holidays",
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p_le_zero": 1.0
+      },
+      {
+        "baseline": "A_climatology",
+        "candidate": "A+all_dynamic",
+        "diff": -0.0024,
+        "ci95": [
+          -0.0231,
+          0.0188
+        ],
+        "p_le_zero": 0.614
+      }
+    ],
+    "offset_models": {
+      "A+weather": {
+        "l2": 1.0,
+        "coefs": {
+          "tmax_mean_7__anom": 0.3285,
+          "rhmin_mean_7__anom": 0.3232,
+          "vpd_mean_7__anom": 0.0079,
+          "wind_mean_7__anom": 0.0687,
+          "tmax_mean_14__anom": 0.1053,
+          "rhmin_mean_14__anom": 0.0188,
+          "vpd_mean_14__anom": -0.1911,
+          "wind_mean_14__anom": -0.0591,
+          "tmax_mean_30__anom": 0.0191,
+          "rhmin_mean_30__anom": 0.0566,
+          "vpd_mean_30__anom": 0.1999,
+          "wind_mean_30__anom": 0.017,
+          "tmean_mean_7__anom": -0.3188,
+          "rhmean_mean_7__anom": -0.3139,
+          "wind_max_7__anom": -0.0847,
+          "tmax_max_7__anom": 0.0128,
+          "precip_sum_7__anom": -0.0529,
+          "precip_sum_30__anom": -0.1057,
+          "precip_sum_90__anom": -0.1749,
+          "et0_sum_30__anom": -0.14,
+          "sm_mean_7__anom": -0.2052,
+          "dry_days__anom": -0.0793
+        }
+      },
+      "A+activity": {
+        "l2": 100.0,
+        "coefs": {
+          "act_region_7__anom": 0.1007,
+          "act_region_30__anom": 0.0651,
+          "act_cell_7__anom": 0.0732,
+          "act_nbr_7__anom": 0.035,
+          "hist_cell_30__anom": 0.0491,
+          "hist_cell_90__anom": 0.1528,
+          "hist_cell_365__anom": 0.0668,
+          "hist_nbr_30__anom": 0.0785,
+          "hist_nbr_90__anom": -0.1083
+        }
+      },
+      "A+holidays": {
+        "l2": 1.0,
+        "coefs": {
+          "hol_july4": 0.0198,
+          "hol_memorial": 0.0053,
+          "hol_labor": 0.0471,
+          "hol_thanksgiving": -0.0021,
+          "hol_days_to_july4": 0.0058
+        }
+      },
+      "A+all_dynamic": {
+        "l2": 100.0,
+        "coefs": {
+          "tmax_mean_7__anom": 0.0957,
+          "rhmin_mean_7__anom": 0.0464,
+          "vpd_mean_7__anom": -0.0062,
+          "wind_mean_7__anom": 0.0142,
+          "tmax_mean_14__anom": 0.0206,
+          "rhmin_mean_14__anom": 0.0126,
+          "vpd_mean_14__anom": -0.1288,
+          "wind_mean_14__anom": -0.0491,
+          "tmax_mean_30__anom": 0.0053,
+          "rhmin_mean_30__anom": 0.0095,
+          "vpd_mean_30__anom": 0.1303,
+          "wind_mean_30__anom": 0.0372,
+          "tmean_mean_7__anom": -0.0871,
+          "rhmean_mean_7__anom": -0.1134,
+          "wind_max_7__anom": -0.0626,
+          "tmax_max_7__anom": -0.0193,
+          "precip_sum_7__anom": -0.0474,
+          "precip_sum_30__anom": -0.1028,
+          "precip_sum_90__anom": -0.1114,
+          "et0_sum_30__anom": -0.1198,
+          "sm_mean_7__anom": -0.1401,
+          "dry_days__anom": -0.0337,
+          "act_region_7__anom": 0.1138,
+          "act_region_30__anom": 0.0202,
+          "act_cell_7__anom": 0.0693,
+          "act_nbr_7__anom": 0.0282,
+          "hist_cell_30__anom": 0.042,
+          "hist_cell_90__anom": 0.131,
+          "hist_cell_365__anom": 0.0892,
+          "hist_nbr_30__anom": 0.0802,
+          "hist_nbr_90__anom": -0.1158,
+          "hol_july4": 0.0208,
+          "hol_memorial": 0.0087,
+          "hol_labor": 0.0621,
+          "hol_thanksgiving": -0.0026,
+          "hol_days_to_july4": 0.0062
+        }
+      }
+    },
+    "decision": "PENDING - set after review"
+  }
+]

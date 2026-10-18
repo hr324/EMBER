@@ -1,0 +1,2217 @@
+{
+  "source": "https://archive-api.open-meteo.com/v1/archive",
+  "docs": "https://open-meteo.com/en/docs/historical-weather-api",
+  "model": "Open-Meteo best_match historical reanalysis (ERA5 / ERA5-Land family)",
+  "daily_vars": [
+    "temperature_2m_max",
+    "temperature_2m_mean",
+    "precipitation_sum",
+    "relative_humidity_2m_mean",
+    "relative_humidity_2m_min",
+    "wind_speed_10m_max",
+    "vapour_pressure_deficit_max",
+    "et0_fao_evapotranspiration",
+    "soil_moisture_0_to_7cm_mean"
+  ],
+  "units": {
+    "temperature_2m_max": "degC",
+    "temperature_2m_mean": "degC",
+    "precipitation_sum": "mm",
+    "relative_humidity_2m_mean": "%",
+    "relative_humidity_2m_min": "%",
+    "wind_speed_10m_max": "km/h",
+    "vapour_pressure_deficit_max": "kPa",
+    "et0_fao_evapotranspiration": "mm",
+    "soil_moisture_0_to_7cm_mean": "m3/m3"
+  },
+  "timezone": "America/Los_Angeles",
+  "start": "2014-09-01",
+  "end": "2024-12-23",
+  "sampling": "one point per 2x2 block of 25 km EPSG:3310 cells, at block centroid",
+  "points": {
+    "w00_00": {
+      "lat": 39.11309468464149,
+      "lon": -122.60470646753728,
+      "cells": [
+        "c00_00",
+        "c00_01",
+        "c01_00",
+        "c01_01"
+      ]
+    },
+    "w00_01": {
+      "lat": 39.12408060360923,
+      "lon": -122.02608417722489,
+      "cells": [
+        "c00_02",
+        "c00_03",
+        "c01_02",
+        "c01_03"
+      ]
+    },
+    "w00_02": {
+      "lat": 39.13232114914557,
+      "lon": -121.44731089383956,
+      "cells": [
+        "c00_04",
+        "c00_05",
+        "c01_04",
+        "c01_05"
+      ]
+    },
+    "w00_03": {
+      "lat": 39.137815373262505,
+      "lon": -120.86842971000345,
+      "cells": [
+        "c00_06",
+        "c00_07",
+        "c01_06",
+        "c01_07"
+      ]
+    },
+    "w01_00": {
+      "lat": 39.56285074990245,
+      "lon": -122.62070229142311,
+      "cells": [
+        "c02_00",
+        "c02_01",
+        "c03_00",
+        "c03_01"
+      ]
+    },
+    "w01_01": {
+      "lat": 39.57390645343647,
+      "lon": -122.03852910637892,
+      "cells": [
+        "c02_02",
+        "c02_03",
+        "c03_02",
+        "c03_03"
+      ]
+    },
+    "w01_02": {
+      "lat": 39.582199369823655,
+      "lon": -121.45620212971319,
+      "cells": [
+        "c02_04",
+        "c02_05",
+        "c03_04",
+        "c03_05"
+      ]
+    },
+    "w01_03": {
+      "lat": 39.58772852329366,
+      "lon": -120.87376525213335,
+      "cells": [
+        "c02_06",
+        "c02_07",
+        "c03_06",
+        "c03_07"
+      ]
+    },
+    "w02_00": {
+      "lat": 40.012714032366155,
+      "lon": -122.63689574296093,
+      "cells": [
+        "c04_00",
+        "c04_01",
+        "c05_00",
+        "c05_01"
+      ]
+    },
+    "w02_01": {
+      "lat": 40.02384113152183,
+      "lon": -122.05112783875056,
+      "cells": [
+        "c04_02",
+        "c04_03",
+        "c05_02",
+        "c05_03"
+      ]
+    },
+    "w02_02": {
+      "lat": 40.0321876281967,
+      "lon": -121.46520327479332,
+      "cells": [
+        "c04_04",
+        "c04_05",
+        "c05_04",
+        "c05_05"
+      ]
+    },
+    "w02_03": {
+      "lat": 40.03775251785712,
+      "lon": -120.87916675970455,
+      "cells": [
+        "c04_06",
+        "c04_07",
+        "c05_06",
+        "c05_07"
+      ]
+    },
+    "w03_00": {
+      "lat": 40.462715099805465,
+      "lon": -122.65329050647439,
+      "cells": [
+        "c06_00",
+        "c06_01",
+        "c07_00",
+        "c07_01"
+      ]
+    },
+    "w03_01": {
+      "lat": 40.47391525252937,
+      "lon": -122.0638832428278,
+      "cells": [
+        "c06_02",
+        "c06_03",
+        "c07_02",
+        "c07_03"
+      ]
+    },
+    "w03_02": {
+      "lat": 40.48231657415348,
+      "lon": -121.47431637955673,
+      "cells": [
+        "c06_04",
+        "c06_05",
+        "c07_04",
+        "c07_05"
+      ]
+    },
+    "w03_03": {
+      "lat": 40.48791803035141,
+      "lon": -120.88463546362632,
+      "cells": [
+        "c06_06",
+        "c06_07",
+        "c07_06",
+        "c07_07"
+      ]
+    },
+    "w04_00": {
+      "lat": 40.912885215012395,
+      "lon": -122.66989035841677,
+      "cells": [
+        "c08_00",
+        "c08_01",
+        "c09_00",
+        "c09_01"
+      ]
+    },
+    "w04_01": {
+      "lat": 40.92416012832281,
+      "lon": -122.07679825886449,
+      "cells": [
+        "c08_02",
+        "c08_03",
+        "c09_02",
+        "c09_03"
+      ]
+    },
+    "w04_02": {
+      "lat": 40.93261755642068,
+      "lon": -121.48354354580037,
+      "cells": [
+        "c08_04",
+        "c08_05",
+        "c09_04",
+        "c09_05"
+      ]
+    },
+    "w04_03": {
+      "lat": 40.938256434106975,
+      "lon": -120.89017262562366,
+      "cells": [
+        "c08_06",
+        "c08_07",
+        "c09_06",
+        "c09_07"
+      ]
+    }
+  },
+  "files": [
+    {
+      "point": "w00_00",
+      "year": 2014,
+      "file": "w00_00_2014.json",
+      "sha256": "21849614d3d333fa6098d70347fd70446cc5cb8af700b40242510024fdcc44fc",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_00",
+      "year": 2015,
+      "file": "w00_00_2015.json",
+      "sha256": "046bb65e1e8903a4311b634141df98cd5e60b24456ba8dbe3123d87c52269618",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_00",
+      "year": 2016,
+      "file": "w00_00_2016.json",
+      "sha256": "9379af2eb8603cf38383abf38e0700c2cdeb2f0a156b96213ab8710cbe7a8984",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_00",
+      "year": 2017,
+      "file": "w00_00_2017.json",
+      "sha256": "e064b2ffe19945a5bffd35327df4262162ff59d06d5d2f825d75b5736a198fe5",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_00",
+      "year": 2018,
+      "file": "w00_00_2018.json",
+      "sha256": "e9caf2bf96d7256c7892617662dd92a3436547164c60c36cd80aae7c448a7b33",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_00",
+      "year": 2019,
+      "file": "w00_00_2019.json",
+      "sha256": "d6a8a85988cd10692f271adebf8cff6701f44f3012865dede01d81f2d164885f",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_00",
+      "year": 2020,
+      "file": "w00_00_2020.json",
+      "sha256": "4cf63ae45b5133b04a76caa7419efbe0cff8954d5e0498d453be13b633ae8aeb",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_00",
+      "year": 2021,
+      "file": "w00_00_2021.json",
+      "sha256": "543ed2b9ed2b3bdb334d5335939392c636379d588d19d6f835c4229b1ce54721",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_00",
+      "year": 2022,
+      "file": "w00_00_2022.json",
+      "sha256": "cf75925b63ae2acc6271cdfef95c4efe212380db7183ccfcd528dcf763086430",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_00",
+      "year": 2023,
+      "file": "w00_00_2023.json",
+      "sha256": "7e3e31a735524f7d2dc27672c3a6843e559b14eba224fb128cef7b0d172e22f7",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_00",
+      "year": 2024,
+      "file": "w00_00_2024.json",
+      "sha256": "5e379d1d96d05afe4297ef1c2031b5a289fd4a7fd9436e6de0dedf209d266e96",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.63736,
+      "elevation_m": 836.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2014,
+      "file": "w00_01_2014.json",
+      "sha256": "358955f38cb4b30550341ca53c8b5a1454d47a555f0840fbe7fb1c9f6b0eb8e9",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2015,
+      "file": "w00_01_2015.json",
+      "sha256": "a4e2fa773531a83edc48d00ca518660474196bffcb30fe879124790a2c73bcb5",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2016,
+      "file": "w00_01_2016.json",
+      "sha256": "60323b77e1c92f2745ff3762a500a06f622091edb0a2ecb2080aefbe54a60176",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2017,
+      "file": "w00_01_2017.json",
+      "sha256": "289543f6c308db66ee9d3d9938fb31dbba0d15115b9dfe532f67cf6edb3ba7ad",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2018,
+      "file": "w00_01_2018.json",
+      "sha256": "e728e289c89f8a164b1f823ee149747ea1bf03b266ce0600c0aff9e29a1a1344",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2019,
+      "file": "w00_01_2019.json",
+      "sha256": "ee76c98c8b7e20dcc0b62c26e6fc0cc623d5490bd51cf2bf2243413e08285c65",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2020,
+      "file": "w00_01_2020.json",
+      "sha256": "103e6f0934bf305bb2970393d45806054f1d0858a375b84fc47468d1c3954f97",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2021,
+      "file": "w00_01_2021.json",
+      "sha256": "3af4f834e83ab70f5c7cdf380cc845cde122ee39728bf11347dcee137f020e35",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2022,
+      "file": "w00_01_2022.json",
+      "sha256": "ea0a28845da39dbe0fb7a3a6d85dc5aaa59cc00e1f54923d23ef4198c586b2bd",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2023,
+      "file": "w00_01_2023.json",
+      "sha256": "ee9db769302f391753f34edaf76a5e649925abe2b8bd41801843222eef5b525f",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_01",
+      "year": 2024,
+      "file": "w00_01_2024.json",
+      "sha256": "2396e4098d0ce5cab159b7311b7c69989c6e18cd585321923199b8334a6fda28",
+      "grid_lat": 39.121265,
+      "grid_lon": -122.019226,
+      "elevation_m": 12.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2014,
+      "file": "w00_02_2014.json",
+      "sha256": "e7f4e3ed47495a4e03096114f43c9f152549e24fe8234cbdca8ba954e4f6af72",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2015,
+      "file": "w00_02_2015.json",
+      "sha256": "66da809c3050be28eb13abb729e73f20a344d43da4f86211f4c63dd8cbc059e5",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2016,
+      "file": "w00_02_2016.json",
+      "sha256": "59042b42d50ac305082f3b641dbaf5ecb54f54d7ec20c4d94cc51f176b0a70c3",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2017,
+      "file": "w00_02_2017.json",
+      "sha256": "53178baa72e9b36a6c1c4339638606b74b9aca58b6b7010143d0b5fe49e2c8d3",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2018,
+      "file": "w00_02_2018.json",
+      "sha256": "e028394932a2ab808abb4c0a0d681a9d4171b314d0b288d2908fb7710163a42d",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2019,
+      "file": "w00_02_2019.json",
+      "sha256": "bbe6f9d847e5887e723370326cc039b9b4ff5c97d90cc62fcf81c2ee79ef1232",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2020,
+      "file": "w00_02_2020.json",
+      "sha256": "ac4294da46970e2a4c6368d8faafae66b9e2cfdab8a8b1e4b6f61ed2e4e8e309",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2021,
+      "file": "w00_02_2021.json",
+      "sha256": "98c8bca095a85838b224e6610cf9b5c7ed3de766de94edacdf233a416815906d",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2022,
+      "file": "w00_02_2022.json",
+      "sha256": "a065347b878021f51ce1a603e6108ae736f021cf30fbfa3732f264eb5b3962fd",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2023,
+      "file": "w00_02_2023.json",
+      "sha256": "97262a35154b7e9ecc4594f75797f160e9c910edbeace375af227f3e75cbac87",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_02",
+      "year": 2024,
+      "file": "w00_02_2024.json",
+      "sha256": "1f11ae399852c32b6a4209f4b8a4721a41c5ed3d5a25d770db49d4073c7110f8",
+      "grid_lat": 39.121265,
+      "grid_lon": -121.40109,
+      "elevation_m": 28.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2014,
+      "file": "w00_03_2014.json",
+      "sha256": "99b34e5beb0fca8cbc643a5ba7a63a3de256505caf549cc95c8e6b681d20d65e",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2015,
+      "file": "w00_03_2015.json",
+      "sha256": "48b3b2c5f603cbf61ccdb548606a6ad5e377f7343e8ac3464a102c037d220ea8",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2016,
+      "file": "w00_03_2016.json",
+      "sha256": "731ef387cae24067ac1e7377e395cfc4d3ebfd416935835c92449feaf639bf8a",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2017,
+      "file": "w00_03_2017.json",
+      "sha256": "944310d8985cac36d79711ffa6d90aca5eaca57e4572b09f96f66ee4ed787768",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2018,
+      "file": "w00_03_2018.json",
+      "sha256": "9bebaab3fa2d97f97b6e59e74fdc5c9fa2a0dc19eb9530371c530aa003238eae",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2019,
+      "file": "w00_03_2019.json",
+      "sha256": "56b7b900edc6158d4c7c55a5b0a9effc0e299e43f20a3ae654a1cd419c62b4e8",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2020,
+      "file": "w00_03_2020.json",
+      "sha256": "55383fd813b10861f7c61659c5462b90fe507c0505901d287a13b006451897fe",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2021,
+      "file": "w00_03_2021.json",
+      "sha256": "4a9a21f7519cea33f58d34729f399c6621b5ab8f89607ffd2096918c94d5ceb6",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2022,
+      "file": "w00_03_2022.json",
+      "sha256": "b44542d557390afa53e76863b2f1f84caa4531e3166481d25d8c0770c93cab91",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2023,
+      "file": "w00_03_2023.json",
+      "sha256": "293234764262f9fff52bfa400095369a711f83b956868b3d8ebcb92c69bc17b0",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w00_03",
+      "year": 2024,
+      "file": "w00_03_2024.json",
+      "sha256": "98cea505e7beb5da22e9513ad66924670c1b80a9262f799bf9721bff0e6d2301",
+      "grid_lat": 39.121265,
+      "grid_lon": -120.906586,
+      "elevation_m": 784.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2014,
+      "file": "w01_00_2014.json",
+      "sha256": "45b9738a48c5ce0ba53200e279d37024c2f7d005548c08e15c031891f136ffa2",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2015,
+      "file": "w01_00_2015.json",
+      "sha256": "5d07be4ee1b4e699ca2523dba0b927545d05d0804026e4be5a1b0fe538e8ab47",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2016,
+      "file": "w01_00_2016.json",
+      "sha256": "85f00dc33515bd00b7e604040ccc342a62906a8d1235719afa978cb134bd8597",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2017,
+      "file": "w01_00_2017.json",
+      "sha256": "f4cd2819fe2f28604c1363c9981f4734df94a6170bc99d8bf654cf56f98530fe",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2018,
+      "file": "w01_00_2018.json",
+      "sha256": "2d6e1a417f521bf46d04e73ec593f9e2b83227ecee37c9b6a7afa2bb536e8d73",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2019,
+      "file": "w01_00_2019.json",
+      "sha256": "d5d97d5301e3e24d7cb4b99ec7bd92374708f3366fa23992c85bde5767e5e783",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2020,
+      "file": "w01_00_2020.json",
+      "sha256": "3cb3d4930223ecb7ca83d0bbd0f10409950278947f1af58c2f75a3d3cf9f4010",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2021,
+      "file": "w01_00_2021.json",
+      "sha256": "3b7c0cd0cc3f7fc78c8c29fc6d131fbcb0e04a1afd53d0c32c0f09f822bfc9a0",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2022,
+      "file": "w01_00_2022.json",
+      "sha256": "5bf8b038a5870af97fe781fd8ced9ff9313633a6b40a6e4325d26708223fd7cd",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2023,
+      "file": "w01_00_2023.json",
+      "sha256": "6fc8025d305795a9e29cd6694baf71793c1bae1af0e4c36eb0a47b667d590492",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_00",
+      "year": 2024,
+      "file": "w01_00_2024.json",
+      "sha256": "82987bf2625d8a49e2460f1b931e67d22ae173806cb9660b03314a307ab29083",
+      "grid_lat": 39.613354,
+      "grid_lon": -122.57974,
+      "elevation_m": 585.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2014,
+      "file": "w01_01_2014.json",
+      "sha256": "1a64e6032e408ee3247f273cd836b477990a78f0d8078a0156d32ac021182535",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2015,
+      "file": "w01_01_2015.json",
+      "sha256": "108b8e00855ee3c6c642e03b81e8ef799ec5eb7e6822be51575c6eb556ee0478",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2016,
+      "file": "w01_01_2016.json",
+      "sha256": "17bf0e6f3d08cb8db149ff303c507372bea05a5209d13e68ec2ee5efb2142b41",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2017,
+      "file": "w01_01_2017.json",
+      "sha256": "1dbe522a3fb85f64d6eb91a04d70e761c99e08828af411571d5b6afd04cf6e39",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2018,
+      "file": "w01_01_2018.json",
+      "sha256": "7606c20b69eea34315ec0e4bbe3e9ad6b76b645c469412eabcb32c68e62710a6",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2019,
+      "file": "w01_01_2019.json",
+      "sha256": "e41e894d369e9b7b1f2355bcbaa2290cd6c191ed67ac2161bb65765e7c912b9a",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2020,
+      "file": "w01_01_2020.json",
+      "sha256": "3596d5ce1d41f81a0f5b13a7c2c71ea6f34a8564532a24cd218b19868692b076",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2021,
+      "file": "w01_01_2021.json",
+      "sha256": "6d6eedb196cdd66afcf6b7a329487922d374aefb8fa8bcc6d7e14b72148c5198",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2022,
+      "file": "w01_01_2022.json",
+      "sha256": "88f83a13acfa635295888bc3df00e959f8731abc63c83265e4648b388f9985e4",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2023,
+      "file": "w01_01_2023.json",
+      "sha256": "2d75bfeace582e2114efde6ccd4b63d92afa7c16eee1f28d4066534158568711",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_01",
+      "year": 2024,
+      "file": "w01_01_2024.json",
+      "sha256": "f115732a4a208d00a105641319ee2ccbd98c2efce2e841b518cb5d46d53ae3ee",
+      "grid_lat": 39.543056,
+      "grid_lon": -122.03601,
+      "elevation_m": 31.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2014,
+      "file": "w01_02_2014.json",
+      "sha256": "8c704bcf4989c8f7a99d61f1e697154dfdbdb3e18dc15e1efe2377b6fab1b4eb",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2015,
+      "file": "w01_02_2015.json",
+      "sha256": "c6191a6c25bf1a4ea3d636d213fc8d3dbfd6696c5d12feefc7055e9e657497fd",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2016,
+      "file": "w01_02_2016.json",
+      "sha256": "8192aea1afefb3ba7b2e2e7b4d22e3bb60e79cefe4402221a4909e1e7b0eaeb1",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2017,
+      "file": "w01_02_2017.json",
+      "sha256": "72c4b74a64338892feab73e26061ed0b0def4bd639a85065c1b4c6e7cad50458",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2018,
+      "file": "w01_02_2018.json",
+      "sha256": "eb20a0b3cb5a6938d42d1f7d223dba646b8804d4627426c629d388447b3e477d",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2019,
+      "file": "w01_02_2019.json",
+      "sha256": "1546367242cdeb3398f9e8beeb05793cd80e84aefc3b03abf960c6e9025f8b1a",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2020,
+      "file": "w01_02_2020.json",
+      "sha256": "cf3b0e0b5923adfef6dbf163d5e0dfa592e683e3b70fae2fab703e4d15ccbfe5",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2021,
+      "file": "w01_02_2021.json",
+      "sha256": "0f4513fb9b940d9f6bd2bfb0de57e103b1f9b0b18d7a86f66651a23ca7a39e52",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2022,
+      "file": "w01_02_2022.json",
+      "sha256": "e5d996723b664f3b2fcea64d6b4ba344c090b1ef84b8588fdea38c6b8da96a64",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2023,
+      "file": "w01_02_2023.json",
+      "sha256": "e5a4181fc6d8a6d6f2a1490bad0795e3b7b7b57297a0e67bfaef6fed6b1e90ff",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_02",
+      "year": 2024,
+      "file": "w01_02_2024.json",
+      "sha256": "a78a4939ea86528d576371a0fe9c6f1595bdbdedd05bdea9f61b3e77df585184",
+      "grid_lat": 39.613354,
+      "grid_lon": -121.4563,
+      "elevation_m": 256.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2014,
+      "file": "w01_03_2014.json",
+      "sha256": "0e52bf2414fec92eb47b1b3ab2c953fa57d3d8fb5af833fb8b1e8970192ad6a5",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2015,
+      "file": "w01_03_2015.json",
+      "sha256": "0349e92fc2efb260f48e27425a0d4000bb8925990e5343ee58475c7324272fb1",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2016,
+      "file": "w01_03_2016.json",
+      "sha256": "44ec3f802950b699f5c08b6b852849d746d4a749813522f4ed8fa181d6ace22f",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2017,
+      "file": "w01_03_2017.json",
+      "sha256": "ff5c6153ee8162c0c0845538df5440fd427369b5960e06db1e75bbb7f47a0e9a",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2018,
+      "file": "w01_03_2018.json",
+      "sha256": "8d2c2d76312d35434b14767b9dba62a57ede1139bce8e8fbf0fd73df344da502",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2019,
+      "file": "w01_03_2019.json",
+      "sha256": "5f923654c7672d0bce04d4a09ccc9bf32a05a066ee796d6e9bfa498e33e77df2",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2020,
+      "file": "w01_03_2020.json",
+      "sha256": "48ab3aeaceff2f9fcd4cb227da93c86dae3ac2c7afa452b12a87e109a14e2807",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2021,
+      "file": "w01_03_2021.json",
+      "sha256": "25fbf375909f177d6066e156f0d1321c62d5e61c862db4eeed8c995f5b8bde93",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2022,
+      "file": "w01_03_2022.json",
+      "sha256": "16e6b79fbc3aa193d416a83dc502e8cca5279a4d72ab91417d401eacd660ba07",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2023,
+      "file": "w01_03_2023.json",
+      "sha256": "605f8666278e18eac67e8654466be7a83f39637967a131d80db44c0bbfdcb565",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w01_03",
+      "year": 2024,
+      "file": "w01_03_2024.json",
+      "sha256": "629b4e78ce27eb06de65f0d52780266223c05afd0974dcf062ed97eddf88b48d",
+      "grid_lat": 39.543056,
+      "grid_lon": -120.91412,
+      "elevation_m": 1179.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2014,
+      "file": "w02_00_2014.json",
+      "sha256": "4eb89b6b1422a2698b7b4ead984b1325b0c9604a1dd435f0346c0b0a161dba4b",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2015,
+      "file": "w02_00_2015.json",
+      "sha256": "afcf80e78a658e7656aeef63114e82870764bc1c9af09800f187094d5aa466dc",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2016,
+      "file": "w02_00_2016.json",
+      "sha256": "3344f912755d7ca94cb04640319e05f6e9bfad6b21f60d1b6c37baf7e3f3cc4a",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2017,
+      "file": "w02_00_2017.json",
+      "sha256": "e1a2789a7ecb16b8a0b381fc9e76165d9ac5fd484c0860d419296e421fed97f9",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2018,
+      "file": "w02_00_2018.json",
+      "sha256": "d3c2e07cfc72a1439af5a9c00216919837979123cbcf8451eca83b294918170d",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2019,
+      "file": "w02_00_2019.json",
+      "sha256": "0018dacbde36c67b469af0e8870661eca453bf8ed5ed4650bae257780dad3555",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2020,
+      "file": "w02_00_2020.json",
+      "sha256": "253f8c21cb06494854f1439cd534d330ce2f3e2f9865ddb8d7aa5414e99119a7",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2021,
+      "file": "w02_00_2021.json",
+      "sha256": "3ee2a72ffcb83fb5f5576045f3b8a944dd2d76de22102203c0fc0b907d6a0f27",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2022,
+      "file": "w02_00_2022.json",
+      "sha256": "4199f07f7249135f4e623fffbf762a4ae48d218d7dc67e59cfc74108af52b173",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2023,
+      "file": "w02_00_2023.json",
+      "sha256": "a80ef56ce3aa9b78400be34c36bf09719d5add5089a356fe1e75253e975b1ac1",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_00",
+      "year": 2024,
+      "file": "w02_00_2024.json",
+      "sha256": "b77c5f2a18847397781dd494b4db0e6d3d2df40f3cba0ef2b7928a61bf7285d9",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.601395,
+      "elevation_m": 511.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2014,
+      "file": "w02_01_2014.json",
+      "sha256": "ac0ed0847e2e5d1a1052ffc9111eec2c1b18f660d8dd0876795a5afc9fafc0e9",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2015,
+      "file": "w02_01_2015.json",
+      "sha256": "88a41be31821a15849b108ea12245d61648b2d46b861f6f87d24c3ddaee36bbf",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2016,
+      "file": "w02_01_2016.json",
+      "sha256": "63fed99a5e963cd36ba583bb61c277a6f62ae4013943345f8a95ecf493f9dc09",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2017,
+      "file": "w02_01_2017.json",
+      "sha256": "c0b1978e7f2ffd6d951026eacc09469b0b5f973b315d64447ae310c13f19d7bc",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2018,
+      "file": "w02_01_2018.json",
+      "sha256": "65390918b3a7bf6ade37fb1dd7bdb31ad13e95a3c506fc7d9efc80647dde6aa5",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2019,
+      "file": "w02_01_2019.json",
+      "sha256": "896728991c6caf60fe821d219911b5a394537e6639d79c91c4ff7b875562c73c",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2020,
+      "file": "w02_01_2020.json",
+      "sha256": "20a190b0e867c6f4f0a5311f30c79619f0561cd3bf3a4d7067c831f6c9d3f9bc",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2021,
+      "file": "w02_01_2021.json",
+      "sha256": "a3b5f7c659c3acd5157aae8033a5ed234f6484778bd9dc7aed4c43131f94a594",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2022,
+      "file": "w02_01_2022.json",
+      "sha256": "72647f0e48a1152f700fbed8eb1136477254a33dd2a0dae5fb7957bd660e6ff2",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2023,
+      "file": "w02_01_2023.json",
+      "sha256": "72d664724545ea3c86d3ae343594e508e350703bde35af1d8bb243a7e57065de",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_01",
+      "year": 2024,
+      "file": "w02_01_2024.json",
+      "sha256": "200e19fcd78852a111fcc82059579c48e73512b5179a087b2fe8227a3e2b12e8",
+      "grid_lat": 40.03515,
+      "grid_lon": -122.097885,
+      "elevation_m": 102.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2014,
+      "file": "w02_02_2014.json",
+      "sha256": "d46b319b1fbb7fffca42a0e75f24f7ad10fa54590a21407b2d406af011c80eb9",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2015,
+      "file": "w02_02_2015.json",
+      "sha256": "2b02ea2a8ad267adf779321d6d16ea9e27f9793ae01d104132505cafb7254ac3",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2016,
+      "file": "w02_02_2016.json",
+      "sha256": "cffce459e20c2d309c08f3677eec4f48fccda9911a28e2e91dc1fcdb52cb2741",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2017,
+      "file": "w02_02_2017.json",
+      "sha256": "705844f6fdc59dd8d2f063252220dbb19894a96b103695a1a8ba5664541e50f6",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2018,
+      "file": "w02_02_2018.json",
+      "sha256": "bdcc3f8c2c18dc252441b0c2ada341a72621a847be688760f5f9483d254d9336",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2019,
+      "file": "w02_02_2019.json",
+      "sha256": "720f75864edaceb4b52a2efa128c6564b24cddcf762689ebe8709a6bf827c717",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2020,
+      "file": "w02_02_2020.json",
+      "sha256": "33e36b788da527af2b3d85071b709accbf3dff84302a05e51152ae465ffa1a1a",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2021,
+      "file": "w02_02_2021.json",
+      "sha256": "aff2632aac8f907535be1550c831d17868e4588eb2950ba8266cd67f2357e049",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2022,
+      "file": "w02_02_2022.json",
+      "sha256": "4857410a210722aff3d8d9a2e5cd2e2fa5017c78050b4e7db34a70d887fbc909",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2023,
+      "file": "w02_02_2023.json",
+      "sha256": "1e4dc722e98e46adffe035cfeb2432fbd3e186fdad0114caf215cb777b296b47",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_02",
+      "year": 2024,
+      "file": "w02_02_2024.json",
+      "sha256": "4216dd4bdaf437af110fd0a8257ada3621387e8fa7d103e8a9b1a1e799832712",
+      "grid_lat": 40.03515,
+      "grid_lon": -121.46852,
+      "elevation_m": 1792.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2014,
+      "file": "w02_03_2014.json",
+      "sha256": "f77b4ab5f2b85fb641daf9cb3441b4acf4db0c5907f1762c867ff2809020634a",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2015,
+      "file": "w02_03_2015.json",
+      "sha256": "f490c31c11752195e29f5915a9418dcc5bbf9b5822a677c778360bf981612a77",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2016,
+      "file": "w02_03_2016.json",
+      "sha256": "673e89413b591c95fabffde7ee1f82844bbd10180c4675958369a668622990fd",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2017,
+      "file": "w02_03_2017.json",
+      "sha256": "5c712cc81603b8eed47c980b1cc2f8571d7e42a427606cf465713aa422198c47",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2018,
+      "file": "w02_03_2018.json",
+      "sha256": "fdb00de6aaa412c313818179402655a7eac4e52b4c0429451e07d3f8d89db084",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2019,
+      "file": "w02_03_2019.json",
+      "sha256": "e67086eb47cfea9a543e144d09e85aa477de22568cab1efa6552a7571d886faa",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2020,
+      "file": "w02_03_2020.json",
+      "sha256": "8489e0a2931673b04e8fc38be9c88821170ac4f05422b677fd7e55505ff82367",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2021,
+      "file": "w02_03_2021.json",
+      "sha256": "b5f79bb7a73721f9442471f9daffb62e614cd0e48abf381bb88b9f026c46c901",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2022,
+      "file": "w02_03_2022.json",
+      "sha256": "b6681a03274ecc690ed51a1841366a431f80ba151ae2d4bcd5e9e01ccb115b16",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2023,
+      "file": "w02_03_2023.json",
+      "sha256": "2b1c69542f1cc6770d7720ba3414d1f0d0b7ecd3cd2920f80d7099d6d6c227b5",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w02_03",
+      "year": 2024,
+      "file": "w02_03_2024.json",
+      "sha256": "e8485aa8d0f1190d5421587f727bdbcbcdda64d84457a12599345f8fe038a073",
+      "grid_lat": 40.03515,
+      "grid_lon": -120.83914,
+      "elevation_m": 2022.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2014,
+      "file": "w03_00_2014.json",
+      "sha256": "525c90c2c0d76ba6f61dc2731576d5cbec6e4ca31abb51f3ede972bc3e1fd23b",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2015,
+      "file": "w03_00_2015.json",
+      "sha256": "29f6f71dbcd0cc5758d863c5459d538ff3d307824189b5a8298e51bf843a7502",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2016,
+      "file": "w03_00_2016.json",
+      "sha256": "1f1fb0294be5233e8c896bb3b3f67864b5aaed5f313756ad4022f0fde9c60ccf",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2017,
+      "file": "w03_00_2017.json",
+      "sha256": "51eb9489ec15139748f296e76378ff3022d25fc2852d84f2d0f97638643d45d6",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2018,
+      "file": "w03_00_2018.json",
+      "sha256": "21865b9976a7a93ba4670029730b4509e42951c3856874804c5c5c77fa9cb03a",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2019,
+      "file": "w03_00_2019.json",
+      "sha256": "a7bfdb4f19197341a887e9ae62e85929bae44cb87c7585508372f58323ec20af",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2020,
+      "file": "w03_00_2020.json",
+      "sha256": "fad8813779c15b72b4ef1f67a8331b5a4f9e7f860ce310612fd007a4707356ba",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2021,
+      "file": "w03_00_2021.json",
+      "sha256": "aefc8141918d1ee6ed81ac8aff6fec02f1a8b1d79a9f9985fdfad9f24da972bf",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2022,
+      "file": "w03_00_2022.json",
+      "sha256": "0cf22b2d554347e217d55c005887fac44859805ce19656e8827e6245061ccf6b",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2023,
+      "file": "w03_00_2023.json",
+      "sha256": "ccefa3d8d2dd7a7de7c5078324c1b1f57c228655f65862c50310510e0b5e3c35",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_00",
+      "year": 2024,
+      "file": "w03_00_2024.json",
+      "sha256": "c7e52ba3eed3d92065dcab2659686187524091963375653a7fbbcceb3fec85a0",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.6234,
+      "elevation_m": 348.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2014,
+      "file": "w03_01_2014.json",
+      "sha256": "941bbb63a208fffb80164e73c3aeef68f25aa41da0f3112989177f57d5a01525",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2015,
+      "file": "w03_01_2015.json",
+      "sha256": "430e6d1e3b0e42e710327c9a3236d32439907e3ebb821f75d7c194b04704c4c1",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2016,
+      "file": "w03_01_2016.json",
+      "sha256": "1a6ce417084a32f7025c29433583dca8de428f59f53f21eda6c231a0048afc93",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2017,
+      "file": "w03_01_2017.json",
+      "sha256": "f31ef01a30b9a002147f72822ac0308a1465e3f9d24a82ebc94c997c481ffa05",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2018,
+      "file": "w03_01_2018.json",
+      "sha256": "655aa5c45e3107f9f9c05a0ef3a9ce92d65d0a3f986edf9cd5453fc7601fe8b8",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2019,
+      "file": "w03_01_2019.json",
+      "sha256": "d8f66ed5c13edc0e679c5f1a5be551ee63dc4ab699c446022d2ff00bd5009b13",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2020,
+      "file": "w03_01_2020.json",
+      "sha256": "1ee2f83936768bd38225f20ddbacda0a6745a7ad66b2b092ff4e891ec698c244",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2021,
+      "file": "w03_01_2021.json",
+      "sha256": "14d7c7bd82b19380b4c89e554bbcdfdfabe39272062260e7d6f22db3ce9b401e",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2022,
+      "file": "w03_01_2022.json",
+      "sha256": "d890e2db5d5d22f66b21e6c092798a327308da2efcd3a2160dc6cae9826077a3",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2023,
+      "file": "w03_01_2023.json",
+      "sha256": "70b72c16ac30d6b483926d823f96f9e448fc5bd22e95d02d04d0d9ff10627304",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_01",
+      "year": 2024,
+      "file": "w03_01_2024.json",
+      "sha256": "16e9d559ba75523f5f71f0f4000bb6c26ae611d68fba5d006d5e55a2a5046353",
+      "grid_lat": 40.45694,
+      "grid_lon": -122.11565,
+      "elevation_m": 334.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2014,
+      "file": "w03_02_2014.json",
+      "sha256": "2735274953347b8dcbc1c5086c8a30e8c82cd2ad846166acc3a27f6d4bafc7b2",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2015,
+      "file": "w03_02_2015.json",
+      "sha256": "0f12b4bbf50301cf30568fae68c0db484c9a6a338176bfc7eb1879d15a48ed3e",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2016,
+      "file": "w03_02_2016.json",
+      "sha256": "3f2825cb80f538375317ea35a730cb55868a2318d9ab6b4e1b99a85bc1c82622",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2017,
+      "file": "w03_02_2017.json",
+      "sha256": "49b291a8d63baf89b4eb28d68d38f0796cbd28e277cfd516ce05818b0f029628",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2018,
+      "file": "w03_02_2018.json",
+      "sha256": "fa3629217bdde2440730f8e15b1d789e22c87de8db9f1fef8a7ed681b85a659f",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2019,
+      "file": "w03_02_2019.json",
+      "sha256": "87a9f2af5d87808e8351b62fca2aa9bbe33cc36b92a2a6219fe546d24031b3da",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2020,
+      "file": "w03_02_2020.json",
+      "sha256": "d962cea8fa640852380131a1fa715e9e60e00eae2819a4bd8453209107bf9943",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2021,
+      "file": "w03_02_2021.json",
+      "sha256": "a11f74845ddc9bb557a9d72f520202979cbcb85ba364c38893d8259434510647",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2022,
+      "file": "w03_02_2022.json",
+      "sha256": "8ce51b222e8dbcc1bc0f53d2c2c9d94068ad1c4d2c8520bba223ba5b662ecea3",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2023,
+      "file": "w03_02_2023.json",
+      "sha256": "e6d198dde51399ead26d044f2f287d8e1a0f350918ab9b3e7c138da58292eac3",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_02",
+      "year": 2024,
+      "file": "w03_02_2024.json",
+      "sha256": "20655519ea4cbead6d86f233059bd75b0b9c0d4e7f103247b61e42928899786d",
+      "grid_lat": 40.45694,
+      "grid_lon": -121.48096,
+      "elevation_m": 2374.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2014,
+      "file": "w03_03_2014.json",
+      "sha256": "1dd8a6c234bb8547ac2d7b0f6ef10e1f346e747090108ed28aefdeb19ebddb9d",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2015,
+      "file": "w03_03_2015.json",
+      "sha256": "c23815f1b1f0dec626db1cfbbceba8753cac0261489ef1f168c0fd2425fb30f1",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2016,
+      "file": "w03_03_2016.json",
+      "sha256": "08d01b6e4b38945828f9c575c33102fd4adfd8570fc72e157ff352b236c02832",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2017,
+      "file": "w03_03_2017.json",
+      "sha256": "779e7b62c8830478d3b757a015ad73ca3fae8e60f972580f30291259d44337c6",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2018,
+      "file": "w03_03_2018.json",
+      "sha256": "f077acd60b3e25a9ba5dad05168275df4279b4f8d8ea96d4e39261d84464ab9e",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2019,
+      "file": "w03_03_2019.json",
+      "sha256": "46047b2d5533460d16620db4081e56ebc8b4634a1d7433f0c47f81ad9dc8c65d",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2020,
+      "file": "w03_03_2020.json",
+      "sha256": "6eacb9dd6dd649d9eed508cc4fd29bb1ea401cbb104825b980546b8b67aa5613",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2021,
+      "file": "w03_03_2021.json",
+      "sha256": "6db9f1c9e2e93d72e2feeb9d3a29a690c587158d188b500e80df04ece4d135ee",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2022,
+      "file": "w03_03_2022.json",
+      "sha256": "90b927c94a4cb127d0a4ff6e390b59a653039451d3aa6eb3d3f64b630e2f2b08",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2023,
+      "file": "w03_03_2023.json",
+      "sha256": "f5682126beb9ca432438220d857ed98b5eefbc8862e749197bd42b8bd77546c7",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w03_03",
+      "year": 2024,
+      "file": "w03_03_2024.json",
+      "sha256": "204aeb0efcb8ed6404586b7e8116127ac351c0e5bed1feebe199029a3b95ab4a",
+      "grid_lat": 40.52724,
+      "grid_lon": -120.88983,
+      "elevation_m": 1897.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2014,
+      "file": "w04_00_2014.json",
+      "sha256": "fa93aab85eb28e2588d6c0bda87622198c3c50a2df01e0dc67933321256520ab",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2015,
+      "file": "w04_00_2015.json",
+      "sha256": "88b2955c466e181ec6bd7b3de69a782e52318b1d2db195208c4035c0d892fc38",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2016,
+      "file": "w04_00_2016.json",
+      "sha256": "b58603051efe1e998f8bbeefcf9c2d8c49fd788f1b7d0889a3db30f66615d762",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2017,
+      "file": "w04_00_2017.json",
+      "sha256": "2cf5a4e660312ecb4a159d6786f8689d32fd79d29f33971b1d20271232a0bb02",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2018,
+      "file": "w04_00_2018.json",
+      "sha256": "1b848e90df1e31ef02d140c3367c7d4e601eba94a7415580f22b02d9cceac443",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2019,
+      "file": "w04_00_2019.json",
+      "sha256": "b4e06a64b46bd5b39f10a211fef99d47e450ace0307e4a6c76f9e41ea9ad5f2e",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2020,
+      "file": "w04_00_2020.json",
+      "sha256": "0cae3abb84e93d7c8677d070be48b635a488b9beb9e07914ad04e8646145949b",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2021,
+      "file": "w04_00_2021.json",
+      "sha256": "b0419df416ad748fec28d0f253999fb257b9cc7ce71aa32bd9a58997d07536c9",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2022,
+      "file": "w04_00_2022.json",
+      "sha256": "333d3b19d0754baf2c087588aeb20ea428bda600f331832e34d6cdb7543ff254",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2023,
+      "file": "w04_00_2023.json",
+      "sha256": "bb3ab8974cec50e4054ac605164b7605367bfd20c00bee7ccdd1f8dc4b17e14c",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_00",
+      "year": 2024,
+      "file": "w04_00_2024.json",
+      "sha256": "b2405f0214a65d481a606f1299e0f21348ea5b2cadf1b11bc8693519b792f41f",
+      "grid_lat": 40.878735,
+      "grid_lon": -122.6458,
+      "elevation_m": 1018.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2014,
+      "file": "w04_01_2014.json",
+      "sha256": "e6ca74164f0567a07794b467d8e0725c04a72284be2ee3447d8bd56facffb0b7",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2015,
+      "file": "w04_01_2015.json",
+      "sha256": "0e27e136b234cd4c2ea2d187896e7033ed3896851034b06b7d2ed21f17e5c522",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2016,
+      "file": "w04_01_2016.json",
+      "sha256": "b88c97689274a2f84b0d8b8d3559fc7862263422fcaa83a18055b9b4fbbd294f",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2017,
+      "file": "w04_01_2017.json",
+      "sha256": "12a2c04bdb6516050e401718e1813b7e308893975d0de05fec532244aa41487b",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2018,
+      "file": "w04_01_2018.json",
+      "sha256": "b85b8f7ca06569065a1fbb2880144fe118fb0c35df43bc56e85182fd81653f93",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2019,
+      "file": "w04_01_2019.json",
+      "sha256": "019b82ceb8bbe9d61b7359f56ab945623a5fbcf9d4c01e2cfc1c1f5f92835d60",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2020,
+      "file": "w04_01_2020.json",
+      "sha256": "2c0b51244993f564114b92408a083b08a671c8a1a30295c98371b6fa0ccfec2e",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2021,
+      "file": "w04_01_2021.json",
+      "sha256": "93a8759e8ea5b490cea9d46a09057394731a7e6122d5ae29cd8464ccad3dc1fb",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2022,
+      "file": "w04_01_2022.json",
+      "sha256": "8b89512e3ed99a6effda3f93d86e3efc2350d03f7a5d21603761df5eb1b2566f",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2023,
+      "file": "w04_01_2023.json",
+      "sha256": "1fd27fc48b741f51910042ca95c4ae636e98a5775ebdc4edee6c8fdb27d34b57",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_01",
+      "year": 2024,
+      "file": "w04_01_2024.json",
+      "sha256": "73c6ba5d520cbcb180146065462f40c11302f29488816ae6bf5bd21f0f029341",
+      "grid_lat": 40.94903,
+      "grid_lon": -122.05127,
+      "elevation_m": 651.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2014,
+      "file": "w04_02_2014.json",
+      "sha256": "78448c239d2ed5cbdd073880f367487f8a8f5e6e42d7db6995f9a58ba323e962",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2015,
+      "file": "w04_02_2015.json",
+      "sha256": "c23d59e3f3085f13d089c92a229a1d0fd9b94d2106702387bc8eb1918b47d2bb",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2016,
+      "file": "w04_02_2016.json",
+      "sha256": "0190f9141f083b9f960938d2e2781dcc44432a25b695602a1ea3c7366362b5ee",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2017,
+      "file": "w04_02_2017.json",
+      "sha256": "bc5d5730fb69fbe424f25492df685a72b14e69cf53825d3b096665d513c34f07",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2018,
+      "file": "w04_02_2018.json",
+      "sha256": "7ebcb4f2fe5b2c155fc415bfe67f5f6440554eee96f044016834853149acfbd6",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2019,
+      "file": "w04_02_2019.json",
+      "sha256": "c199d6d1d7c92cc3b007ef1b6188597e03ace56d21d42fa5777309cc213aa242",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2020,
+      "file": "w04_02_2020.json",
+      "sha256": "a7c2aad78d77a35d46f1c7ce0954e34649aaa72bdf3e11b6eb2ce959ddb96dc6",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2021,
+      "file": "w04_02_2021.json",
+      "sha256": "b90def87ef30b9efcbbfdc861927be1b8c36d461abc1202b53a1c2c4296aa44c",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2022,
+      "file": "w04_02_2022.json",
+      "sha256": "0bf1d50acee16e27f521c455ae8da563e63a81d46674afae394b49202bbe74c7",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2023,
+      "file": "w04_02_2023.json",
+      "sha256": "faf79404881b58b8522dc995d89dbe85be7a21662cd371c2f402afaf3bb1afd0",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_02",
+      "year": 2024,
+      "file": "w04_02_2024.json",
+      "sha256": "0e377c4834d6247fe20d13050dc507bed90591eed5a50cf59afd3f666603f5b0",
+      "grid_lat": 40.878735,
+      "grid_lon": -121.49359,
+      "elevation_m": 1080.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2014,
+      "file": "w04_03_2014.json",
+      "sha256": "34f4cdaddaf72b10822276582b30014b9dbb24bab1e6fb026c59e5f805e01cee",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2015,
+      "file": "w04_03_2015.json",
+      "sha256": "d1b13ef990cff26e78106d05900dbed0f573387675dc8a54734adc462e497c27",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2016,
+      "file": "w04_03_2016.json",
+      "sha256": "958494fd8868e5854e906fcdb1445e2f1f771da25ffd954c0d0dc12475b75ce0",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2017,
+      "file": "w04_03_2017.json",
+      "sha256": "2db4a03da3bc51d6cd77dae0c6b61b128b24db24c11f9e16f6527acdd2dce4b5",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2018,
+      "file": "w04_03_2018.json",
+      "sha256": "146313392f5cea41754fa33d79031d918f62ee140efb39db5ea27871ef481227",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2019,
+      "file": "w04_03_2019.json",
+      "sha256": "645ae938e183fd528d9765241142d97e32e64f574e2b59cc8bb35b7d622d85f1",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2020,
+      "file": "w04_03_2020.json",
+      "sha256": "a498b3af04c7f73fd72f7474e96a31c4931cae926d038a03777c7b5fbef4928a",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2021,
+      "file": "w04_03_2021.json",
+      "sha256": "fd20bde4553868c691641215ff4ef0fe57254768ed9aaf5f65543f7d5dd0b147",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2022,
+      "file": "w04_03_2022.json",
+      "sha256": "563ba2ec8f16dad72e3878b44dbb701c50c9008c27491fd66c1914bf7cfee4e8",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2023,
+      "file": "w04_03_2023.json",
+      "sha256": "44450f7d695152487853e31b5903506657ebebd46abdb389a4e133454b9f9e84",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    },
+    {
+      "point": "w04_03",
+      "year": 2024,
+      "file": "w04_03_2024.json",
+      "sha256": "4f2f80cfc723f03955e0be9056196c510727b2986c361d59e06d3c60827878f2",
+      "grid_lat": 40.94903,
+      "grid_lon": -120.897415,
+      "elevation_m": 1732.0
+    }
+  ],
+  "assembled_utc": "2026-10-18T02:08:51+00:00",
+  "rows": 75340
+}

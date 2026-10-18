@@ -1,53 +1,264 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EMBER / GNN Forecast Replay</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#0c1418"/>
+<title>EMBER / Next-observation forecast</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
-:root{color-scheme:dark}body{margin:0;background:#10181b;color:#edf2ee;font:14px system-ui,sans-serif}
-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:18px 24px;gap:10px;background:#152226;border-bottom:1px solid #2d4145}
-h1{font-size:21px;margin:0}small{color:#95b8b7}a{color:#80e6d4}#map{height:calc(100vh - 180px);min-height:380px;background:#24323a}
-.controls{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 24px;background:#152226}
-button{background:#24413f;color:#e5fbf8;border:1px solid #4c928a;border-radius:5px;padding:10px 14px;cursor:pointer}button:hover{background:#33665f}
-input[type=range]{flex:1;min-width:170px;accent-color:#74dccc}
-.legend{display:flex;gap:16px;flex-wrap:wrap}i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:middle}
-.leaflet-container{background:#102127}.leaflet-popup-content-wrapper{background:#162326;color:#eff}.leaflet-popup-tip{background:#162326}
+:root{color-scheme:dark;--bg:#0c1418;--surface:#142025;--surface2:#1a2a30;--line:#30434a;--text:#eff4f3;--muted:#a0b9ba;--aqua:#75d6cf;--orange:#ffa952;--red:#ff7186}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+button,select{font:inherit}button{border:1px solid #45636a;background:var(--surface2);color:var(--text);border-radius:7px;padding:10px 14px;cursor:pointer;transition:background .15s}button:hover:not(:disabled){background:#28434b}button:focus-visible,select:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--aqua);outline-offset:3px}button:disabled{opacity:.4;cursor:not-allowed}
+header{border-bottom:1px solid var(--line);padding:16px 25px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header .brand{font-weight:800;letter-spacing:.13em;font-size:17px}header .brand strong{color:var(--orange)}header .sub{font-size:12px;color:var(--muted);margin-top:4px}header a{color:var(--aqua);font-size:13px;text-decoration:none}
+main{max-width:1880px;margin:auto;padding:18px 22px 24px}
+.hero{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:15px;flex-wrap:wrap}.hero h1{font-size:clamp(21px,2.5vw,31px);margin:0 0 5px;font-weight:750;line-height:1.2}.hero p{color:var(--muted);margin:0}.pill{display:inline-block;padding:5px 9px;border:1px solid #74583d;border-radius:5px;color:#ffce91;letter-spacing:.07em;font-size:10px;font-weight:700;white-space:nowrap}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:12px}.step{border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:12px 13px;min-height:77px}.step strong{display:block;margin-bottom:4px;font-size:13px}.step span{color:var(--muted);font-size:12px}.step .num{color:var(--aqua);font-size:11px;margin-right:7px}.step.current{border-color:#527f7c;background:#172d31}.step.done{border-color:#7d6247}
+.timeline{display:flex;align-items:center;gap:11px;padding:13px;background:var(--surface);border:1px solid var(--line);border-radius:8px;margin-bottom:13px;flex-wrap:wrap}.timeline input{flex:1;min-width:130px;accent-color:var(--aqua)}.timeline .context{font-size:12px;color:var(--muted);min-width:245px;text-align:center}.timeline .context b{color:var(--text);display:block;font-size:13px}.timeline .reveal{background:var(--orange);border-color:var(--orange);color:#172026;font-weight:800;min-width:161px}.timeline .reveal:hover{background:#f6bf7d}.timeline .reveal.active{background:transparent;color:var(--aqua);border-color:var(--aqua)}
+.workspace{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:13px;align-items:stretch}.map-wrap{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:9px;overflow:hidden;min-width:0}.map-bar{display:flex;align-items:center;justify-content:space-between;padding:11px 14px;border-bottom:1px solid var(--line);gap:6px;flex-wrap:wrap}.map-bar b{font-size:12px;letter-spacing:.08em}.map-bar span{color:var(--muted);font-size:11px}
+#map{height:min(63vh,680px);min-height:450px;background:#293b3b;z-index:0}.leaflet-container{font:13px system-ui,sans-serif}.leaflet-popup-content-wrapper{background:#15262a;color:white}.leaflet-popup-tip{background:#15262a}.leaflet-tooltip{color:#f0f4f3!important;background:#15262a!important;border:1px solid #547278!important;box-shadow:0 2px 12px #0006!important}.leaflet-tooltip-top:before{border-top-color:#547278!important}
+.map-legend{position:absolute;z-index:500;bottom:14px;left:13px;padding:10px 13px;background:#0e1b20ef;border:1px solid #3a555b;border-radius:7px;max-width:300px;display:grid;gap:6px;font-size:12px;pointer-events:none}.legend-row{display:flex;align-items:center;gap:7px}.key{width:12px;height:12px;display:inline-block;border-radius:50%;flex-shrink:0}.key.square{border-radius:2px;background:var(--orange)}.key.current{background:var(--aqua)}.key.future{background:var(--red)}.legend-note{font-size:10px;color:#b4c4c5;line-height:1.35}
+.panel{display:flex;flex-direction:column;gap:12px}.card{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:16px}.card h2{font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin:0 0 12px}.card h2 em{font-style:normal;color:var(--aqua)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{padding:11px;background:#101b20;border-radius:6px;min-width:0}.stat strong{display:block;font-size:21px;line-height:1.25;font-variant-numeric:tabular-nums}.stat small{font-size:11px;color:var(--muted)}.stat .accent{color:var(--orange)}.stat.full{grid-column:span 2}
+.k-select{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.k-select label{font-size:12px;color:var(--muted)}select{background:var(--surface2);border:1px solid #49666e;color:white;border-radius:6px;padding:8px;max-width:175px;cursor:pointer}
+.help{font-size:12px;color:var(--muted);margin:9px 0 0}.warning{border-left:3px solid var(--orange);padding-left:10px;color:#d6d3c7}
+.result{border:1px solid #52766c;background:#122725;border-radius:7px;padding:12px}.result strong{display:block;color:var(--aqua);font-size:22px;font-variant-numeric:tabular-nums}.result span{font-size:12px;color:#bfd7d4}.metrics{margin-top:11px;display:grid;gap:10px}.metric-label{display:flex;justify-content:space-between;color:#ccdcda;font-size:12px;gap:12px}.track{height:9px;border-radius:10px;background:#28353a;overflow:hidden;margin-top:4px}.track>span{display:block;height:100%;border-radius:10px}.track .model{background:var(--aqua)}.track .baseline{background:#a4adb3}
+.footer{font-size:12px;color:var(--muted);padding:12px 1px 0;line-height:1.55}.footer strong{color:#c4d8d8}#status{margin:12px 0;color:#ffb8a7}.muted{color:var(--muted)}.hidden{display:none!important}
+@media(max-width:1100px){.workspace{grid-template-columns:minmax(0,1fr) 300px}}
+@media(max-width:850px){.workspace{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr 1fr}.step{padding:10px}.panel{display:grid;grid-template-columns:1fr 1fr}.map-legend{bottom:10px}}
+@media(max-width:630px){main{padding:10px}.steps{grid-template-columns:1fr}.step{min-height:0}.timeline .context{width:100%;order:-1}#map{min-height:390px;height:55vh}.panel{grid-template-columns:1fr}.map-legend{font-size:10px;max-width:245px}.timeline button{padding:8px}}
 </style>
-</head><body>
-<header><div><h1>EMBER <small>/ LEARNED FIRE FORECAST</small></h1><small id="about">Loading time-ordered predictions...</small></div><a href="/">← Origin investigation</a></header>
-<div class="controls"><button id="previous">← Earlier</button><input id="pass" type="range" min="0" max="0" value="0"/><button id="next">Later →</button><button id="reveal">Reveal actual next detections</button><strong id="stamp">—</strong></div>
-<div id="map"></div>
-<div class="controls"><div class="legend"><span><i style="background:#65cfc8"></i>Observed now</span><span><i style="background:#f4a35c"></i>GNN forecast</span><span><i style="background:#ff6877"></i>Actually detected later (reveal)</span></div><small>Not an operational wildfire warning. Later satellite detections do not represent all burning ground.</small></div>
+</head>
+<body>
+<header>
+  <div><div class="brand"><strong>EMBER</strong> / FIRE FORECAST</div><div class="sub" id="case">Historical replay · Loading trained model results…</div></div>
+  <a href="/">← Back to origin investigation</a>
+</header>
+<main>
+  <div class="hero"><div><h1>Where will the fire be detected next?</h1><p>See the AI's forecast <b>before</b> revealing what satellites detected later.</p></div><div class="pill">HISTORICAL REPLAY · NOT A LIVE WARNING</div></div>
+  <div class="steps">
+    <div class="step current" id="step1"><strong><span class="num">01</span>What we know</strong><span>Turquoise marks where the current satellite detected fire.</span></div>
+    <div class="step current" id="step2"><strong><span class="num">02</span>AI makes a forecast</strong><span>Orange squares show only the GNN's highest-ranked locations.</span></div>
+    <div class="step" id="step3"><strong><span class="num">03</span>Check what happened</strong><span>Reveal the later satellite detections in red and see the measured result.</span></div>
+  </div>
+  <div class="timeline">
+    <button id="prev" aria-label="Previous forecast window">← Earlier</button>
+    <input id="pass" type="range" min="0" max="5" value="0" aria-label="Forecast window"/>
+    <button id="next" aria-label="Next forecast window">Later →</button>
+    <div class="context"><b id="pass-title">Loading…</b><span id="pass-times">—</span></div>
+    <button class="reveal" id="reveal">3. Reveal outcome</button>
+  </div>
+  <div class="workspace">
+    <div class="map-wrap">
+      <div class="map-bar"><b>FORECAST VS LATER OBSERVATIONS</b><span>Each orange square is one model-ranked grid cell — not a confirmed burn area</span></div>
+      <div id="map" role="img" aria-label="Map with current observations, top-ranked forecast cells, and optional later detections"></div>
+      <div class="map-legend">
+        <div class="legend-row"><i class="key current"></i>Current satellite detections</div>
+        <div class="legend-row"><i class="key square"></i>Top-ranked GNN forecast cells</div>
+        <div class="legend-row" id="future-key" style="opacity:.45"><i class="key future"></i>Actually detected later (hidden)</div>
+        <div class="legend-note">Orange = a ranking, <b>not</b> a calibrated chance of fire. Unshown cells are not necessarily safe.</div>
+      </div>
+    </div>
+    <aside class="panel">
+      <div class="card">
+        <h2><em>01</em> The forecast</h2>
+        <div class="k-select"><label for="topk">Show highest-ranked cells</label><select id="topk"><option value="10">Top 10</option><option value="25" selected>Top 25</option><option value="50">Top 50</option></select></div>
+        <div class="stats">
+          <div class="stat"><strong class="accent" id="cell-count">25</strong><small>Top cells shown / total tested</small></div>
+          <div class="stat"><strong id="lead">—</strong><small>Until next satellite pass</small></div>
+          <div class="stat full"><strong id="resolution">—</strong><small>Size of each grid cell; not a precise fire boundary</small></div>
+        </div>
+        <p class="help">The AI ranks where it expects <b>satellite-detected fire activity</b> next. We only show the highest-ranked cells to keep the map readable.</p>
+      </div>
+      <div class="card" id="before">
+        <h2><em>02</em> Before we reveal</h2>
+        <p class="help warning">Try to predict whether the orange squares will line up with the later satellite detections. Then click <b>Reveal outcome</b>.</p>
+        <p class="help">This replay uses an unseen historical fire. The future satellite pass was excluded from the model's input.</p>
+      </div>
+      <div class="card hidden" id="after">
+        <h2><em>03</em> Measured result</h2>
+        <div class="result"><strong id="hits">—</strong><span id="hit-desc">of the top 25 cells were observed burning later</span></div>
+        <p class="help" id="recall">—</p>
+        <div class="metrics">
+          <div><div class="metric-label"><span>GNN ranking (average precision)</span><b id="gnn-ap">—</b></div><div class="track"><span id="gnn-bar" class="model" style="width:0"></span></div></div>
+          <div><div class="metric-label"><span>Simple baseline</span><b id="base-ap">—</b></div><div class="track"><span id="base-bar" class="baseline" style="width:0"></span></div></div>
+        </div>
+        <p class="help">Average precision scores the ranking across <b>all</b> tested cells. It is <b>not</b> percentage forecasting accuracy. The top-cell hit count is a separate, stricter test.</p>
+      </div>
+    </aside>
+  </div>
+  <p class="footer" id="status" role="status"></p>
+  <div class="footer"><strong>Limits:</strong> Orange cells are ranked possibilities, not a predicted fire perimeter. Red cells mark later <i>satellite detections</i>, not everything that burned. GNN scores are not calibrated probabilities. The target time varies with the next satellite pass. Only a few wildfires were available for training, so this is a research prototype — <strong>not operational emergency advice</strong>.</div>
+</main>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 'use strict';
-let data, index=0, revealed=false;
-const map=L.map('map',{preferCanvas:true}).setView([39.77,-121.55],10);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap contributors'}).addTo(map);
-const observed=L.layerGroup().addTo(map),forecast=L.layerGroup().addTo(map),nextObserved=L.layerGroup().addTo(map);
-const stamp=document.querySelector('#stamp');
-function render(){
-  const frame=data.frames[index];if(!frame)return;
-  observed.clearLayers();forecast.clearLayers();nextObserved.clearLayers();
-  let bounds=[];
-  for(const [lat,lon] of frame.observations){L.circleMarker([lat,lon],{radius:3,color:'#65cfc8',fillColor:'#65cfc8',fillOpacity:.7,weight:0}).addTo(observed);bounds.push([lat,lon])}
-  for(const [lat,lon,score] of frame.forecast){
-    L.circleMarker([lat,lon],{radius:4+5*score,color:'#f4a35c',fillColor:'#f4a35c',fillOpacity:Math.min(.65,.14+.65*score),weight:.3})
-     .bindTooltip('GNN ranking score: '+score.toFixed(3)).addTo(forecast);bounds.push([lat,lon]);
-  }
-  if(revealed){for(const [lat,lon] of frame.next_observations){L.circleMarker([lat,lon],{radius:3,color:'#ff6877',fillColor:'#ff6877',fillOpacity:.8,weight:0}).addTo(nextObserved)}}
-  if(bounds.length)map.fitBounds(L.latLngBounds(bounds).pad(.08),{maxZoom:11});
-  stamp.textContent=`Pass ${index+1}/${data.frames.length} · ${frame.issue_time} → ${frame.next_observation_time}`;
-  document.querySelector('#reveal').textContent=revealed?'Hide actual next detections':'Reveal actual next detections';
-  document.querySelector('#pass').value=index;
+let dataset=null, frameIndex=0, revealed=false, topK=25;
+const $=id=>document.getElementById(id);
+const map=L.map('map',{preferCanvas:true,zoomControl:true}).setView([39.77,-121.55],10);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+  maxZoom:18, attribution:'© OpenStreetMap contributors'
+}).addTo(map);
+const currentLayer=L.layerGroup().addTo(map);
+const forecastLayer=L.layerGroup().addTo(map);
+const outcomeLayer=L.layerGroup().addTo(map);
+
+// Convert a satellite timestamp into an easy-to-read UTC label.
+function when(iso){
+  if(!iso)return '—';
+  const d=new Date(iso);
+  return Number.isNaN(d.getTime())?iso:d.toLocaleString('en-GB',{
+    day:'numeric',month:'short',hour:'2-digit',minute:'2-digit',timeZone:'UTC'
+  })+' UTC';
 }
-fetch('/static/gnn_replay.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('No replay file. Run scripts/gnn_replay.py first.');return r.json()})
-.then(d=>{data=d;document.querySelector('#about').textContent=`${d.case} · trained on ${d.trained_on.join(', ')} · test: ${d.test_fire.join(', ')}`;
-  document.querySelector('#pass').max=Math.max(0,d.frames.length-1);render()})
-.catch(err=>{document.querySelector('#about').textContent='ERROR: '+err.message});
-document.querySelector('#pass').addEventListener('input',e=>{index=Number(e.target.value);revealed=false;render()});
-document.querySelector('#previous').onclick=()=>{if(data){index=Math.max(0,index-1);revealed=false;render()}};
-document.querySelector('#next').onclick=()=>{if(data){index=Math.min(data.frames.length-1,index+1);revealed=false;render()}};
-document.querySelector('#reveal').onclick=()=>{if(data){revealed=!revealed;render()}};
-</script></body></html>
+
+// Get an honest forecast horizon, which may be many hours between satellite passes.
+function leadLabel(frame){
+  const h=Number.isFinite(frame.horizon_hours)?frame.horizon_hours:
+    (new Date(frame.next_observation_time)-new Date(frame.issue_time))/3600000;
+  if(!Number.isFinite(h))return '—';
+  const total=Math.round(h*60);
+  return total>=60?`${Math.floor(total/60)}h ${String(total%60).padStart(2,'0')}m`:`${total} min`;
+}
+
+// Show a cell's rank and size on hover without suggesting an uncalibrated score is a probability.
+function forecastTooltip(rank,score,meters){
+  return `<b>Forecast rank #${rank}</b><br>${Math.round(meters/1000*100)/100} km cell<br>`+
+    `Raw model score: ${score.toFixed(3)} <small>(not a probability)</small>`;
+}
+
+// Add the top-ranked cells as geographical squares, not hundreds of overlapping orange dots.
+function drawForecast(frame,bounds){
+  const cells=frame.forecast.slice(0,topK);
+  const meters=frame.cell_m||2000;
+  for(let i=0;i<cells.length;i++){
+    const [lat,lon,score]=cells[i];
+    const halfLat=meters/2/111320;
+    const halfLon=meters/2/(111320*Math.max(.1,Math.cos(lat*Math.PI/180)));
+    const strong=i<10;
+    const rect=L.rectangle([[lat-halfLat,lon-halfLon],[lat+halfLat,lon+halfLon]],{
+      color:strong?'#f18d35':'#f5a654',weight:strong?1.5:1,
+      fillColor:'#f6a35c',fillOpacity:strong?.35:.19,interactive:true
+    }).bindTooltip(forecastTooltip(i+1,score,meters),{sticky:true});
+    rect.addTo(forecastLayer);
+    bounds.push([lat,lon]);
+  }
+  $('cell-count').textContent=`${cells.length} / ${frame.grid_cell_count||'?'}`;
+  $('resolution').textContent=`${(meters/1000).toFixed(meters%1000===0?0:1)} km × ${(meters/1000).toFixed(meters%1000===0?0:1)} km`;
+}
+
+// Render a restrained sample of current hotspot locations as turquoise points.
+function drawCurrent(frame,bounds){
+  for(const [lat,lon] of frame.observations||[]){
+    L.circleMarker([lat,lon],{radius:2.9,color:'#38bcb7',weight:0,fillColor:'#42c9c3',fillOpacity:.7})
+      .bindTooltip('Detected by satellite at '+when(frame.issue_time),{sticky:true}).addTo(currentLayer);
+    bounds.push([lat,lon]);
+  }
+}
+
+// Reveal later observations only on user request, keeping the forecast itself unchanged.
+function drawOutcome(frame){
+  const targetCells=frame.next_cells||frame.next_observations||[];
+  for(const [lat,lon] of targetCells){
+    L.circleMarker([lat,lon],{radius:5,color:'#d84f68',weight:1.4,fillColor:'#ff7186',fillOpacity:.86})
+      .bindTooltip('Detected on NEXT satellite pass: '+when(frame.next_observation_time),{sticky:true})
+      .addTo(outcomeLayer);
+  }
+}
+
+// Display evaluation metrics computed against next-pass cells, never used as inputs to the GNN.
+function showOutcomeMetrics(frame){
+  const evaluation=frame.evaluation;
+  if(!evaluation){
+    $('hits').textContent='Not available';
+    $('hit-desc').textContent='Regenerate the replay with the updated exporter for exact top-cell metrics.';
+    $('recall').textContent='The red observations are still available for visual comparison.';
+    $('gnn-ap').textContent='—';$('base-ap').textContent='—';
+    $('gnn-bar').style.width='0%';$('base-bar').style.width='0%';
+    return;
+  }
+  const hits=evaluation.top_k?.[String(topK)];
+  $('hits').textContent=hits?`${hits.hits} / ${hits.shown}`:'—';
+  $('hit-desc').textContent='top-ranked cells also detected on the next pass';
+  $('recall').textContent=hits?
+    `These include ${(hits.recall*100).toFixed(1)}% of the ${evaluation.future_positive_cells} later-detected cells inside the tested grid.`:
+    'Top-cell matching unavailable for this frame.';
+  for(const [key,labelId,barId] of [
+    ['gnn_average_precision','gnn-ap','gnn-bar'],
+    ['persistence_average_precision','base-ap','base-bar']
+  ]){
+    const value=evaluation[key];
+    $(labelId).textContent=typeof value==='number'?value.toFixed(3):'—';
+    $(barId).style.width=typeof value==='number'?`${Math.min(100,Math.max(0,value*100))}%`:'0%';
+  }
+}
+
+// Re-render the selected forecast and reset the view to what the model knew at issue time.
+function render({fit=true}={}){
+  if(!dataset?.frames?.length)return;
+  const frame=dataset.frames[frameIndex];
+  currentLayer.clearLayers();forecastLayer.clearLayers();outcomeLayer.clearLayers();
+  const bounds=[];
+  drawCurrent(frame,bounds);
+  drawForecast(frame,bounds);
+  if(revealed)drawOutcome(frame);
+  if(fit&&bounds.length)map.fitBounds(L.latLngBounds(bounds).pad(.17),{maxZoom:11,animate:false});
+  $('pass-title').textContent=`FORECAST ${frameIndex+1} / ${dataset.frames.length}`;
+  $('pass-times').textContent=`${when(frame.issue_time)}  →  ${when(frame.next_observation_time)}`;
+  $('lead').textContent=leadLabel(frame);
+  $('pass').value=frameIndex;
+  $('prev').disabled=frameIndex===0;
+  $('next').disabled=frameIndex===dataset.frames.length-1;
+  $('reveal').textContent=revealed?'Hide later observations':'3. Reveal outcome';
+  $('reveal').classList.toggle('active',revealed);
+  $('after').classList.toggle('hidden',!revealed);
+  $('before').classList.toggle('hidden',revealed);
+  $('step3').classList.toggle('done',revealed);
+  $('step3').classList.toggle('current',revealed);
+  $('future-key').style.opacity=revealed?'1':'.45';
+  $('future-key').lastChild.textContent=revealed?'Actually detected later':'Actually detected later (hidden)';
+  if(revealed)showOutcomeMetrics(frame);
+}
+
+// Move through history without ever carrying the previous pass's revealed ground truth forward.
+function changePass(next){
+  frameIndex=Math.max(0,Math.min(dataset.frames.length-1,next));
+  revealed=false;
+  render();
+}
+
+// Bind playback controls only after the replay has successfully loaded.
+function bindControls(){
+  $('pass').max=dataset.frames.length-1;
+  $('pass').addEventListener('input',e=>changePass(Number(e.target.value)));
+  $('prev').onclick=()=>changePass(frameIndex-1);
+  $('next').onclick=()=>changePass(frameIndex+1);
+  $('topk').onchange=e=>{topK=Number(e.target.value);render({fit:false})};
+  $('reveal').onclick=()=>{revealed=!revealed;render({fit:false})};
+  document.addEventListener('keydown',event=>{
+    if(event.target.matches('select,input,button'))return;
+    if(event.key==='ArrowRight')changePass(frameIndex+1);
+    if(event.key==='ArrowLeft')changePass(frameIndex-1);
+  });
+}
+
+// Load the previously generated, time-ordered predictions from the local server.
+async function loadReplay(){
+  try{
+    const response=await fetch('/static/gnn_replay.json',{cache:'no-store'});
+    if(!response.ok)throw new Error('Forecast file missing. Run scripts/gnn_replay.py first.');
+    dataset=await response.json();
+    if(!Array.isArray(dataset.frames)||!dataset.frames.length)throw new Error('No forecast frames available.');
+    $('case').textContent=`${dataset.case.replaceAll('_',' ')} · trained on ${dataset.trained_on.join(' + ')} · held-out historical test`;
+    $('status').textContent='';
+    bindControls();render();
+  }catch(error){
+    $('status').textContent='ERROR: '+error.message;
+    $('pass-title').textContent='Replay unavailable';
+  }
+}
+loadReplay();
+</script>
+</body>
+</html>

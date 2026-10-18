@@ -12,8 +12,8 @@ import sys
 
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from gnn_forecast import (EdgeAwareGNN, build_example, get_passes, load_firms,
-                          load_weather, torch)
+from gnn_forecast import (EdgeAwareGNN, average_precision, build_example, get_passes,
+                          load_firms, load_weather, parse_utc, torch)
 
 
 def main() -> None:
@@ -41,14 +41,55 @@ def main() -> None:
                                 cell_m=settings['cell_m'],margin_km=settings['margin_km'],
                                 max_cells=settings['max_cells'])
             if graph is None:continue
-            probs=torch.sigmoid(model(graph)).cpu().tolist()
+            # Make this prediction before constructing any labels from the future.
+            predicted_scores=torch.sigmoid(model(graph))
+            probs=predicted_scores.cpu().tolist()
             top=sorted(range(len(probs)),key=probs.__getitem__,reverse=True)[:args.top]
+            next_time=passes[i+1][0]['observed_utc']
+
+            # Build labels AFTER predicting. This separate construction uses the
+            # same past-only features, and the next pass solely for evaluation.
+            labelled=build_example(args.name,passes[max(0,i-2):i+1],passes[i+1],weather,
+                                   cell_m=settings['cell_m'],margin_km=settings['margin_km'],
+                                   max_cells=settings['max_cells'])
+            evaluation=None
+            next_cells=[]
+            if labelled is not None:
+                labels=labelled.label.cpu().tolist()
+                future_ids=[j for j,flag in enumerate(labels) if flag > 0.5]
+                next_cells=[[round(graph.grid.nodes[j].lat,5),round(graph.grid.nodes[j].lon,5)]
+                            for j in future_ids]
+                # For every fixed-size forecast shortlist, compare cell IDs rather
+                # than approximate geographic distances to later detections.
+                top_k={}
+                for k in (10,25,50):
+                    shortlist=top[:min(k,len(top))]
+                    hits=sum(labels[j] > 0.5 for j in shortlist)
+                    top_k[str(k)]={'hits':hits, 'shown':len(shortlist),
+                                   'precision':round(hits/max(1,len(shortlist)),4),
+                                   'recall':round(hits/max(1,len(future_ids)),4)}
+                evaluation={
+                    'gnn_average_precision':round(average_precision(predicted_scores,labelled.label),4),
+                    'persistence_average_precision':round(average_precision(labelled.current_mask,labelled.label),4),
+                    'future_positive_cells':len(future_ids),
+                    'future_pixel_coverage_in_grid':round(labelled.coverage,3),
+                    'top_k':top_k
+                }
+
             frames.append({'issue_time':graph.current_time,'pass_index':i,
-                'next_observation_time':passes[i+1][0]['observed_utc'],
-                'observations':[[round(d['latitude'],5),round(d['longitude'],5)] for d in obs[::max(1,len(obs)//800)]],
-                'forecast':[[round(graph.grid.nodes[j].lat,5),round(graph.grid.nodes[j].lon,5),round(probs[j],5)] for j in top],
+                'next_observation_time':next_time,
+                'horizon_hours':round((parse_utc(next_time)-parse_utc(graph.current_time)).total_seconds()/3600,2),
+                'cell_m':settings['cell_m'],
+                'grid_cell_count':len(probs),
+                'observations':[[round(d['latitude'],5),round(d['longitude'],5)]
+                                 for d in obs[::max(1,len(obs)//800)]],
+                'forecast':[[round(graph.grid.nodes[j].lat,5),round(graph.grid.nodes[j].lon,5),round(probs[j],5)]
+                            for j in top],
+                'next_cells':next_cells,
+                'evaluation':evaluation,
+                # Retained for compatibility with older forecast viewers.
                 'next_observations':[[round(d['latitude'],5),round(d['longitude'],5)]
-                                   for d in passes[i+1][::max(1,len(passes[i+1])//800)]]})
+                                     for d in passes[i+1][::max(1,len(passes[i+1])//800)]]})
     result={'case':args.name,'frames':frames,'test_fire':checkpoint['split']['test'],
         'trained_on':checkpoint['split']['training'],
         'warning':'Forecasts concern NEXT satellite detections, not fire perimeter or burned area. Model scores not calibrated. Later satellite detections are not exhaustive ground truth.'}

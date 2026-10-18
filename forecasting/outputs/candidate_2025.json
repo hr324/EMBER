@@ -1,0 +1,101 @@
+{
+  "prereg": "PREREG_2025_v2.md",
+  "weeks": 51,
+  "cell_weeks": 4080,
+  "fire_cell_weeks": 790,
+  "fires": 1563,
+  "base_rate": 0.1936,
+  "models": {
+    "A_climatology": {
+      "alerts": 408,
+      "hits": 223,
+      "precision": 0.5466,
+      "event_capture": 0.3928,
+      "cellweek_recall": 0.2823,
+      "pr_auc": 0.6127,
+      "TP": 223,
+      "FP": 185,
+      "FN": 567,
+      "TN": 3105
+    },
+    "E0_control": {
+      "alerts": 408,
+      "hits": 225,
+      "precision": 0.5515,
+      "event_capture": 0.3852,
+      "cellweek_recall": 0.2848,
+      "pr_auc": 0.6072,
+      "TP": 225,
+      "FP": 183,
+      "FN": 565,
+      "TN": 3107
+    },
+    "E_gbm_history_weather": {
+      "alerts": 408,
+      "hits": 235,
+      "precision": 0.576,
+      "event_capture": 0.4012,
+      "cellweek_recall": 0.2975,
+      "pr_auc": 0.6292,
+      "TP": 235,
+      "FP": 173,
+      "FN": 555,
+      "TN": 3117
+    },
+    "E0+redflag": {
+      "alerts": 408,
+      "hits": 225,
+      "precision": 0.5515,
+      "event_capture": 0.3877,
+      "cellweek_recall": 0.2848,
+      "pr_auc": 0.6086,
+      "TP": 225,
+      "FP": 183,
+      "FN": 565,
+      "TN": 3107
+    }
+  },
+  "comparisons": [
+    {
+      "baseline": "A_climatology",
+      "candidate": "E0+redflag",
+      "diff": 0.0049,
+      "ci95": [
+        -0.0245,
+        0.035
+      ],
+      "p_le_zero": 0.3965
+    },
+    {
+      "baseline": "E0_control",
+      "candidate": "E0+redflag",
+      "diff": 0.0,
+      "ci95": [
+        -0.0096,
+        0.0098
+      ],
+      "p_le_zero": 0.593
+    },
+    {
+      "baseline": "E_gbm_history_weather",
+      "candidate": "E0+redflag",
+      "diff": -0.0245,
+      "ci95": [
+        -0.051,
+        0.0024
+      ],
+      "p_le_zero": 0.9735
+    },
+    {
+      "baseline": "A_climatology",
+      "candidate": "E_gbm_history_weather",
+      "diff": 0.0294,
+      "ci95": [
+        -0.0049,
+        0.06
+      ],
+      "p_le_zero": 0.05
+    }
+  ],
+  "run_utc": "2026-10-18T03:43:50+00:00"
+}

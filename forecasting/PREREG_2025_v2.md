@@ -38,3 +38,18 @@ Committed 18 October 2026, **before** any 2025 score for the candidate was compu
 
 - **The candidate beats the baseline** only if the 95% CI of the primary difference excludes zero. Otherwise the result is "no measurable advantage established".
 - **The result is reported whatever it is.** No second 2025 variant will be tried.
+
+## Outcome (run once, 18 Oct 2026)
+
+`outputs/candidate_2025.json`. Weekly top-8 alerts, 51 weeks, 408 alerts per model:
+
+| Model | Alerts followed by a fire | Hit rate |
+|---|---|---|
+| A climatology (primary comparator) | 223 / 408 | 54.7% |
+| E0 matched control | 225 / 408 | 55.1% |
+| **E0+redflag (candidate)** | **225 / 408** | **55.1%** |
+| E original frozen model (secondary) | 235 / 408 | 57.6% |
+
+- **Candidate vs A:** +0.5 pt, 95% CI [−2.5, +3.5]. **No measurable advantage established.**
+- **Candidate vs E0:** +0.0 pt. The Red Flag features changed no alert outcome.
+- **E vs A (secondary):** +2.9 pt [−0.5, +6.0], P(≤ 0) = 0.05. Suggestive, but the CI includes zero.

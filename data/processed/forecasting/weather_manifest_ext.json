@@ -1,0 +1,272 @@
+{
+  "source": "https://archive-api.open-meteo.com/v1/archive",
+  "chunks": [
+    [
+      "ext2025",
+      "2024-12-01",
+      "2025-12-31"
+    ],
+    [
+      "ext2026",
+      "2026-01-01",
+      "2026-10-11"
+    ]
+  ],
+  "daily_vars": [
+    "temperature_2m_max",
+    "temperature_2m_mean",
+    "precipitation_sum",
+    "relative_humidity_2m_mean",
+    "relative_humidity_2m_min",
+    "wind_speed_10m_max",
+    "vapour_pressure_deficit_max",
+    "et0_fao_evapotranspiration",
+    "soil_moisture_0_to_7cm_mean"
+  ],
+  "timezone": "America/Los_Angeles",
+  "files": [
+    {
+      "point": "w00_00",
+      "chunk": "ext2025",
+      "file": "w00_00_ext2025.json",
+      "sha256": "801d95647a8bb6a80f32b6acb5bffe93ef4837b18419bc41f936f8f3653189c5"
+    },
+    {
+      "point": "w00_00",
+      "chunk": "ext2026",
+      "file": "w00_00_ext2026.json",
+      "sha256": "6cd43bc60d14b961bb7487be67c48f7d662cfa01a5bb4eea7656138312c4d3e7"
+    },
+    {
+      "point": "w00_01",
+      "chunk": "ext2025",
+      "file": "w00_01_ext2025.json",
+      "sha256": "c12c749226fa3acb0e78654eb0af937ec06e9dc9a647121295cee7c012b2119e"
+    },
+    {
+      "point": "w00_01",
+      "chunk": "ext2026",
+      "file": "w00_01_ext2026.json",
+      "sha256": "2c87deb709ba1364719170c16f8756c78efbe4f85c7185d0520b76c33b5f6745"
+    },
+    {
+      "point": "w00_02",
+      "chunk": "ext2025",
+      "file": "w00_02_ext2025.json",
+      "sha256": "884e32bf08fff358be055d659cd00d8ce200a173f10b26bb6eab88529b165476"
+    },
+    {
+      "point": "w00_02",
+      "chunk": "ext2026",
+      "file": "w00_02_ext2026.json",
+      "sha256": "767f5203758e78e2f9af79ca1d61be95620208f8b9f061d1e4246f7d7f44ecbb"
+    },
+    {
+      "point": "w00_03",
+      "chunk": "ext2025",
+      "file": "w00_03_ext2025.json",
+      "sha256": "840d881087551e0ad577d3ec14ef024c00644fa864c67adf7cb8ac15ff945fe1"
+    },
+    {
+      "point": "w00_03",
+      "chunk": "ext2026",
+      "file": "w00_03_ext2026.json",
+      "sha256": "278086859dc61f9c4799cd99f8a3682392d20cbd78c2e7f0aab831b85cd86c0d"
+    },
+    {
+      "point": "w01_00",
+      "chunk": "ext2025",
+      "file": "w01_00_ext2025.json",
+      "sha256": "179c09d0edfa44f9f8167b274bbe4b13a3c65c28b4d4a38c5a12a07668038653"
+    },
+    {
+      "point": "w01_00",
+      "chunk": "ext2026",
+      "file": "w01_00_ext2026.json",
+      "sha256": "ada7843e6143d47f4c1e0e69cfde69c7ce394d9d01c32b59fdea5bf0843d2860"
+    },
+    {
+      "point": "w01_01",
+      "chunk": "ext2025",
+      "file": "w01_01_ext2025.json",
+      "sha256": "b19b83644ab1f3801a9cd67757e0be4810adcd89cea99d57de6d756f30ac6ddd"
+    },
+    {
+      "point": "w01_01",
+      "chunk": "ext2026",
+      "file": "w01_01_ext2026.json",
+      "sha256": "523a3ada426a28edd57dbde4043571c4f256c78149ab265953bc9665097097c3"
+    },
+    {
+      "point": "w01_02",
+      "chunk": "ext2025",
+      "file": "w01_02_ext2025.json",
+      "sha256": "b8d785b5ab19e0928638e42a60a321ab89fa9742907311a232c2f11e1569dde4"
+    },
+    {
+      "point": "w01_02",
+      "chunk": "ext2026",
+      "file": "w01_02_ext2026.json",
+      "sha256": "5ddc3bafe8f333e9f8353a06ebcf292216883c823e5ad124bf78afeed2b412df"
+    },
+    {
+      "point": "w01_03",
+      "chunk": "ext2025",
+      "file": "w01_03_ext2025.json",
+      "sha256": "5299e71d5a21ff6a345d51cb866b0da7cdb5409d0f56ce3a1a6bb65a37058936"
+    },
+    {
+      "point": "w01_03",
+      "chunk": "ext2026",
+      "file": "w01_03_ext2026.json",
+      "sha256": "dd7c3f3d9a69b20c8f6bbab83828079a8628af3d34803e46039567109dbf2f65"
+    },
+    {
+      "point": "w02_00",
+      "chunk": "ext2025",
+      "file": "w02_00_ext2025.json",
+      "sha256": "7784b66aa25b5d18bc909b49d82966a788e5c3738e27577211208a4e94b8b9c9"
+    },
+    {
+      "point": "w02_00",
+      "chunk": "ext2026",
+      "file": "w02_00_ext2026.json",
+      "sha256": "7d4fd47b51690efc57bc09666dc5ba93bd8b68e7cb17f0fbed04aafe11c92c73"
+    },
+    {
+      "point": "w02_01",
+      "chunk": "ext2025",
+      "file": "w02_01_ext2025.json",
+      "sha256": "a08679284cc29b967a3bed276a42478fbb601f2228e4936eae35b4f9e483a8b3"
+    },
+    {
+      "point": "w02_01",
+      "chunk": "ext2026",
+      "file": "w02_01_ext2026.json",
+      "sha256": "4b7b240eea3643f2f23ff389663b5861e8809bdb289cd1248598b2b4984b8f69"
+    },
+    {
+      "point": "w02_02",
+      "chunk": "ext2025",
+      "file": "w02_02_ext2025.json",
+      "sha256": "e77f2efdb5db6cbca9d87039858c1837eae8e9a0abbd77133b36426c25088900"
+    },
+    {
+      "point": "w02_02",
+      "chunk": "ext2026",
+      "file": "w02_02_ext2026.json",
+      "sha256": "b033e41c4b9ad93726a5696497d7f5d109adf145de85c41dc6ce57e369ea1d59"
+    },
+    {
+      "point": "w02_03",
+      "chunk": "ext2025",
+      "file": "w02_03_ext2025.json",
+      "sha256": "fef7d31259a62dc787d8e44743d4c09a308feb198607f0e57a30ecdec7501367"
+    },
+    {
+      "point": "w02_03",
+      "chunk": "ext2026",
+      "file": "w02_03_ext2026.json",
+      "sha256": "a543a3b534ced684fcf38b47a144abd51bfc6675c4ae7c48eb16efe5e9ff36bc"
+    },
+    {
+      "point": "w03_00",
+      "chunk": "ext2025",
+      "file": "w03_00_ext2025.json",
+      "sha256": "c1547a0dfb12bb0d21c724a33f831f4bdf4ae1d2cec0681e1049848e0f0d535f"
+    },
+    {
+      "point": "w03_00",
+      "chunk": "ext2026",
+      "file": "w03_00_ext2026.json",
+      "sha256": "45504ad33eba57e6c120a813ffae543a0b3fa8a98f1c202205061c2ed4b0735a"
+    },
+    {
+      "point": "w03_01",
+      "chunk": "ext2025",
+      "file": "w03_01_ext2025.json",
+      "sha256": "32219f9c7f09fc317f7728eaf58b43d4c85a2a8d6fdaa238a1c8de27554a5720"
+    },
+    {
+      "point": "w03_01",
+      "chunk": "ext2026",
+      "file": "w03_01_ext2026.json",
+      "sha256": "7367d91557b147ef0c87e499acf6eeb46a5fcaa5ee621bffcefe82ab0eb36185"
+    },
+    {
+      "point": "w03_02",
+      "chunk": "ext2025",
+      "file": "w03_02_ext2025.json",
+      "sha256": "f5254eef2af42ccc9bace8ced5b7fd8b26720a91c9a0d9e076f6e4ffa754cd21"
+    },
+    {
+      "point": "w03_02",
+      "chunk": "ext2026",
+      "file": "w03_02_ext2026.json",
+      "sha256": "a409bb8f3abe8e5bbbcdc1d781560df45fee3f48ad95398919b57cd321dc1617"
+    },
+    {
+      "point": "w03_03",
+      "chunk": "ext2025",
+      "file": "w03_03_ext2025.json",
+      "sha256": "d3becf8fe99f25c9dc6b97e0dda8ff31ae8b746c7c5c9e22a5a15619238b46b6"
+    },
+    {
+      "point": "w03_03",
+      "chunk": "ext2026",
+      "file": "w03_03_ext2026.json",
+      "sha256": "6135d65f00e637ad649b780f45fef24afb888f1f45766846ad7f5a8526bd9cf4"
+    },
+    {
+      "point": "w04_00",
+      "chunk": "ext2025",
+      "file": "w04_00_ext2025.json",
+      "sha256": "c749d50f3a41aa0d08c363e99373ea0104a20a28ad4f31d39fd5ed602c09270f"
+    },
+    {
+      "point": "w04_00",
+      "chunk": "ext2026",
+      "file": "w04_00_ext2026.json",
+      "sha256": "07bbfeb353f3c1a3699dcb3e6abdc267f06daaf6799e8439da93ac272eb0ff41"
+    },
+    {
+      "point": "w04_01",
+      "chunk": "ext2025",
+      "file": "w04_01_ext2025.json",
+      "sha256": "ee05e38c16c268c143876b206e422139e7eecb5e6aa2a0897b27cca3cd1aaeff"
+    },
+    {
+      "point": "w04_01",
+      "chunk": "ext2026",
+      "file": "w04_01_ext2026.json",
+      "sha256": "e01b82d0c5673d7dc8c3cf2bad37dc5532c8b7ef9490b71ae506472b2bd4698a"
+    },
+    {
+      "point": "w04_02",
+      "chunk": "ext2025",
+      "file": "w04_02_ext2025.json",
+      "sha256": "52a3b19faf32617770e42c16a0b61a3f93f71db5490bb0bd315849bb71fc3c0d"
+    },
+    {
+      "point": "w04_02",
+      "chunk": "ext2026",
+      "file": "w04_02_ext2026.json",
+      "sha256": "828f8fc25761f69ae5c9d041184cc5f4e74fd5274df2a15d1c5607d403abcde4"
+    },
+    {
+      "point": "w04_03",
+      "chunk": "ext2025",
+      "file": "w04_03_ext2025.json",
+      "sha256": "dfea128543a44cce3cc0a6b2a2ed7b5b566b09218beaa1e8933047255b46924f"
+    },
+    {
+      "point": "w04_03",
+      "chunk": "ext2026",
+      "file": "w04_03_ext2026.json",
+      "sha256": "7cea52c933f89e5d45948c1fccd1c34bb4ef2675a511b9349b4c9d837b252bd0"
+    }
+  ],
+  "rows": 13600,
+  "last_complete_date": "2026-10-11",
+  "assembled_utc": "2026-10-18T03:14:44+00:00"
+}

@@ -126,6 +126,35 @@ class TestLabelsFeaturesLeakage(unittest.TestCase):
         self.assertAlmostEqual(a['tmax_mean_7'].iloc[0], win, places=6)
 
 
+class TestWfigsCleaning(unittest.TestCase):
+    """Live-feed rules from PREREG_2025.md, on verbatim WFIGS records."""
+
+    @classmethod
+    def setUpClass(cls):
+        from forecasting import fetch_wfigs
+        raw = json.loads((SAMPLES / 'wfigs_2024_jul23_25.json').read_text())['features']
+        cls.rows = [dict(f['attributes'], _gx=(f.get('geometry') or {}).get('x'), _gy=(f.get('geometry') or {}).get('y'))
+                    for f in raw]
+        cls.clean = staticmethod(fetch_wfigs.clean)
+
+    def test_discovery_date_is_pacific_calendar_day(self):
+        from datetime import datetime, timezone
+        from zoneinfo import ZoneInfo
+        out, audit = self.clean(self.rows)
+        self.assertGreater(audit['utc_date_differs_from_pacific_date'], 0)
+        for r in out:
+            utc = datetime.fromisoformat(r['discovery_utc'])
+            self.assertEqual(r['discovery_date'], utc.astimezone(ZoneInfo('America/Los_Angeles')).date().isoformat())
+        # BAXTER: 2024-07-24 00:42 UTC is 23 July in California.
+        baxter = [r for r in out if r['fire_name'] == 'BAXTER']
+        self.assertEqual(baxter[0]['discovery_date'], '2024-07-23')
+
+    def test_duplicates_removed(self):
+        out, audit = self.clean(self.rows + self.rows[:3])
+        self.assertEqual(audit['duplicate_unique_id'], 3)
+        self.assertEqual(len(out), len(self.clean(self.rows)[0]))
+
+
 @unittest.skipUnless(HAS_STACK, 'numpy/pandas/scikit-learn not installed')
 class TestMetricsAndModels(unittest.TestCase):
     def test_capture_shares_ties(self):

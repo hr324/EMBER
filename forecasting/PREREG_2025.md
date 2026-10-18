@@ -55,3 +55,17 @@ the change and its reason will be recorded here, and the original result reporte
 - **E beats A** only if the 95% CI of the primary difference excludes zero.
 - **A null or negative result** is reported as such.
 - **The absolute capture level** is compared with the 2023–2024 holdout only after allowing for the source-change effect in check 2.
+
+## Deviation log
+
+- **18 Oct 2026, before any 2025 score was seen.** The first `test` run crashed inside `features.history`: its day index was sized to end in December 2024. The crash produced no metrics.
+  - Fix: size the index from the latest issue date.
+  - Verified the fix leaves every 2015–2024 history feature identical.
+  - No rule above changed.
+- **Live source.** WFIGS records were downloaded on 18 Oct 2026. The feed is live, so a later download may differ slightly; page hashes are in `data/raw/forecasting/wfigs/manifest.json`.
+
+## Outcome
+
+See `outputs/EXTERNAL_TEST.md`.
+- **2025 (primary):** E 40.1% vs A 39.3%, +0.8 pt, 95% CI [−0.4, +3.1]. Not significant.
+- **2026 to date (secondary):** +0.3 pt [−2.8, +3.1]. Not significant.

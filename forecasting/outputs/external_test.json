@@ -1,0 +1,1398 @@
+{
+  "compare": {
+    "yearly_counts": {
+      "2015": {
+        "fpa_fod": 1290,
+        "wfigs": 417
+      },
+      "2016": {
+        "fpa_fod": 974,
+        "wfigs": 235
+      },
+      "2017": {
+        "fpa_fod": 1172,
+        "wfigs": 480
+      },
+      "2018": {
+        "fpa_fod": 1173,
+        "wfigs": 346
+      },
+      "2019": {
+        "fpa_fod": 722,
+        "wfigs": 643
+      },
+      "2020": {
+        "fpa_fod": 1424,
+        "wfigs": 1375
+      },
+      "2021": {
+        "fpa_fod": 776,
+        "wfigs": 1325
+      },
+      "2022": {
+        "fpa_fod": 1283,
+        "wfigs": 1553
+      },
+      "2023": {
+        "fpa_fod": 1335,
+        "wfigs": 1274
+      },
+      "2024": {
+        "fpa_fod": 1235,
+        "wfigs": 1265
+      }
+    },
+    "label_agreement_by_year": {
+      "2015": {
+        "cell_weeks": 4160,
+        "fpa_pos": 783,
+        "wfigs_pos": 302,
+        "both_pos": 249,
+        "agreement": 0.8589,
+        "kappa": 0.3957,
+        "fpa_pos_also_in_wfigs": 0.318,
+        "wfigs_pos_also_in_fpa": 0.8245
+      },
+      "2016": {
+        "cell_weeks": 4160,
+        "fpa_pos": 600,
+        "wfigs_pos": 198,
+        "both_pos": 177,
+        "agreement": 0.8933,
+        "kappa": 0.4007,
+        "fpa_pos_also_in_wfigs": 0.295,
+        "wfigs_pos_also_in_fpa": 0.8939
+      },
+      "2017": {
+        "cell_weeks": 4160,
+        "fpa_pos": 682,
+        "wfigs_pos": 335,
+        "both_pos": 277,
+        "agreement": 0.8887,
+        "kappa": 0.4896,
+        "fpa_pos_also_in_wfigs": 0.4062,
+        "wfigs_pos_also_in_fpa": 0.8269
+      },
+      "2018": {
+        "cell_weeks": 4240,
+        "fpa_pos": 733,
+        "wfigs_pos": 285,
+        "both_pos": 247,
+        "agreement": 0.8764,
+        "kappa": 0.4301,
+        "fpa_pos_also_in_wfigs": 0.337,
+        "wfigs_pos_also_in_fpa": 0.8667
+      },
+      "2019": {
+        "cell_weeks": 4160,
+        "fpa_pos": 514,
+        "wfigs_pos": 431,
+        "both_pos": 249,
+        "agreement": 0.8925,
+        "kappa": 0.4669,
+        "fpa_pos_also_in_wfigs": 0.4844,
+        "wfigs_pos_also_in_fpa": 0.5777
+      },
+      "2020": {
+        "cell_weeks": 4160,
+        "fpa_pos": 776,
+        "wfigs_pos": 796,
+        "both_pos": 464,
+        "agreement": 0.8452,
+        "kappa": 0.4949,
+        "fpa_pos_also_in_wfigs": 0.5979,
+        "wfigs_pos_also_in_fpa": 0.5829
+      },
+      "2021": {
+        "cell_weeks": 4160,
+        "fpa_pos": 540,
+        "wfigs_pos": 739,
+        "both_pos": 402,
+        "agreement": 0.8858,
+        "kappa": 0.5631,
+        "fpa_pos_also_in_wfigs": 0.7444,
+        "wfigs_pos_also_in_fpa": 0.544
+      },
+      "2022": {
+        "cell_weeks": 4160,
+        "fpa_pos": 724,
+        "wfigs_pos": 845,
+        "both_pos": 719,
+        "agreement": 0.9685,
+        "kappa": 0.8972,
+        "fpa_pos_also_in_wfigs": 0.9931,
+        "wfigs_pos_also_in_fpa": 0.8509
+      },
+      "2023": {
+        "cell_weeks": 4160,
+        "fpa_pos": 705,
+        "wfigs_pos": 708,
+        "both_pos": 681,
+        "agreement": 0.9877,
+        "kappa": 0.9565,
+        "fpa_pos_also_in_wfigs": 0.966,
+        "wfigs_pos_also_in_fpa": 0.9619
+      },
+      "2024": {
+        "cell_weeks": 4160,
+        "fpa_pos": 664,
+        "wfigs_pos": 688,
+        "both_pos": 643,
+        "agreement": 0.9841,
+        "kappa": 0.9417,
+        "fpa_pos_also_in_wfigs": 0.9684,
+        "wfigs_pos_also_in_fpa": 0.9346
+      }
+    },
+    "label_agreement_2020_2024": {
+      "cell_weeks": 20800,
+      "fpa_pos": 3409,
+      "wfigs_pos": 3776,
+      "both_pos": 2909,
+      "agreement": 0.9343,
+      "kappa": 0.7701,
+      "fpa_pos_also_in_wfigs": 0.8533,
+      "wfigs_pos_also_in_fpa": 0.7704
+    },
+    "record_matching": {
+      "scope": "FPA-FOD records 2020-2024 (WFIGS coverage reliable from 2020)",
+      "fpa_records": 6053,
+      "matched_within_2km_3days": 4502,
+      "match_rate": 0.7438,
+      "wfigs_minus_fpa_date_days": {
+        "-3": 11,
+        "-2": 15,
+        "-1": 24,
+        "0": 4372,
+        "1": 51,
+        "2": 20,
+        "3": 9
+      },
+      "same_day_share_of_matches": 0.9711
+    }
+  },
+  "shift": {
+    "fpa_labels_fpa_history": {
+      "weeks": 104,
+      "cell_weeks": 8320,
+      "fire_cell_weeks": 1369,
+      "fires": 2569,
+      "base_rate": 0.1645,
+      "models": {
+        "A_climatology": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.6145,
+          "roc_auc": 0.8568,
+          "brier": 0.09455,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2962,
+          "top5_lift": 5.924,
+          "top5_captured_events": 761.0,
+          "top10_capture": 0.4562,
+          "top10_lift": 4.562,
+          "top10_captured_events": 1172.0,
+          "top20_capture": 0.6571,
+          "top20_lift": 3.285,
+          "top20_captured_events": 1688.0
+        },
+        "B_logit_season_loc": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.6185,
+          "roc_auc": 0.8644,
+          "brier": 0.09425,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2989,
+          "top5_lift": 5.979,
+          "top5_captured_events": 768.0,
+          "top10_capture": 0.464,
+          "top10_lift": 4.64,
+          "top10_captured_events": 1192.0,
+          "top20_capture": 0.6726,
+          "top20_lift": 3.363,
+          "top20_captured_events": 1728.0
+        },
+        "C_logit_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.616,
+          "roc_auc": 0.8641,
+          "brier": 0.09437,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2989,
+          "top5_lift": 5.979,
+          "top5_captured_events": 768.0,
+          "top10_capture": 0.4628,
+          "top10_lift": 4.628,
+          "top10_captured_events": 1189.0,
+          "top20_capture": 0.6676,
+          "top20_lift": 3.338,
+          "top20_captured_events": 1715.0
+        },
+        "D0_gbm_season_loc": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.5948,
+          "roc_auc": 0.8496,
+          "brier": 0.09705,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.3005,
+          "top5_lift": 6.01,
+          "top5_captured_events": 772.0,
+          "top10_capture": 0.4494,
+          "top10_lift": 4.494,
+          "top10_captured_events": 1154.5,
+          "top20_capture": 0.6551,
+          "top20_lift": 3.276,
+          "top20_captured_events": 1683.0
+        },
+        "D_gbm_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.5925,
+          "roc_auc": 0.8507,
+          "brier": 0.09721,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2877,
+          "top5_lift": 5.753,
+          "top5_captured_events": 739.0,
+          "top10_capture": 0.4441,
+          "top10_lift": 4.441,
+          "top10_captured_events": 1141.0,
+          "top20_capture": 0.6547,
+          "top20_lift": 3.274,
+          "top20_captured_events": 1682.0
+        },
+        "E0_gbm_history": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.6158,
+          "roc_auc": 0.8607,
+          "brier": 0.09383,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2958,
+          "top5_lift": 5.917,
+          "top5_captured_events": 760.0,
+          "top10_capture": 0.4628,
+          "top10_lift": 4.628,
+          "top10_captured_events": 1189.0,
+          "top20_capture": 0.6563,
+          "top20_lift": 3.281,
+          "top20_captured_events": 1686.0
+        },
+        "E_gbm_history_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.6158,
+          "roc_auc": 0.8621,
+          "brier": 0.09346,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2904,
+          "top5_lift": 5.808,
+          "top5_captured_events": 746.0,
+          "top10_capture": 0.4675,
+          "top10_lift": 4.675,
+          "top10_captured_events": 1201.0,
+          "top20_capture": 0.6598,
+          "top20_lift": 3.299,
+          "top20_captured_events": 1695.0
+        }
+      },
+      "E_minus_A_top10": {
+        "metric": "top10_capture",
+        "baseline": "A_climatology",
+        "candidate": "E_gbm_history_weather",
+        "diff": 0.0113,
+        "ci95": [
+          -0.0042,
+          0.0299
+        ],
+        "p_le_zero": 0.0795,
+        "blocks": 24,
+        "n_boot": 2000
+      },
+      "equal_budget_5pct": {
+        "budget": 449,
+        "budget_share": 0.054,
+        "A_climatology_hit_rate": 0.8241,
+        "E_gbm_history_weather_hit_rate": 0.8352,
+        "A_climatology_share_of_fire_cell_weeks": 0.2703,
+        "E_gbm_history_weather_share_of_fire_cell_weeks": 0.2739,
+        "diff_hit_rate": 0.0111,
+        "ci95": [
+          -0.0338,
+          0.0245
+        ],
+        "p_le_zero": 0.566
+      },
+      "seasons": {
+        "Autumn (Sep-Nov)": {
+          "weeks": 26,
+          "fires": 645,
+          "E_top10": 0.4899,
+          "A_top10": 0.4806
+        },
+        "Spring (Mar-May)": {
+          "weeks": 26,
+          "fires": 457,
+          "E_top10": 0.4858,
+          "A_top10": 0.4464
+        },
+        "Summer (Jun-Aug)": {
+          "weeks": 26,
+          "fires": 1393,
+          "E_top10": 0.4523,
+          "A_top10": 0.4537
+        },
+        "Winter (Dec-Feb)": {
+          "weeks": 26,
+          "fires": 74,
+          "E_top10": 0.4459,
+          "A_top10": 0.3514
+        }
+      }
+    },
+    "fpa_labels_wfigs_history": {
+      "weeks": 104,
+      "cell_weeks": 8320,
+      "fire_cell_weeks": 1369,
+      "fires": 2569,
+      "base_rate": 0.1645,
+      "models": {
+        "A_climatology": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.6145,
+          "roc_auc": 0.8568,
+          "brier": 0.09455,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2962,
+          "top5_lift": 5.924,
+          "top5_captured_events": 761.0,
+          "top10_capture": 0.4562,
+          "top10_lift": 4.562,
+          "top10_captured_events": 1172.0,
+          "top20_capture": 0.6571,
+          "top20_lift": 3.285,
+          "top20_captured_events": 1688.0
+        },
+        "B_logit_season_loc": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.6185,
+          "roc_auc": 0.8644,
+          "brier": 0.09425,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2989,
+          "top5_lift": 5.979,
+          "top5_captured_events": 768.0,
+          "top10_capture": 0.464,
+          "top10_lift": 4.64,
+          "top10_captured_events": 1192.0,
+          "top20_capture": 0.6726,
+          "top20_lift": 3.363,
+          "top20_captured_events": 1728.0
+        },
+        "C_logit_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.616,
+          "roc_auc": 0.8641,
+          "brier": 0.09437,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2989,
+          "top5_lift": 5.979,
+          "top5_captured_events": 768.0,
+          "top10_capture": 0.4628,
+          "top10_lift": 4.628,
+          "top10_captured_events": 1189.0,
+          "top20_capture": 0.6676,
+          "top20_lift": 3.338,
+          "top20_captured_events": 1715.0
+        },
+        "D0_gbm_season_loc": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.5948,
+          "roc_auc": 0.8496,
+          "brier": 0.09705,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.3005,
+          "top5_lift": 6.01,
+          "top5_captured_events": 772.0,
+          "top10_capture": 0.4494,
+          "top10_lift": 4.494,
+          "top10_captured_events": 1154.5,
+          "top20_capture": 0.6551,
+          "top20_lift": 3.276,
+          "top20_captured_events": 1683.0
+        },
+        "D_gbm_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.5925,
+          "roc_auc": 0.8507,
+          "brier": 0.09721,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2877,
+          "top5_lift": 5.753,
+          "top5_captured_events": 739.0,
+          "top10_capture": 0.4441,
+          "top10_lift": 4.441,
+          "top10_captured_events": 1141.0,
+          "top20_capture": 0.6547,
+          "top20_lift": 3.274,
+          "top20_captured_events": 1682.0
+        },
+        "E0_gbm_history": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.6178,
+          "roc_auc": 0.8608,
+          "brier": 0.09376,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.3001,
+          "top5_lift": 6.002,
+          "top5_captured_events": 771.0,
+          "top10_capture": 0.4574,
+          "top10_lift": 4.574,
+          "top10_captured_events": 1175.0,
+          "top20_capture": 0.6524,
+          "top20_lift": 3.262,
+          "top20_captured_events": 1676.0
+        },
+        "E_gbm_history_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1369,
+          "events": 2569,
+          "prevalence": 0.1645,
+          "pr_auc": 0.6172,
+          "roc_auc": 0.8618,
+          "brier": 0.0933,
+          "brier_climatological_constant": 0.13747,
+          "top5_capture": 0.2927,
+          "top5_lift": 5.854,
+          "top5_captured_events": 752.0,
+          "top10_capture": 0.4624,
+          "top10_lift": 4.624,
+          "top10_captured_events": 1188.0,
+          "top20_capture": 0.661,
+          "top20_lift": 3.305,
+          "top20_captured_events": 1698.0
+        }
+      },
+      "E_minus_A_top10": {
+        "metric": "top10_capture",
+        "baseline": "A_climatology",
+        "candidate": "E_gbm_history_weather",
+        "diff": 0.0062,
+        "ci95": [
+          -0.0101,
+          0.026
+        ],
+        "p_le_zero": 0.2355,
+        "blocks": 24,
+        "n_boot": 2000
+      },
+      "equal_budget_5pct": {
+        "budget": 449,
+        "budget_share": 0.054,
+        "A_climatology_hit_rate": 0.8241,
+        "E_gbm_history_weather_hit_rate": 0.8396,
+        "A_climatology_share_of_fire_cell_weeks": 0.2703,
+        "E_gbm_history_weather_share_of_fire_cell_weeks": 0.2754,
+        "diff_hit_rate": 0.0156,
+        "ci95": [
+          -0.027,
+          0.0333
+        ],
+        "p_le_zero": 0.4545
+      },
+      "seasons": {
+        "Autumn (Sep-Nov)": {
+          "weeks": 26,
+          "fires": 645,
+          "E_top10": 0.4853,
+          "A_top10": 0.4806
+        },
+        "Spring (Mar-May)": {
+          "weeks": 26,
+          "fires": 457,
+          "E_top10": 0.4661,
+          "A_top10": 0.4464
+        },
+        "Summer (Jun-Aug)": {
+          "weeks": 26,
+          "fires": 1393,
+          "E_top10": 0.4494,
+          "A_top10": 0.4537
+        },
+        "Winter (Dec-Feb)": {
+          "weeks": 26,
+          "fires": 74,
+          "E_top10": 0.4865,
+          "A_top10": 0.3514
+        }
+      }
+    },
+    "wfigs_labels_fpa_history": {
+      "weeks": 104,
+      "cell_weeks": 8320,
+      "fire_cell_weeks": 1396,
+      "fires": 2537,
+      "base_rate": 0.1678,
+      "models": {
+        "A_climatology": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.6161,
+          "roc_auc": 0.8536,
+          "brier": 0.09627,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2944,
+          "top5_lift": 5.889,
+          "top5_captured_events": 747.0,
+          "top10_capture": 0.4493,
+          "top10_lift": 4.493,
+          "top10_captured_events": 1140.0,
+          "top20_capture": 0.6449,
+          "top20_lift": 3.224,
+          "top20_captured_events": 1636.0
+        },
+        "B_logit_season_loc": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.6203,
+          "roc_auc": 0.8609,
+          "brier": 0.09594,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2972,
+          "top5_lift": 5.944,
+          "top5_captured_events": 754.0,
+          "top10_capture": 0.4568,
+          "top10_lift": 4.568,
+          "top10_captured_events": 1159.0,
+          "top20_capture": 0.6634,
+          "top20_lift": 3.317,
+          "top20_captured_events": 1683.0
+        },
+        "C_logit_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.6175,
+          "roc_auc": 0.8605,
+          "brier": 0.09616,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2972,
+          "top5_lift": 5.944,
+          "top5_captured_events": 754.0,
+          "top10_capture": 0.4553,
+          "top10_lift": 4.553,
+          "top10_captured_events": 1155.0,
+          "top20_capture": 0.6555,
+          "top20_lift": 3.277,
+          "top20_captured_events": 1663.0
+        },
+        "D0_gbm_season_loc": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.5964,
+          "roc_auc": 0.8469,
+          "brier": 0.09882,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2984,
+          "top5_lift": 5.968,
+          "top5_captured_events": 757.0,
+          "top10_capture": 0.4436,
+          "top10_lift": 4.436,
+          "top10_captured_events": 1125.5,
+          "top20_capture": 0.6464,
+          "top20_lift": 3.232,
+          "top20_captured_events": 1640.0
+        },
+        "D_gbm_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.5964,
+          "roc_auc": 0.8479,
+          "brier": 0.09891,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2877,
+          "top5_lift": 5.755,
+          "top5_captured_events": 730.0,
+          "top10_capture": 0.4383,
+          "top10_lift": 4.383,
+          "top10_captured_events": 1112.0,
+          "top20_capture": 0.6437,
+          "top20_lift": 3.218,
+          "top20_captured_events": 1633.0
+        },
+        "E0_gbm_history": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.6133,
+          "roc_auc": 0.8564,
+          "brier": 0.09594,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2929,
+          "top5_lift": 5.857,
+          "top5_captured_events": 743.0,
+          "top10_capture": 0.4541,
+          "top10_lift": 4.541,
+          "top10_captured_events": 1152.0,
+          "top20_capture": 0.6441,
+          "top20_lift": 3.22,
+          "top20_captured_events": 1634.0
+        },
+        "E_gbm_history_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.6136,
+          "roc_auc": 0.8578,
+          "brier": 0.09555,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2885,
+          "top5_lift": 5.771,
+          "top5_captured_events": 732.0,
+          "top10_capture": 0.4553,
+          "top10_lift": 4.553,
+          "top10_captured_events": 1155.0,
+          "top20_capture": 0.648,
+          "top20_lift": 3.24,
+          "top20_captured_events": 1644.0
+        }
+      },
+      "E_minus_A_top10": {
+        "metric": "top10_capture",
+        "baseline": "A_climatology",
+        "candidate": "E_gbm_history_weather",
+        "diff": 0.0059,
+        "ci95": [
+          -0.0082,
+          0.0231
+        ],
+        "p_le_zero": 0.215,
+        "blocks": 24,
+        "n_boot": 2000
+      },
+      "equal_budget_5pct": {
+        "budget": 449,
+        "budget_share": 0.054,
+        "A_climatology_hit_rate": 0.8307,
+        "E_gbm_history_weather_hit_rate": 0.8396,
+        "A_climatology_share_of_fire_cell_weeks": 0.2672,
+        "E_gbm_history_weather_share_of_fire_cell_weeks": 0.2701,
+        "diff_hit_rate": 0.0089,
+        "ci95": [
+          -0.0337,
+          0.0231
+        ],
+        "p_le_zero": 0.589
+      },
+      "seasons": {
+        "Autumn (Sep-Nov)": {
+          "weeks": 26,
+          "fires": 646,
+          "E_top10": 0.4783,
+          "A_top10": 0.4752
+        },
+        "Spring (Mar-May)": {
+          "weeks": 26,
+          "fires": 455,
+          "E_top10": 0.4615,
+          "A_top10": 0.4286
+        },
+        "Summer (Jun-Aug)": {
+          "weeks": 26,
+          "fires": 1363,
+          "E_top10": 0.4439,
+          "A_top10": 0.4505
+        },
+        "Winter (Dec-Feb)": {
+          "weeks": 26,
+          "fires": 73,
+          "E_top10": 0.4247,
+          "A_top10": 0.3288
+        }
+      }
+    },
+    "wfigs_labels_wfigs_history": {
+      "weeks": 104,
+      "cell_weeks": 8320,
+      "fire_cell_weeks": 1396,
+      "fires": 2537,
+      "base_rate": 0.1678,
+      "models": {
+        "A_climatology": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.6161,
+          "roc_auc": 0.8536,
+          "brier": 0.09627,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2944,
+          "top5_lift": 5.889,
+          "top5_captured_events": 747.0,
+          "top10_capture": 0.4493,
+          "top10_lift": 4.493,
+          "top10_captured_events": 1140.0,
+          "top20_capture": 0.6449,
+          "top20_lift": 3.224,
+          "top20_captured_events": 1636.0
+        },
+        "B_logit_season_loc": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.6203,
+          "roc_auc": 0.8609,
+          "brier": 0.09594,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2972,
+          "top5_lift": 5.944,
+          "top5_captured_events": 754.0,
+          "top10_capture": 0.4568,
+          "top10_lift": 4.568,
+          "top10_captured_events": 1159.0,
+          "top20_capture": 0.6634,
+          "top20_lift": 3.317,
+          "top20_captured_events": 1683.0
+        },
+        "C_logit_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.6175,
+          "roc_auc": 0.8605,
+          "brier": 0.09616,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2972,
+          "top5_lift": 5.944,
+          "top5_captured_events": 754.0,
+          "top10_capture": 0.4553,
+          "top10_lift": 4.553,
+          "top10_captured_events": 1155.0,
+          "top20_capture": 0.6555,
+          "top20_lift": 3.277,
+          "top20_captured_events": 1663.0
+        },
+        "D0_gbm_season_loc": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.5964,
+          "roc_auc": 0.8469,
+          "brier": 0.09882,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2984,
+          "top5_lift": 5.968,
+          "top5_captured_events": 757.0,
+          "top10_capture": 0.4436,
+          "top10_lift": 4.436,
+          "top10_captured_events": 1125.5,
+          "top20_capture": 0.6464,
+          "top20_lift": 3.232,
+          "top20_captured_events": 1640.0
+        },
+        "D_gbm_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.5964,
+          "roc_auc": 0.8479,
+          "brier": 0.09891,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2877,
+          "top5_lift": 5.755,
+          "top5_captured_events": 730.0,
+          "top10_capture": 0.4383,
+          "top10_lift": 4.383,
+          "top10_captured_events": 1112.0,
+          "top20_capture": 0.6437,
+          "top20_lift": 3.218,
+          "top20_captured_events": 1633.0
+        },
+        "E0_gbm_history": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.617,
+          "roc_auc": 0.8573,
+          "brier": 0.09557,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2984,
+          "top5_lift": 5.968,
+          "top5_captured_events": 757.0,
+          "top10_capture": 0.4497,
+          "top10_lift": 4.497,
+          "top10_captured_events": 1141.0,
+          "top20_capture": 0.6425,
+          "top20_lift": 3.212,
+          "top20_captured_events": 1630.0
+        },
+        "E_gbm_history_weather": {
+          "n": 8320,
+          "weeks": 104,
+          "positives": 1396,
+          "events": 2537,
+          "prevalence": 0.1678,
+          "pr_auc": 0.6164,
+          "roc_auc": 0.8582,
+          "brier": 0.09519,
+          "brier_climatological_constant": 0.13964,
+          "top5_capture": 0.2905,
+          "top5_lift": 5.81,
+          "top5_captured_events": 737.0,
+          "top10_capture": 0.4529,
+          "top10_lift": 4.529,
+          "top10_captured_events": 1149.0,
+          "top20_capture": 0.6516,
+          "top20_lift": 3.258,
+          "top20_captured_events": 1653.0
+        }
+      },
+      "E_minus_A_top10": {
+        "metric": "top10_capture",
+        "baseline": "A_climatology",
+        "candidate": "E_gbm_history_weather",
+        "diff": 0.0035,
+        "ci95": [
+          -0.0105,
+          0.0217
+        ],
+        "p_le_zero": 0.324,
+        "blocks": 24,
+        "n_boot": 2000
+      },
+      "equal_budget_5pct": {
+        "budget": 449,
+        "budget_share": 0.054,
+        "A_climatology_hit_rate": 0.8307,
+        "E_gbm_history_weather_hit_rate": 0.8419,
+        "A_climatology_share_of_fire_cell_weeks": 0.2672,
+        "E_gbm_history_weather_share_of_fire_cell_weeks": 0.2708,
+        "diff_hit_rate": 0.0111,
+        "ci95": [
+          -0.0255,
+          0.0315
+        ],
+        "p_le_zero": 0.446
+      },
+      "seasons": {
+        "Autumn (Sep-Nov)": {
+          "weeks": 26,
+          "fires": 646,
+          "E_top10": 0.4783,
+          "A_top10": 0.4752
+        },
+        "Spring (Mar-May)": {
+          "weeks": 26,
+          "fires": 455,
+          "E_top10": 0.4505,
+          "A_top10": 0.4286
+        },
+        "Summer (Jun-Aug)": {
+          "weeks": 26,
+          "fires": 1363,
+          "E_top10": 0.4417,
+          "A_top10": 0.4505
+        },
+        "Winter (Dec-Feb)": {
+          "weeks": 26,
+          "fires": 73,
+          "E_top10": 0.4521,
+          "A_top10": 0.3288
+        }
+      }
+    }
+  },
+  "test": {
+    "2025_primary": {
+      "weeks": 51,
+      "cell_weeks": 4080,
+      "fire_cell_weeks": 790,
+      "fires": 1563,
+      "base_rate": 0.1936,
+      "models": {
+        "A_climatology": {
+          "n": 4080,
+          "weeks": 51,
+          "positives": 790,
+          "events": 1563,
+          "prevalence": 0.1936,
+          "pr_auc": 0.6127,
+          "roc_auc": 0.8364,
+          "brier": 0.11225,
+          "brier_climatological_constant": 0.15614,
+          "top5_capture": 0.2482,
+          "top5_lift": 4.965,
+          "top5_captured_events": 388.0,
+          "top10_capture": 0.3928,
+          "top10_lift": 3.928,
+          "top10_captured_events": 614.0,
+          "top20_capture": 0.5726,
+          "top20_lift": 2.863,
+          "top20_captured_events": 895.0
+        },
+        "B_logit_season_loc": {
+          "n": 4080,
+          "weeks": 51,
+          "positives": 790,
+          "events": 1563,
+          "prevalence": 0.1936,
+          "pr_auc": 0.61,
+          "roc_auc": 0.8499,
+          "brier": 0.11202,
+          "brier_climatological_constant": 0.15614,
+          "top5_capture": 0.2502,
+          "top5_lift": 5.003,
+          "top5_captured_events": 391.0,
+          "top10_capture": 0.382,
+          "top10_lift": 3.82,
+          "top10_captured_events": 597.0,
+          "top20_capture": 0.5758,
+          "top20_lift": 2.879,
+          "top20_captured_events": 900.0
+        },
+        "C_logit_weather": {
+          "n": 4080,
+          "weeks": 51,
+          "positives": 790,
+          "events": 1563,
+          "prevalence": 0.1936,
+          "pr_auc": 0.615,
+          "roc_auc": 0.8522,
+          "brier": 0.11041,
+          "brier_climatological_constant": 0.15614,
+          "top5_capture": 0.2502,
+          "top5_lift": 5.003,
+          "top5_captured_events": 391.0,
+          "top10_capture": 0.3852,
+          "top10_lift": 3.852,
+          "top10_captured_events": 602.0,
+          "top20_capture": 0.5861,
+          "top20_lift": 2.93,
+          "top20_captured_events": 916.0
+        },
+        "D0_gbm_season_loc": {
+          "n": 4080,
+          "weeks": 51,
+          "positives": 790,
+          "events": 1563,
+          "prevalence": 0.1936,
+          "pr_auc": 0.5763,
+          "roc_auc": 0.82,
+          "brier": 0.11639,
+          "brier_climatological_constant": 0.15614,
+          "top5_capture": 0.247,
+          "top5_lift": 4.939,
+          "top5_captured_events": 386.0,
+          "top10_capture": 0.3807,
+          "top10_lift": 3.807,
+          "top10_captured_events": 595.0,
+          "top20_capture": 0.5585,
+          "top20_lift": 2.793,
+          "top20_captured_events": 873.0
+        },
+        "D_gbm_weather": {
+          "n": 4080,
+          "weeks": 51,
+          "positives": 790,
+          "events": 1563,
+          "prevalence": 0.1936,
+          "pr_auc": 0.6107,
+          "roc_auc": 0.8425,
+          "brier": 0.11176,
+          "brier_climatological_constant": 0.15614,
+          "top5_capture": 0.247,
+          "top5_lift": 4.939,
+          "top5_captured_events": 386.0,
+          "top10_capture": 0.3916,
+          "top10_lift": 3.916,
+          "top10_captured_events": 612.0,
+          "top20_capture": 0.5576,
+          "top20_lift": 2.788,
+          "top20_captured_events": 871.5
+        },
+        "E0_gbm_history": {
+          "n": 4080,
+          "weeks": 51,
+          "positives": 790,
+          "events": 1563,
+          "prevalence": 0.1936,
+          "pr_auc": 0.6088,
+          "roc_auc": 0.8418,
+          "brier": 0.11245,
+          "brier_climatological_constant": 0.15614,
+          "top5_capture": 0.2508,
+          "top5_lift": 5.016,
+          "top5_captured_events": 392.0,
+          "top10_capture": 0.389,
+          "top10_lift": 3.89,
+          "top10_captured_events": 608.0,
+          "top20_capture": 0.6001,
+          "top20_lift": 3.001,
+          "top20_captured_events": 938.0
+        },
+        "E_gbm_history_weather": {
+          "n": 4080,
+          "weeks": 51,
+          "positives": 790,
+          "events": 1563,
+          "prevalence": 0.1936,
+          "pr_auc": 0.6292,
+          "roc_auc": 0.8542,
+          "brier": 0.10763,
+          "brier_climatological_constant": 0.15614,
+          "top5_capture": 0.2431,
+          "top5_lift": 4.862,
+          "top5_captured_events": 380.0,
+          "top10_capture": 0.4012,
+          "top10_lift": 4.012,
+          "top10_captured_events": 627.0,
+          "top20_capture": 0.5918,
+          "top20_lift": 2.959,
+          "top20_captured_events": 925.0
+        }
+      },
+      "E_minus_A_top10": {
+        "metric": "top10_capture",
+        "baseline": "A_climatology",
+        "candidate": "E_gbm_history_weather",
+        "diff": 0.0083,
+        "ci95": [
+          -0.0042,
+          0.0309
+        ],
+        "p_le_zero": 0.1045,
+        "blocks": 12,
+        "n_boot": 2000
+      },
+      "equal_budget_5pct": {
+        "budget": 220,
+        "budget_share": 0.0539,
+        "A_climatology_hit_rate": 0.8182,
+        "E_gbm_history_weather_hit_rate": 0.8318,
+        "A_climatology_share_of_fire_cell_weeks": 0.2278,
+        "E_gbm_history_weather_share_of_fire_cell_weeks": 0.2316,
+        "diff_hit_rate": 0.0136,
+        "ci95": [
+          -0.0231,
+          0.0625
+        ],
+        "p_le_zero": 0.2695
+      },
+      "seasons": {
+        "Autumn (Sep-Nov)": {
+          "weeks": 13,
+          "fires": 286,
+          "E_top10": 0.4161,
+          "A_top10": 0.4056
+        },
+        "Spring (Mar-May)": {
+          "weeks": 13,
+          "fires": 280,
+          "E_top10": 0.4714,
+          "A_top10": 0.4893
+        },
+        "Summer (Jun-Aug)": {
+          "weeks": 13,
+          "fires": 907,
+          "E_top10": 0.366,
+          "A_top10": 0.3616
+        },
+        "Winter (Dec-Feb)": {
+          "weeks": 12,
+          "fires": 90,
+          "E_top10": 0.4889,
+          "A_top10": 0.3667
+        }
+      },
+      "issue_dates": [
+        "2025-01-06",
+        "2025-12-22"
+      ]
+    },
+    "2026_to_date_secondary": {
+      "weeks": 39,
+      "cell_weeks": 3120,
+      "fire_cell_weeks": 514,
+      "fires": 778,
+      "base_rate": 0.1647,
+      "models": {
+        "A_climatology": {
+          "n": 3120,
+          "weeks": 39,
+          "positives": 514,
+          "events": 778,
+          "prevalence": 0.1647,
+          "pr_auc": 0.4548,
+          "roc_auc": 0.8073,
+          "brier": 0.11483,
+          "brier_climatological_constant": 0.1376,
+          "top5_capture": 0.2198,
+          "top5_lift": 4.396,
+          "top5_captured_events": 171.0,
+          "top10_capture": 0.3817,
+          "top10_lift": 3.817,
+          "top10_captured_events": 297.0,
+          "top20_capture": 0.5662,
+          "top20_lift": 2.831,
+          "top20_captured_events": 440.5
+        },
+        "B_logit_season_loc": {
+          "n": 3120,
+          "weeks": 39,
+          "positives": 514,
+          "events": 778,
+          "prevalence": 0.1647,
+          "pr_auc": 0.4608,
+          "roc_auc": 0.8125,
+          "brier": 0.11268,
+          "brier_climatological_constant": 0.1376,
+          "top5_capture": 0.2237,
+          "top5_lift": 4.473,
+          "top5_captured_events": 174.0,
+          "top10_capture": 0.3869,
+          "top10_lift": 3.869,
+          "top10_captured_events": 301.0,
+          "top20_capture": 0.5771,
+          "top20_lift": 2.886,
+          "top20_captured_events": 449.0
+        },
+        "C_logit_weather": {
+          "n": 3120,
+          "weeks": 39,
+          "positives": 514,
+          "events": 778,
+          "prevalence": 0.1647,
+          "pr_auc": 0.4782,
+          "roc_auc": 0.8138,
+          "brier": 0.11256,
+          "brier_climatological_constant": 0.1376,
+          "top5_capture": 0.2237,
+          "top5_lift": 4.473,
+          "top5_captured_events": 174.0,
+          "top10_capture": 0.3907,
+          "top10_lift": 3.907,
+          "top10_captured_events": 304.0,
+          "top20_capture": 0.5887,
+          "top20_lift": 2.943,
+          "top20_captured_events": 458.0
+        },
+        "D0_gbm_season_loc": {
+          "n": 3120,
+          "weeks": 39,
+          "positives": 514,
+          "events": 778,
+          "prevalence": 0.1647,
+          "pr_auc": 0.4518,
+          "roc_auc": 0.7912,
+          "brier": 0.11869,
+          "brier_climatological_constant": 0.1376,
+          "top5_capture": 0.2211,
+          "top5_lift": 4.422,
+          "top5_captured_events": 172.0,
+          "top10_capture": 0.3728,
+          "top10_lift": 3.728,
+          "top10_captured_events": 290.0,
+          "top20_capture": 0.5566,
+          "top20_lift": 2.783,
+          "top20_captured_events": 433.0
+        },
+        "D_gbm_weather": {
+          "n": 3120,
+          "weeks": 39,
+          "positives": 514,
+          "events": 778,
+          "prevalence": 0.1647,
+          "pr_auc": 0.4348,
+          "roc_auc": 0.7949,
+          "brier": 0.11987,
+          "brier_climatological_constant": 0.1376,
+          "top5_capture": 0.1992,
+          "top5_lift": 3.985,
+          "top5_captured_events": 155.0,
+          "top10_capture": 0.3368,
+          "top10_lift": 3.368,
+          "top10_captured_events": 262.0,
+          "top20_capture": 0.5566,
+          "top20_lift": 2.783,
+          "top20_captured_events": 433.0
+        },
+        "E0_gbm_history": {
+          "n": 3120,
+          "weeks": 39,
+          "positives": 514,
+          "events": 778,
+          "prevalence": 0.1647,
+          "pr_auc": 0.4733,
+          "roc_auc": 0.8044,
+          "brier": 0.11625,
+          "brier_climatological_constant": 0.1376,
+          "top5_capture": 0.2301,
+          "top5_lift": 4.602,
+          "top5_captured_events": 179.0,
+          "top10_capture": 0.4023,
+          "top10_lift": 4.023,
+          "top10_captured_events": 313.0,
+          "top20_capture": 0.5758,
+          "top20_lift": 2.879,
+          "top20_captured_events": 448.0
+        },
+        "E_gbm_history_weather": {
+          "n": 3120,
+          "weeks": 39,
+          "positives": 514,
+          "events": 778,
+          "prevalence": 0.1647,
+          "pr_auc": 0.4748,
+          "roc_auc": 0.8129,
+          "brier": 0.11405,
+          "brier_climatological_constant": 0.1376,
+          "top5_capture": 0.2147,
+          "top5_lift": 4.293,
+          "top5_captured_events": 167.0,
+          "top10_capture": 0.3843,
+          "top10_lift": 3.843,
+          "top10_captured_events": 299.0,
+          "top20_capture": 0.5746,
+          "top20_lift": 2.873,
+          "top20_captured_events": 447.0
+        }
+      },
+      "E_minus_A_top10": {
+        "metric": "top10_capture",
+        "baseline": "A_climatology",
+        "candidate": "E_gbm_history_weather",
+        "diff": 0.0026,
+        "ci95": [
+          -0.0279,
+          0.0306
+        ],
+        "p_le_zero": 0.4825,
+        "blocks": 9,
+        "n_boot": 2000
+      },
+      "equal_budget_5pct": {
+        "budget": 168,
+        "budget_share": 0.0538,
+        "A_climatology_hit_rate": 0.6667,
+        "E_gbm_history_weather_hit_rate": 0.6429,
+        "A_climatology_share_of_fire_cell_weeks": 0.2179,
+        "E_gbm_history_weather_share_of_fire_cell_weeks": 0.2101,
+        "diff_hit_rate": -0.0238,
+        "ci95": [
+          -0.0566,
+          0.0596
+        ],
+        "p_le_zero": 0.633
+      },
+      "seasons": {
+        "Autumn (Sep-Nov)": {
+          "weeks": 4,
+          "fires": 87,
+          "E_top10": 0.3103,
+          "A_top10": 0.3218
+        },
+        "Spring (Mar-May)": {
+          "weeks": 13,
+          "fires": 210,
+          "E_top10": 0.4048,
+          "A_top10": 0.4
+        },
+        "Summer (Jun-Aug)": {
+          "weeks": 14,
+          "fires": 454,
+          "E_top10": 0.3744,
+          "A_top10": 0.37
+        },
+        "Winter (Dec-Feb)": {
+          "weeks": 8,
+          "fires": 27,
+          "E_top10": 0.6296,
+          "A_top10": 0.6296
+        }
+      },
+      "issue_dates": [
+        "2026-01-05",
+        "2026-09-28"
+      ]
+    }
+  }
+}

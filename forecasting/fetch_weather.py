@@ -137,7 +137,55 @@ def assemble(manifest: list[dict]) -> None:
     print(f'wrote {out}: {len(rows)} point-days, {missing} missing values')
 
 
+EXT_CHUNKS = (('ext2025', date(2024, 12, 1), date(2025, 12, 31)),
+              ('ext2026', date(2026, 1, 1), date(2026, 10, 11)))
+
+
+def extend() -> None:
+    """Fetch Dec 2024 - Oct 2026 for the external (WFIGS) test into ``weather_daily_ext.csv``.
+
+    Same points, variables and timezone as the original archive. Trailing days
+    the archive has not filled yet (null values) are dropped, not imputed.
+    """
+    cache = config.CACHE_DIR / 'weather'
+    cache.mkdir(parents=True, exist_ok=True)
+    rows, files = [], []
+    for bid, p in sorted(weather_points().items()):
+        for tag, s, e in EXT_CHUNKS:
+            path = cache / f'{bid}_{tag}.json'
+            if not path.exists():
+                raw = _fetch(dict(latitude=f"{p['lat']:.5f}", longitude=f"{p['lon']:.5f}", start_date=s.isoformat(),
+                                  end_date=e.isoformat(), daily=','.join(DAILY_VARS), timezone=TZ))
+                json.loads(raw)
+                path.write_bytes(raw)
+                print(f'  {bid} {tag}: fetched', flush=True)
+                time.sleep(2.5)
+            raw = path.read_bytes()
+            files.append(dict(point=bid, chunk=tag, file=path.name, sha256=hashlib.sha256(raw).hexdigest()))
+            daily = json.loads(raw)['daily']
+            for i, t in enumerate(daily['time']):
+                vals = {v: daily[v][i] for v in DAILY_VARS}
+                if any(x is None for x in vals.values()):
+                    continue
+                rows.append(dict(point_id=bid, date=t, **vals))
+    out = config.PROCESSED_DIR / 'weather_daily_ext.csv'
+    with out.open('w', newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
+        w.writeheader()
+        w.writerows(rows)
+    last = max(r['date'] for r in rows)
+    (config.PROCESSED_DIR / 'weather_manifest_ext.json').write_text(json.dumps(dict(
+        source=config.OPEN_METEO_ARCHIVE, chunks=[(t, str(s), str(e)) for t, s, e in EXT_CHUNKS], daily_vars=DAILY_VARS,
+        timezone=TZ, files=files, rows=len(rows), last_complete_date=last,
+        assembled_utc=datetime.now(timezone.utc).isoformat(timespec='seconds')), indent=2))
+    print(f'wrote {out}: {len(rows)} point-days, last complete date {last}')
+
+
 def main() -> None:
+    import sys
+    if '--extend' in sys.argv:
+        extend()
+        return
     pts = weather_points()
     print(f'{len(pts)} weather points, {START}..{END}', flush=True)
     assemble(download())

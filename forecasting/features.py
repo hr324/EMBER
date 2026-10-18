@@ -98,7 +98,8 @@ def history(labels: pd.DataFrame, fires: pd.DataFrame) -> pd.DataFrame:
     g = Grid()
     cells = [c.cell_id for c in g.cells]
     day0 = pd.Timestamp('2014-01-01')
-    days = pd.date_range(day0, pd.Timestamp(config.LAST_ISSUE) + pd.Timedelta(days=7), freq='D')
+    last = max(pd.Timestamp(config.LAST_ISSUE), pd.to_datetime(labels['forecast_date']).max())
+    days = pd.date_range(day0, last + pd.Timedelta(days=7), freq='D')
     idx = {c: i for i, c in enumerate(cells)}
     counts = np.zeros((len(cells), len(days) + 1))
     for c, d in zip(fires['cell_id'], pd.to_datetime(fires['discovery_date'])):

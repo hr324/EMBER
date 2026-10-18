@@ -1,0 +1,29 @@
+{
+  "raw_records": 12924,
+  "duplicate_unique_id": 32,
+  "duplicate_irwin": 0,
+  "missing_date": 0,
+  "location_from_geometry": 1555,
+  "missing_location": 0,
+  "outside_grid": 1284,
+  "kinds": {
+    "FI": 11608
+  },
+  "utc_date_differs_from_pacific_date": 3019,
+  "clean_records": 11608,
+  "by_year": {
+    "2014": 287,
+    "2015": 417,
+    "2016": 235,
+    "2017": 480,
+    "2018": 346,
+    "2019": 643,
+    "2020": 1375,
+    "2021": 1325,
+    "2022": 1553,
+    "2023": 1274,
+    "2024": 1265,
+    "2025": 1563,
+    "2026": 845
+  }
+}

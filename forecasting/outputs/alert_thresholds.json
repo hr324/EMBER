@@ -1,0 +1,27 @@
+{
+  "chosen_on": "validation 2021-2022 (each model separately)",
+  "default_rule": "precision70",
+  "rules": {
+    "best_f1": "threshold maximising F1 on validation",
+    "precision70": "lowest threshold with >=70% validation hit rate",
+    "precision50": "lowest threshold with >=50% validation hit rate"
+  },
+  "thresholds": {
+    "A_climatology": {
+      "best_f1": 0.299038,
+      "precision70": 0.600881,
+      "precision50": 0.385994
+    },
+    "E_gbm_history_weather": {
+      "best_f1": 0.275181,
+      "precision70": 0.605826,
+      "precision50": 0.335375
+    },
+    "E0+redflag": {
+      "best_f1": 0.2538890440411629,
+      "precision70": 0.6001507395296761,
+      "precision50": 0.33123807996992927
+    }
+  },
+  "source": "forecasting/flexible_alerts.py"
+}

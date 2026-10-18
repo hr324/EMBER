@@ -21,10 +21,10 @@ main{max-width:1880px;margin:auto;padding:18px 22px 24px}
 .map-legend{position:absolute;z-index:500;bottom:14px;left:13px;padding:10px 13px;background:#0e1b20ef;border:1px solid #3a555b;border-radius:7px;max-width:300px;display:grid;gap:6px;font-size:12px;pointer-events:none}.legend-row{display:flex;align-items:center;gap:7px}.key{width:12px;height:12px;display:inline-block;border-radius:50%;flex-shrink:0}.key.square{border-radius:2px;background:var(--orange)}.key.current{background:var(--aqua)}.key.future{background:var(--red)}.legend-note{font-size:10px;color:#b4c4c5;line-height:1.35}
 .panel{display:flex;flex-direction:column;gap:12px}.card{background:var(--surface);border:1px solid var(--line);border-radius:9px;padding:16px}.card h2{font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin:0 0 12px}.card h2 em{font-style:normal;color:var(--aqua)}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{padding:11px;background:#101b20;border-radius:6px;min-width:0}.stat strong{display:block;font-size:21px;line-height:1.25;font-variant-numeric:tabular-nums}.stat small{font-size:11px;color:var(--muted)}.stat .accent{color:var(--orange)}.stat.full{grid-column:span 2}
-.k-select{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.k-select label{font-size:12px;color:var(--muted)}select{background:var(--surface2);border:1px solid #49666e;color:white;border-radius:6px;padding:8px;max-width:175px;cursor:pointer}
+.mode-select{display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:12px;color:#cfdfdd}.mode-select input{accent-color:var(--aqua);height:16px;width:16px}.k-select{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.k-select label{font-size:12px;color:var(--muted)}select{background:var(--surface2);border:1px solid #49666e;color:white;border-radius:6px;padding:8px;max-width:175px;cursor:pointer}
 .help{font-size:12px;color:var(--muted);margin:9px 0 0}.warning{border-left:3px solid var(--orange);padding-left:10px;color:#d6d3c7}
 .result{border:1px solid #52766c;background:#122725;border-radius:7px;padding:12px}.result strong{display:block;color:var(--aqua);font-size:22px;font-variant-numeric:tabular-nums}.result span{font-size:12px;color:#bfd7d4}.metrics{margin-top:11px;display:grid;gap:10px}.metric-label{display:flex;justify-content:space-between;color:#ccdcda;font-size:12px;gap:12px}.track{height:9px;border-radius:10px;background:#28353a;overflow:hidden;margin-top:4px}.track>span{display:block;height:100%;border-radius:10px}.track .model{background:var(--aqua)}.track .baseline{background:#a4adb3}
-.footer{font-size:12px;color:var(--muted);padding:12px 1px 0;line-height:1.55}.footer strong{color:#c4d8d8}#status{margin:12px 0;color:#ffb8a7}.muted{color:var(--muted)}.hidden{display:none!important}
+.priority-list{display:grid;gap:8px}.priority{display:flex;justify-content:space-between;gap:10px;align-items:center;text-align:left;padding:9px 10px;border:1px solid #365158;border-radius:6px;background:#112227;color:var(--text);width:100%}.priority:hover{background:#1c383d}.priority b{font-size:12px}.priority small{display:block;font-size:11px;color:var(--muted)}.priority .value{color:#f4b773;white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums}.footer{font-size:12px;color:var(--muted);padding:12px 1px 0;line-height:1.55}.footer strong{color:#c4d8d8}#status{margin:12px 0;color:#ffb8a7}.muted{color:var(--muted)}.hidden{display:none!important}
 @media(max-width:1100px){.workspace{grid-template-columns:minmax(0,1fr) 300px}}
 @media(max-width:850px){.workspace{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr 1fr}.step{padding:10px}.panel{display:grid;grid-template-columns:1fr 1fr}.map-legend{bottom:10px}}
 @media(max-width:630px){main{padding:10px}.steps{grid-template-columns:1fr}.step{min-height:0}.timeline .context{width:100%;order:-1}#map{min-height:390px;height:55vh}.panel{grid-template-columns:1fr}.map-legend{font-size:10px;max-width:245px}.timeline button{padding:8px}}
@@ -63,13 +63,14 @@ main{max-width:1880px;margin:auto;padding:18px 22px 24px}
     <aside class="panel">
       <div class="card">
         <h2><em>01</em> The forecast</h2>
-        <div class="k-select"><label for="topk">Show highest-ranked cells</label><select id="topk"><option value="10">Top 10</option><option value="25" selected>Top 25</option><option value="50">Top 50</option></select></div>
+        <label class="mode-select"><input id="new-only" type="checkbox" checked/>Focus on locations NOT detected in the current satellite pass</label>
+        <div class="k-select"><label for="topk">Show highest-ranked cells</label><select id="topk"><option value="10">Top 10</option><option value="25" selected>Top 25</option><option value="50">Top 50</option><option value="100">Top 100</option><option value="200">Top 200</option><option value="400">Top 400</option></select></div>
         <div class="stats">
-          <div class="stat"><strong class="accent" id="cell-count">25</strong><small>Top cells shown / total tested</small></div>
+          <div class="stat"><strong class="accent" id="cell-count">25</strong><small>Forecast cells shown</small></div>
           <div class="stat"><strong id="lead">—</strong><small>Until next satellite pass</small></div>
           <div class="stat full"><strong id="resolution">—</strong><small>Size of each grid cell; not a precise fire boundary</small></div>
         </div>
-        <p class="help">The AI ranks where it expects <b>satellite-detected fire activity</b> next. We only show the highest-ranked cells to keep the map readable.</p>
+        <p class="help" id="forecast-explanation">The AI ranks where it expects <b>satellite-detected fire activity</b> next. We only show the highest-ranked cells to keep the map readable.</p>
       </div>
       <div class="card" id="before">
         <h2><em>02</em> Before we reveal</h2>
@@ -81,10 +82,17 @@ main{max-width:1880px;margin:auto;padding:18px 22px 24px}
         <div class="result"><strong id="hits">—</strong><span id="hit-desc">of the top 25 cells were observed burning later</span></div>
         <p class="help" id="recall">—</p>
         <div class="metrics">
-          <div><div class="metric-label"><span>GNN ranking (average precision)</span><b id="gnn-ap">—</b></div><div class="track"><span id="gnn-bar" class="model" style="width:0"></span></div></div>
-          <div><div class="metric-label"><span>Simple baseline</span><b id="base-ap">—</b></div><div class="track"><span id="base-bar" class="baseline" style="width:0"></span></div></div>
+          <div><div class="metric-label"><span id="gnn-metric-label">GNN ranking (average precision)</span><b id="gnn-ap">—</b></div><div class="track"><span id="gnn-bar" class="model" style="width:0"></span></div></div>
+          <div><div class="metric-label"><span>Persistence baseline</span><b id="base-ap">—</b></div><div class="track"><span id="base-bar" class="baseline" style="width:0"></span></div></div>
+          <div><div class="metric-label"><span>Distance-to-fire baseline</span><b id="distance-ap">—</b></div><div class="track"><span id="distance-bar" class="baseline" style="width:0"></span></div></div>
         </div>
-        <p class="help">Average precision scores the ranking across <b>all</b> tested cells. It is <b>not</b> percentage forecasting accuracy. The top-cell hit count is a separate, stricter test.</p>
+        <p class="help" id="metric-explanation">Average precision scores the ranking across <b>all</b> tested cells. It is <b>not</b> percentage forecasting accuracy. The top-cell hit count is a separate, stricter test.</p>
+      </div>
+      <div class="card" id="population-card">
+        <h2><em>04</em> Community exposure · experimental</h2>
+        <p class="help" id="population-summary">Not loaded yet. Add a WorldPop raster to overlay real population estimates.</p>
+        <div class="priority-list" id="population-list"></div>
+        <p class="help">Rows rank forecast cells with estimated residents using an <b>uncalibrated priority index</b>. These are not counts of endangered people, fire probabilities, or evacuation recommendations. Click a row to inspect its location.</p>
       </div>
     </aside>
   </div>
@@ -94,7 +102,7 @@ main{max-width:1880px;margin:auto;padding:18px 22px 24px}
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 'use strict';
-let dataset=null, frameIndex=0, revealed=false, topK=25;
+let dataset=null, frameIndex=0, revealed=false, topK=25, newOnly=true;
 const $=id=>document.getElementById(id);
 const map=L.map('map',{preferCanvas:true,zoomControl:true}).setView([39.77,-121.55],10);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
@@ -130,7 +138,7 @@ function forecastTooltip(rank,score,meters){
 
 // Add the top-ranked cells as geographical squares, not hundreds of overlapping orange dots.
 function drawForecast(frame,bounds){
-  const cells=frame.forecast.slice(0,topK);
+  const cells=(newOnly&&frame.forecast_new?frame.forecast_new:frame.forecast).slice(0,topK);
   const meters=frame.cell_m||2000;
   for(let i=0;i<cells.length;i++){
     const [lat,lon,score]=cells[i];
@@ -144,7 +152,8 @@ function drawForecast(frame,bounds){
     rect.addTo(forecastLayer);
     bounds.push([lat,lon]);
   }
-  $('cell-count').textContent=`${cells.length} / ${frame.grid_cell_count||'?'}`;
+  $('cell-count').textContent=cells.length;
+  $('forecast-explanation').textContent=newOnly?'Showing only candidate locations NOT detected by the current pass. A newly detected location is not necessarily newly burned ground.':'Showing all future-detection candidates, including currently detected areas.';
   $('resolution').textContent=`${(meters/1000).toFixed(meters%1000===0?0:1)} km × ${(meters/1000).toFixed(meters%1000===0?0:1)} km`;
 }
 
@@ -159,7 +168,7 @@ function drawCurrent(frame,bounds){
 
 // Reveal later observations only on user request, keeping the forecast itself unchanged.
 function drawOutcome(frame){
-  const targetCells=frame.next_cells||frame.next_observations||[];
+  const targetCells=(newOnly&&frame.next_new_cells?frame.next_new_cells:frame.next_cells)||frame.next_observations||[];
   for(const [lat,lon] of targetCells){
     L.circleMarker([lat,lon],{radius:5,color:'#d84f68',weight:1.4,fillColor:'#ff7186',fillOpacity:.86})
       .bindTooltip('Detected on NEXT satellite pass: '+when(frame.next_observation_time),{sticky:true})
@@ -169,28 +178,76 @@ function drawOutcome(frame){
 
 // Display evaluation metrics computed against next-pass cells, never used as inputs to the GNN.
 function showOutcomeMetrics(frame){
-  const evaluation=frame.evaluation;
+  const evaluation=newOnly&&frame.evaluation?.new_activity?frame.evaluation.new_activity:frame.evaluation;
+  $('gnn-metric-label').textContent=newOnly?'GNN: previously undetected cells (AP)':'GNN: all future-detected cells (AP)';
+  $('metric-explanation').textContent=newOnly?'Average precision among cells not detected in the present pass. This measures new satellite detections, not newly burned terrain.':'Average precision across all grid cells. Neither score is a percent accuracy.';
   if(!evaluation){
     $('hits').textContent='Not available';
     $('hit-desc').textContent='Regenerate the replay with the updated exporter for exact top-cell metrics.';
     $('recall').textContent='The red observations are still available for visual comparison.';
-    $('gnn-ap').textContent='—';$('base-ap').textContent='—';
-    $('gnn-bar').style.width='0%';$('base-bar').style.width='0%';
+    $('gnn-ap').textContent='—';$('base-ap').textContent='—';$('distance-ap').textContent='—';
+    $('gnn-bar').style.width='0%';$('base-bar').style.width='0%';$('distance-bar').style.width='0%';
     return;
   }
   const hits=evaluation.top_k?.[String(topK)];
   $('hits').textContent=hits?`${hits.hits} / ${hits.shown}`:'—';
-  $('hit-desc').textContent='top-ranked cells also detected on the next pass';
+  $('hit-desc').textContent=newOnly?'top-ranked previously undetected cells seen on the next pass':'top-ranked cells also detected on the next pass';
   $('recall').textContent=hits?
-    `These include ${(hits.recall*100).toFixed(1)}% of the ${evaluation.future_positive_cells} later-detected cells inside the tested grid.`:
+    `These include ${(hits.recall*100).toFixed(1)}% of the ${newOnly?evaluation.future_new_positive_cells:evaluation.future_positive_cells} eligible later-detected cells inside the tested grid.`:
     'Top-cell matching unavailable for this frame.';
   for(const [key,labelId,barId] of [
     ['gnn_average_precision','gnn-ap','gnn-bar'],
-    ['persistence_average_precision','base-ap','base-bar']
+    ['persistence_average_precision','base-ap','base-bar'],
+    ['proximity_average_precision','distance-ap','distance-bar']
   ]){
     const value=evaluation[key];
     $(labelId).textContent=typeof value==='number'?value.toFixed(3):'—';
     $(barId).style.width=typeof value==='number'?`${Math.min(100,Math.max(0,value*100))}%`:'0%';
+  }
+}
+
+
+// Population data is contextual. Never represent uncalibrated GNN scores as risk probabilities.
+function showPopulation(frame){
+  const list=$('population-list');
+  list.replaceChildren();
+  const rows=frame.population_priorities||[];
+  const metadata=dataset.population_metadata||{};
+  if(!rows.length){
+    $('population-summary').textContent='Population not yet integrated. Run scripts/enrich_population.py using the historical WorldPop raster to enable this panel.';
+    return;
+  }
+  const year=metadata.year||'reference';
+  $('population-summary').textContent=`WorldPop ${year} · Areas near named places, ranked from the strongest newly detected-activity candidates. These are estimated residents in selected cells, NOT town populations or people expected to be harmed.`;
+  // Group candidate cells by nearby place instead of showing "Paradise" six times.
+  // A place name is the nearest Census representative point, not a city boundary.
+  const byPlace=new Map();
+  for(const place of rows){
+    const key=place.nearest_place||'Unlabelled area';
+    if(!byPlace.has(key))byPlace.set(key,{name:key,score:place.priority_index,
+      count:0,population:0,latitude:place.latitude,longitude:place.longitude});
+    const group=byPlace.get(key);
+    group.count+=1;
+    group.population+=place.population_estimate;
+    if(place.priority_index>group.score){
+      group.score=place.priority_index;group.latitude=place.latitude;group.longitude=place.longitude;
+    }
+  }
+  const grouped=[...byPlace.values()].sort((a,b)=>b.score-a.score).slice(0,6);
+  for(const [index,place] of grouped.entries()){
+    const button=document.createElement('button');
+    button.className='priority';
+    const left=document.createElement('span');
+    const title=document.createElement('b');
+    title.textContent=`${index+1}. Near ${place.name}`;
+    const subtitle=document.createElement('small');
+    subtitle.textContent=`${place.count} shortlisted cell${place.count===1?'':'s'} · priority index ${place.score.toFixed(2)}`;
+    left.append(title,subtitle);
+    const right=document.createElement('span');right.className='value';
+    right.textContent=`≈${Math.round(place.population).toLocaleString()} residents in cells`;
+    button.append(left,right);
+    button.onclick=()=>map.flyTo([place.latitude,place.longitude],12,{animate:true});
+    list.append(button);
   }
 }
 
@@ -202,6 +259,7 @@ function render({fit=true}={}){
   const bounds=[];
   drawCurrent(frame,bounds);
   drawForecast(frame,bounds);
+  showPopulation(frame);
   if(revealed)drawOutcome(frame);
   if(fit&&bounds.length)map.fitBounds(L.latLngBounds(bounds).pad(.17),{maxZoom:11,animate:false});
   $('pass-title').textContent=`FORECAST ${frameIndex+1} / ${dataset.frames.length}`;
@@ -235,6 +293,7 @@ function bindControls(){
   $('prev').onclick=()=>changePass(frameIndex-1);
   $('next').onclick=()=>changePass(frameIndex+1);
   $('topk').onchange=e=>{topK=Number(e.target.value);render({fit:false})};
+  $('new-only').onchange=e=>{newOnly=e.target.checked;render({fit:false})};
   $('reveal').onclick=()=>{revealed=!revealed;render({fit:false})};
   document.addEventListener('keydown',event=>{
     if(event.target.matches('select,input,button'))return;
@@ -252,6 +311,12 @@ async function loadReplay(){
     if(!Array.isArray(dataset.frames)||!dataset.frames.length)throw new Error('No forecast frames available.');
     $('case').textContent=`${dataset.case.replaceAll('_',' ')} · trained on ${dataset.trained_on.join(' + ')} · held-out historical test`;
     $('status').textContent='';
+    // At 1 km, top 100 covers the same area as 25 cells at 2 km.
+    topK=dataset.frames[0].cell_m<=1000?100:25;
+    $('topk').value=String(topK);
+    newOnly=Boolean(dataset.frames[0].forecast_new);
+    $('new-only').checked=newOnly;
+    $('new-only').disabled=!dataset.frames[0].forecast_new;
     bindControls();render();
   }catch(error){
     $('status').textContent='ERROR: '+error.message;

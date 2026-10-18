@@ -244,8 +244,19 @@ def average_precision(scores: torch.Tensor, labels: torch.Tensor) -> float:
     return ap
 
 
+def proximity_baseline(example: GraphExample) -> torch.Tensor:
+    """Fixed stronger baseline: rank each grid cell by proximity to present detections.
+
+    Current hotspots are the only input. No future observations or evaluation
+    labels influence this score; use the same grid for every model comparison.
+    """
+    distances = nearest_detection_distance(example.grid, example.current_mask.tolist())
+    return torch.tensor([-float(d) if math.isfinite(d) else -1e12 for d in distances],
+                        dtype=torch.float32)
+
+
 def evaluate(model: nn.Module, examples: list[GraphExample]) -> list[dict]:
-    """Compare trained predictions and a persistence baseline on unseen fires."""
+    """Compare GNN against both persistence and spatial-proximity baselines."""
     model.eval()
     output = []
     with torch.no_grad():
@@ -257,7 +268,8 @@ def evaluate(model: nn.Module, examples: list[GraphExample]) -> list[dict]:
                            'future_pixel_coverage_in_grid': round(ex.coverage,3),
                            'future_positive_cells': int(ex.label.sum().item()),
                            'gnn_average_precision': round(average_precision(scores,ex.label),4),
-                           'persistence_average_precision': round(average_precision(ex.current_mask,ex.label),4)})
+                           'persistence_average_precision': round(average_precision(ex.current_mask,ex.label),4),
+                           'proximity_average_precision': round(average_precision(proximity_baseline(ex),ex.label),4)})
     return output
 
 
@@ -306,8 +318,30 @@ def train(args) -> None:
     cases, stats=load_examples(Path(args.data),cell_m=args.cell_m,
                               margin_km=args.margin_km,max_cells=args.max_cells,
                               max_hours=args.max_hours)
+    # Newly downloaded EONET cases are deliberately provisional. Require human
+    # approval before training on them; otherwise a nearby unrelated wildfire
+    # could silently contaminate the training labels.
+    provisional=set()
+    for name in cases:
+        path=Path(args.data)/name/'source.json'
+        if path.exists():
+            try:
+                if 'provisional' in str(json.loads(path.read_text()).get('data_quality','')).lower():
+                    provisional.add(name)
+            except (OSError, ValueError):pass
+    if args.approved_list:
+        approved={row.strip() for row in Path(args.approved_list).read_text().splitlines()
+                  if row.strip() and not row.lstrip().startswith('#')}
+        cases={n:items for n,items in cases.items() if n in approved}
+        excluded=set(stats)-set(cases)
+        stats={n:v for n,v in stats.items() if n in cases}
+    else:
+        excluded=provisional
+        cases={n:items for n,items in cases.items() if n not in provisional}
+        stats={n:v for n,v in stats.items() if n not in provisional}
     usable=[name for name,items in cases.items() if items]
-    report={'dataset':stats,'fire_count':len(usable),'method':'edge-aware message passing GNN',
+    report={'dataset':stats,'fire_count':len(usable),'excluded_until_review':sorted(excluded),
+            'method':'edge-aware message passing GNN',
             'evaluation_caution':'Later FIRMS detections are partial observations, NOT complete burn area.'}
     if len(usable)<3:
         print(json.dumps(report,indent=2))
@@ -364,6 +398,9 @@ def train(args) -> None:
     report['history']=log
     report['test_predictions']=test_scores
     report['training_note']='No test-fire labels used for training or early stopping.'
+    report['baseline_note']='Proximity baseline uses only currently detected cells and fixed grid distances; all methods evaluated on the same next-pass labels.'
+    report['test_summary']={k:round(sum(item[k] for item in test_scores)/len(test_scores),4)
+                            for k in ('gnn_average_precision','persistence_average_precision','proximity_average_precision')}
     out=Path(args.output)
     out.mkdir(parents=True,exist_ok=True)
     torch.save({'state_dict':best_state,'hidden':args.hidden,
@@ -421,6 +458,7 @@ def main() -> None:
     sub=parser.add_subparsers(dest='command',required=True)
     tr=sub.add_parser('train')
     tr.add_argument('--data',default='data/fire_sequences')
+    tr.add_argument('--approved-list',help='Text file of manually verified case folder names; provisional EONET cases otherwise excluded')
     tr.add_argument('--output',default='artifacts/gnn')
     tr.add_argument('--test-fire',default='camp_2018')
     tr.add_argument('--epochs',type=int,default=20)

@@ -1,0 +1,1460 @@
+{
+  "definitions": "Evaluation that rewards forecasting fires climatology did NOT expect.\n\nDefinitions (fixed before any number below was computed; committed first):\n\n* Expectedness of a cell-week = c, the frozen 2015-2020 climatology rate for that\n  cell and week of year (model A's score). Recognising summer hotspots is worth\n  nothing here; only departures from c that turn out right earn credit.\n* M1 information gain over climatology, bits per cell-week:\n      mean[ y*log2(p/c) + (1-y)*log2((1-p)/(1-c)) ]      (p, c clipped to [1e-4, 1-1e-4])\n  > 0 only if the model's deviations from climatology are right on balance. A = 0.\n  Also the Brier skill score vs climatology: 1 - Brier(p)/Brier(c).\n* M2 within-stratum ranking: ROC-AUC computed inside each climatology decile\n  (decile edges = quantiles of c on 2021-2022 validation), averaged with weights =\n  positives per decile (deciles lacking both classes skipped). Measures who can\n  tell, among cell-weeks with the SAME historical risk, which will burn.\n* M3 unexpected fires: fire cell-weeks with c < 0.10 (that cell and week burned in\n  under 1 week in 10 historically). Sensitivity: c < 0.05 and c < 0.20. Under each\n  validation-chosen alert rule (``alert_thresholds.json``): unexpected fire\n  cell-weeks alerted (recall), alerts in the stratum and their hit rate, and\n  surprise-weighted recall = sum over alerted fire cell-weeks of -log2(c) / same\n  over all fire cell-weeks.\n* M4 excess hits: for each alert rule, sum over alerts of (y - c): fires found\n  beyond what climatology already expected in the alerted cells; also per alert.",
+  "decile_edges": [
+    0.0002,
+    0.0043,
+    0.0102,
+    0.0321,
+    0.0546,
+    0.0872,
+    0.13,
+    0.1858,
+    0.2747,
+    0.4537,
+    0.9998
+  ],
+  "thresholds": {
+    "A_climatology": {
+      "best_f1": 0.299038,
+      "precision70": 0.600881,
+      "precision50": 0.385994
+    },
+    "E_gbm_history_weather": {
+      "best_f1": 0.275181,
+      "precision70": 0.605826,
+      "precision50": 0.335375
+    },
+    "E0+redflag": {
+      "best_f1": 0.2538890440411629,
+      "precision70": 0.6001507395296761,
+      "precision50": 0.33123807996992927
+    }
+  },
+  "periods": {
+    "validation 2021-2022": {
+      "cell_weeks": 8320,
+      "fire_cell_weeks": 1264,
+      "unexpected_share_of_fire_cellweeks": {
+        "0.05": 0.0886,
+        "0.1": 0.1669,
+        "0.2": 0.3378
+      },
+      "M1": {
+        "A_climatology": {
+          "info_gain_bits": 0.0,
+          "brier_skill": 0.0
+        },
+        "E_gbm_history_weather": {
+          "info_gain_bits": 0.02664,
+          "brier_skill": 0.0356
+        },
+        "E0+redflag": {
+          "info_gain_bits": 0.02505,
+          "brier_skill": 0.0318
+        }
+      },
+      "M2": {
+        "A_climatology": 0.5971,
+        "E_gbm_history_weather": 0.6722,
+        "E0+redflag": 0.6697
+      },
+      "M3": {
+        "best_f1": {
+          "0.05": {
+            "A_climatology": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0345,
+              "fire_cellweeks": 112,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0345,
+              "fire_cellweeks": 112,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0345,
+              "fire_cellweeks": 112,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 2,
+              "hit_rate": 0.0,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.1": {
+            "A_climatology": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0474,
+              "fire_cellweeks": 211,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0474,
+              "fire_cellweeks": 211,
+              "alerted_fires": 2,
+              "recall": 0.0095,
+              "alerts": 17,
+              "hit_rate": 0.1176,
+              "surprise_weighted_recall": 0.0066
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0474,
+              "fire_cellweeks": 211,
+              "alerted_fires": 2,
+              "recall": 0.0095,
+              "alerts": 19,
+              "hit_rate": 0.1053,
+              "surprise_weighted_recall": 0.0068
+            }
+          },
+          "0.2": {
+            "A_climatology": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0708,
+              "fire_cellweeks": 427,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0708,
+              "fire_cellweeks": 427,
+              "alerted_fires": 43,
+              "recall": 0.1007,
+              "alerts": 142,
+              "hit_rate": 0.3028,
+              "surprise_weighted_recall": 0.0711
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0708,
+              "fire_cellweeks": 427,
+              "alerted_fires": 48,
+              "recall": 0.1124,
+              "alerts": 173,
+              "hit_rate": 0.2775,
+              "surprise_weighted_recall": 0.0799
+            }
+          }
+        },
+        "precision70": {
+          "0.05": {
+            "A_climatology": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0345,
+              "fire_cellweeks": 112,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0345,
+              "fire_cellweeks": 112,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0345,
+              "fire_cellweeks": 112,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.1": {
+            "A_climatology": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0474,
+              "fire_cellweeks": 211,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0474,
+              "fire_cellweeks": 211,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0474,
+              "fire_cellweeks": 211,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.2": {
+            "A_climatology": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0708,
+              "fire_cellweeks": 427,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0708,
+              "fire_cellweeks": 427,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0708,
+              "fire_cellweeks": 427,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 1,
+              "hit_rate": 0.0,
+              "surprise_weighted_recall": 0.0
+            }
+          }
+        },
+        "precision50": {
+          "0.05": {
+            "A_climatology": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0345,
+              "fire_cellweeks": 112,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0345,
+              "fire_cellweeks": 112,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0345,
+              "fire_cellweeks": 112,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.1": {
+            "A_climatology": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0474,
+              "fire_cellweeks": 211,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0474,
+              "fire_cellweeks": 211,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 5,
+              "hit_rate": 0.0,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0474,
+              "fire_cellweeks": 211,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 5,
+              "hit_rate": 0.0,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.2": {
+            "A_climatology": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0708,
+              "fire_cellweeks": 427,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0708,
+              "fire_cellweeks": 427,
+              "alerted_fires": 17,
+              "recall": 0.0398,
+              "alerts": 61,
+              "hit_rate": 0.2787,
+              "surprise_weighted_recall": 0.0281
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0708,
+              "fire_cellweeks": 427,
+              "alerted_fires": 19,
+              "recall": 0.0445,
+              "alerts": 67,
+              "hit_rate": 0.2836,
+              "surprise_weighted_recall": 0.0308
+            }
+          }
+        }
+      },
+      "M4": {
+        "best_f1": {
+          "A_climatology": {
+            "alerts": 1498,
+            "hits": 673,
+            "expected_by_climatology": 787.5,
+            "excess_hits": -114.5,
+            "excess_per_alert": -0.0764
+          },
+          "E_gbm_history_weather": {
+            "alerts": 1571,
+            "hits": 719,
+            "expected_by_climatology": 761.5,
+            "excess_hits": -42.5,
+            "excess_per_alert": -0.0271
+          },
+          "E0+redflag": {
+            "alerts": 1719,
+            "hits": 752,
+            "expected_by_climatology": 803.5,
+            "excess_hits": -51.5,
+            "excess_per_alert": -0.03
+          }
+        },
+        "precision70": {
+          "A_climatology": {
+            "alerts": 440,
+            "hits": 308,
+            "expected_by_climatology": 338.7,
+            "excess_hits": -30.7,
+            "excess_per_alert": -0.0698
+          },
+          "E_gbm_history_weather": {
+            "alerts": 488,
+            "hits": 342,
+            "expected_by_climatology": 346.5,
+            "excess_hits": -4.5,
+            "excess_per_alert": -0.0092
+          },
+          "E0+redflag": {
+            "alerts": 478,
+            "hits": 335,
+            "expected_by_climatology": 344.4,
+            "excess_hits": -9.4,
+            "excess_per_alert": -0.0197
+          }
+        },
+        "precision50": {
+          "A_climatology": {
+            "alerts": 1118,
+            "hits": 559,
+            "expected_by_climatology": 659.9,
+            "excess_hits": -100.9,
+            "excess_per_alert": -0.0902
+          },
+          "E_gbm_history_weather": {
+            "alerts": 1236,
+            "hits": 618,
+            "expected_by_climatology": 660.0,
+            "excess_hits": -42.0,
+            "excess_per_alert": -0.034
+          },
+          "E0+redflag": {
+            "alerts": 1256,
+            "hits": 628,
+            "expected_by_climatology": 668.7,
+            "excess_hits": -40.7,
+            "excess_per_alert": -0.0324
+          }
+        }
+      }
+    },
+    "test 2023-2024 (FPA-FOD)": {
+      "cell_weeks": 8320,
+      "fire_cell_weeks": 1369,
+      "unexpected_share_of_fire_cellweeks": {
+        "0.05": 0.0526,
+        "0.1": 0.1249,
+        "0.2": 0.2798
+      },
+      "M1": {
+        "A_climatology": {
+          "info_gain_bits": 0.0,
+          "brier_skill": 0.0
+        },
+        "E_gbm_history_weather": {
+          "info_gain_bits": 0.00712,
+          "brier_skill": 0.0112
+        },
+        "E0+redflag": {
+          "info_gain_bits": 0.00734,
+          "brier_skill": 0.0115
+        }
+      },
+      "M2": {
+        "A_climatology": 0.6274,
+        "E_gbm_history_weather": 0.665,
+        "E0+redflag": 0.6605
+      },
+      "M3": {
+        "best_f1": {
+          "0.05": {
+            "A_climatology": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0222,
+              "fire_cellweeks": 72,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0222,
+              "fire_cellweeks": 72,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0222,
+              "fire_cellweeks": 72,
+              "alerted_fires": 1,
+              "recall": 0.0139,
+              "alerts": 2,
+              "hit_rate": 0.5,
+              "surprise_weighted_recall": 0.011
+            }
+          },
+          "0.1": {
+            "A_climatology": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0384,
+              "fire_cellweeks": 171,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0384,
+              "fire_cellweeks": 171,
+              "alerted_fires": 2,
+              "recall": 0.0117,
+              "alerts": 5,
+              "hit_rate": 0.4,
+              "surprise_weighted_recall": 0.0087
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0384,
+              "fire_cellweeks": 171,
+              "alerted_fires": 5,
+              "recall": 0.0292,
+              "alerts": 16,
+              "hit_rate": 0.3125,
+              "surprise_weighted_recall": 0.0256
+            }
+          },
+          "0.2": {
+            "A_climatology": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0635,
+              "fire_cellweeks": 383,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0635,
+              "fire_cellweeks": 383,
+              "alerted_fires": 22,
+              "recall": 0.0574,
+              "alerts": 103,
+              "hit_rate": 0.2136,
+              "surprise_weighted_recall": 0.0439
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0635,
+              "fire_cellweeks": 383,
+              "alerted_fires": 34,
+              "recall": 0.0888,
+              "alerts": 176,
+              "hit_rate": 0.1932,
+              "surprise_weighted_recall": 0.0708
+            }
+          }
+        },
+        "precision70": {
+          "0.05": {
+            "A_climatology": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0222,
+              "fire_cellweeks": 72,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0222,
+              "fire_cellweeks": 72,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0222,
+              "fire_cellweeks": 72,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.1": {
+            "A_climatology": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0384,
+              "fire_cellweeks": 171,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0384,
+              "fire_cellweeks": 171,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0384,
+              "fire_cellweeks": 171,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.2": {
+            "A_climatology": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0635,
+              "fire_cellweeks": 383,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0635,
+              "fire_cellweeks": 383,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0635,
+              "fire_cellweeks": 383,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            }
+          }
+        },
+        "precision50": {
+          "0.05": {
+            "A_climatology": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0222,
+              "fire_cellweeks": 72,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0222,
+              "fire_cellweeks": 72,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 3246,
+              "stratum_base_rate": 0.0222,
+              "fire_cellweeks": 72,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.1": {
+            "A_climatology": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0384,
+              "fire_cellweeks": 171,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0384,
+              "fire_cellweeks": 171,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 4452,
+              "stratum_base_rate": 0.0384,
+              "fire_cellweeks": 171,
+              "alerted_fires": 2,
+              "recall": 0.0117,
+              "alerts": 3,
+              "hit_rate": 0.6667,
+              "surprise_weighted_recall": 0.0098
+            }
+          },
+          "0.2": {
+            "A_climatology": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0635,
+              "fire_cellweeks": 383,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0635,
+              "fire_cellweeks": 383,
+              "alerted_fires": 4,
+              "recall": 0.0104,
+              "alerts": 27,
+              "hit_rate": 0.1481,
+              "surprise_weighted_recall": 0.0079
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 6032,
+              "stratum_base_rate": 0.0635,
+              "fire_cellweeks": 383,
+              "alerted_fires": 10,
+              "recall": 0.0261,
+              "alerts": 31,
+              "hit_rate": 0.3226,
+              "surprise_weighted_recall": 0.0205
+            }
+          }
+        }
+      },
+      "M4": {
+        "best_f1": {
+          "A_climatology": {
+            "alerts": 1498,
+            "hits": 809,
+            "expected_by_climatology": 787.5,
+            "excess_hits": 21.5,
+            "excess_per_alert": 0.0144
+          },
+          "E_gbm_history_weather": {
+            "alerts": 1605,
+            "hits": 849,
+            "expected_by_climatology": 781.4,
+            "excess_hits": 67.6,
+            "excess_per_alert": 0.0421
+          },
+          "E0+redflag": {
+            "alerts": 1789,
+            "hits": 884,
+            "expected_by_climatology": 825.5,
+            "excess_hits": 58.5,
+            "excess_per_alert": 0.0327
+          }
+        },
+        "precision70": {
+          "A_climatology": {
+            "alerts": 440,
+            "hits": 365,
+            "expected_by_climatology": 338.7,
+            "excess_hits": 26.3,
+            "excess_per_alert": 0.0597
+          },
+          "E_gbm_history_weather": {
+            "alerts": 580,
+            "hits": 455,
+            "expected_by_climatology": 405.5,
+            "excess_hits": 49.5,
+            "excess_per_alert": 0.0854
+          },
+          "E0+redflag": {
+            "alerts": 566,
+            "hits": 448,
+            "expected_by_climatology": 400.2,
+            "excess_hits": 47.8,
+            "excess_per_alert": 0.0845
+          }
+        },
+        "precision50": {
+          "A_climatology": {
+            "alerts": 1118,
+            "hits": 700,
+            "expected_by_climatology": 659.9,
+            "excess_hits": 40.1,
+            "excess_per_alert": 0.0359
+          },
+          "E_gbm_history_weather": {
+            "alerts": 1293,
+            "hits": 759,
+            "expected_by_climatology": 690.7,
+            "excess_hits": 68.3,
+            "excess_per_alert": 0.0528
+          },
+          "E0+redflag": {
+            "alerts": 1316,
+            "hits": 769,
+            "expected_by_climatology": 696.4,
+            "excess_hits": 72.6,
+            "excess_per_alert": 0.0552
+          }
+        }
+      },
+      "ci": {
+        "E_gbm_history_weather": {
+          "info_gain": [
+            -0.0006,
+            0.0153
+          ],
+          "strat_auc_diff": {
+            "diff": 0.0376,
+            "ci95": [
+              0.0156,
+              0.0603
+            ]
+          },
+          "unexpected_recall_diff": {
+            "best_f1": {
+              "diff": 0.0117,
+              "ci95": [
+                0.0,
+                0.0296
+              ]
+            },
+            "precision70": {
+              "diff": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "precision50": {
+              "diff": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "excess_per_alert_diff": {
+            "best_f1": {
+              "diff": 0.0277,
+              "ci95": [
+                0.0164,
+                0.0428
+              ]
+            },
+            "precision70": {
+              "diff": 0.0257,
+              "ci95": [
+                0.0023,
+                0.0512
+              ]
+            },
+            "precision50": {
+              "diff": 0.0169,
+              "ci95": [
+                0.0018,
+                0.0362
+              ]
+            }
+          }
+        },
+        "E0+redflag": {
+          "info_gain": [
+            -0.0022,
+            0.0173
+          ],
+          "strat_auc_diff": {
+            "diff": 0.0331,
+            "ci95": [
+              0.0079,
+              0.0598
+            ]
+          },
+          "unexpected_recall_diff": {
+            "best_f1": {
+              "diff": 0.0292,
+              "ci95": [
+                0.0,
+                0.0698
+              ]
+            },
+            "precision70": {
+              "diff": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "precision50": {
+              "diff": 0.0117,
+              "ci95": [
+                0.0,
+                0.0296
+              ]
+            }
+          },
+          "excess_per_alert_diff": {
+            "best_f1": {
+              "diff": 0.0183,
+              "ci95": [
+                0.0057,
+                0.0366
+              ]
+            },
+            "precision70": {
+              "diff": 0.0248,
+              "ci95": [
+                0.0074,
+                0.0449
+              ]
+            },
+            "precision50": {
+              "diff": 0.0193,
+              "ci95": [
+                0.0014,
+                0.0413
+              ]
+            }
+          }
+        }
+      }
+    },
+    "test 2025 (WFIGS)": {
+      "cell_weeks": 4080,
+      "fire_cell_weeks": 790,
+      "unexpected_share_of_fire_cellweeks": {
+        "0.05": 0.0722,
+        "0.1": 0.1405,
+        "0.2": 0.3152
+      },
+      "M1": {
+        "A_climatology": {
+          "info_gain_bits": 0.0,
+          "brier_skill": 0.0
+        },
+        "E_gbm_history_weather": {
+          "info_gain_bits": 0.02765,
+          "brier_skill": 0.0412
+        },
+        "E0+redflag": {
+          "info_gain_bits": 0.01205,
+          "brier_skill": 0.0034
+        }
+      },
+      "M2": {
+        "A_climatology": 0.5903,
+        "E_gbm_history_weather": 0.6699,
+        "E0+redflag": 0.6371
+      },
+      "M3": {
+        "best_f1": {
+          "0.05": {
+            "A_climatology": {
+              "stratum_cellweeks": 1551,
+              "stratum_base_rate": 0.0368,
+              "fire_cellweeks": 57,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 1551,
+              "stratum_base_rate": 0.0368,
+              "fire_cellweeks": 57,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 1551,
+              "stratum_base_rate": 0.0368,
+              "fire_cellweeks": 57,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 2,
+              "hit_rate": 0.0,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.1": {
+            "A_climatology": {
+              "stratum_cellweeks": 2149,
+              "stratum_base_rate": 0.0517,
+              "fire_cellweeks": 111,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 2149,
+              "stratum_base_rate": 0.0517,
+              "fire_cellweeks": 111,
+              "alerted_fires": 5,
+              "recall": 0.045,
+              "alerts": 13,
+              "hit_rate": 0.3846,
+              "surprise_weighted_recall": 0.0339
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 2149,
+              "stratum_base_rate": 0.0517,
+              "fire_cellweeks": 111,
+              "alerted_fires": 2,
+              "recall": 0.018,
+              "alerts": 20,
+              "hit_rate": 0.1,
+              "surprise_weighted_recall": 0.0131
+            }
+          },
+          "0.2": {
+            "A_climatology": {
+              "stratum_cellweeks": 2936,
+              "stratum_base_rate": 0.0848,
+              "fire_cellweeks": 249,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 2936,
+              "stratum_base_rate": 0.0848,
+              "fire_cellweeks": 249,
+              "alerted_fires": 40,
+              "recall": 0.1606,
+              "alerts": 145,
+              "hit_rate": 0.2759,
+              "surprise_weighted_recall": 0.123
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 2936,
+              "stratum_base_rate": 0.0848,
+              "fire_cellweeks": 249,
+              "alerted_fires": 49,
+              "recall": 0.1968,
+              "alerts": 215,
+              "hit_rate": 0.2279,
+              "surprise_weighted_recall": 0.1449
+            }
+          }
+        },
+        "precision70": {
+          "0.05": {
+            "A_climatology": {
+              "stratum_cellweeks": 1551,
+              "stratum_base_rate": 0.0368,
+              "fire_cellweeks": 57,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 1551,
+              "stratum_base_rate": 0.0368,
+              "fire_cellweeks": 57,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 1551,
+              "stratum_base_rate": 0.0368,
+              "fire_cellweeks": 57,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.1": {
+            "A_climatology": {
+              "stratum_cellweeks": 2149,
+              "stratum_base_rate": 0.0517,
+              "fire_cellweeks": 111,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 2149,
+              "stratum_base_rate": 0.0517,
+              "fire_cellweeks": 111,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 2149,
+              "stratum_base_rate": 0.0517,
+              "fire_cellweeks": 111,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.2": {
+            "A_climatology": {
+              "stratum_cellweeks": 2936,
+              "stratum_base_rate": 0.0848,
+              "fire_cellweeks": 249,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 2936,
+              "stratum_base_rate": 0.0848,
+              "fire_cellweeks": 249,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 2936,
+              "stratum_base_rate": 0.0848,
+              "fire_cellweeks": 249,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 3,
+              "hit_rate": 0.0,
+              "surprise_weighted_recall": 0.0
+            }
+          }
+        },
+        "precision50": {
+          "0.05": {
+            "A_climatology": {
+              "stratum_cellweeks": 1551,
+              "stratum_base_rate": 0.0368,
+              "fire_cellweeks": 57,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 1551,
+              "stratum_base_rate": 0.0368,
+              "fire_cellweeks": 57,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 1551,
+              "stratum_base_rate": 0.0368,
+              "fire_cellweeks": 57,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.1": {
+            "A_climatology": {
+              "stratum_cellweeks": 2149,
+              "stratum_base_rate": 0.0517,
+              "fire_cellweeks": 111,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 2149,
+              "stratum_base_rate": 0.0517,
+              "fire_cellweeks": 111,
+              "alerted_fires": 4,
+              "recall": 0.036,
+              "alerts": 7,
+              "hit_rate": 0.5714,
+              "surprise_weighted_recall": 0.0265
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 2149,
+              "stratum_base_rate": 0.0517,
+              "fire_cellweeks": 111,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 3,
+              "hit_rate": 0.0,
+              "surprise_weighted_recall": 0.0
+            }
+          },
+          "0.2": {
+            "A_climatology": {
+              "stratum_cellweeks": 2936,
+              "stratum_base_rate": 0.0848,
+              "fire_cellweeks": 249,
+              "alerted_fires": 0,
+              "recall": 0.0,
+              "alerts": 0,
+              "hit_rate": null,
+              "surprise_weighted_recall": 0.0
+            },
+            "E_gbm_history_weather": {
+              "stratum_cellweeks": 2936,
+              "stratum_base_rate": 0.0848,
+              "fire_cellweeks": 249,
+              "alerted_fires": 25,
+              "recall": 0.1004,
+              "alerts": 74,
+              "hit_rate": 0.3378,
+              "surprise_weighted_recall": 0.0767
+            },
+            "E0+redflag": {
+              "stratum_cellweeks": 2936,
+              "stratum_base_rate": 0.0848,
+              "fire_cellweeks": 249,
+              "alerted_fires": 23,
+              "recall": 0.0924,
+              "alerts": 87,
+              "hit_rate": 0.2644,
+              "surprise_weighted_recall": 0.0685
+            }
+          }
+        }
+      },
+      "M4": {
+        "best_f1": {
+          "A_climatology": {
+            "alerts": 749,
+            "hits": 431,
+            "expected_by_climatology": 393.7,
+            "excess_hits": 37.3,
+            "excess_per_alert": 0.0498
+          },
+          "E_gbm_history_weather": {
+            "alerts": 958,
+            "hits": 500,
+            "expected_by_climatology": 422.5,
+            "excess_hits": 77.5,
+            "excess_per_alert": 0.0809
+          },
+          "E0+redflag": {
+            "alerts": 1117,
+            "hits": 532,
+            "expected_by_climatology": 456.8,
+            "excess_hits": 75.2,
+            "excess_per_alert": 0.0674
+          }
+        },
+        "precision70": {
+          "A_climatology": {
+            "alerts": 220,
+            "hits": 180,
+            "expected_by_climatology": 169.4,
+            "excess_hits": 10.6,
+            "excess_per_alert": 0.0484
+          },
+          "E_gbm_history_weather": {
+            "alerts": 332,
+            "hits": 255,
+            "expected_by_climatology": 222.9,
+            "excess_hits": 32.1,
+            "excess_per_alert": 0.0968
+          },
+          "E0+redflag": {
+            "alerts": 336,
+            "hits": 248,
+            "expected_by_climatology": 222.9,
+            "excess_hits": 25.1,
+            "excess_per_alert": 0.0748
+          }
+        },
+        "precision50": {
+          "A_climatology": {
+            "alerts": 559,
+            "hits": 361,
+            "expected_by_climatology": 329.9,
+            "excess_hits": 31.1,
+            "excess_per_alert": 0.0556
+          },
+          "E_gbm_history_weather": {
+            "alerts": 782,
+            "hits": 453,
+            "expected_by_climatology": 378.6,
+            "excess_hits": 74.4,
+            "excess_per_alert": 0.0952
+          },
+          "E0+redflag": {
+            "alerts": 826,
+            "hits": 453,
+            "expected_by_climatology": 390.6,
+            "excess_hits": 62.4,
+            "excess_per_alert": 0.0756
+          }
+        }
+      },
+      "ci": {
+        "E_gbm_history_weather": {
+          "info_gain": [
+            0.0022,
+            0.0562
+          ],
+          "strat_auc_diff": {
+            "diff": 0.0796,
+            "ci95": [
+              0.0385,
+              0.1253
+            ]
+          },
+          "unexpected_recall_diff": {
+            "best_f1": {
+              "diff": 0.045,
+              "ci95": [
+                0.0,
+                0.0929
+              ]
+            },
+            "precision70": {
+              "diff": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "precision50": {
+              "diff": 0.036,
+              "ci95": [
+                0.0,
+                0.0726
+              ]
+            }
+          },
+          "excess_per_alert_diff": {
+            "best_f1": {
+              "diff": 0.0311,
+              "ci95": [
+                -0.0021,
+                0.0826
+              ]
+            },
+            "precision70": {
+              "diff": 0.0484,
+              "ci95": [
+                0.0225,
+                0.0766
+              ]
+            },
+            "precision50": {
+              "diff": 0.0396,
+              "ci95": [
+                0.014,
+                0.0736
+              ]
+            }
+          }
+        },
+        "E0+redflag": {
+          "info_gain": [
+            -0.0167,
+            0.0411
+          ],
+          "strat_auc_diff": {
+            "diff": 0.0468,
+            "ci95": [
+              0.0109,
+              0.0902
+            ]
+          },
+          "unexpected_recall_diff": {
+            "best_f1": {
+              "diff": 0.018,
+              "ci95": [
+                0.0,
+                0.0394
+              ]
+            },
+            "precision70": {
+              "diff": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            },
+            "precision50": {
+              "diff": 0.0,
+              "ci95": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "excess_per_alert_diff": {
+            "best_f1": {
+              "diff": 0.0176,
+              "ci95": [
+                -0.02,
+                0.0544
+              ]
+            },
+            "precision70": {
+              "diff": 0.0264,
+              "ci95": [
+                -0.0131,
+                0.0642
+              ]
+            },
+            "precision50": {
+              "diff": 0.02,
+              "ci95": [
+                -0.0178,
+                0.053
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

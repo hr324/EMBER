@@ -11,9 +11,13 @@ Builds features exactly as in training, with each source's lag:
     Monday 06:00 America/Los_Angeles; the issue year is re-downloaded.
 
 Scores A (climatology), E (original frozen model) and the overnight candidate
-(E0+redflag, ``candidate_v2.pkl``). Writes ``outputs/live/forecast_<date>.csv``
-and ``.geojson`` with ranks and the weekly top-8 alert flags. Outcomes are NOT
-included; score them later with ``--score-outcomes`` once WFIGS has the week.
+(E0+redflag, ``candidate_v2.pkl``). Alerts are VARIABLE: a cell is alerted when
+its risk clears that model's threshold, chosen on 2021-2022 validation
+(``outputs/alert_thresholds.json``; default rule ``precision70``, also
+``precision50`` and ``best_f1``). So a quiet week can have no alerts and a
+dangerous week many. Writes ``outputs/live/forecast_<date>.csv`` and ``.geojson``.
+Outcomes are NOT included; score them later with ``--score-outcomes``.
+``--reflag`` recomputes alert flags on a saved forecast from its saved scores.
 
 Python API: ``score_frame(df)`` scores a frame that already holds the feature
 columns (see ``features_info.json`` and ``candidate.SPECS``).
@@ -35,7 +39,23 @@ from .experiments import REDFLAG_COLS
 from .grid import Grid
 
 LIVE = config.OUTPUT_DIR / 'live'
-TOP = 8
+THRESHOLDS = config.OUTPUT_DIR / 'alert_thresholds.json'
+TAGS = ((BASELINE, 'baseline'), (HEADLINE, 'ember'), (CAND, 'candidate'))
+
+
+def load_thresholds() -> dict:
+    return json.loads(THRESHOLDS.read_text())
+
+
+def add_alerts(out: pd.DataFrame) -> dict:
+    """Variable alert flags per model and rule from saved risk scores (validation thresholds)."""
+    t = load_thresholds()
+    for model, tag in TAGS:
+        for rule, thr in t['thresholds'][model].items():
+            if thr is not None:
+                out[f'{tag}_alert_{rule}'] = out[f'{tag}_risk_score'] >= thr
+        out[f'{tag}_alert'] = out[f'{tag}_alert_{t["default_rule"]}']
+    return t
 
 
 def ensure_weather(issue: date) -> None:
@@ -108,10 +128,14 @@ def write(df: pd.DataFrame, issue: date) -> dict:
     LIVE.mkdir(parents=True, exist_ok=True)
     out = df[['forecast_date', 'cell_id', 'centroid_lat', 'centroid_lon', 'weather_latest_date',
               'history_latest_date'] + REDFLAG_COLS].copy()
-    for name, tag in ((BASELINE, 'baseline'), (HEADLINE, 'ember'), (CAND, 'candidate')):
+    for name, tag in TAGS:
         out[f'{tag}_risk_score'] = df[name].round(5)
         out[f'{tag}_rank'] = df[name].rank(ascending=False, method='first').astype(int)
-        out[f'{tag}_alert'] = out[f'{tag}_rank'] <= TOP
+    t = add_alerts(out)
+    return save(out, issue, t, issued_utc=datetime.now(timezone.utc).isoformat(timespec='seconds'))
+
+
+def save(out: pd.DataFrame, issue: date, t: dict, issued_utc: str, note: str | None = None) -> dict:
     stem = LIVE / f'forecast_{issue.isoformat()}'
     out.to_csv(stem.with_suffix('.csv'), index=False)
     cells = {c.cell_id: c for c in Grid().cells}
@@ -119,14 +143,32 @@ def write(df: pd.DataFrame, issue: date) -> dict:
                   properties={k: (v.isoformat() if hasattr(v, 'isoformat') else (bool(v) if isinstance(v, (bool, np.bool_)) else v))
                               for k, v in r.items() if k not in ('centroid_lat', 'centroid_lon')})
              for r in out.to_dict('records')]
-    meta = dict(issue_date=issue.isoformat(), window=f'{issue} to {issue + timedelta(days=6)}',
-                issued_utc=datetime.now(timezone.utc).isoformat(timespec='seconds'),
+    meta = dict(issue_date=issue.isoformat(), window=f'{issue} to {issue + timedelta(days=6)}', issued_utc=issued_utc,
                 meaning='Risk of at least one newly reported wildfire in each ~25 km cell during the 7-day window. '
-                        'Alerts = the 8 highest-ranked cells. Scores are relative risk, not calibrated probabilities.',
+                        'A cell is alerted when its risk clears the model threshold chosen on 2021-2022 validation, '
+                        f'so the number of alerts varies week to week (default rule {t["default_rule"]}).',
+                alert_rules=t['rules'], default_rule=t['default_rule'], thresholds=t['thresholds'],
                 models={'baseline': BASELINE, 'ember': HEADLINE, 'candidate': CAND})
+    if note:
+        meta['note'] = note
     stem.with_suffix('.geojson').write_text(json.dumps(dict(type='FeatureCollection', **meta, features=feats), default=str))
-    alerts = {t: out.loc[out[f'{t}_alert'], 'cell_id'].tolist() for t in ('baseline', 'ember', 'candidate')}
-    return dict(**meta, alerts=alerts, files=[str(stem.with_suffix('.csv')), str(stem.with_suffix('.geojson'))])
+    alerts = {tag: out.loc[out[f'{tag}_alert'], 'cell_id'].tolist() for _, tag in TAGS}
+    return dict(**{k: v for k, v in meta.items() if k != 'thresholds'}, alerts=alerts,
+                alert_counts_by_rule={tag: {r: int(out[f'{tag}_alert_{r}'].sum()) for r in t['rules']
+                                            if f'{tag}_alert_{r}' in out} for _, tag in TAGS},
+                files=[str(stem.with_suffix('.csv')), str(stem.with_suffix('.geojson'))])
+
+
+def reflag(issue: date) -> dict:
+    """Re-derive variable alerts on a saved forecast from its saved scores (no re-scoring, no new data)."""
+    out = pd.read_csv(LIVE / f'forecast_{issue.isoformat()}.csv')
+    out = out[[c for c in out.columns if '_alert' not in c]]
+    gj = json.loads((LIVE / f'forecast_{issue.isoformat()}.geojson').read_text())
+    t = add_alerts(out)
+    return save(out, issue, t, issued_utc=gj['issued_utc'],
+                note=f'Scores issued {gj["issued_utc"]}; alert flags re-derived from those saved scores on '
+                     f'{datetime.now(timezone.utc).isoformat(timespec="seconds")} with validation thresholds '
+                     '(originally flagged as a fixed top 8; see git history).')
 
 
 def score_outcomes(issue: date) -> dict:
@@ -136,8 +178,12 @@ def score_outcomes(issue: date) -> dict:
     end = pd.Timestamp(issue) + pd.Timedelta(days=6)
     week = wf[(wf['discovery_date'] >= pd.Timestamp(issue)) & (wf['discovery_date'] <= end)]
     hit = set(week['cell_id'])
-    res = {t: dict(alerts=int(f[f'{t}_alert'].sum()), hits=int(f.loc[f[f'{t}_alert'], 'cell_id'].isin(hit).sum()))
-           for t in ('baseline', 'ember', 'candidate')}
+    res = {}
+    for _, tag in TAGS:
+        for col in [c for c in f.columns if c.startswith(f'{tag}_alert_')]:
+            a = f[col].astype(bool)
+            res[col] = dict(alerts=int(a.sum()), hits=int(f.loc[a, 'cell_id'].isin(hit).sum()),
+                            fire_cells_missed=int(len(hit - set(f.loc[a, 'cell_id']))))
     return dict(issue_date=issue.isoformat(), reported_fires=int(len(week)), cells_with_fire=len(hit), results=res,
                 feed_downloaded_note='WFIGS is live; rerun after late reports settle (about two weeks).')
 
@@ -147,8 +193,12 @@ def main() -> None:
     ap.add_argument('--date', required=True, help='Monday issue date YYYY-MM-DD')
     ap.add_argument('--refresh-fires', action='store_true', help='re-download the live WFIGS feed first')
     ap.add_argument('--score-outcomes', action='store_true', help='score a saved forecast against WFIGS reports')
+    ap.add_argument('--reflag', action='store_true', help='recompute alert flags of a saved forecast from its scores')
     a = ap.parse_args()
     issue = date.fromisoformat(a.date)
+    if a.reflag:
+        print(json.dumps(reflag(issue), indent=2, default=str))
+        return
     if a.score_outcomes:
         print(json.dumps(score_outcomes(issue), indent=2))
         return

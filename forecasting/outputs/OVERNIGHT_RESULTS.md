@@ -33,6 +33,33 @@ Branch `rayan` · code in `forecasting/` · every number below is read from save
 
 The confusion table for EMBER's 2025 alert rule is TP 235, FP 173, FN 555, TN 3,117. **The alerts cover 29.8% of all cell-weeks that had a fire.** Most fire cell-weeks fall outside the top 8, because fires are spread over many cells.
 
+## Skill beyond "usual places in summer"
+
+Full tables: [SURPRISE_EVAL.md](SURPRISE_EVAL.md). Definitions were committed before computing.
+- **Expectedness:** each cell-week is judged against its frozen 2015–2020 climatology rate.
+- **What earns credit:** only correct departures from that rate. Recognising usual hotspots earns none.
+
+| Measure (EMBER vs seasonal baseline) | 2025 | 2023–2024 |
+|---|---|---|
+| **Ranking among cell-weeks with the same historical risk** (within-decile ROC-AUC) | 0.670 vs 0.590: **+0.080 [+0.038, +0.125]** | 0.665 vs 0.627: **+0.038 [+0.016, +0.060]** |
+| Information gain over climatology (millibits per cell-week) | **+27.7 [+2.2, +56.2]** | +7.1 [−0.6, +15.3] |
+| Excess fires per alert beyond climatology's expectation, confident rule | **+0.048 [+0.022, +0.077]** | **+0.026 [+0.002, +0.051]** |
+| Truly unexpected fires (climatology < 10%) | 111 fire cell-weeks; EMBER alerts there rarely (≤ 13 alerts, 4–5 caught; the baseline can't alert there at all) | 171; EMBER made 5 alerts there, 2 caught |
+
+**This is the strongest evidence of real forecasting skill in the project, and it replicates in both test periods.**
+- **What it shows:** among places and weeks that history rates equally, EMBER is significantly better at telling which will see a fire. Its alerts find more fires than climatology already expected.
+- **Why the fixed top-8 metric missed it:** the top 8 are nearly always the same high-climatology hotspots, so the dynamic skill only shows away from them.
+- **The honest limit:** fires in places that almost never burn remain essentially unpredicted. Too few alerts land there to judge.
+
+**Pitch line:** *"Even among places and weeks with identical fire history, EMBER can tell which are more likely to burn, a significant edge confirmed on two separate test periods, which a seasonal map cannot do by definition."*
+
+## Live alerts now vary with risk
+
+`python3 -m forecasting.predict` no longer flags a fixed top 8.
+- **Rule:** a cell is alerted when its risk clears that model's threshold, chosen on 2021–2022 validation ([alert_thresholds.json](alert_thresholds.json)).
+- **Rules available:** the default is `precision70`; `precision50` and `best_f1` are also saved.
+- **The 19 Oct 2026 forecast:** re-flagged from its saved scores (scores unchanged; the original top-8 version is in git history). Under the default rule EMBER alerts **6 cells**, the baseline 4 and the candidate 2. Under the broader rules EMBER alerts 15–19.
+
 ## Without a fixed number of alerts per week
 
 Full tables: [FLEXIBLE_ALERTS.md](FLEXIBLE_ALERTS.md).

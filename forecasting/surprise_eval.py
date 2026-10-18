@@ -76,7 +76,8 @@ def unexpected(df: pd.DataFrame, m: str, thr: float, cut: float) -> dict:
     y = s['label'] == 1
     surprise = -np.log2(s[BASELINE].clip(EPS, 1).to_numpy())
     tp = int((flag & y).sum())
-    return dict(fire_cellweeks=int(y.sum()), alerted_fires=tp, recall=round(tp / max(int(y.sum()), 1), 4),
+    return dict(stratum_cellweeks=int(len(s)), stratum_base_rate=round(float(y.mean()), 4) if len(s) else None,
+                fire_cellweeks=int(y.sum()), alerted_fires=tp, recall=round(tp / max(int(y.sum()), 1), 4),
                 alerts=int(flag.sum()), hit_rate=round(tp / int(flag.sum()), 4) if flag.sum() else None,
                 surprise_weighted_recall=round(float(surprise[(flag & y).to_numpy()].sum() / surprise[y.to_numpy()].sum()), 4)
                 if y.any() else None)
@@ -155,7 +156,11 @@ def write_report(res: dict) -> None:
             for m, c in r['ci'].items():
                 L.append(f"| {NAMES[m]} | [{1000 * c['info_gain'][0]:+.1f}, {1000 * c['info_gain'][1]:+.1f}] | "
                          f"{c['strat_auc_diff']['diff']:+.3f} [{c['strat_auc_diff']['ci95'][0]:+.3f}, {c['strat_auc_diff']['ci95'][1]:+.3f}] |")
+        x0 = r['M3'][RULES[1]][str(PRIMARY_CUT)][BASELINE]
         L += ['', f'### Unexpected fires (climatology < {int(100 * PRIMARY_CUT)}%) caught by validation-threshold alerts', '',
+              f"Stratum: {x0['stratum_cellweeks']:,} cell-weeks, {pct(x0['stratum_base_rate'])} of which had a fire. The baseline's "
+              "score IS climatology, and all its thresholds exceed 10%, so it cannot alert here by construction; the test for "
+              "EMBER is whether its alerts in this stratum beat the stratum base rate.", '',
               '| Rule | Model | Unexpected fire cell-weeks | Caught | Recall | Alerts in that stratum | Their hit rate | Surprise-weighted recall |',
               '|---|---|---|---|---|---|---|---|']
         for rule, byc in r['M3'].items():
